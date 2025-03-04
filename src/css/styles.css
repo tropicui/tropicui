@@ -1,158 +1,376 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: var(--color-sky-500);
-    --color-primary-outline: var(--color-sky-600);
-    --color-primary-hover: var(--color-sky-400);
-    --color-primary-active: var(--color-sky-600);
+    --color-primary: var(--color-blue-500);
+    --color-primary-border: var(--color-blue-600);
+    --color-primary-hover: var(--color-blue-400);
+    --color-primary-active: var(--color-blue-600);
+    --color-primary-shadow: --alpha(var(--color-blue-500) / 40%);
+    --color-primary-disabled: var(--color-blue-50);
 
-    --color-secondary: var(--color-cyan-500);
-    --color-secondary-outline: var(--color-cyan-600);
-    --color-secondary-hover: var(--color-cyan-400);
-    --color-secondary-active: var(--color-cyan-600);
+    --color-primary-light: var(--color-blue-100);
+    --color-primary-light-border: var(--color-blue-300);
+    --color-primary-light-disabled: var(--color-blue-300);
 
-    --color-info: var(--color-purple-500);
-    --color-info-outline: var(--color-purple-600);
-    --color-info-hover: var(--color-purple-400);
-    --color-info-active: var(--color-purple-600);
+    --color-secondary: var(--color-purple-500);
+    --color-secondary-border: var(--color-purple-600);
+    --color-secondary-hover: var(--color-purple-400);
+    --color-secondary-active: var(--color-purple-600);
+    --color-secondary-shadow: --alpha(var(--color-purple-500) / 40%);
+    --color-secondary-disabled: var(--color-purple-50);
+
+    --color-secondary-light: var(--color-purple-100);
+    --color-secondary-light-border: var(--color-purple-300);
+    --color-secondary-light-disabled: var(--color-purple-300);
+
+    --color-info: var(--color-orange-500);
+    --color-info-border: var(--color-orange-600);
+    --color-info-hover: var(--color-orange-400);
+    --color-info-active: var(--color-orange-600);
+    --color-info-shadow: --alpha(var(--color-orange-500) / 40%);
+    --color-info-disabled: var(--color-orange-50);
+
+    --color-info-light: var(--color-orange-100);
+    --color-info-light-border: var(--color-orange-300);
+    --color-info-light-disabled: var(--color-orange-200);
 
     --color-dark: var(--color-neutral-800);
-    --color-dark-outline: var(--color-neutral-950);
+    --color-dark-border: var(--color-neutral-950);
     --color-dark-hover: var(--color-neutral-600);
     --color-dark-active: var(--color-neutral-950);
+    --color-dark-shadow: --alpha(var(--color-neutral-800) / 40%);
+    --color-dark-disabled: var(--color-neutral-500);
 
     --color-light: var(--color-white);
-    --color-light-outline: var(--color-neutral-300);
+    --color-light-border: var(--color-neutral-300);
     --color-light-hover: var(--color-neutral-50);
     --color-light-active: var(--color-neutral-200);
+    --color-light-shadow: --alpha(var(--color-white) / 40%);
+    --color-light-disabled: var(--color-neutral-400);
 
-    --color-grey: var(--color-gray-400);
-    --color-grey-outline: var(--color-gray-500);
-    --color-grey-hover: var(--color-gray-300);
-    --color-grey-active: var(--color-gray-500);
+    --color-grey: var(--color-gray-300);
+    --color-grey-border: var(--color-gray-400);
+    --color-grey-hover: var(--color-gray-200);
+    --color-grey-active: var(--color-gray-400);
+    --color-grey-shadow: --alpha(var(--color-gray-300) / 40%);
+    --color-grey-disabled: var(--color-gray-50);
+
+    --color-grey-light: var(--color-gray-100);
+    --color-grey-light-border: var(--color-gray-300);
+    --color-grey-light-disabled: var(--color-gray-300);
 
     --color-danger: var(--color-red-500);
-    --color-danger-outline: var(--color-red-600);
+    --color-danger-border: var(--color-red-600);
     --color-danger-hover: var(--color-red-400);
     --color-danger-active: var(--color-red-600);
+    --color-danger-shadow: --alpha(var(--color-red-500) / 40%);
+    --color-danger-disabled: var(--color-red-50);
+
+    --color-danger-light: var(--color-red-100);
+    --color-danger-light-border: var(--color-red-300);
+    --color-danger-light-disabled: var(--color-red-300);
 
     --color-warning: var(--color-yellow-400);
-    --color-warning-outline: var(--color-yellow-500);
+    --color-warning-border: var(--color-yellow-500);
     --color-warning-hover: var(--color-amber-300);
     --color-warning-active: var(--color-amber-400);
+    --color-warning-shadow: --alpha(var(--color-yellow-400) / 40%);
+    --color-warning-disabled: var(--color-yellow-50);
+
+    --color-warning-light: var(--color-amber-100);
+    --color-warning-light-border: var(--color-yellow-300);
+    --color-warning-light-disabled: var(--color-yellow-300);
 
     --color-success: var(--color-green-500);
-    --color-success-outline: var(--color-green-600);
+    --color-success-border: var(--color-green-600);
     --color-success-hover: var(--color-green-400);
     --color-success-active: var(--color-green-600);
+    --color-success-shadow: --alpha(var(--color-green-500) / 40%);
+    --color-success-disabled: var(--color-green-50);
+
+    --color-success-light: var(--color-green-100);
+    --color-success-light-border: var(--color-green-300);
+    --color-success-light-disabled: var(--color-green-300);
 }
 
 @layer components {
     .btn {
-        @apply  text-base
-                rounded-md
-                px-5 py-2
-                ;
+        @apply text-base
+               rounded-md
+               overflow-hidden
+               px-5 py-2.5
+               ;
     }
     .btn-xs {
-        @apply  text-xs
-                rounded-sm
-                px-5 py-1.25
-                ;
+        @apply text-xs
+               rounded-sm
+               px-2 py-1
+               ;
     }
     .btn-sm {
-        @apply  text-sm
-                rounded
-                px-5 py-1.5
-                ;
+        @apply text-sm
+               rounded
+               px-4 py-2
+               ;
     }
     .btn-lg {
-        @apply  text-lg
-                rounded-lg
-                px-6 py-2.5
-                ;
+        @apply text-lg
+               rounded-lg
+               px-6 py-3
+               ;
     }
     .btn-xl {
-        @apply  text-xl
-                rounded-lg
-                px-7 py-3.5
-                ;
+        @apply text-xl
+               rounded-lg
+               px-7 py-3.5
+               ;
     }
     .btn-primary {
-        @apply  
-                bg-primary
-                hover:bg-primary-hover
-                active:bg-primary-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-primary),0_0_0_1px_var(--color-primary-outline)]
-                text-white;
-    }
-    .btn-outline.btn-primary {
-        @apply  
-                bg-transparent-primary
-                text-primary
+        @apply text-white
+               bg-primary
+               hover:bg-primary-hover
+               active:bg-primary-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-border)]
+               ;
+        &.btn-outline {
+            @apply text-primary
+                   hover:text-white
+                   bg-primary-light
+                   hover:bg-primary
+                   active:bg-primary-active
+                   shadow-[0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-border)]
+                   ;
+            &:disabled {
+                @apply text-primary-light-disabled
+                        bg-primary-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-primary-light
+                   bg-primary-light-disabled
+                   shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-light-border)]
+                   ;
+        }
     }
     .btn-secondary {
-        @apply  
-                bg-secondary
-                hover:bg-secondary-hover
-                active:bg-secondary-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-secondary),0_0_0_1px_var(--color-secondary-outline)]
-                text-white;
+        @apply text-white
+               bg-secondary
+               hover:bg-secondary-hover
+               active:bg-secondary-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-border)]
+               ;
+        &.btn-outline {
+            @apply text-secondary
+                   hover:text-white
+                   bg-secondary-light
+                   hover:bg-secondary
+                   active:bg-secondary-active
+                   shadow-[0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-border)]
+                   ;
+            &:disabled {
+                @apply text-secondary-light-disabled
+                        bg-secondary-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-secondary-light
+                   bg-secondary-light-disabled
+                   shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-light-border)]
+                   ;
+        }
     }
     .btn-info {
-        @apply  
-                bg-info
-                hover:bg-info-hover
-                active:bg-info-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-info),0_0_0_1px_var(--color-info-outline)]
-                text-white;
+        @apply text-white
+               bg-info
+               hover:bg-info-hover
+               active:bg-info-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-border)]
+               ;
+        &.btn-outline {
+            @apply text-info
+                   hover:text-white
+                   bg-info-light
+                   hover:bg-info
+                   active:bg-info-active
+                   shadow-[0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-border)]
+                   ;
+            &:disabled {
+                @apply text-info-light-disabled
+                        bg-info-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-info-light
+                    bg-info-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-light-disabled)]
+                    ;
+        }
     }
     .btn-dark {
-        @apply  
-                bg-dark
-                hover:bg-dark-hover
-                active:bg-dark-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-dark),0_0_0_1px_var(--color-dark-outline)]
-                text-white;
+        @apply text-white
+               bg-dark
+               hover:bg-dark-hover
+               active:bg-dark-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-dark-border)]
+               ;
+        &.btn-outline {
+            @apply text-dark
+                   hover:text-white
+                   bg-light
+                   hover:bg-dark
+                   active:bg-dark-active
+                   shadow-[0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-dark-border)]
+                   ;
+            &:disabled {
+                @apply text-dark
+                        bg-grey-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-grey-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-light-disabled
+                    bg-dark-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-dark-disabled)]
+                    ;
+        }
     }
     .btn-light {
-        @apply  
-                bg-light
-                hover:bg-light-hover
-                active:bg-light-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-neutral-300),0_0_0_1px_var(--color-light-outline)]
+        @apply text-dark
+               bg-light
+               hover:bg-light-hover
+               active:bg-light-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-light-shadow),0_0_0_1px_var(--color-light-border)]
+               ;
     }
     .btn-grey, .btn-gray {
-        @apply  
-                bg-grey
-                hover:bg-grey-hover
-                active:bg-grey-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-grey),0_0_0_1px_var(--color-grey-outline)]
-                text-white;
+        @apply text-dark
+               bg-grey
+               hover:bg-grey-hover
+               active:bg-grey-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-border)]
+               ;
+        &.btn-outline {
+            @apply text-gray-800
+                   bg-grey-light
+                   hover:bg-grey
+                   active:bg-grey-active
+                   shadow-[0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-border)]
+                   ;
+            &:disabled {
+                @apply text-grey-light-disabled
+                        bg-grey-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-grey-light
+                    bg-grey-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-light-border)]
+                    ;
+        }
     }
     .btn-danger {
-        @apply  
-                bg-danger
-                hover:bg-danger-hover
-                active:bg-danger-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_10px_10px_0_rgba(var(--color-red-500)_50),0_0_0_1px_var(--color-danger-outline)]
-                text-white;
+        @apply text-white
+               bg-danger
+               hover:bg-danger-hover
+               active:bg-danger-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-border)]
+               ;
+        &.btn-outline {
+            @apply text-danger
+                   hover:text-white
+                   bg-danger-light
+                   hover:bg-danger
+                   active:bg-danger-active
+                   shadow-[0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-border)]
+                   ;
+            &:disabled {
+                @apply text-danger-light-disabled
+                        bg-danger-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-danger-light
+                    bg-danger-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-light-border)]
+                    ;
+        }
     }
     .btn-warning {
-        @apply  
-                bg-warning
-                hover:bg-warning-hover
-                active:bg-warning-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-warning),0_0_0_1px_var(--color-warning-outline)]
-                text-white;
+        @apply text-white
+               bg-warning
+               hover:bg-warning-hover
+               active:bg-warning-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-border)]
+               ;
+        &.btn-outline {
+            @apply text-warning
+                   hover:text-white 
+                   bg-warning-light
+                   hover:bg-warning
+                   active:bg-warning-active
+                   shadow-[0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-border)]
+                   ;
+            &:disabled {
+                @apply text-warning-light-disabled
+                        bg-warning-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-warning-light
+                    bg-warning-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-light-border)]
+                    ;
+        }
     }
     .btn-success {
-        @apply  
-                bg-success
-                hover:bg-success-hover
-                active:bg-success-active
-                shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_2px_0_var(--color-success),0_0_0_1px_var(--color-success-outline)]
-                text-white;
+        @apply text-white
+               bg-success
+               hover:bg-success-hover
+               active:bg-success-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-border)]
+               ;
+        &.btn-outline {
+            @apply text-success
+                   hover:text-white
+                   bg-success-light
+                   hover:bg-success
+                   active:bg-success-active
+                   shadow-[0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-border)]
+                   ;
+            &:disabled {
+                @apply text-success-light-disabled
+                        bg-success-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-success-light
+                    bg-success-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-light-border)]
+                    ;
+        }
     }
 }
 

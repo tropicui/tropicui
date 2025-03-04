@@ -6,31 +6,55 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-50: oklch(0.971 0.013 17.38);
+    --color-red-100: oklch(0.936 0.032 17.717);
+    --color-red-300: oklch(0.808 0.114 19.571);
     --color-red-400: oklch(0.704 0.191 22.216);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-red-600: oklch(0.577 0.245 27.325);
+    --color-orange-50: oklch(0.98 0.016 73.684);
+    --color-orange-100: oklch(0.954 0.038 75.164);
+    --color-orange-200: oklch(0.901 0.076 70.697);
+    --color-orange-300: oklch(0.837 0.128 66.29);
+    --color-orange-400: oklch(0.75 0.183 55.934);
+    --color-orange-500: oklch(0.705 0.213 47.604);
+    --color-orange-600: oklch(0.646 0.222 41.116);
+    --color-amber-100: oklch(0.962 0.059 95.617);
     --color-amber-300: oklch(0.879 0.169 91.605);
     --color-amber-400: oklch(0.828 0.189 84.429);
+    --color-yellow-50: oklch(0.987 0.026 102.212);
+    --color-yellow-300: oklch(0.905 0.182 98.111);
     --color-yellow-400: oklch(0.852 0.199 91.936);
     --color-yellow-500: oklch(0.795 0.184 86.047);
+    --color-green-50: oklch(0.982 0.018 155.826);
+    --color-green-100: oklch(0.962 0.044 156.743);
+    --color-green-300: oklch(0.871 0.15 154.449);
     --color-green-400: oklch(0.792 0.209 151.711);
     --color-green-500: oklch(0.723 0.219 149.579);
     --color-green-600: oklch(0.627 0.194 149.214);
-    --color-cyan-400: oklch(0.789 0.154 211.53);
-    --color-cyan-500: oklch(0.715 0.143 215.221);
-    --color-cyan-600: oklch(0.609 0.126 221.723);
-    --color-sky-400: oklch(0.746 0.16 232.661);
-    --color-sky-500: oklch(0.685 0.169 237.323);
-    --color-sky-600: oklch(0.588 0.158 241.966);
+    --color-blue-50: oklch(0.97 0.014 254.604);
+    --color-blue-100: oklch(0.932 0.032 255.585);
+    --color-blue-300: oklch(0.809 0.105 251.813);
+    --color-blue-400: oklch(0.707 0.165 254.624);
+    --color-blue-500: oklch(0.623 0.214 259.815);
+    --color-blue-600: oklch(0.546 0.245 262.881);
+    --color-purple-50: oklch(0.977 0.014 308.299);
+    --color-purple-100: oklch(0.946 0.033 307.174);
+    --color-purple-300: oklch(0.827 0.119 306.383);
     --color-purple-400: oklch(0.714 0.203 305.504);
     --color-purple-500: oklch(0.627 0.265 303.9);
     --color-purple-600: oklch(0.558 0.288 302.321);
+    --color-gray-50: oklch(0.985 0.002 247.839);
+    --color-gray-100: oklch(0.967 0.003 264.542);
+    --color-gray-200: oklch(0.928 0.006 264.531);
     --color-gray-300: oklch(0.872 0.01 258.338);
     --color-gray-400: oklch(0.707 0.022 261.325);
-    --color-gray-500: oklch(0.551 0.027 264.364);
+    --color-gray-800: oklch(0.278 0.033 256.848);
     --color-neutral-50: oklch(0.985 0 0);
     --color-neutral-200: oklch(0.922 0 0);
     --color-neutral-300: oklch(0.87 0 0);
+    --color-neutral-400: oklch(0.708 0 0);
+    --color-neutral-500: oklch(0.556 0 0);
     --color-neutral-600: oklch(0.439 0 0);
     --color-neutral-800: oklch(0.269 0 0);
     --color-neutral-950: oklch(0.145 0 0);
@@ -61,42 +85,81 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --color-primary: var(--color-sky-500);
-    --color-primary-outline: var(--color-sky-600);
-    --color-primary-hover: var(--color-sky-400);
-    --color-primary-active: var(--color-sky-600);
-    --color-secondary: var(--color-cyan-500);
-    --color-secondary-outline: var(--color-cyan-600);
-    --color-secondary-hover: var(--color-cyan-400);
-    --color-secondary-active: var(--color-cyan-600);
-    --color-info: var(--color-purple-500);
-    --color-info-outline: var(--color-purple-600);
-    --color-info-hover: var(--color-purple-400);
-    --color-info-active: var(--color-purple-600);
+    --color-primary: var(--color-blue-500);
+    --color-primary-border: var(--color-blue-600);
+    --color-primary-hover: var(--color-blue-400);
+    --color-primary-active: var(--color-blue-600);
+    --color-primary-shadow: color-mix(in oklab, var(--color-blue-500) 40%, transparent);
+    --color-primary-disabled: var(--color-blue-50);
+    --color-primary-light: var(--color-blue-100);
+    --color-primary-light-border: var(--color-blue-300);
+    --color-primary-light-disabled: var(--color-blue-300);
+    --color-secondary: var(--color-purple-500);
+    --color-secondary-border: var(--color-purple-600);
+    --color-secondary-hover: var(--color-purple-400);
+    --color-secondary-active: var(--color-purple-600);
+    --color-secondary-shadow: color-mix(in oklab, var(--color-purple-500) 40%, transparent);
+    --color-secondary-disabled: var(--color-purple-50);
+    --color-secondary-light: var(--color-purple-100);
+    --color-secondary-light-border: var(--color-purple-300);
+    --color-secondary-light-disabled: var(--color-purple-300);
+    --color-info: var(--color-orange-500);
+    --color-info-border: var(--color-orange-600);
+    --color-info-hover: var(--color-orange-400);
+    --color-info-active: var(--color-orange-600);
+    --color-info-shadow: color-mix(in oklab, var(--color-orange-500) 40%, transparent);
+    --color-info-disabled: var(--color-orange-50);
+    --color-info-light: var(--color-orange-100);
+    --color-info-light-border: var(--color-orange-300);
+    --color-info-light-disabled: var(--color-orange-200);
     --color-dark: var(--color-neutral-800);
-    --color-dark-outline: var(--color-neutral-950);
+    --color-dark-border: var(--color-neutral-950);
     --color-dark-hover: var(--color-neutral-600);
     --color-dark-active: var(--color-neutral-950);
+    --color-dark-shadow: color-mix(in oklab, var(--color-neutral-800) 40%, transparent);
+    --color-dark-disabled: var(--color-neutral-500);
     --color-light: var(--color-white);
-    --color-light-outline: var(--color-neutral-300);
+    --color-light-border: var(--color-neutral-300);
     --color-light-hover: var(--color-neutral-50);
     --color-light-active: var(--color-neutral-200);
-    --color-grey: var(--color-gray-400);
-    --color-grey-outline: var(--color-gray-500);
-    --color-grey-hover: var(--color-gray-300);
-    --color-grey-active: var(--color-gray-500);
+    --color-light-shadow: color-mix(in oklab, var(--color-white) 40%, transparent);
+    --color-light-disabled: var(--color-neutral-400);
+    --color-grey: var(--color-gray-300);
+    --color-grey-border: var(--color-gray-400);
+    --color-grey-hover: var(--color-gray-200);
+    --color-grey-active: var(--color-gray-400);
+    --color-grey-shadow: color-mix(in oklab, var(--color-gray-300) 40%, transparent);
+    --color-grey-disabled: var(--color-gray-50);
+    --color-grey-light: var(--color-gray-100);
+    --color-grey-light-border: var(--color-gray-300);
+    --color-grey-light-disabled: var(--color-gray-300);
     --color-danger: var(--color-red-500);
-    --color-danger-outline: var(--color-red-600);
+    --color-danger-border: var(--color-red-600);
     --color-danger-hover: var(--color-red-400);
     --color-danger-active: var(--color-red-600);
+    --color-danger-shadow: color-mix(in oklab, var(--color-red-500) 40%, transparent);
+    --color-danger-disabled: var(--color-red-50);
+    --color-danger-light: var(--color-red-100);
+    --color-danger-light-border: var(--color-red-300);
+    --color-danger-light-disabled: var(--color-red-300);
     --color-warning: var(--color-yellow-400);
-    --color-warning-outline: var(--color-yellow-500);
+    --color-warning-border: var(--color-yellow-500);
     --color-warning-hover: var(--color-amber-300);
     --color-warning-active: var(--color-amber-400);
+    --color-warning-shadow: color-mix(in oklab, var(--color-yellow-400) 40%, transparent);
+    --color-warning-disabled: var(--color-yellow-50);
+    --color-warning-light: var(--color-amber-100);
+    --color-warning-light-border: var(--color-yellow-300);
+    --color-warning-light-disabled: var(--color-yellow-300);
     --color-success: var(--color-green-500);
-    --color-success-outline: var(--color-green-600);
+    --color-success-border: var(--color-green-600);
     --color-success-hover: var(--color-green-400);
     --color-success-active: var(--color-green-600);
+    --color-success-shadow: color-mix(in oklab, var(--color-green-500) 40%, transparent);
+    --color-success-disabled: var(--color-green-50);
+    --color-success-light: var(--color-green-100);
+    --color-success-light-border: var(--color-green-300);
+    --color-success-light-disabled: var(--color-green-300);
   }
 }
 @layer base {
@@ -241,6 +304,9 @@
   }
 }
 @layer utilities {
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -269,30 +335,31 @@
 }
 @layer components {
   .btn {
+    overflow: hidden;
     border-radius: var(--radius-md);
     padding-inline: calc(var(--spacing) * 5);
-    padding-block: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 2.5);
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .btn-xs {
     border-radius: var(--radius-sm);
-    padding-inline: calc(var(--spacing) * 5);
-    padding-block: calc(var(--spacing) * 1.25);
+    padding-inline: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 1);
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
   .btn-sm {
     border-radius: 0.25rem;
-    padding-inline: calc(var(--spacing) * 5);
-    padding-block: calc(var(--spacing) * 1.5);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 2);
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .btn-lg {
     border-radius: var(--radius-lg);
     padding-inline: calc(var(--spacing) * 6);
-    padding-block: calc(var(--spacing) * 2.5);
+    padding-block: calc(var(--spacing) * 3);
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
@@ -306,7 +373,7 @@
   .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-primary)), 0 0 0 1px var(--tw-shadow-color, var(--color-primary-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-primary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-primary-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -316,11 +383,48 @@
     &:active {
       background-color: var(--color-primary-active);
     }
+    &.btn-outline {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-primary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-primary-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-primary);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-primary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-primary-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-primary-active);
+      }
+      &:disabled {
+        background-color: var(--color-primary-disabled);
+        color: var(--color-primary-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-primary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-primary-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-primary-light-disabled);
+      color: var(--color-primary-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-primary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-primary-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-secondary {
     background-color: var(--color-secondary);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-secondary)), 0 0 0 1px var(--tw-shadow-color, var(--color-secondary-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-secondary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-secondary-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -330,11 +434,48 @@
     &:active {
       background-color: var(--color-secondary-active);
     }
+    &.btn-outline {
+      background-color: var(--color-secondary-light);
+      color: var(--color-secondary);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-secondary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-secondary-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-secondary);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-secondary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-secondary-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-secondary-active);
+      }
+      &:disabled {
+        background-color: var(--color-secondary-disabled);
+        color: var(--color-secondary-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-secondary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-secondary-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-secondary-light-disabled);
+      color: var(--color-secondary-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-secondary-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-secondary-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-info {
     background-color: var(--color-info);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-info)), 0 0 0 1px var(--tw-shadow-color, var(--color-info-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-info-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-info-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -344,11 +485,48 @@
     &:active {
       background-color: var(--color-info-active);
     }
+    &.btn-outline {
+      background-color: var(--color-info-light);
+      color: var(--color-info);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-info-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-info-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-info);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-info-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-info-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-info-active);
+      }
+      &:disabled {
+        background-color: var(--color-info-disabled);
+        color: var(--color-info-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-info-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-info-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-info-light-disabled);
+      color: var(--color-info-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-info-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-info-light-disabled));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-dark {
     background-color: var(--color-dark);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-dark)), 0 0 0 1px var(--tw-shadow-color, var(--color-dark-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-dark-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-dark-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -358,10 +536,48 @@
     &:active {
       background-color: var(--color-dark-active);
     }
+    &.btn-outline {
+      background-color: var(--color-light);
+      color: var(--color-dark);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-dark-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-dark);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-dark-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-dark-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-dark-active);
+      }
+      &:disabled {
+        background-color: var(--color-grey-disabled);
+        color: var(--color-dark);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-dark-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-dark-disabled);
+      color: var(--color-light-disabled);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-dark-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-dark-disabled));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-light {
     background-color: var(--color-light);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-neutral-300)), 0 0 0 1px var(--tw-shadow-color, var(--color-light-outline));
+    color: var(--color-dark);
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-light-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-light-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -374,8 +590,8 @@
   }
   .btn-grey, .btn-gray {
     background-color: var(--color-grey);
-    color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-grey)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-outline));
+    color: var(--color-dark);
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-grey-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -385,11 +601,43 @@
     &:active {
       background-color: var(--color-grey-active);
     }
+    &.btn-outline {
+      background-color: var(--color-grey-light);
+      color: var(--color-gray-800);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-grey-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-grey);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-grey-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-grey-active);
+      }
+      &:disabled {
+        background-color: var(--color-grey-disabled);
+        color: var(--color-grey-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-grey-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-grey-light-disabled);
+      color: var(--color-grey-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-grey-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-grey-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-danger {
     background-color: var(--color-danger);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 10px 10px 0 var(--tw-shadow-color, rgba(var(--color-red-500) 50)), 0 0 0 1px var(--tw-shadow-color, var(--color-danger-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-danger-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-danger-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -399,11 +647,48 @@
     &:active {
       background-color: var(--color-danger-active);
     }
+    &.btn-outline {
+      background-color: var(--color-danger-light);
+      color: var(--color-danger);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-danger-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-danger-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-danger);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-danger-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-danger-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-danger-active);
+      }
+      &:disabled {
+        background-color: var(--color-danger-disabled);
+        color: var(--color-danger-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-danger-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-danger-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-danger-light-disabled);
+      color: var(--color-danger-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-danger-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-danger-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-warning {
     background-color: var(--color-warning);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-warning)), 0 0 0 1px var(--tw-shadow-color, var(--color-warning-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-warning-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-warning-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -413,11 +698,48 @@
     &:active {
       background-color: var(--color-warning-active);
     }
+    &.btn-outline {
+      background-color: var(--color-warning-light);
+      color: var(--color-warning);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-warning-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-warning-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-warning);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-warning-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-warning-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-warning-active);
+      }
+      &:disabled {
+        background-color: var(--color-warning-disabled);
+        color: var(--color-warning-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-warning-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-warning-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-warning-light-disabled);
+      color: var(--color-warning-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-warning-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-warning-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
   }
   .btn-success {
     background-color: var(--color-success);
     color: var(--color-white);
-    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 2px 0 var(--tw-shadow-color, var(--color-success)), 0 0 0 1px var(--tw-shadow-color, var(--color-success-outline));
+    --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-success-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-success-border));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     &:hover {
       @media (hover: hover) {
@@ -426,6 +748,43 @@
     }
     &:active {
       background-color: var(--color-success-active);
+    }
+    &.btn-outline {
+      background-color: var(--color-success-light);
+      color: var(--color-success);
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, var(--color-success-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-success-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-success);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-white);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.3)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-success-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-success-border));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      &:active {
+        background-color: var(--color-success-active);
+      }
+      &:disabled {
+        background-color: var(--color-success-disabled);
+        color: var(--color-success-light-disabled);
+        --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-success-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-success-light));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+    &:disabled {
+      background-color: var(--color-success-light-disabled);
+      color: var(--color-success-light);
+      --tw-shadow: 0 1px 0 0 var(--tw-shadow-color, oklch(100 0 0/0.2)) inset, 0 1px 3px 0 var(--tw-shadow-color, var(--color-success-shadow)), 0 0 0 1px var(--tw-shadow-color, var(--color-success-light-border));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
 }
