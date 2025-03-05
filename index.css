@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "./components/button.css";
+
+@theme {
+    --color-primary: var(--color-blue-500);
+    --color-primary-border: var(--color-blue-600);
+    --color-primary-hover: var(--color-blue-400);
+    --color-primary-active: var(--color-blue-600);
+    --color-primary-shadow: --alpha(var(--color-blue-500) / 40%);
+    --color-primary-disabled: var(--color-blue-50);
+
+    --color-primary-light: var(--color-blue-100);
+    --color-primary-light-border: var(--color-blue-300);
+    --color-primary-light-disabled: var(--color-blue-300);
+
+    --color-secondary: var(--color-purple-500);
+    --color-secondary-border: var(--color-purple-600);
+    --color-secondary-hover: var(--color-purple-400);
+    --color-secondary-active: var(--color-purple-600);
+    --color-secondary-shadow: --alpha(var(--color-purple-500) / 40%);
+    --color-secondary-disabled: var(--color-purple-50);
+
+    --color-secondary-light: var(--color-purple-100);
+    --color-secondary-light-border: var(--color-purple-300);
+    --color-secondary-light-disabled: var(--color-purple-300);
+
+    --color-info: var(--color-orange-500);
+    --color-info-border: var(--color-orange-600);
+    --color-info-hover: var(--color-orange-400);
+    --color-info-active: var(--color-orange-600);
+    --color-info-shadow: --alpha(var(--color-orange-500) / 40%);
+    --color-info-disabled: var(--color-orange-50);
+
+    --color-info-light: var(--color-orange-100);
+    --color-info-light-border: var(--color-orange-300);
+    --color-info-light-disabled: var(--color-orange-200);
+
+    --color-dark: var(--color-neutral-800);
+    --color-dark-border: var(--color-neutral-950);
+    --color-dark-hover: var(--color-neutral-600);
+    --color-dark-active: var(--color-neutral-950);
+    --color-dark-shadow: --alpha(var(--color-neutral-800) / 40%);
+    --color-dark-disabled: var(--color-neutral-500);
+
+    --color-light: var(--color-white);
+    --color-light-border: var(--color-neutral-300);
+    --color-light-hover: var(--color-neutral-50);
+    --color-light-active: var(--color-neutral-200);
+    --color-light-shadow: --alpha(var(--color-white) / 40%);
+    --color-light-disabled: var(--color-neutral-200);
+
+    --color-grey: var(--color-gray-300);
+    --color-grey-border: var(--color-gray-400);
+    --color-grey-hover: var(--color-gray-200);
+    --color-grey-active: var(--color-gray-400);
+    --color-grey-shadow: --alpha(var(--color-gray-300) / 40%);
+    --color-grey-disabled: var(--color-gray-50);
+
+    --color-grey-light: var(--color-gray-100);
+    --color-grey-light-border: var(--color-gray-300);
+    --color-grey-light-disabled: var(--color-gray-300);
+
+    --color-danger: var(--color-red-500);
+    --color-danger-border: var(--color-red-600);
+    --color-danger-hover: var(--color-red-400);
+    --color-danger-active: var(--color-red-600);
+    --color-danger-shadow: --alpha(var(--color-red-500) / 40%);
+    --color-danger-disabled: var(--color-red-50);
+
+    --color-danger-light: var(--color-red-100);
+    --color-danger-light-border: var(--color-red-300);
+    --color-danger-light-disabled: var(--color-red-300);
+
+    --color-warning: var(--color-yellow-400);
+    --color-warning-border: var(--color-yellow-500);
+    --color-warning-hover: var(--color-amber-300);
+    --color-warning-active: var(--color-amber-400);
+    --color-warning-shadow: --alpha(var(--color-yellow-400) / 40%);
+    --color-warning-disabled: var(--color-yellow-50);
+
+    --color-warning-light: var(--color-amber-100);
+    --color-warning-light-border: var(--color-yellow-300);
+    --color-warning-light-disabled: var(--color-yellow-300);
+
+    --color-success: var(--color-green-500);
+    --color-success-border: var(--color-green-600);
+    --color-success-hover: var(--color-green-400);
+    --color-success-active: var(--color-green-600);
+    --color-success-shadow: --alpha(var(--color-green-500) / 40%);
+    --color-success-disabled: var(--color-green-50);
+
+    --color-success-light: var(--color-green-100);
+    --color-success-light-border: var(--color-green-300);
+    --color-success-light-disabled: var(--color-green-300);
+}
+
+
+
+html {
+    font-size: 14px;
+}

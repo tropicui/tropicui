@@ -1,10 +1,22 @@
 {
-  "name": "theme03",
+  "name": "tropicui-dev",
   "version": "1.0.0",
-  "description": "",
+  "description": "placeholder for theme",
   "private": true,
+  "files": [
+    "components",
+    "index.css"
+  ],
+  "exports": {
+    ".": {
+      "style": "./index.css"
+    },
+    "./package.json": "./package.json",
+    "./index.css": "./index.css",
+    "./index": "./index.css"
+  },
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./dist/assets/css/styles.css",
+    "build": "node build.js",
     "dev": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./dist/assets/css/styles.css --watch",
     "prod": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./dist/assets/css/styles.css --minify"
   },

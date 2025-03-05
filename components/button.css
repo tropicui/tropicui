@@ -1,0 +1,290 @@
+@layer components {
+    .btn {
+        @apply text-base
+               rounded-md
+               overflow-hidden
+               px-5 py-2.5
+               ;
+    }
+    .btn-xs {
+        @apply text-xs
+               rounded-sm
+               px-2 py-1
+               ;
+    }
+    .btn-sm {
+        @apply text-sm
+               rounded
+               px-4 py-2
+               ;
+    }
+    .btn-lg {
+        @apply text-lg
+               rounded-lg
+               px-6 py-3
+               ;
+    }
+    .btn-xl {
+        @apply text-xl
+               rounded-lg
+               px-7 py-3.5
+               ;
+    }
+    .btn-wide {
+        @apply px-24
+               ;
+    }
+    .btn-primary {
+        @apply text-white
+               bg-primary
+               hover:bg-primary-hover
+               active:bg-primary-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-border)]
+               ;
+        &.btn-outline {
+            @apply text-primary
+                   hover:text-white
+                   bg-primary-light
+                   hover:bg-primary
+                   active:bg-primary-active
+                   shadow-[0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-border)]
+                   ;
+            &:disabled {
+                @apply text-primary-light-disabled
+                        bg-primary-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-primary-light
+                   bg-primary-light-disabled
+                   shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-primary-shadow),0_0_0_1px_var(--color-primary-light-border)]
+                   ;
+        }
+    }
+    .btn-secondary {
+        @apply text-white
+               bg-secondary
+               hover:bg-secondary-hover
+               active:bg-secondary-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-border)]
+               ;
+        &.btn-outline {
+            @apply text-secondary
+                   hover:text-white
+                   bg-secondary-light
+                   hover:bg-secondary
+                   active:bg-secondary-active
+                   shadow-[0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-border)]
+                   ;
+            &:disabled {
+                @apply text-secondary-light-disabled
+                        bg-secondary-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-secondary-light
+                   bg-secondary-light-disabled
+                   shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-secondary-shadow),0_0_0_1px_var(--color-secondary-light-border)]
+                   ;
+        }
+    }
+    .btn-info {
+        @apply text-white
+               bg-info
+               hover:bg-info-hover
+               active:bg-info-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-border)]
+               ;
+        &.btn-outline {
+            @apply text-info
+                   hover:text-white
+                   bg-info-light
+                   hover:bg-info
+                   active:bg-info-active
+                   shadow-[0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-border)]
+                   ;
+            &:disabled {
+                @apply text-info-light-disabled
+                        bg-info-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-info-light
+                    bg-info-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-info-shadow),0_0_0_1px_var(--color-info-light-disabled)]
+                    ;
+        }
+    }
+    .btn-dark {
+        @apply text-white
+               bg-dark
+               hover:bg-dark-hover
+               active:bg-dark-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-dark-border)]
+               ;
+        &.btn-outline {
+            @apply text-dark
+                   hover:text-white
+                   bg-light
+                   hover:bg-dark
+                   active:bg-dark-active
+                   shadow-[0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-dark-border)]
+                   ;
+            &:disabled {
+                @apply text-grey-light-disabled
+                        bg-light
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-grey-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-grey-light-disabled
+                    bg-dark-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-dark-shadow),0_0_0_1px_var(--color-dark-disabled)]
+                    ;
+        }
+    }
+    .btn-light {
+        @apply text-dark
+               bg-light
+               hover:bg-light-hover
+               active:bg-light-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-light-shadow),0_0_0_1px_var(--color-light-border)]
+               ;
+        &:disabled {
+            @apply text-grey-light-disabled
+                    bg-light
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-light-shadow),0_0_0_1px_var(--color-light-disabled)]
+                    ;
+        }
+    }
+    .btn-grey, .btn-gray {
+        @apply text-dark
+               bg-grey
+               hover:bg-grey-hover
+               active:bg-grey-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-border)]
+               ;
+        &.btn-outline {
+            @apply text-gray-800
+                   bg-grey-light
+                   hover:bg-grey
+                   active:bg-grey-active
+                   shadow-[0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-border)]
+                   ;
+            &:disabled {
+                @apply text-grey-light-disabled
+                        bg-grey-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-grey-light
+                    bg-grey-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-grey-shadow),0_0_0_1px_var(--color-grey-light-border)]
+                    ;
+        }
+    }
+    .btn-danger {
+        @apply text-white
+               bg-danger
+               hover:bg-danger-hover
+               active:bg-danger-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-border)]
+               ;
+        &.btn-outline {
+            @apply text-danger
+                   hover:text-white
+                   bg-danger-light
+                   hover:bg-danger
+                   active:bg-danger-active
+                   shadow-[0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-danger-shadow),0_0_0_1px_var(--color-danger-border)]
+                   ;
+            &:disabled {
+                @apply text-danger-light-disabled
+                        bg-danger-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_0_0_1px_var(--color-danger-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-danger-light
+                    bg-danger-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_0_0_1px_var(--color-danger-light-border)]
+                    ;
+        }
+    }
+    .btn-warning {
+        @apply text-white
+               bg-warning
+               hover:bg-warning-hover
+               active:bg-warning-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-border)]
+               ;
+        &.btn-outline {
+            @apply text-warning
+                   hover:text-white 
+                   bg-warning-light
+                   hover:bg-warning
+                   active:bg-warning-active
+                   shadow-[0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-border)]
+                   ;
+            &:disabled {
+                @apply text-warning-light-disabled
+                        bg-warning-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-warning-light
+                    bg-warning-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-warning-shadow),0_0_0_1px_var(--color-warning-light-border)]
+                    ;
+        }
+    }
+    .btn-success {
+        @apply text-white
+               bg-success
+               hover:bg-success-hover
+               active:bg-success-active
+               shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-border)]
+               ;
+        &.btn-outline {
+            @apply text-success
+                   hover:text-white
+                   bg-success-light
+                   hover:bg-success
+                   active:bg-success-active
+                   shadow-[0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-light-border)]
+                   hover:shadow-[0_1px_0_0_oklch(100_0_0/0.3)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-border)]
+                   ;
+            &:disabled {
+                @apply text-success-light-disabled
+                        bg-success-disabled
+                        shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-light)]
+                        ;
+            }
+        }
+        &:disabled {
+            @apply text-success-light
+                    bg-success-light-disabled
+                    shadow-[0_1px_0_0_oklch(100_0_0/0.2)_inset,0_1px_3px_0_var(--color-success-shadow),0_0_0_1px_var(--color-success-light-border)]
+                    ;
+        }
+    }
+}
