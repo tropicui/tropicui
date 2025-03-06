@@ -17,6 +17,10 @@
   "author": "kenfai",
   "type": "commonjs",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "app.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
