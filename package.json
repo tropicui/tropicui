@@ -19,7 +19,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "app.js"
+    "app.js",
+    "!components/form.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
