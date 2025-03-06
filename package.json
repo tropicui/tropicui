@@ -20,7 +20,8 @@
   "files": [
     "index.js",
     "app.js",
-    "!components/form.js"
+    "components",
+    "!components/*/line.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
