@@ -1,0 +1,29 @@
+{
+  "name": "tropicui",
+  "version": "1.0.0",
+  "description": "the theme placeholder",
+  "private": true,
+  "keywords": [
+    "theme"
+  ],
+  "homepage": "https://github.com/tropicui/tropicui#readme",
+  "bugs": {
+    "url": "https://github.com/tropicui/tropicui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tropicui/tropicui.git"
+  },
+  "license": "ISC",
+  "author": "kenfai",
+  "type": "module",
+  "main": "./index.css",
+  "files": [
+    "base",
+    "components",
+    "themes"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

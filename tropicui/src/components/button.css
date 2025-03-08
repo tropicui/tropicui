@@ -1,0 +1,89 @@
+@layer components {
+    .btn {
+        @apply
+            inline-flex
+            justify-center
+            items-center
+            shrink-0
+            gap-1.5
+            rounded-lg
+            overflow-hidden
+            outline-2
+            outline-offset-2
+            outline-transparent
+            no-underline
+            select-none
+            transition-all
+            px-5 py-2.5
+        ;
+        @apply 
+            bg-[var(--btn-bg)]
+            hover:bg-[color-mix(in_oklab,var(--btn-bg),_white_10%)]
+            active:bg-[color-mix(in_oklab,var(--btn-bg),_black_10%)]
+            text-[var(--btn-fg)]
+            border
+            border-[color-mix(in_oklab,var(--btn-border),_black_15%)]
+            shadow-[inset_0_1px_--theme(--color-white/.2),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
+            active:shadow-[inset_0_1px_1px_1px_color-mix(in_oklab,var(--btn-shadow),_black_30%)]
+        ;
+        --btn-bg: var(--btn-color, var(--color-base));
+        --btn-border: var(--btn-color);
+        --btn-fg: var(--color-base-content);
+        --btn-shadow: var(--btn-color);
+    }
+    .btn-primary {
+        --btn-color: var(--color-primary);
+        --btn-fg: var(--color-primary-content);
+    }
+    .btn-soft {
+        &:not(:hover,:active) {
+            --btn-bg: color-mix(in oklab,var(--btn-color, var(--color-base)) 20%, white);
+            --btn-border: color-mix(in oklab,var(--btn-color, var(--color-base)) 30%, white);
+            --btn-fg: var(--btn-color);
+            --btn-shadow: var(--btn-color);
+        }
+    }
+    .btn-outline {
+        --btn-border: var(--btn-color);
+        --btn-shadow: var(--btn-color);
+        &:is(:hover:not(:active)) {
+            @apply
+                hover:shadow-[inset_0_0_0_2px_--theme(--color-white/.9),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
+            ;
+            --btn-bg: color-mix(in oklab,var(--btn-color, var(--color-base)) 20%, white);
+            --btn-fg: var(--btn-color);
+        }
+        &:not(:hover,:active) {
+            --btn-bg: transparent;
+            --btn-fg: var(--btn-color);
+        }
+    }
+    .btn-xs {
+        @apply text-xs
+            rounded-sm
+            px-2 py-1
+            ;
+    }
+    .btn-sm {
+        @apply text-sm
+            rounded
+            px-4 py-2
+            ;
+    }
+    .btn-lg {
+        @apply text-lg
+            rounded-lg
+            px-6 py-3
+            ;
+    }
+    .btn-xl {
+        @apply text-xl
+            rounded-lg
+            px-7 py-3.5
+            ;
+    }
+    .btn-wide {
+        @apply px-24
+            ;
+    }
+}

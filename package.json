@@ -1,20 +1,8 @@
 {
-  "name": "tropicui-dev",
+  "name": "tropicui-monorepo",
   "version": "1.0.0",
   "description": "placeholder for theme",
   "private": true,
-  "files": [
-    "components",
-    "index.css"
-  ],
-  "exports": {
-    ".": {
-      "style": "./index.css"
-    },
-    "./package.json": "./package.json",
-    "./index.css": "./index.css",
-    "./index": "./index.css"
-  },
   "scripts": {
     "build": "node build.js",
     "dev": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./dist/assets/css/styles.css --watch",
