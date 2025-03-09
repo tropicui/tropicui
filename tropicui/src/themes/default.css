@@ -1,6 +1,19 @@
 @theme {
-    --color-base: var(--color-gray-900);
-    --color-base-content: var(--color-white);
+    --color-base: var(--color-neutral-800);
+    --color-base-content: var(--color-neutral-100);
     --color-primary: var(--color-blue-500);
-    --color-primary-content: var(--color-white);
+    --color-primary-content: var(--color-neutral-100);
+    --color-secondary: var(--color-indigo-500);
+    --color-secondary-content: var(--color-neutral-100);
+    --color-info: var(--color-yellow-500);
+    --color-info-content: var(--color-neutral-100);
+    --color-accent: var(--color-sky-500);
+    --color-accent-content: var(--color-neutral-100);
+    --color-success: var(--color-green-500);
+    --color-success-content: var(--color-neutral-100);
+    --color-warning: var(--color-amber-500);
+    --color-warning-content: var(--color-neutral-100);
+    --color-danger: var(--color-red-500);
+    --color-danger-content: var(--color-neutral-100);
+    --color-highlight: var(--color-blue-300);
 }
