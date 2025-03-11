@@ -18,7 +18,7 @@
             px-5 py-2.5
         ;
         @apply 
-            bg-[var(--btn-bg)]
+            bg-(--btn-bg)
             hover:bg-[color-mix(in_oklab,var(--btn-bg),_white_20%)]
             active:bg-[color-mix(in_oklab,var(--btn-bg),_black_10%)]
             text-[color-mix(in_oklab,var(--btn-fg),_white_10%)]
@@ -38,8 +38,8 @@
         --btn-bg: var(--btn-color);
         --btn-border: var(--btn-color);
         --btn-shadow: var(--btn-color);
-        --btn-color: var(--color-base);
-        --btn-fg: var(--color-base-content);
+        --btn-color: var(--color-neutral);
+        --btn-fg: var(--color-neutral-content);
     }
     .btn-xs {
         @apply text-xs
@@ -102,8 +102,8 @@
 
     .btn-soft {
         &:not(:hover,:active) {
-            --btn-bg: color-mix(in oklab,var(--btn-color, var(--color-base)), white 90%);
-            --btn-border: color-mix(in oklab,var(--btn-color, var(--color-base)), white 90%);
+            --btn-bg: color-mix(in oklab,var(--btn-color), white 90%);
+            --btn-border: color-mix(in oklab,var(--btn-color), white 90%);
             --btn-fg: var(--btn-color);
         }
     }
@@ -115,7 +115,7 @@
             @apply
                 shadow-[inset_0_0_0_2px_--theme(--color-white/.9),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
             ;
-            --btn-bg: color-mix(in oklab,var(--btn-color, var(--color-base)) 20%, white);
+            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
             --btn-fg: var(--btn-color);
         }
         &:not(:hover,:active) {
@@ -129,7 +129,7 @@
             border-dashed
         ;
         &:is(:hover:not(:active)) {
-            --btn-bg: color-mix(in oklab,var(--btn-color, var(--color-base)) 20%, white);
+            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
             --btn-fg: var(--btn-color);
         }
         &:not(:hover,:active) {
@@ -145,7 +145,7 @@
         --btn-border: transparent;
         --btn-shadow: transparent;
         &:is(:hover:not(:active)) {
-            --btn-bg: color-mix(in oklab,var(--btn-color, var(--color-base)) 20%, white);
+            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
             --btn-fg: var(--btn-color);
         }
         &:not(:hover,:active) {
@@ -168,10 +168,10 @@
         --btn-bg: transparent;
         --btn-fg: var(--btn-color);
         &:is(:hover:not(:active)) {
-            --btn-fg: color-mix(in oklab,var(--btn-color, var(--color-base)), white 30%);
+            --btn-fg: color-mix(in oklab,var(--btn-color), white 30%);
         }
         &:active {
-            --btn-fg: color-mix(in oklab,var(--btn-color, var(--color-base)), black 15%);
+            --btn-fg: color-mix(in oklab,var(--btn-color), black 15%);
         }
     }
 }

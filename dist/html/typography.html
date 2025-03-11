@@ -7,7 +7,7 @@
     <title>Typography | Theme 03 - Lagoon</title>
 </head>
 <body>
-    <main>
+    <main class="p-10">
         <h1>Typography</h1>
 
         <h2>Headings</h2>
@@ -22,7 +22,7 @@
 
         <h2>Paragraph</h2>
         <hr>
-        <p class="prose">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
             , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -33,7 +33,15 @@
         <hr>
         <blockquote>
             <p>“The greatest glory in living lies not in never falling, but in rising every time we fall.”</p>
-            <footer>Nelson Mandela</footer>
+            <footer class="blockquote-footer">by <cite>Nelson Mandela</cite></footer>
+        </blockquote>
+        <blockquote class="text-center">
+            <p>“The greatest glory in living lies not in never falling, but in rising every time we fall.”</p>
+            <footer class="blockquote-footer">by <cite>Nelson Mandela</cite></footer>
+        </blockquote>
+        <blockquote class="text-right">
+            <p>“The greatest glory in living lies not in never falling, but in rising every time we fall.”</p>
+            <footer class="blockquote-footer">by <cite>Nelson Mandela</cite></footer>
         </blockquote>
 
         <h2>Lists</h2>
@@ -42,15 +50,53 @@
         <ul>
             <li>Item 1</li>
             <li>Item 2</li>
-            <li>Item 3</li>
+            <li>Sub items
+                <ul>
+                    <li>Item 2.1</li>
+                    <li>Item 2.2</li>
+                    <li>sub-Sub items
+                        <ul>
+                            <li>Item 2.2.1</li>
+                            <li>Item 2.2.2</li>
+                            <li>Item 2.2.3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
 
         <h3>Ordered List</h3>
         <ol>
             <li>Item 1</li>
             <li>Item 2</li>
-            <li>Item 3</li>
+            <li>Sub items
+                <ol>
+                    <li>Item 2.1</li>
+                    <li>Item 2.2</li>
+                    <li>sub-Sub items
+                        <ol>
+                            <li>Item 2.2.1</li>
+                            <li>Item 2.2.2</li>
+                            <li>Item 2.2.3</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
         </ol>
+
+        <h3>Unstyled List</h3>
+        <ul class="list-unstyled">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Sub items
+                <ul>
+                    <li>Item 2.1</li>
+                    <li>Item 2.2</li>
+                    <li>sub-Sub items</li>
+                </ul>
+            </li>
+        </ul>
+
 
         <h3>Definition List</h3>
         <dl>
@@ -64,11 +110,19 @@
 
         <h2>Inline Elements</h2>
         <hr>
+        <p>You can use the mark tag to <mark>example</mark> text.</p>
+        <p><del>This line of text is meant to be treated as deleted text.</del></p>
+        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+        <p><u>This line of text will render as underlined</u></p>
+        <p><small>This line of text is meant to be treated as fine print.</small></p>
+        <p><strong>This line rendered as bold text.</strong></p>
+        <p><em>This line rendered as italicized text.</em></p>
         <p>This is a <a href="#">link</a> and this is <strong>bold</strong> and this is <em>italic</em> and this is <u>underline</u> and this is <del>deleted</del> and this is <ins>inserted</ins> and this is <mark>marked</mark> and this is <sub>subscript</sub> and this is <sup>superscript</sup>.</p>
 
         <h2>Code</h2>
         <hr>
-        <p>This is an <code>inline code</code> and this is a <kbd>keyboard input</kbd> and this is a <samp>sample output</samp> and this is a <var>variable</var>.</p>
+        <p>This is <code>.</code> an <code>inline code</code> and this is a <kbd>keyboard input</kbd> and this is a <samp>sample output</samp> and this is a <var>variable</var>.</p>
 
         <h2>Preformatted Text</h2>
         <hr>
@@ -95,66 +149,63 @@
 
         <h2>Text Alignment</h2>
         <hr>
-        <p style="text-align: left;">This is left aligned text.</p>
-        <p style="text-align: center;">This is center aligned text.</p>
-        <p style="text-align: right;">This is right aligned text.</p>
-        <p style="text-align: justify;">
+        <p class="text-left">This is left aligned text.</p>
+        <p class="text-center">This is center aligned text.</p>
+        <p class="text-right">This is right aligned text.</p>
+        <p class="text-justify">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, placeat. Consequuntur, vel nihil quod voluptatem rerum, placeat itaque molestias nam cupiditate sed deleniti vitae? Magni repellendus fugit in neque maiores.
         </p>
 
         <h2>Text Transform</h2>
         <hr>
-        <p style="text-transform: uppercase;">This is uppercase text.</p>
-        <p style="text-transform: lowercase;">This is lowercase text.</p>
-        <p style="text-transform: capitalize;">This is capitalize text.</p>
+        <p class="uppercase">This is uppercase text.</p>
+        <p class="lowercase">This IS LOWERCASE TEXT</p>
+        <p class="capitalize">This is capitalize text.</p>
 
         <h2>Text Indentation</h2>
         <hr>
-        <p style="text-indent: 50px;">This is text with 50px indentation.</p>
-
-        <h2>Text Shadow</h2>
-        <hr>
-        <p style="text-shadow: 2px 2px 2px #000;">This is text with shadow.</p>
+        <p class="indent-10">This is text with indentation.</p>
 
         <h2>Text Overflow</h2>
         <hr>
-        <p style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">This is text with overflow.</p>
+        <p class="truncate w-20">This is text with overflow.</p>
 
         <h2>Text Wrapping</h2>
         <hr>
-        <p style="white-space: nowrap;">This is text with no wrapping.</p>
-        <p style="white-space: normal;">This is text with normal wrapping.</p>
-        <p style="white-space: pre;">This is text with pre wrapping.</p>
-        <p style="white-space: pre-line;">This is text with pre-line wrapping.</p>
-        <p style="white-space: pre-wrap;">This is text with pre-wrap wrapping.</p>
-
-        <h2>Text Direction</h2>
-        <hr>
-        <p style="direction: ltr;">This is left-to-right text.</p>
-        <p style="direction: rtl;">This is right-to-left text.</p>
+        <p class="text-nowrap">This is text with no wrapping.</p>
+        <p class="text-wrap">This is text with normal wrapping.</p>
 
         <h2>Text Spacing</h2>
         <hr>
-        <p style="letter-spacing: 2px;">This is text with 2px letter spacing.</p>
-        <p style="word-spacing: 2px;">This is text with 2px word spacing.</p>
+        <p class="tracking-widest">This is text with 2px letter spacing.</p>
 
         <h2>Text Line Height</h2>
         <hr>
-        <p style="line-height: 1;">This is text with 1 line height.</p>
-        <p style="line-height: 1.5;">This is text with 1.5 line height.</p>
-        <p style="line-height: 2;">This is text with 2 line height.</p>
+        <p class="leading-none">This is text with 1 line height.</p>
+        <p class="leading-normal">This is text with 1.5 line height.</p>
+        <p class="leading-loose">This is text with 2 line height.</p>
 
         <h2>Text Color</h2>
         <hr>
-        <p style="color: red;">This is red text.</p>
-        <p style="color: green;">This is green text.</p>
-        <p style="color: blue;">This is blue text.</p>
+        <p class="text-base">This is base text.</p>
+        <p class="text-primary">This is primary text.</p>
+        <p class="text-secondary">This is secondary text.</p>
+        <p class="text-info">This is info text.</p>
+        <p class="text-accent">This is accent text.</p>
+        <p class="text-success">This is success text.</p>
+        <p class="text-warning">This is warning text.</p>
+        <p class="text-danger">This is danger text.</p>
 
         <h2>Text Background Color</h2>
         <hr>
-        <p style="background-color: red;">This is text with red background color.</p>
-        <p style="background-color: green;">This is text with green background color.</p>
-        <p style="background-color: blue;">This is text with blue background color.</p>
+        <p class="bg-base text-base-content">This is text with base background color.</p>
+        <p class="bg-primary text-primary-content">This is text with primary background color.</p>
+        <p class="bg-secondary text-secondary-content">This is text with secondary background color.</p>
+        <p class="bg-info text-info-content">This is text with info background color.</p>
+        <p class="bg-accent text-accent-content">This is text with accent background color.</p>
+        <p class="bg-success text-success-content">This is text with success background color.</p>
+        <p class="bg-warning text-warning-content">This is text with warning background color.</p>
+        <p class="bg-danger text-danger-content">This is text with danger background color.</p>
 
         <h2>Text Font</h2>
         <hr>
@@ -162,35 +213,64 @@
         <p style="font-family: 'Times New Roman', serif;">This is text with Times New Roman font.</p>
         <p style="font-family: 'Courier New', monospace;">This is text with Courier New font.</p>
 
-        <h2>Text Size</h2>
+        <h2>Font Stretch</h2>
         <hr>
-        <p style="font-size: 12px;">This is text with 12px font size.</p>
-        <p style="font-size: 16px;">This is text with 16px font size.</p>
-        <p style="font-size: 20px;">This is text with 20px font size.</p>
+        <p class="font-stretch-extra-condensed">The quick brown fox...</p>
+        <p class="font-stretch-condensed">The quick brown fox...</p>
+        <p class="font-stretch-normal">The quick brown fox...</p>
+        <p class="font-stretch-expanded">The quick brown fox...</p>
+        <p class="font-stretch-extra-expanded">The quick brown fox...</p>
 
         <h2>Text Weight</h2>
         <hr>
-        <p style="font-weight: normal;">This is text with normal weight.</p>
-        <p style="font-weight: bold;">This is text with bold weight.</p>
-        <p style="font-weight: bolder;">This is text with bolder weight.</p>
-        <p style="font-weight: lighter;">This is text with lighter weight.</p>
+        <p class="font-thin">This is text with thin weight.</p>
+        <p class="font-extralight">This is text with extralight weight.</p>
+        <p class="font-light">This is text with light weight.</p>
+        <p class="font-normal">This is text with normal weight.</p>
+        <p class="font-medium">This is text with medium weight.</p>
+        <p class="font-semibold">This is text with semibold weight.</p>
+        <p class="font-bold">This is text with bold weight.</p>
+        <p class="font-extrabold">This is text with extrabold weight.</p>
+        <p class="font-black">This is text with black weight.</p>
 
         <h2>Text Style</h2>
         <hr>
-        <p style="font-style: normal;">This is text with normal style.</p>
-        <p style="font-style: italic;">This is text with italic style.</p>
-        <p style="font-style: oblique;">This is text with oblique style.</p>
+        <p class="not-italic">This is text with normal style.</p>
+        <p class="italic">This is text with italic style.</p>
 
         <h2>Text Decoration</h2>
         <hr>
-        <p style="text-decoration: none;">This is text with no decoration.</p>
-        <p style="text-decoration: underline;">This is text with underline decoration.</p>
-        <p style="text-decoration: overline;">This is text with overline decoration.</p>
-        <p style="text-decoration: line-through;">This is text with line-through decoration.</p>
-        <p style="text-decoration: underline overline;">This is text with underline overline decoration.</p>
-        <p style="text-decoration: underline line-through;">This is text with underline line-through decoration.</p>
-        <p style="text-decoration: overline line-through;">This is text with overline line-through decoration.</p>
-        <p style="text-decoration: underline overline line-through;">This is text with underline overline line-through decoration.</p>
+        <p>This is text with no decoration.</p>
+        <p class="no-underline">This is text with no text decoration.</p>
+        <p class="underline">This is text with underline decoration.</p>
+        <p class="overline">This is text with overline decoration.</p>
+        <p class="line-through">This is text with line-through decoration.</p>
+        <p class="underline decoration-solid">This is text with solid text decoration.</p>
+        <p class="underline decoration-double">This is text with double text decoration.</p>
+        <p class="underline decoration-dotted">This is text with dotted text decoration.</p>
+        <p class="underline decoration-dashed">This is text with dashed text decoration.</p>
+        <p class="underline decoration-wavy">This is text with wavy text decoration.</p>
+        <p class="underline decoration-2">This is text with thick text decoration.</p>
+        <p class="underline decoration-4">This is text with thicker text decoration.</p>
+        <p class="underline decoration-2 decoration-primary">This is text with colored text decoration.</p>
+        <p class="underline decoration-2 decoration-danger">This is text with colored text decoration.</p>
+
+
+        <h2>Text Size</h2>
+        <hr>
+        <p class="text-xs">This is text with xs font size.</p>
+        <p class="text-sm">This is text with sm font size.</p>
+        <p class="text-base">This is text with base font size.</p>
+        <p class="text-lg">This is text with lg font size.</p>
+        <p class="text-xl">This is text with xl font size.</p>
+        <p class="text-2xl">This is text with 2xl font size.</p>
+        <p class="text-3xl">This is text with 3xl font size.</p>
+        <p class="text-4xl">This is text with 4xl font size.</p>
+        <p class="text-5xl">This is text with 5xl font size.</p>
+        <p class="text-6xl">This is text with 6xl font size.</p>
+        <p class="text-7xl">This is text with 7xl font size.</p>
+        <p class="text-8xl">This is text with 8xl font size.</p>
+        <p class="text-9xl">This is text with 9xl font size.</p>
 
 
 

@@ -1,38 +1,103 @@
 @layer base {
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-        @apply
-            leading-snug
-        ;
-    }
     h1, .h1 {
         @apply
-            text-5xl
+            text-5xl/16
         ;
     }
     h2, .h2 {
         @apply
-            text-4xl
+            text-4xl/14
         ;
     }
     h3, .h3 {
         @apply
-            text-3xl
+            text-3xl/12
         ;
     }
     h4, .h4 {
         @apply
-            text-2xl
+            text-2xl/10
         ;
     }
     h5, .h5 {
         @apply
-            text-xl
+            text-xl/8
         ;
     }
     h6, .h6 {
         @apply
-            text-lg
+            text-lg/6
+        ;
+    }
+
+    p {
+        @apply
+            leading-loose
+            mb-2.5
+        ;
+    }
+
+    blockquote, .blockquote {
+        @apply
+            ps-12
+            my-4
+        ;
+
+        & > p {
+            @apply
+                leading-relaxed
+            ;
+        }
+        & > footer, & > .blockquote-footer {
+            @apply
+                text-base
+            ;
+        }
+        & > .blockquote-footer::before {
+            @apply
+                content-["—_"]
+            ;
+        }
+    }
+
+    ul {
+        @apply
+            list-disc
+            px-6
+        ;
+    }
+
+    ol {
+        @apply
+            list-decimal
+            px-6
+        ;
+    }
+
+    .list-unstyled {
+        @apply
+            list-none
+            px-0
+        ;
+    }
+
+    code, kbd, samp, var, pre {
+        @apply
+            bg-(--color-base-content)
+            border
+            border-(--color-base-support)
+            rounded-md
+            p-1
+            h-fit
+            w-fit
+            min-w-5
+        ;
+    }
+
+    mark {
+        @apply
+            bg-(--color-highlight)
+            text-highlight-content
         ;
     }
 }
