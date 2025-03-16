@@ -33,24 +33,17 @@
     p {
         @apply
             leading-loose
-            mb-2.5
         ;
     }
 
     blockquote, .blockquote {
         @apply
             ps-12
-            my-4
         ;
 
         & > p {
             @apply
                 leading-relaxed
-            ;
-        }
-        & > footer, & > .blockquote-footer {
-            @apply
-                text-base
             ;
         }
         & > .blockquote-footer::before {
@@ -83,9 +76,9 @@
 
     code, kbd, samp, var, pre {
         @apply
-            bg-(--color-base-content)
+            bg-base
             border
-            border-(--color-base-support)
+            border-base
             rounded-md
             p-1
             h-fit
@@ -96,8 +89,9 @@
 
     mark {
         @apply
-            bg-(--color-highlight)
-            text-highlight-content
+            bg-info
+            text-info-content
         ;
     }
+
 }

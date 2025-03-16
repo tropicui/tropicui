@@ -19,14 +19,14 @@
         ;
         @apply 
             bg-(--btn-bg)
-            hover:bg-[color-mix(in_oklab,var(--btn-bg),_white_20%)]
-            active:bg-[color-mix(in_oklab,var(--btn-bg),_black_10%)]
-            text-[color-mix(in_oklab,var(--btn-fg),_white_10%)]
+            hover:bg-[color-mix(in_oklch,var(--btn-bg),_white_20%)]
+            active:bg-[color-mix(in_oklch,var(--btn-bg),_black_10%)]
+            text-(--btn-fg)
             border
-            border-[color-mix(in_oklab,var(--btn-border),_black_15%)]
-            shadow-[inset_0_1px_--theme(--color-white/.2),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
-            active:shadow-[inset_0_1px_1px_1px_color-mix(in_oklab,var(--btn-shadow),_black_30%)]
-            focus-visible:outline-highlight
+            border-[color-mix(in_oklch,var(--btn-border),_black_15%)]
+            shadow-[inset_0_1px_--theme(--color-white/.2),0_1px_2px_color-mix(in_oklch,var(--btn-shadow),_transparent_60%)]
+            active:shadow-[inset_0_1px_1px_1px_color-mix(in_oklch,var(--btn-shadow),_black_30%)]
+            focus-visible:outline-info
         ;
         &:is(:disabled) {
             @apply
@@ -102,20 +102,21 @@
 
     .btn-soft {
         &:not(:hover,:active) {
-            --btn-bg: color-mix(in oklab,var(--btn-color), white 90%);
-            --btn-border: color-mix(in oklab,var(--btn-color), white 90%);
+            --btn-bg: color-mix(in oklch,var(--btn-color), white 90%);
+            --btn-border: color-mix(in oklch,var(--btn-color), white 90%);
             --btn-fg: var(--btn-color);
         }
     }
     .btn-outline {
         @apply
             shadow-none
+            border-(--btn-color)
         ;
         &:is(:hover:not(:active)) {
             @apply
-                shadow-[inset_0_0_0_2px_--theme(--color-white/.9),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
+                shadow-[inset_0_0_0_2px_--theme(--color-white/.9),0_1px_2px_color-mix(in_oklch,var(--btn-shadow),_transparent_60%)]
             ;
-            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
+            --btn-bg: color-mix(in oklch,var(--btn-color) 20%, white);
             --btn-fg: var(--btn-color);
         }
         &:not(:hover,:active) {
@@ -129,7 +130,7 @@
             border-dashed
         ;
         &:is(:hover:not(:active)) {
-            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
+            --btn-bg: color-mix(in oklch,var(--btn-color) 20%, white);
             --btn-fg: var(--btn-color);
         }
         &:not(:hover,:active) {
@@ -145,7 +146,7 @@
         --btn-border: transparent;
         --btn-shadow: transparent;
         &:is(:hover:not(:active)) {
-            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
+            --btn-bg: color-mix(in oklch,var(--btn-color) 20%, white);
             --btn-fg: var(--btn-color);
         }
         &:not(:hover,:active) {
@@ -168,10 +169,10 @@
         --btn-bg: transparent;
         --btn-fg: var(--btn-color);
         &:is(:hover:not(:active)) {
-            --btn-fg: color-mix(in oklab,var(--btn-color), white 30%);
+            --btn-fg: color-mix(in oklch,var(--btn-color), white 30%);
         }
         &:active {
-            --btn-fg: color-mix(in oklab,var(--btn-color), black 15%);
+            --btn-fg: color-mix(in oklch,var(--btn-color), black 15%);
         }
     }
 }
