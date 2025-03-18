@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./src/base/reset.css";
 @import "./src/base/typography.css";
+@import "./src/base/heroicons.css";
 @import "./src/themes/default.css";
+@import "./src/components/alert.css";
 @import "./src/components/button.css";
 @import "./src/components/divider.css";

@@ -1,0 +1,102 @@
+@layer components {
+    .alert {
+        @apply
+            grid
+            grid-flow-col
+            grid-cols-[auto_1fr]
+            items-center
+            gap-2
+            border
+            border-(--alert-border)
+            rounded-lg
+            bg-(--alert-bg)
+            shadow-[inset_0_1px_--theme(--color-white/.1),0_2px_2px_--theme(--color-black/.05)]
+            text-(--alert-fg)
+            py-4
+            px-4
+        ;
+        --alert-border: color-mix(in oklab,var(--alert-color),white 15%);
+        --alert-bg: var(--alert-color);
+        --alert-color: var(--color-base);
+        --alert-fg: var(--color-base-content);
+        i {
+            @apply
+                text-(--alert-fg)
+            ;
+        }
+    }
+    .alert-sm {
+        @apply
+            py-2
+        ;
+    }
+    .alert-lg {
+        @apply
+            py-6
+        ;
+    }
+    .alert-xl {
+        @apply
+            py-8
+        ;
+    }
+    .alert-neutral {
+        --alert-color: var(--color-neutral);
+        --alert-fg: var(--color-neutral-content);
+    }
+    .alert-primary {
+        --alert-color: var(--color-primary);
+        --alert-fg: var(--color-primary-content);
+    }
+    .alert-secondary {
+        --alert-color: var(--color-secondary);
+        --alert-fg: var(--color-secondary-content);
+    }
+    .alert-info {
+        --alert-color: var(--color-info);
+        --alert-fg: var(--color-info-content);
+    }
+    .alert-accent {
+        --alert-color: var(--color-accent);
+        --alert-fg: var(--color-accent-content);
+    }
+    .alert-success {
+        --alert-color: var(--color-success);
+        --alert-fg: var(--color-success-content);
+    }
+    .alert-warning {
+        --alert-color: var(--color-warning);
+        --alert-fg: var(--color-warning-content);
+    }
+    .alert-danger {
+        --alert-color: var(--color-danger);
+        --alert-fg: var(--color-danger-content);
+    }
+    .alert-soft {
+        --alert-bg: color-mix(in oklab,var(--alert-color), white 90%);
+        --alert-fg: var(--alert-color);
+    }
+    .alert-outline {
+        @apply
+            shadow-none
+        ;
+        --alert-bg: transparent;
+        --alert-fg: var(--alert-color);
+    }
+    .alert-outline-dashed {
+        @apply
+            shadow-none
+            border-dashed
+        ;
+        --alert-bg: color-mix(in oklab,var(--alert-color), white 90%);
+        --alert-fg: var(--alert-color);
+    }
+    .alert-outline-dotted {
+        @apply
+            shadow-none
+            border-dotted
+        ;
+        --alert-bg: color-mix(in oklab,var(--alert-color), white 90%);
+        --alert-fg: var(--alert-color);
+    }
+}

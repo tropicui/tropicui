@@ -1,5 +1,6 @@
 @theme {
     --color-base: var(--color-neutral-300);
+    --color-base-subtle: var(--color-neutral-100);
     --color-base-content: var(--color-neutral-800);
     --color-base-shadow: var(--color-neutral-900);
     --color-neutral: var(--color-zinc-800);

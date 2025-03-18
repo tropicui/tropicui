@@ -11,16 +11,46 @@
         &:after {
             @apply
                 content-['']
-                border-b
-                border-(--divider-color)
+                border-b-(length:--divider-width)
+                border-(--divider-border)
                 h-0.25
-                grow
+                w-full
         }
         &:not(:empty) {
             @apply gap-4;
         }
+        &:before {
+            @apply w-(--divider-start);
+        }
+        &:after {
+            @apply w-(--divider-end);
+        }
         --divider-border: var(--divider-color-modifier, var(--divider-color));
         --divider-color: var(--color-base);
+        --divider-width: 1px;
+        --divider-start: 100%;
+        --divider-end: 100%;
+    }
+    .divider-horizontal {
+        &.divider {
+            @apply
+                flex-col
+                h-full
+            ;
+            &:before,
+            &:after {
+                @apply
+                    border-s-(length:--divider-width)
+                    h-full
+                    w-0.25
+            }
+            &:before {
+                @apply h-(--divider-start);
+            }
+            &:after {
+                @apply h-(--divider-end);
+            }
+        }
     }
     .divider-dashed {
         &:before,
@@ -67,11 +97,24 @@
     .divider-subtle {
         --divider-color-modifier: color-mix(in oklch,var(--divider-color) 20%,white);
     }
+    .divider-start {
+        --divider-start: calc(var(--spacing) * 10);
+    }
+    .divider-end {
+        --divider-end: calc(var(--spacing) * 10);
+    }
+}
+
+@utility divider-start-* {
+    --divider-start: --value([*]);
+    --divider-start: calc(var(--spacing) * --value(integer));
+}
+
+@utility divider-end-* {
+    --divider-end: --value([*]);
+    --divider-end: calc(var(--spacing) * --value(integer));
 }
 
 @utility divider-* {
-    &:before,
-    &:after {
-        border-bottom-width: --value(integer)px;
-    }
+    --divider-width: --value(integer)px;
 }

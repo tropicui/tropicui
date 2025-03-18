@@ -30,12 +30,6 @@
         ;
     }
 
-    p {
-        @apply
-            leading-loose
-        ;
-    }
-
     blockquote, .blockquote {
         @apply
             ps-12
@@ -76,14 +70,14 @@
 
     code, kbd, samp, var, pre {
         @apply
-            bg-base
+            bg-base-subtle
             border
             border-base
             rounded-md
-            p-1
+            py-0.5
+            px-1
             h-fit
             w-fit
-            min-w-5
         ;
     }
 
