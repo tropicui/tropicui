@@ -1,0 +1,40 @@
+@layer components {
+    .card {
+        @apply
+            border
+            border-base
+            rounded-lg
+            overflow-hidden
+            w-full
+            shadow-[inset_0_1px_--theme(--color-white/.1),0_2px_2px_--theme(--color-black/.05)]
+        ;
+        .card-header {
+            @apply
+                border-b
+                border-base
+                px-6
+                py-4
+            ;
+            small {
+                @apply
+                    text-sm
+                    text-(--color-base-content)
+                ;
+            }
+        }
+        .card-body {
+            @apply
+                px-6
+                py-4
+            ;
+        }
+        .card-actions {
+            @apply
+                flex
+                flex-wrap
+                gap-3
+            ;
+        }
+    }
+
+}

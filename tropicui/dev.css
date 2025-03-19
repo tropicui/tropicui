@@ -5,4 +5,5 @@
 @import "./src/themes/default.css";
 @import "./src/components/alert.css";
 @import "./src/components/button.css";
+@import "./src/components/card.css";
 @import "./src/components/divider.css";
