@@ -1,14 +1,16 @@
 i.hi {
     @apply
-        block
+        inline-block
         size-6
     ;
     &::before {
-        background-color: currentColor;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        content: '';
+        @apply
+            bg-current
+            content-['']
+            inline-block
+            size-full
+            align-text-bottom
+        ;
         mask-image: var(--svg);
         mask-repeat: no-repeat;
     }

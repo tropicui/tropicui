@@ -1,24 +1,47 @@
 @layer components {
     .card {
         @apply
-            border
-            border-base
-            rounded-lg
+            rounded
+            bg-(--card-bg)
             overflow-hidden
             w-full
             shadow-[inset_0_1px_--theme(--color-white/.1),0_2px_2px_--theme(--color-black/.05)]
         ;
+        --card-bg: var(--color-white);
+        .card-border {
+            @apply
+                border
+                border-base
+            ;
+        }
         .card-header {
             @apply
+                flex
+                justify-between
+                items-center
                 border-b
                 border-base
                 px-6
                 py-4
             ;
+            .card-title {
+                @apply
+                    flex
+                    items-baseline
+                    gap-2
+                ;
+            }
+            .card-toolbar {
+                @apply
+                    flex
+                    justify-end
+                    gap-2
+                ;
+            }
             small {
                 @apply
                     text-sm
-                    text-(--color-base-content)
+                    text-(--color-base-subtle)
                 ;
             }
         }
@@ -35,6 +58,42 @@
                 gap-3
             ;
         }
+        .card-footer {
+            @apply
+                flex
+                justify-between
+                items-center
+                border-t
+                border-base
+                px-6
+                py-4
+            ;
+        }
+        .alert {
+            @apply
+                rounded-none
+                shadow-none
+            ;
+        }
     }
-
+    .card-group {
+        @apply
+            flex
+        ;
+        .card {
+            @apply
+                rounded-none
+            ;
+        }
+        .card:is(:first-child) {
+            @apply
+                rounded-l
+            ;
+        }
+        .card:is(:last-child) {
+            @apply
+                rounded-r
+            ;
+        }
+    }
 }
