@@ -1,0 +1,30 @@
+@layer components {
+    .menu {
+        padding-inline: --spacing(4);
+        > ul {
+            > li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: --spacing(10);
+                &:has(ul) {
+                    @apply
+                        @container
+                    ;
+                    > a {
+                    }
+                }
+                > ul {
+
+                    transition-property: height;
+                    transition-duration: var(--tt-duration, var(--default-transition-duration));
+                    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+                }
+            }
+        }
+        .btn {
+            display: flex;
+            justify-content: start;
+        }
+    }
+}

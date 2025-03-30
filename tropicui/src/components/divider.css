@@ -1,14 +1,12 @@
 @layer components {
     .divider {
-        @apply
-            flex
-            flex-row
-            items-center
-            whitespace-nowrap
-        ;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        white-space: nowrap;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             @apply
                 content-['']
                 border-b-(length:--divider-width)
@@ -17,13 +15,13 @@
                 w-full
         }
         &:not(:empty) {
-            @apply gap-4;
+            gap: --spacing(4);
         }
-        &:before {
-            @apply w-(--divider-start);
+        &::before {
+            width: var(--divider-start);
         }
-        &:after {
-            @apply w-(--divider-end);
+        &::after {
+            width: var(--divider-end);
         }
         --divider-border: var(--divider-color-modifier, var(--divider-color));
         --divider-color: var(--color-base);
@@ -37,36 +35,36 @@
                 flex-col
                 h-full
             ;
-            &:before,
-            &:after {
+            &::before,
+            &::after {
                 @apply
                     border-s-(length:--divider-width)
                     h-full
                     w-0.25
             }
-            &:before {
-                @apply h-(--divider-start);
+            &::before {
+                height: var(--divider-start);
             }
-            &:after {
-                @apply h-(--divider-end);
+            &::after {
+                height: var(--divider-end);
             }
         }
     }
     .divider-dashed {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             @apply border-dashed;
         }
     }
     .divider-dotted {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             @apply border-dotted;
         }
     }
     .divider-solid {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             @apply border-solid;
         }
     }
@@ -102,6 +100,16 @@
     }
     .divider-end {
         --divider-end: calc(var(--spacing) * 10);
+    }
+    .divider-start-0 {
+        &::before {
+            @apply content-none;
+        }
+    }
+    .divider-end-0 {
+        &::after {
+            @apply content-none;
+        }
     }
 }
 

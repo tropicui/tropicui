@@ -1,0 +1,15 @@
+@layer components {
+    .badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-sm);
+        background-color: var(--badge-bg);
+        color: var(--badge-fg);
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+        font-weight: var(--font-weight-medium);
+        --badge-bg: var(--color-neutral-500);
+        --badge-fg: var(--color-neutral-100);
+    }
+}

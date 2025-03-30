@@ -1,0 +1,39 @@
+@layer components {
+    .input-group {
+        &:has(.input-icon) {
+            position: relative;
+            flex-grow: 1;
+        }
+        .input-icon {
+            position: absolute;
+            bottom: --spacing(0.5);
+            left: --spacing(0.5);
+        }
+    }
+    .input {
+        height: --spacing(9);
+        width: 100%;
+        min-width: --spacing(9);
+        border: 1px solid var(--color-neutral-300);
+        border-radius: var(--radius-md);
+        outline-color: var(--color-blue-200);
+        background-color: var(--color-neutral-200);
+        padding-inline-start: --spacing(9);
+        &::placeholder {
+            font-style: italic;
+        }
+        &:focus-visible {
+            outline-width: 2px;
+            outline-style: solid;
+            border-color: var(--color-blue-400);
+        }
+    }
+    .input-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: --spacing(8);
+        height: --spacing(8);
+        color: var(--color-neutral-500);
+    }
+}

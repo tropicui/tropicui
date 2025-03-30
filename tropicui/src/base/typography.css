@@ -47,24 +47,17 @@
         }
     }
 
-    ul {
+    ul.list-styled {
         @apply
             list-disc
             px-6
         ;
     }
 
-    ol {
+    ol.list-styled {
         @apply
             list-decimal
             px-6
-        ;
-    }
-
-    .list-unstyled {
-        @apply
-            list-none
-            px-0
         ;
     }
 

@@ -1,0 +1,102 @@
+@layer components {
+    aside.sidebar {
+        /* container query - for tracking max and min width */
+        container-type: inline-size;
+        container-name: sidebar;
+        /* fixed the sidebar position to allow overlapping the main content */
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        flex: auto 0 0;
+        /* dimensions */
+        height: 100vh;
+        width: var(--tt-sidebar-width);
+        max-width: var(--tt-sidebar-max-w);
+        min-width: var(--tt-sidebar-min-w);
+        overflow-y: auto;
+        /* colors */
+        background-color: var(--color-neutral-100);
+        border-right: 1px solid var(--color-neutral-200);
+        color: var(--color-neutral-600);
+        /* animation */
+        transition-property: width;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+        /* collapsible logic */
+        --tt-sidebar-width: var(--tt-sidebar-max-w);
+        /* use a hidden checkbox to toggle the sidebar */
+        &:has(.sidebar-toggle input:checked) {
+            --tt-sidebar-width: var(--tt-sidebar-min-w);
+        }
+        &:hover {
+            --tt-sidebar-width: var(--tt-sidebar-max-w)!important;
+        }
+        /* modifiers */
+        --tt-sidebar-max-w: --spacing(64);
+        --tt-sidebar-min-w: --spacing(16);
+        --tt-duration: 200ms;
+        --tt-ease-out: ease-out;
+        /* sidebar header */
+        .sidebar-header {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: --spacing(2);
+            align-items: center;
+            /* dimensions */
+            min-height: --spacing(16);
+            padding-inline: --spacing(4);
+            /* colors */
+            border-bottom: 1px solid var(--color-neutral-200);
+
+            /* site logo / brand */
+            .sidebar-logo {
+                padding-inline-start: --spacing(2);
+            }
+            /* site title */
+            .sidebar-title {
+                flex-grow: 1;
+                overflow: hidden;
+                font-weight: var(--font-weight-medium);
+            }
+            /* sidebar toggle button - to collapse the sidebar */
+            .sidebar-toggle {
+                margin-inline-start: --spacing(2);
+                overflow: hidden;
+                /* hide the toggle checkbox */
+                input[type='checkbox'] {
+                    display: none;
+                }
+                /* animation */
+                transition-property: width;
+                transition-duration: var(--tt-duration, var(--default-transition-duration));
+                transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+            }
+        }
+        /* additional sidebar tools - e.g. search field */
+        .sidebar-tool {
+            display: flex;
+            align-items: center;
+            padding: --spacing(4);
+        }
+        /* sidebar menu links */
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            /* allow sidebar height to extend to the bottom */
+            flex: 1;
+            /* extend the menu spacing if there is a bottom menu */
+            .menu:has(+ .menu-bottom) {
+                flex: 1;
+            }
+            /* elements: hide divider span text when sidebar is collapsed */
+            .divider {
+                @container sidebar (width < 8rem) {
+                    gap: 0;
+                    * {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

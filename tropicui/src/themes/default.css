@@ -1,5 +1,7 @@
 @theme {
     --color-base: var(--color-neutral-300);
+    --color-base-sunken: var(--color-neutral-100);
+    --color-base-border: var(--color-neutral-200);
     --color-base-subtle: var(--color-neutral-400);
     --color-base-content: var(--color-neutral-800);
     --color-base-shadow: var(--color-neutral-900);

@@ -1,180 +1,46 @@
 @layer components {
     .btn {
-        @apply
-            inline-flex
-            justify-center
-            items-center
-            shrink-0
-            gap-1.5
-            rounded
-            overflow-hidden
-            outline-2
-            outline-offset-2
-            outline-transparent
-            no-underline
-            select-none
-            transition-all
-            cursor-pointer
-            px-5 py-2.5
-        ;
-        @apply 
-            bg-(--btn-bg)
-            hover:bg-[color-mix(in_oklab,var(--btn-bg),_white_20%)]
-            active:bg-[color-mix(in_oklab,var(--btn-bg),_black_10%)]
-            text-(--btn-fg)
-            border
-            border-[color-mix(in_oklab,var(--btn-border),_black_15%)]
-            shadow-[inset_0_1px_--theme(--color-white/.2),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
-            active:shadow-[inset_0_1px_1px_1px_color-mix(in_oklab,var(--btn-shadow),_black_30%)]
-            focus-visible:outline-info
-        ;
-        &:is(:disabled) {
-            @apply
-                opacity-50
-                cursor-none
-                pointer-events-none
-            ;
-        }
-        --btn-bg: var(--btn-color);
-        --btn-border: var(--btn-color);
-        --btn-shadow: var(--btn-color);
-        --btn-color: var(--color-neutral);
-        --btn-fg: var(--color-neutral-content);
-    }
-    .btn-xs {
-        @apply text-xs
-            px-2 py-1
-            ;
-    }
-    .btn-sm {
-        @apply text-sm
-            px-4 py-2
-            ;
-    }
-    .btn-lg {
-        @apply text-lg
-            px-6 py-3
-            ;
-    }
-    .btn-xl {
-        @apply text-xl
-            px-7 py-3.5
-            ;
-    }
-    .btn-wide {
-        @apply
-            w-full
-            max-w-64
-            ;
-    }
-    .btn-block {
-        @apply w-full
-            ;
-    }
-    .btn-primary {
-        --btn-color: var(--color-primary);
-        --btn-fg: var(--color-primary-content);
-    }
-    .btn-secondary {
-        --btn-color: var(--color-secondary);
-        --btn-fg: var(--color-secondary-content);
-    }
-    .btn-info {
-        --btn-color: var(--color-info);
-        --btn-fg: var(--color-info-content);
-    }
-    .btn-accent {
-        --btn-color: var(--color-accent);
-        --btn-fg: var(--color-accent-content);
-    }
-    .btn-success {
-        --btn-color: var(--color-success);
-        --btn-fg: var(--color-success-content);
-    }
-    .btn-warning {
-        --btn-color: var(--color-warning);
-        --btn-fg: var(--color-warning-content);
-    }
-    .btn-danger {
-        --btn-color: var(--color-danger);
-        --btn-fg: var(--color-danger-content);
-    }
-
-    .btn-soft {
-        &:not(:hover,:active) {
-            --btn-bg: color-mix(in oklab,var(--btn-color), white 90%);
-            --btn-border: color-mix(in oklab,var(--btn-color), white 90%);
-            --btn-fg: var(--btn-color);
-        }
-    }
-    .btn-outline {
-        @apply
-            shadow-none
-            border-(--btn-color)
-        ;
-        &:is(:hover:not(:active)) {
-            @apply
-                shadow-[inset_0_0_0_2px_--theme(--color-white/.9),0_1px_2px_color-mix(in_oklab,var(--btn-shadow),_transparent_60%)]
-            ;
-            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
-            --btn-fg: var(--btn-color);
-        }
-        &:not(:hover,:active) {
-            --btn-bg: transparent;
-            --btn-fg: var(--btn-color);
-        }
-    }
-    .btn-dashed {
-        @apply
-            shadow-none
-            border-dashed
-        ;
-        &:is(:hover:not(:active)) {
-            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
-            --btn-fg: var(--btn-color);
-        }
-        &:not(:hover,:active) {
-            --btn-bg: transparent;
-            --btn-fg: var(--btn-color);
-        }
-    }
-    .btn-clear {
-        @apply
-            shadow-none
-            border-none
-        ;
-        --btn-border: transparent;
-        --btn-shadow: transparent;
-        &:is(:hover:not(:active)) {
-            --btn-bg: color-mix(in oklab,var(--btn-color) 20%, white);
-            --btn-fg: var(--btn-color);
-        }
-        &:not(:hover,:active) {
-            --btn-bg: transparent;
-            --btn-fg: var(--btn-color);
-        }
-    }
-    .btn-link {
-        @apply
-            bg-transparent
-            shadow-none
-            border-none
-            active:bg-transparent
-            active:shadow-none
-            hover:underline
-            active:underline
-            px-1
-            py-0
-        ;
-        --btn-border: transparent;
-        --btn-shadow: transparent;
-        --btn-bg: transparent;
-        --btn-fg: var(--btn-color);
-        &:is(:hover:not(:active)) {
-            --btn-fg: color-mix(in oklab,var(--btn-color), white 30%);
+        /* inline-flex for flexible size */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: --spacing(2);
+        overflow: hidden;
+        /* dimensions */
+        min-width: var(--btn-h);
+        height: var(--btn-h);
+        border-radius: var(--radius-md);
+        padding-inline: --spacing(2);
+        /* colors */
+        background-color: var(--btn-bg);
+        /* states */
+        &:hover, &:focus {
+            background-color: var(--color-neutral-200);
         }
         &:active {
-            --btn-fg: color-mix(in oklab,var(--btn-color), black 15%);
+            background-color: var(--color-neutral-300);
+        }
+        /* modifiers */
+        --btn-bg: var(--color-neutral-100);
+        --btn-h: --spacing(9);
+    }
+    .btn-icon {
+        border: 2px solid var(--color-neutral-50);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--tt-ring-shadow), var(--shadow-sm);
+        padding-inline: 0;
+        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-300, currentColor);
+    }
+    .btn-block {
+        display: flex;
+    }
+    .btn-clear {
+        --btn-bg: none;
+    }
+    svg, img, i {
+        .btn & {
+            width: --spacing(5);
+            min-width: --spacing(5);
         }
     }
 }
