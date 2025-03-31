@@ -12,4 +12,7 @@
         --badge-bg: var(--color-neutral-500);
         --badge-fg: var(--color-neutral-100);
     }
+    .badge-circle {
+        border-radius: calc(infinity * 1px);
+    }
 }

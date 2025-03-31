@@ -1,30 +1,83 @@
 @layer components {
+    .menu :where(ul li) {
+        display: flex;
+        flex-direction: column;
+        min-height: --spacing(10);
+    }
     .menu {
-        padding-inline: --spacing(4);
+        /* to use new height:calc-size(fit-content,size) once fully supported */
+        interpolate-size: allow-keywords;
+        /* level 1 */
         > ul {
             > li {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                min-height: --spacing(10);
                 &:has(ul) {
-                    @apply
-                        @container
-                    ;
-                    > a {
+                    > a:focus svg:last-of-type {
+                        rotate: 180deg;
+                    }
+                    > a:focus ~ ul {
+                        height: auto;
+                    }
+                    > ul:has(li:hover,:focus,:active,:checked) {
+                        height: auto;
+                    }
+                    /* level 2 */
+                    ul {
+                        /* dimensions */
+                        height: 0;
+                        overflow: hidden;
+                        padding-top: --spacing(1);
+                        /* animation */
+                        transition-property: height;
+                        transition-duration: var(--tt-duration, var(--default-transition-duration));
+                        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+                        > li {
+                            .btn {
+                                color: var(--color-neutral-400);
+                            }
+                            > .btn {
+                                padding-inline-start: --spacing(9);
+                            }
+                            &:has(ul) {
+                                .btn {
+                                    input[type='checkbox'] {
+                                        /* hide the toggle checkbox */
+                                        display: none;
+                                        /* rotate the toggle icon */
+                                        &:checked ~ svg {
+                                            rotate: 90deg;
+                                        }
+                                    }
+                                    svg {
+                                        /* animation */
+                                        transition-property: rotate;
+                                        transition-duration: var(--tt-duration, var(--default-transition-duration));
+                                        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+                                    }
+                                }
+                                .btn:has(input:checked) ~ ul {
+                                    height: auto;
+                                }
+                                /* level 3 */
+                                ul li {
+                                    border-left: 1px solid var(--color-neutral-300);
+                                    margin-inline-start: --spacing(11);
+                                    padding-inline-start: --spacing(3);
+                                    > .btn {
+                                        padding-inline-start: --spacing(2);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                > ul {
-
-                    transition-property: height;
-                    transition-duration: var(--tt-duration, var(--default-transition-duration));
-                    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+                &:not(:has(a)) {
+                    justify-content: center;
                 }
             }
         }
         .btn {
             display: flex;
-            justify-content: start;
+            justify-content: stretch;
         }
     }
 }
