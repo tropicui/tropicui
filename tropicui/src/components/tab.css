@@ -1,0 +1,25 @@
+@layer components {
+    .tabs {
+        /* functionality */
+        display: flex;
+        flex-wrap: wrap;
+        gap: --spacing(1);
+        .tab {
+            /* functionality */
+            input[type="radio"] {
+                display: none;
+                visibility: hidden;
+            }
+            &:has(input:checked) {
+                &+.tab-content {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+        .tab-content {
+            display: none;
+            order: calc(infinity);
+        }
+    }
+}

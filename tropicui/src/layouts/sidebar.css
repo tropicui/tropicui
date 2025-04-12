@@ -6,6 +6,7 @@
         /* fixed the sidebar position to allow overlapping the main content */
         position: fixed;
         display: flex;
+        z-index: 10;
         flex-direction: column;
         flex: auto 0 0;
         /* dimensions */
@@ -13,7 +14,6 @@
         width: var(--tt-sidebar-width);
         max-width: var(--tt-sidebar-max-w);
         min-width: var(--tt-sidebar-min-w);
-        overflow-y: auto;
         /* colors */
         background-color: var(--color-neutral-100);
         border-right: 1px solid var(--color-neutral-200);
@@ -24,12 +24,20 @@
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         /* collapsible logic */
         --tt-sidebar-width: var(--tt-sidebar-max-w);
+        /* adjust the main container left padding */
+        + div {
+            padding-inline-start: var(--tt-sidebar-max-w);
+        }
         /* use a hidden checkbox to toggle the sidebar */
         &:has(.sidebar-toggle input:checked) {
             --tt-sidebar-width: var(--tt-sidebar-min-w);
-        }
-        &:hover {
-            --tt-sidebar-width: var(--tt-sidebar-max-w)!important;
+            /* adjust the main container left padding */
+            + div {
+                padding-inline-start: var(--tt-sidebar-min-w);
+            }
+            &:hover {
+                --tt-sidebar-width: var(--tt-sidebar-max-w);
+            }
         }
         /* modifiers */
         --tt-sidebar-max-w: --spacing(64);
@@ -42,19 +50,24 @@
             flex-wrap: nowrap;
             gap: --spacing(2);
             align-items: center;
+            overflow: hidden;
             /* dimensions */
             min-height: --spacing(16);
             padding-inline: --spacing(4);
             /* colors */
             border-bottom: 1px solid var(--color-neutral-200);
-
+            background-color: var(--color-neutral-50);
             /* site logo / brand */
             .sidebar-logo {
-                margin-inline-start: --spacing(2);
-                width: --spacing(6);
-                height: --spacing(6);
-                min-width: --spacing(6);
-                min-height: --spacing(6);
+                width: --spacing(8);
+                height: --spacing(8);
+                min-width: --spacing(8);
+                min-height: --spacing(8);
+                padding: --spacing(1);
+                background-color: var(--color-white);
+                border: 1px solid var(--color-neutral-300);
+                border-radius: var(--radius-sm);
+                text-align: center;
             }
             /* site title */
             .sidebar-title {
@@ -82,38 +95,35 @@
                 }
             }
         }
-        /* additional sidebar tools - e.g. search field */
-        .sidebar-tool {
-            display: flex;
-            align-items: center;
-            padding: --spacing(4);
-        }
         /* sidebar menu links */
-        .sidebar-menu {
+        .sidebar-content {
             display: flex;
             flex-direction: column;
             /* allow sidebar height to extend to the bottom */
             flex: 1;
-            padding-inline: --spacing(4);
-            /* extend the menu spacing if there is a bottom menu */
-            .menu:has(+ .menu-bottom) {
-                flex: 1;
-            }
-            /* elements */
-            /* hide divider span text when sidebar is collapsed */
-            .divider {
-                @container sidebar (width < 8rem) {
+            overflow-y: scroll;
+            scrollbar-color: var(--color-neutral-300) var(--color-neutral-100);
+            padding-inline-start: --spacing(4);
+            /* additional element logic when sidebar is collapsed */
+            @container sidebar (width < 8rem) {
+                /* hide the scrollbar and introduce end padding when sidebar is collapsed */
+                overflow-y: hidden;
+                padding-inline-end: --spacing(4);
+                /* hide divider span text when sidebar is collapsed */
+                .divider {
                     gap: 0;
                     * {
                         display: none;
                     }
                 }
-            }
-            /* hide all sub-menu when sidebar is collapse */
-            .menu > ul ul {
-                @container sidebar (width < 8rem) {
+                /* hide all sub-menu when sidebar is collapse */
+                .menu > ul ul {
                     height: 0!important;
                 }
+            }
+            /* extend the menu spacing if there is a bottom menu */
+            .menu:has(+ .menu-bottom) {
+                flex: 1;
             }
         }
         .sidebar-footer {

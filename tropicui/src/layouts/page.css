@@ -1,0 +1,11 @@
+@layer components {
+    .page {
+        display: flex;
+        flex-direction: column;
+        /* dimensions */
+        /* min-height to ensure background color covers the whole page */
+        min-height: 100vh;
+        /* color */
+        background-color: var(--color-neutral-100);
+    }
+}

@@ -1,0 +1,6 @@
+@layer components {
+    main {
+        flex: 1;
+        padding: --spacing(4);
+    }
+}

@@ -1,0 +1,10 @@
+@layer components {
+    .breadcrumb {
+        ol {
+            display: inline-flex;
+            li {
+                margin-inline: --spacing(2);
+            }
+        }
+    }
+}

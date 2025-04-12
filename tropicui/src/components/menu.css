@@ -6,7 +6,10 @@
     }
     .menu {
         /* to use new height:calc-size(fit-content,size) once fully supported */
-        interpolate-size: allow-keywords;
+        @media (prefers-reduced-motion: no-preference) {
+            interpolate-size: allow-keywords;
+        }        /* text */
+        font-weight: var(--font-weight-medium);
         /* level 1 */
         > ul {
             > li {
@@ -16,18 +19,21 @@
                     }
                     > a:focus ~ ul {
                         height: auto;
+                        visibility: visible;
                     }
-                    > ul:has(li:hover,:focus,:active,:checked) {
+                    > ul:has(:hover,:focus,:active,:checked) {
                         height: auto;
+                        visibility: visible;
                     }
                     /* level 2 */
                     ul {
                         /* dimensions */
                         height: 0;
+                        visibility: hidden;
                         overflow: hidden;
                         padding-top: --spacing(1);
                         /* animation */
-                        transition-property: height;
+                        transition-property: height,visibility;
                         transition-duration: var(--tt-duration, var(--default-transition-duration));
                         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
                         > li {
@@ -56,6 +62,7 @@
                                 }
                                 .btn:has(input:checked) ~ ul {
                                     height: auto;
+                                    visibility: visible;
                                 }
                                 /* level 3 */
                                 ul li {
@@ -67,6 +74,10 @@
                                     }
                                 }
                             }
+                        }
+                        &.open {
+                            height: auto;
+                            visibility: visible;
                         }
                     }
                 }

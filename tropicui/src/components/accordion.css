@@ -1,0 +1,58 @@
+@layer components {
+    .accordion {
+        @media (prefers-reduced-motion: no-preference) {
+            interpolate-size: allow-keywords;
+        }
+        border: 1px solid var(--color-neutral-200);
+        border-radius: var(--radius-sm);
+        summary {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            padding-inline: --spacing(4);
+            padding-block: --spacing(4);
+        }
+        summary::marker {
+            content: "";
+        }
+        summary::after {
+            content: "";
+            mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>');
+            mask-repeat: no-repeat;
+            mask-type: alpha;
+            background-color: currentColor;
+            color: var(--color-neutral-500);
+            inline-size: --spacing(5);
+            /* animation */
+            transition-property: rotate;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+        }
+        &[open] {
+            summary::after {
+                rotate: 180deg;
+            }
+            &::details-content {
+                opacity: 1;
+                block-size: auto;
+                padding-block-end: --spacing(4);
+            }
+        }
+        &::details-content {
+            opacity: 0;
+            block-size: 0;
+            overflow-y: clip;
+            padding-inline: --spacing(4);
+            /* colors */
+            color: var(--color-neutral-500);
+            /* animation */
+            transition-property: content-visibility, opacity, block-size;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-behavior: allow-discrete;
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        }
+        /* modifiers */
+        
+    }
+}

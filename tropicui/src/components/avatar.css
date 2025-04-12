@@ -1,0 +1,25 @@
+@layer components {
+    .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        /* dimension */
+        width: var(--av-size);
+        height: var(--av-size);
+        min-width: var(--av-size);
+        min-height: var(--av-size);
+        /* text */
+        text-align: center;
+        font-size: var(--text-sm);
+        line-height: var(--leading-relaxed);
+        /* color */
+        background-color: var(--color-neutral-200);
+        border: 2px solid var(--color-neutral-50);
+        border-radius: calc(infinity * 1px);
+        box-shadow: var(--tt-ring-shadow), var(--shadow-sm);
+        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-300, currentColor);
+        /* modifiers */
+        --av-size: --spacing(6.5);
+    }
+}

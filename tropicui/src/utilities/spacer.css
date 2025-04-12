@@ -1,0 +1,5 @@
+@layer utilities {
+    .spacer {
+        flex: 1;
+    }
+}

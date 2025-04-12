@@ -3,12 +3,24 @@
 @import "./src/base/typography.css";
 @import "./src/base/heroicons.css";
 @import "./src/themes/default.css";
+@import "./src/layouts/footer.css";
+@import "./src/layouts/main.css";
+@import "./src/layouts/page.css";
+@import "./src/layouts/sidebar.css";
+@import "./src/layouts/topbar.css";
+@import "./src/components/accordion.css";
 @import "./src/components/alert.css";
+@import "./src/components/avatar.css";
 @import "./src/components/badge.css";
+@import "./src/components/breadcrumb.css";
 @import "./src/components/button.css";
 @import "./src/components/card.css";
 @import "./src/components/divider.css";
+@import "./src/components/dropdown.css";
 @import "./src/components/input.css";
 @import "./src/components/menu.css";
-@import "./src/components/sidebar.css";
-
+@import "./src/components/popover.css";
+@import "./src/components/tab.css";
+@import "./src/components/table.css";
+@import "./src/components/tooltip.css";
+@import "./src/utilities/spacer.css";

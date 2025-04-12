@@ -1,26 +1,23 @@
 @layer components {
     .card {
-        @apply
-            rounded
-            bg-(--card-bg)
-            overflow-hidden
-            w-full
-            shadow-[inset_0_1px_--theme(--color-white/.1),0_2px_2px_--theme(--color-black/.05)]
-        ;
+        box-shadow: var(--shadow-xs);
+        border-radius: var(--radius-sm);
+        width: 100%;
+        background-color: var(--card-bg);
+        /* modifiers */
         --card-bg: var(--color-white);
-        .card-border {
-            @apply
-                border
-                border-base
-            ;
+        &.card-border {
+            border: 1px solid var(--color-neutral-200);
+        }
+        &.card-gutter {
+            margin-block-end: --spacing(8);
         }
         .card-header {
+            border-bottom: 1px solid var(--color-neutral-200);
             @apply
                 flex
                 justify-between
                 items-center
-                border-b
-                border-base
                 px-6
                 py-4
             ;
@@ -46,10 +43,8 @@
             }
         }
         .card-body {
-            @apply
-                px-6
-                py-4
-            ;
+            padding-inline: --spacing(6);
+            padding-block: --spacing(4);
         }
         .card-actions {
             @apply
