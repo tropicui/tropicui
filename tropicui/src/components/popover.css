@@ -5,6 +5,7 @@
 
         /* modifiers */
         --popover-content-margin: --spacing(2);
+        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-200, currentColor);
     }
     .popover-toggle {
         .popover &:focus + .popover-content {
@@ -31,12 +32,12 @@
 
             /* colors */
             background-color: var(--color-white);
-            border: 1px solid var(--color-neutral-200);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-neutral-50);
+            border-radius: var(--radius-md);
+            box-shadow: var(--tt-ring-shadow), var(--shadow-md);
 
             /* animation */
-            transition-property: opacity, scale, transform, visibility;
+            transition-property: opacity, scale, visibility;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }

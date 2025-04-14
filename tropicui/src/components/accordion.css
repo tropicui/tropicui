@@ -46,7 +46,7 @@
             /* colors */
             color: var(--color-neutral-500);
             /* animation */
-            transition-property: content-visibility, opacity, block-size;
+            transition-property: block-size, content-visibility, opacity, padding-block;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-behavior: allow-discrete;
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));

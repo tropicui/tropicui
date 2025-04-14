@@ -24,14 +24,14 @@
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         /* collapsible logic */
         --tt-sidebar-width: var(--tt-sidebar-max-w);
-        /* adjust the main container left padding */
+        /* adjust the main page left padding */
         + div {
             padding-inline-start: var(--tt-sidebar-max-w);
         }
         /* use a hidden checkbox to toggle the sidebar */
         &:has(.sidebar-toggle input:checked) {
             --tt-sidebar-width: var(--tt-sidebar-min-w);
-            /* adjust the main container left padding */
+            /* adjust the main page left padding */
             + div {
                 padding-inline-start: var(--tt-sidebar-min-w);
             }

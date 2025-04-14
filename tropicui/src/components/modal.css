@@ -1,0 +1,129 @@
+@layer components {
+    .modal {
+        opacity: 0;
+        min-block-size: var(--modal-block);
+        inline-size: var(--modal-inline);
+
+        /* colors */
+        background-color: var(--color-white);
+        border: 1px solid var(--color-neutral-50);
+        border-radius: var(--radius-md);
+        box-shadow: var(--tt-ring-shadow), var(--shadow-xl);
+
+        /* modifiers */
+        --modal-block: --spacing(60);
+        --modal-header-block: --spacing(14);
+        --modal-footer-block: --spacing(16);
+        --modal-inline: --spacing(120);
+        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-200, currentColor);
+
+        /* animation */
+        transition-property: display, opacity, overlay, scale, transform, visibility;
+        transition-behavior: allow-discrete;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        /* transition-duration: 2s; */
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+        @starting-style {
+            &:open {
+                opacity: 0;
+                scale: 80%;
+            }
+        }
+        &:open {
+            opacity: 1;
+        }
+        &::backdrop {
+            background-color: color-mix(in oklab, var(--color-black) 0%, transparent);
+
+            /* animation */
+            transition-property: display, overlay, background-color;
+            transition-behavior: allow-discrete;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            /* transition-duration: 2s; */
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+        }
+        &:open::backdrop {
+            background-color: color-mix(in oklab, var(--color-black) 25%, transparent);
+        }
+        @starting-style {
+            &:open::backdrop {
+                background-color: color-mix(in oklab, var(--color-black) 0%, transparent);
+            }
+        }
+        &:has(::backdrop:hover) .modal-header {
+            background-color: var(--color-red-500);
+        }
+
+        .modal-header,
+        .modal-header-sticky {
+            display: flex;
+            align-items: center;
+            min-block-size: var(--modal-header-block);
+            padding-inline: --spacing(4);
+            border-block-end: 1px solid var(--color-neutral-200);
+            background-color: var(--color-white);
+        }
+
+        .modal-header-sticky {
+            position: sticky;
+            inset-block-start: 0;
+        }
+
+        .modal-body {
+            min-block-size: calc(var(--modal-block) - var(--modal-header-block) - var(--modal-footer-block));
+            padding-block-start: --spacing(4);
+            padding-inline: --spacing(4);
+            padding-block-end: --spacing(8);
+        }
+
+        .modal-footer,
+        .modal-footer-sticky {
+            display: flex;
+            gap: --spacing(2);
+            align-items: center;
+            min-block-size: var(--modal-footer-block);
+            inline-size: 100%;
+            padding-inline: --spacing(4);
+            border-block-start: 1px solid var(--color-neutral-200);
+            background-color: var(--color-white);
+        }
+
+        .modal-footer-sticky {
+            position: sticky;
+            inset-block-end: 0;
+        }
+
+        /* corner close x button */
+        .modal-dismiss-x {
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                block-size: --spacing(12);
+                inline-size: --spacing(12);
+                cursor: pointer;
+                > :where(svg, img) {
+                    width: --spacing(5);
+                }
+            }
+        }
+        /* action outside of modal */
+        .modal-static,
+        .modal-dismiss-backdrop {
+            display: grid;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: -1;
+        }
+        &:has(.modal-static:active) {
+            scale: 105%;
+        }
+    }
+}

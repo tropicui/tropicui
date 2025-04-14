@@ -5,8 +5,8 @@
 @import "./src/themes/default.css";
 @import "./src/layouts/footer.css";
 @import "./src/layouts/main.css";
-@import "./src/layouts/page.css";
 @import "./src/layouts/sidebar.css";
+@import "./src/layouts/page.css";
 @import "./src/layouts/topbar.css";
 @import "./src/components/accordion.css";
 @import "./src/components/alert.css";
@@ -19,6 +19,7 @@
 @import "./src/components/dropdown.css";
 @import "./src/components/input.css";
 @import "./src/components/menu.css";
+@import "./src/components/modal.css";
 @import "./src/components/popover.css";
 @import "./src/components/tab.css";
 @import "./src/components/table.css";

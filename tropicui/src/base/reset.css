@@ -1,10 +1,12 @@
 html {
     font-size: 14px;
 }
+@layer base {
+    dialog {
+        margin: auto;
+    }
+}
 @theme {
-    /* collapsible logic */
-    --tt-sidebar-width: var(--tt-sidebar-max-w);
-    /* use a hidden checkbox to toggle the sidebar */
-        --tt-sidebar-max-w: --spacing(64);
-        --tt-sidebar-min-w: --spacing(16);
+    --tt-sidebar-max-w: --spacing(64);
+    --tt-sidebar-min-w: --spacing(16);
 }
