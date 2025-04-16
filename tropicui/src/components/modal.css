@@ -12,9 +12,9 @@
 
         /* modifiers */
         --modal-block: --spacing(60);
+        --modal-inline: --spacing(120);
         --modal-header-block: --spacing(14);
         --modal-footer-block: --spacing(16);
-        --modal-inline: --spacing(120);
         --tt-ring-shadow: 0 0 0 1px var(--color-neutral-200, currentColor);
 
         /* animation */
@@ -31,6 +31,9 @@
         }
         &:open {
             opacity: 1;
+            button:focus-visible {
+                background-color: inherit;
+            }
         }
         &::backdrop {
             background-color: color-mix(in oklab, var(--color-black) 0%, transparent);
@@ -50,66 +53,18 @@
                 background-color: color-mix(in oklab, var(--color-black) 0%, transparent);
             }
         }
-        &:has(::backdrop:hover) .modal-header {
-            background-color: var(--color-red-500);
-        }
 
-        .modal-header,
-        .modal-header-sticky {
-            display: flex;
-            align-items: center;
-            min-block-size: var(--modal-header-block);
-            padding-inline: --spacing(4);
-            border-block-end: 1px solid var(--color-neutral-200);
-            background-color: var(--color-white);
-        }
-
-        .modal-header-sticky {
-            position: sticky;
-            inset-block-start: 0;
-        }
-
-        .modal-body {
-            min-block-size: calc(var(--modal-block) - var(--modal-header-block) - var(--modal-footer-block));
-            padding-block-start: --spacing(4);
-            padding-inline: --spacing(4);
-            padding-block-end: --spacing(8);
-        }
-
-        .modal-footer,
-        .modal-footer-sticky {
-            display: flex;
-            gap: --spacing(2);
-            align-items: center;
-            min-block-size: var(--modal-footer-block);
-            inline-size: 100%;
-            padding-inline: --spacing(4);
-            border-block-start: 1px solid var(--color-neutral-200);
-            background-color: var(--color-white);
-        }
-
-        .modal-footer-sticky {
-            position: sticky;
-            inset-block-end: 0;
+        .card-body {
+            min-block-size: calc(var(--modal-block) - var(--card-header-block) - var(--card-footer-block));
         }
 
         /* corner close x button */
         .modal-dismiss-x {
             position: absolute;
-            inset-block-start: 0;
-            inset-inline-end: 0;
-            button {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                block-size: --spacing(12);
-                inline-size: --spacing(12);
-                cursor: pointer;
-                > :where(svg, img) {
-                    width: --spacing(5);
-                }
-            }
+            inset-block-start: --spacing(4);
+            inset-inline-end: --spacing(4);
         }
+
         /* action outside of modal */
         .modal-static,
         .modal-dismiss-backdrop {
@@ -125,5 +80,30 @@
         &:has(.modal-static:active) {
             scale: 105%;
         }
+    }
+
+    /* center content */
+    .modal-center {
+        align-content: center;
+        justify-items: center;
+    }
+
+    /* modal sizes */
+    .modal-sm {
+        --modal-block: --spacing(48);
+        --modal-inline: --spacing(96);
+    }
+    .modal-lg {
+        --modal-block: --spacing(84);
+        --modal-inline: --spacing(168);
+    }
+    .modal-xl {
+        --modal-block: --spacing(120);
+        --modal-inline: --spacing(240);
+    }
+    .modal-focus {
+        block-size: 100%;
+        inline-size: 100%;
+        margin-block: --spacing(4);
     }
 }

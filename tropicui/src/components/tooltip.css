@@ -36,7 +36,7 @@
 
         &::before {
             content: attr(data-tooltip);
-            z-index: 11;
+            z-index: 31;
             padding-block: --spacing(1);
             padding-inline: --spacing(2);
             width: fit-content;
@@ -51,7 +51,7 @@
         &::after {
             /* arrow */
             content: "";
-            z-index: 12;
+            z-index: 32;
             display: block;
             width: var(--tooltip-arrow-size);
             height: var(--tooltip-arrow-size);

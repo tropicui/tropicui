@@ -8,7 +8,8 @@
         /* to use new height:calc-size(fit-content,size) once fully supported */
         @media (prefers-reduced-motion: no-preference) {
             interpolate-size: allow-keywords;
-        }        /* text */
+        }
+        /* text */
         font-weight: var(--font-weight-medium);
         /* level 1 */
         > ul {

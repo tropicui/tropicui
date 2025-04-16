@@ -21,7 +21,7 @@
         &:hover {
             background-color: var(--btn-hover);
         }
-        &:focus {
+        &:focus-visible {
             background-color: var(--btn-focus);
         }
         &:active {

@@ -23,5 +23,6 @@
 @import "./src/components/popover.css";
 @import "./src/components/tab.css";
 @import "./src/components/table.css";
+@import "./src/components/toast.css";
 @import "./src/components/tooltip.css";
 @import "./src/utilities/spacer.css";

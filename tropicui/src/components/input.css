@@ -6,34 +6,96 @@
         }
         .input-icon {
             position: absolute;
-            bottom: --spacing(0.5);
-            left: --spacing(0.5);
+            inset-block-end: --spacing(0.5);
+            inset-inline-start: --spacing(0.5);
         }
     }
+
     .input {
-        height: --spacing(9);
-        width: 100%;
-        min-width: --spacing(9);
+        /* dimensions */
+        block-size: var(--input-size);
+        inline-size: 100%;
+        padding-inline-start: --spacing(4);
+
+        /* colors */
         border: 1px solid var(--color-neutral-300);
         border-radius: var(--radius-md);
         outline-color: var(--color-blue-200);
-        background-color: var(--color-neutral-200);
-        padding-inline-start: --spacing(9);
+        background-color: var(--color-neutral-50);
+        box-shadow: var(--shadow-xs);
+
+        /* modifiers */
+        --input-text: var(--color-neutral-800);
+        --input-size: --spacing(9);
+
+        /* text */
+        color: var(--input-text);
         &::placeholder {
             font-style: italic;
         }
+
+        &:is(:disabled, [disabled]) {
+            /* colors */
+            background-color: var(--color-neutral-200);
+            box-shadow: none;
+            color: color-mix(in oklab, var(--input-text) 60%, transparent);
+        }
+
         &:focus-visible {
             outline-width: 2px;
             outline-style: solid;
             border-color: var(--color-blue-400);
+            background-color: var(--color-white);
+        }
+
+        .input-group & {
+            padding-inline-start: --spacing(9);
         }
     }
+
     .input-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: --spacing(8);
-        height: --spacing(8);
+
+        /* dimensions */
+        block-size: --spacing(8);
+        inline-size: --spacing(8);
+
+        /* colors */
+        color: var(--color-neutral-500);
+    }
+
+    .input-solid {
+        /* colors */
+        border: none;
+        box-shadow: none;
+        background-color: var(--color-neutral-100);
+    }
+
+    /* sizes */
+    .input-sm {
+        --input-size: --spacing(8);
+        font-size: var(--text-sm);
+    }
+
+    .input-lg {
+        --input-size: --spacing(10);
+        font-size: var(--text-lg);
+    }
+
+    .input-xl {
+        --input-size: --spacing(12);
+        font-size: var(--text-xl);
+    }
+
+    label:has(~ .input) {
+        display: flex;
+        gap: --spacing(2);
+        margin-block: --spacing(2);
+
+        /* text */
+        font-weight: var(--font-weight-semibold);
         color: var(--color-neutral-500);
     }
 }

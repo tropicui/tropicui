@@ -422,6 +422,257 @@
                 </div>
                 <div class="mb-4"></div>
                 <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="input" placeholder="First name">
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-2 gap-8">
+                                <div class="col-span-2">
+                                    <label>First name:</label>
+                                    <input type="text" class="input" placeholder="First name">
+                                </div>
+                                <div class="">
+                                    <label>Disabled:</label>
+                                    <input type="text" class="input" value="Mohd Chan" disabled>
+                                </div>
+                                <div class="">
+                                    <label>Disabled (placeholder):</label>
+                                    <input type="text" class="input" placeholder="First name" disabled>
+                                </div>
+                                <div class="">
+                                    <label>No border (solid):</label>
+                                    <input type="text" class="input input-solid">
+                                </div>
+                                <div class="">
+                                    <label>No border disabled (solid):</label>
+                                    <input type="text" class="input input-solid" value="Mohd Chan" disabled>
+                                </div>
+                                <div class="">
+                                    <label>Small:</label>
+                                    <input type="text" class="input input-sm" value="Mohd Chan">
+                                </div>
+                                <div class="">
+                                    <label>Large:</label>
+                                    <input type="text" class="input input-lg" value="Mohd Chan">
+                                </div>
+                                <div class="col-span-2">
+                                    <label>XL:</label>
+                                    <input type="text" class="input input-xl" value="Mohd Chan">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter hidden">
+                    <div class="card-body">
+                        <button class="btn">Show toast</button>
+                        <div class="toast-group toast-top-start">
+                            <div class="toast">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top-start changes 1 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-lg">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your Large top-start changes 2 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                        </div>
+                        <div class="toast-group toast-top">
+                            <div class="toast toast-dismiss-8">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Auto-dismiss in 8 seconds.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-7">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 7 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-6">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 6 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-lg">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your Large top changes 5.5 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-5">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 5 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-4">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 4 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-3">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 3 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-2">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 2 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-dismiss-1">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top changes 1 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                        </div>
+                        <div class="toast-group toast-top-end">
+                            <div class="toast toast-dismiss-4">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You top-end changes 1 has been saved successfully.</div>
+                            </div>
+                            <div class="toast toast-lg">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your Large top-end changes 2 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                        </div>
+                        <div class="toast-group toast-bottom-start">
+                            <div class="toast toast-dismiss-t" style="--toast-delay-t: 1500ms;">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Custom toast dismiss delay: t=1500ms</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-lg">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You bottom-start 2 changes has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                        </div>
+                        <div class="toast-group toast-bottom">
+                            <div class="toast">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">You bottom changes 1 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-xl">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your XL bottom changes 2 has failed to saved.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                        </div>
+                        <div class="toast-group toast-bottom-end">
+                            <div class="toast toast-sm">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your Small bottom-end changes 1 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your normal bottom-end changes 2 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-lg">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your Large bottom-end changes 3 has been saved successfully.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                            <div class="toast toast-xl">
+                                <div class="toast-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                </div>
+                                <div class="toast-content">Your XL bottom-end changes 4 has failed to saved.</div>
+                                <input type="radio" class="btn btn-clear btn-rounded toast-close">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
                     <div class="card-body">
                         <div class="grid grid-cols-3">
                             <div class="col-start-1 row-start-1">1</div>
@@ -431,19 +682,19 @@
                 </div>
                 <div class="card card-border card-gutter">
                     <div class="card-body">
-                        <button class="btn" onclick="showDialog('#modal-1');">Show modal</button>
-                        <dialog id="modal-1" class="modal">
-                            <div class="modal-header-sticky">
+                        <button class="btn" onclick="showDialog('#modal-1');">Show modal 1</button>
+                        <dialog id="modal-1" class="modal card">
+                            <div class="card-header">
                                 <h5>Static modal</h5>
                                 <form method="dialog" class="modal-dismiss-x">
-                                    <button>
+                                    <button class="btn btn-clear btn-rounded">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                         </svg>
                                     </button>
                                 </form>
                             </div>
-                            <div class="modal-body">
+                            <div class="card-body">
                                 <p>Greetings, one and all!</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
@@ -452,59 +703,56 @@
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
                             </div>
-                            <div class="modal-footer-sticky justify-end">
-                                <button class="btn btn-danger">Delete</button>
-                                <form method="dialog">
-                                    <button class="btn">Cancel</button>
-                                </form>
+                            <div class="card-footer justify-end">
+                                <div class="card-actions">
+                                    <button class="btn btn-danger">Delete</button>
+                                    <form method="dialog">
+                                        <button class="btn">Cancel</button>
+                                    </form>
+                                </div>
                             </div>
                             <div class="modal-static"></div>
                         </dialog>
-                        <button class="btn" onclick="showDialog('#modal-2');">Show modal</button>
-                        <dialog id="modal-2" class="modal">
-                            <form method="dialog" class="modal-dismiss-x">
-                                <button>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </form>
-                            <div class="modal-header">
+                        <button class="btn" onclick="showDialog('#modal-2');">Show modal 2</button>
+                        <dialog id="modal-2" class="modal card">
+                            <div class="card-header">
                                 <h5>Confirm delete?</h5>
                                 <form method="dialog" class="modal-dismiss-x">
-                                    <button>
+                                    <button class="btn btn-clear btn-rounded">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                         </svg>
                                     </button>
                                 </form>
                             </div>
-                            <div class="modal-body">
+                            <div class="card-body">
                                 <p>Greetings, one and all!</p>
                             </div>
-                            <div class="modal-footer justify-end">
-                                <button class="btn btn-danger">Delete</button>
-                                <form method="dialog">
-                                    <button class="btn">Cancel</button>
-                                </form>
+                            <div class="card-footer justify-end">
+                                <div class="card-actions">
+                                    <button class="btn btn-danger">Delete</button>
+                                    <form method="dialog">
+                                        <button class="btn">Cancel</button>
+                                    </form>
+                                </div>
                             </div>
                             <form method="dialog" class="modal-dismiss-backdrop">
                                 <button>close</button>
                             </form>
                         </dialog>
-                        <button class="btn" onclick="showDialog('#modal-3');">Show modal</button>
-                        <dialog id="modal-3" class="modal">
-                            <div class="modal-header">
+                        <button class="btn" onclick="showDialog('#modal-3');">Show modal 3</button>
+                        <dialog id="modal-3" class="modal card">
+                            <div class="card-header">
                                 <h5>Static modal</h5>
                                 <form method="dialog" class="modal-dismiss-x">
-                                    <button>
+                                    <button class="btn btn-clear btn-rounded">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                         </svg>
                                     </button>
                                 </form>
                             </div>
-                            <div class="modal-body">
+                            <div class="card-body">
                                 <p>Greetings, one and all!</p>
                                 <div class="popover popover-right">
                                     <button class="btn popover-toggle">Popover Top</button>
@@ -520,12 +768,125 @@
                                 <p>Lorem ipsum dolor sit amet <button class="btn tooltip tooltip-top" data-tooltip="Do not click this">tooltip Top</button> consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
                             </div>
-                            <div class="modal-footer justify-end">
-                                <button class="btn btn-danger">Delete</button>
-                                <form method="dialog">
-                                    <button class="btn">Cancel</button>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn btn-danger">Delete</button>
+                                    <form method="dialog">
+                                        <button class="btn">Cancel</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <form method="dialog" class="modal-dismiss-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <button class="btn" onclick="showDialog('#modal-4');">Show modal4 </button>
+                        <dialog id="modal-4" class="modal card">
+                            <div class="card-header card-sticky">
+                                <h5>Static modal</h5>
+                                <form method="dialog" class="modal-dismiss-x">
+                                    <button class="btn btn-clear btn-rounded">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
                                 </form>
                             </div>
+                            <div class="card-body">
+                                <p>Greetings, one and all!</p>
+                                <div class="popover popover-right">
+                                    <button class="btn popover-toggle">Popover Top</button>
+                                    <div class="popover-content ">
+                                        <p>This is the content within the popover.</p>
+                                        <p>You can put whatever you wanted in here.</p>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
+                                <p>Lorem ipsum dolor sit amet <button class="btn tooltip tooltip-top" data-tooltip="Do not click this">tooltip Top</button> consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eaque ex? Voluptatum quod cupiditate laborum consectetur, dolorum rerum. Itaque quis consequatur quaerat facilis molestias temporibus corporis fugit aut quisquam accusamus.</p>
+                            </div>
+                            <div class="card-footer justify-end card-sticky">
+                                <div class="card-actions">
+                                    <button class="btn btn-danger">Delete</button>
+                                    <form method="dialog">
+                                        <button class="btn">Cancel</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <form method="dialog" class="modal-dismiss-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <button class="btn" onclick="showDialog('#modal-5');">Show modal 5</button>
+                        <dialog id="modal-5" class="modal modal-center">
+                            <form method="dialog" class="modal-dismiss-x">
+                                <button class="btn btn-clear btn-rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <h1>Center</h1>
+                            <form method="dialog" class="modal-dismiss-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <br>
+                        <button class="btn" onclick="showDialog('#modal-sm');">Show modal sm</button>
+                        <dialog id="modal-sm" class="modal modal-sm modal-center">
+                            <form method="dialog" class="modal-dismiss-x">
+                                <button class="btn btn-clear btn-rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <h1>Center</h1>
+                            <form method="dialog" class="modal-dismiss-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <button class="btn" onclick="showDialog('#modal-lg');">Show modal lg</button>
+                        <dialog id="modal-lg" class="modal modal-lg modal-center">
+                            <form method="dialog" class="modal-dismiss-x">
+                                <button class="btn btn-clear btn-rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <h1>Center</h1>
+                            <form method="dialog" class="modal-dismiss-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <button class="btn" onclick="showDialog('#modal-xl');">Show modal xl</button>
+                        <dialog id="modal-xl" class="modal modal-xl modal-center">
+                            <form method="dialog" class="modal-dismiss-x">
+                                <button class="btn btn-clear btn-rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <h1>Center</h1>
+                            <form method="dialog" class="modal-dismiss-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <button class="btn" onclick="showDialog('#modal-focus');">Show modal focus</button>
+                        <dialog id="modal-focus" class="modal modal-focus modal-center">
+                            <form method="dialog" class="modal-dismiss-x">
+                                <button class="btn btn-clear btn-rounded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <h1>Center</h1>
                             <form method="dialog" class="modal-dismiss-backdrop">
                                 <button>close</button>
                             </form>
