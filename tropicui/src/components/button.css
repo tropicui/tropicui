@@ -1,13 +1,14 @@
 @layer components {
     .btn {
+        cursor: pointer;
         /* inline-flex for flexible size */
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: --spacing(2);
         /* dimensions */
-        min-width: var(--btn-min-size);
-        min-height: var(--btn-min-size);
+        block-size: var(--btn-min-size);
+        min-inline-size: var(--btn-min-size);
         padding-inline: --spacing(2);
         padding-block: --spacing(1);
         /* text */
@@ -19,6 +20,7 @@
         color: var(--btn-fg);
         /* states */
         &:hover {
+            color: var(--btn-fg);
             background-color: var(--btn-hover);
         }
         &:focus-visible {
@@ -63,10 +65,15 @@
         --btn-focus: var(--color-white);
         --btn-active: var(--color-white);
     }
+
+    /* sizes */
+    .btn-sm {
+        --btn-min-size: --spacing(7);
+    }
+
     svg, img, i {
         .btn & {
-            width: --spacing(5);
-            min-width: --spacing(5);
+            block-size: 1.25em;
         }
     }
 }

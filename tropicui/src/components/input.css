@@ -1,69 +1,159 @@
 @layer components {
-    .input-group {
-        &:has(.input-icon) {
-            position: relative;
-            flex-grow: 1;
-        }
-        .input-icon {
-            position: absolute;
-            inset-block-end: --spacing(0.5);
-            inset-inline-start: --spacing(0.5);
-        }
-    }
-
     .input {
+        overflow: hidden;
         /* dimensions */
         block-size: var(--input-size);
-        inline-size: 100%;
-        padding-inline-start: --spacing(4);
 
         /* colors */
-        border: 1px solid var(--color-neutral-300);
+        border: var(--input-border);
         border-radius: var(--radius-md);
         outline-color: var(--color-blue-200);
-        background-color: var(--color-neutral-50);
+        background-color: var(--input-bg);
         box-shadow: var(--shadow-xs);
 
+        /* text */
+
         /* modifiers */
+        --input-bg: var(--color-neutral-50);
+        --input-border: 1px solid var(--color-neutral-300);
         --input-text: var(--color-neutral-800);
+        --input-label: var(--color-neutral-400);
         --input-size: --spacing(9);
 
-        /* text */
-        color: var(--input-text);
-        &::placeholder {
-            font-style: italic;
+        /* input field */
+        &:is(input), input {
+            overflow: hidden;
+            inline-size: 100%;
+            padding-inline: --spacing(4);
+
+            /* text */
+            color: var(--input-text);
+
+            &::placeholder {
+                font-style: italic;
+            }
+
+            &:read-only:not(:disabled, [disabled]) {
+                background-color: var(--color-neutral-200);
+            }
         }
 
-        &:is(:disabled, [disabled]) {
+        /* disabled */
+        &:is(:disabled, [disabled]),
+        &:has(:disabled, [disabled]) {
             /* colors */
             background-color: var(--color-neutral-200);
             box-shadow: none;
             color: color-mix(in oklab, var(--input-text) 60%, transparent);
         }
 
-        &:focus-visible {
+        /* focus */
+        &:focus-visible,
+        &:has(:focus-visible) {
             outline-width: 2px;
             outline-style: solid;
             border-color: var(--color-blue-400);
             background-color: var(--color-white);
         }
 
-        .input-group & {
-            padding-inline-start: --spacing(9);
+        /* validation */
+        &.input-validate:invalid,
+        &.input-validate:has(:invalid),
+        &.input-invalid,
+        &:has(.input-invalid) {
+            border-color: var(--color-red-400);
+            outline-width: 2px;
+            outline-style: solid;
+            outline-color: var(--color-red-200);
+
+            & ~ .invalid-msg, .invalid-label {
+                opacity: 1;
+            }
+        }
+
+        & ~ .invalid-msg, .invalid-label {
+            opacity: 0;
+            margin-block: --spacing(1);
+
+            /* text */
+            color: var(--color-red-400);
+            font-size: var(--text-sm);
+            line-height: var(--text-sm--line-height);
+        }
+
+        /* input group */
+        &:not(input) {
+            display: flex;
+            align-items: center;
+
+            > input {
+                flex: 1;
+                outline-width: 0;
+                block-size: 100%;
+            }
+
+            /* label */
+            > :where(:not(input, .btn)) {
+                padding-inline: --spacing(4) --spacing(0);
+
+                /* text */
+                color: var(--input-label);
+
+                &:last-child {
+                    padding-inline: --spacing(0) --spacing(4);
+                }
+            }
+
+            /* button */
+            > .btn {
+                block-size: 100%;
+                min-inline-size: var(--input-size);
+
+                &:has(~ input) {
+                    border-inline-end: var(--input-border);
+                }
+                &:not(:has(~ input)) {
+                    border-inline-start: var(--input-border);
+                }
+            }
+        }
+        
+        :where(svg, img) {
+            block-size: 1.25em;
+
+            .btn & {
+                width: auto;
+                min-width: auto;
+            }
+        }
+
+        &:has(.input-prefix, .input-suffix) {
+            .input-prefix, .input-suffix {
+                block-size: 100%;
+                min-inline-size: var(--input-size);
+                align-content: center;
+                justify-items: center;
+                text-align: center;
+                padding-inline: --spacing(2);
+                background-color: var(--color-neutral-100);
+            }
+
+            .input-prefix {
+                border-inline-end: var(--input-border);
+            }
+    
+            .input-suffix {
+                border-inline-start: var(--input-border);
+            }
         }
     }
 
-    .input-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        /* dimensions */
-        block-size: --spacing(8);
-        inline-size: --spacing(8);
-
+    /* variations */
+    .input-clear {
         /* colors */
-        color: var(--color-neutral-500);
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
     }
 
     .input-solid {
@@ -77,16 +167,19 @@
     .input-sm {
         --input-size: --spacing(8);
         font-size: var(--text-sm);
+        line-height: var(--text-sm--line-height);
     }
 
     .input-lg {
         --input-size: --spacing(10);
         font-size: var(--text-lg);
+        line-height: var(--text-lg--line-height);
     }
 
     .input-xl {
         --input-size: --spacing(12);
         font-size: var(--text-xl);
+        line-height: var(--text-xl--line-height);
     }
 
     label:has(~ .input) {

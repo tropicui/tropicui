@@ -24,7 +24,7 @@
             width: var(--divider-end);
         }
         --divider-border: var(--divider-color-modifier, var(--divider-color));
-        --divider-color: var(--color-base);
+        --divider-color: var(--color-neutral-300);
         --divider-width: 1px;
         --divider-start: 100%;
         --divider-end: 100%;

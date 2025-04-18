@@ -17,7 +17,7 @@
         ;
         --alert-border: color-mix(in oklab,var(--alert-color),white 15%);
         --alert-bg: var(--alert-color);
-        --alert-color: var(--color-base);
+        --alert-color: var(--color-neutral-300);
         --alert-fg: var(--color-base-content);
         i {
             @apply
