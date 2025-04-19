@@ -7,7 +7,7 @@
         /* colors */
         border: var(--input-border);
         border-radius: var(--radius-md);
-        outline-color: var(--color-blue-200);
+        outline: var(--input-focus);
         background-color: var(--input-bg);
         box-shadow: var(--shadow-xs);
 
@@ -16,6 +16,7 @@
         /* modifiers */
         --input-bg: var(--color-neutral-50);
         --input-border: 1px solid var(--color-neutral-300);
+        --input-focus: 0px solid var(--color-blue-200);
         --input-text: var(--color-neutral-800);
         --input-label: var(--color-neutral-400);
         --input-size: --spacing(9);
@@ -36,6 +37,28 @@
             &:read-only:not(:disabled, [disabled]) {
                 background-color: var(--color-neutral-200);
             }
+
+            &:is([type="file"]) {
+                padding-inline-start: 0px;
+                &:not(:disabled, [disabled]) {
+                    background-color: var(--input-bg);
+                }
+            
+                &::file-selector-button {
+                    block-size: 100%;
+                    min-inline-size: var(--input-size);
+                    padding-inline: --spacing(4);
+                    margin-inline-end: --spacing(4);
+
+                    /* color */
+                    background-color: var(--color-neutral-100);
+                    border-inline-end: var(--input-border);
+                }
+
+                &::file-selector-button:hover {
+                    background-color: var(--color-neutral-200);
+                }
+            }
         }
 
         /* disabled */
@@ -44,14 +67,12 @@
             /* colors */
             background-color: var(--color-neutral-200);
             box-shadow: none;
-            color: color-mix(in oklab, var(--input-text) 60%, transparent);
         }
 
         /* focus */
-        &:focus-visible,
-        &:has(:focus-visible) {
+        &:not(.input-nofocus):focus-visible,
+        &:not(.input-nofocus):has(:focus-visible) {
             outline-width: 2px;
-            outline-style: solid;
             border-color: var(--color-blue-400);
             background-color: var(--color-white);
         }
@@ -69,16 +90,6 @@
             & ~ .invalid-msg, .invalid-label {
                 opacity: 1;
             }
-        }
-
-        & ~ .invalid-msg, .invalid-label {
-            opacity: 0;
-            margin-block: --spacing(1);
-
-            /* text */
-            color: var(--color-red-400);
-            font-size: var(--text-sm);
-            line-height: var(--text-sm--line-height);
         }
 
         /* input group */
@@ -164,6 +175,12 @@
     }
 
     /* sizes */
+    .input-xs {
+        --input-size: --spacing(7);
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+    }
+
     .input-sm {
         --input-size: --spacing(8);
         font-size: var(--text-sm);
@@ -180,15 +197,5 @@
         --input-size: --spacing(12);
         font-size: var(--text-xl);
         line-height: var(--text-xl--line-height);
-    }
-
-    label:has(~ .input) {
-        display: flex;
-        gap: --spacing(2);
-        margin-block: --spacing(2);
-
-        /* text */
-        font-weight: var(--font-weight-semibold);
-        color: var(--color-neutral-500);
     }
 }

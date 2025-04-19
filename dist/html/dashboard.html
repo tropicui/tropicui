@@ -424,13 +424,169 @@
                         <h4>Form</h4>
                     </div>
                     <div class="card-body">
-                        <input type="text" class="input" placeholder="First name">
+                        <form class="form">
+                            <div class="grid grid-cols-4 gap-8">
+                                <div>
+                                    <label>Checkbox:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk1" class="checkbox">
+                                        <label for="cbk1">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Original:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox">
+                                        <label>Text</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox disabled:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk2" class="checkbox" disabled>
+                                        <label for="cbk2">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox Solid:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk3" class="checkbox checkbox-solid">
+                                        <label for="cbk3">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox Clear:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk4" class="checkbox checkbox-clear">
+                                        <label for="cbk4">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox XS:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk5" class="checkbox checkbox-xs">
+                                        <label for="cbk5">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox SM:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk6" class="checkbox checkbox-sm">
+                                        <label for="cbk6">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox LG:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk7" class="checkbox checkbox-lg">
+                                        <label for="cbk7">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox XL:</label>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="cbk8" class="checkbox checkbox-xl">
+                                        <label for="cbk8">Enforce</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Checkbox error:</label>
+                                    <div class="form-field field-invalid">
+                                        <input type="checkbox" id="cbk9" class="checkbox">
+                                        <label for="cbk9">Enforce</label>
+                                    </div>
+                                    <div class="invalid-msg">Must not be empty!</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Form</h4>
                     </div>
                     <div class="card-body">
                         <form class="form">
                             <div class="grid grid-cols-2 gap-8">
-                                <div class="col-span-2">
+                                <div class="">
+                                    <label>Textarea:</label>
+                                    <textarea class="textarea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam esse dicta enim nisi, accusantium optio, sunt atque non sed et modi consectetur quasi tenetur totam perspiciatis aspernatur dignissimos ad iste!</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea:</label>
+                                    <textarea class="textarea" placeholder="Please enter your prompt here. (Pictures are not supported)"></textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea disabled:</label>
+                                    <textarea class="textarea" disabled>Textfield is disabled</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea disabled:</label>
+                                    <textarea class="textarea" placeholder="Please enter your prompt here. (Pictures are not supported)" disabled></textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea clear:</label>
+                                    <textarea class="textarea textarea-clear">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facere iure, deleniti tenetur labore dolorum perferendis consequatur quae placeat asperiores fugit nulla veritatis animi. Tempora unde rerum sit sequi suscipit.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea clear disabled:</label>
+                                    <textarea class="textarea textarea-clear" disabled>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facere iure, deleniti tenetur labore dolorum perferendis consequatur quae placeat asperiores fugit nulla veritatis animi. Tempora unde rerum sit sequi suscipit.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea solid:</label>
+                                    <textarea class="textarea textarea-solid">These texts are not meant to be edited.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea solid disabled:</label>
+                                    <textarea class="textarea textarea-solid" disabled>These texts are not meant to be edited.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea readonly:</label>
+                                    <textarea class="textarea" readonly>These texts are not meant to be edited.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea xs:</label>
+                                    <textarea class="textarea textarea-xs">Very small text cramp into a tight open wide space.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea sm:</label>
+                                    <textarea class="textarea textarea-sm">Small text cramp into a tight open wide space.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea lg:</label>
+                                    <textarea class="textarea textarea-lg">Large text cramp into a tight open wide space.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea xl:</label>
+                                    <textarea class="textarea textarea-xl">Extra large text fitting into a tight open wide space.</textarea>
+                                </div>
+                                <div class="">
+                                    <label>Textarea invalid class:</label>
+                                    <textarea class="textarea textarea-invalid"></textarea>
+                                    <div class="invalid-msg">Must not be empty!</div>
+                                </div>
+                                <div class="">
+                                    <label>Textarea invalid:</label>
+                                    <textarea class="textarea textarea-validate" required></textarea>
+                                    <div class="invalid-msg">Must not be empty!</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-2 gap-8">
+                                <div class="">
                                     <label>First name:</label>
+                                    <input type="text" class="input" value="Mohd Chan">
+                                </div>
+                                <div class="">
+                                    <label>Placeholder:</label>
                                     <input type="text" class="input" placeholder="First name">
                                 </div>
                                 <div class="">
@@ -458,6 +614,10 @@
                                     <input type="text" class="input input-clear" value="Mohd Chan" disabled>
                                 </div>
                                 <div class="">
+                                    <label>X Small:</label>
+                                    <input type="text" class="input input-xs" value="Mohd Chan">
+                                </div>
+                                <div class="">
                                     <label>Small:</label>
                                     <input type="text" class="input input-sm" value="Mohd Chan">
                                 </div>
@@ -475,6 +635,13 @@
                                 </div>
                                 <div class="">
                                     <label>Label:</label>
+                                    <div class="input">
+                                        <span>Label</span>
+                                        <input type="text" value="Mohd Chan">
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <label>Labels:</label>
                                     <div class="input">
                                         <span>Label 1 </span>
                                         <span>Label 2 </span>
@@ -588,6 +755,34 @@
                                 <div class="">
                                     <label>Week:</label>
                                     <input type="week" class="input">
+                                </div>
+                                <div class="">
+                                    <label>Password:</label>
+                                    <input type="password" class="input" value="secret123">
+                                </div>
+                                <div class="">
+                                    <label>Number:</label>
+                                    <input type="number" class="input" value="24">
+                                </div>
+                                <div class="">
+                                    <label>File:</label>
+                                    <input type="file" class="input">
+                                </div>
+                                <div class="">
+                                    <label>URL:</label>
+                                    <input type="url" class="input">
+                                </div>
+                                <div class="">
+                                    <label>Color:</label>
+                                    <input type="color" class="input">
+                                </div>
+                                <div class="col-span-2">
+                                    <label>Range:</label>
+                                    <input type="range" class="w-full" min="-10" max="10" step="0.5">
+                                </div>
+                                <div class="">
+                                    <label>Email:</label>
+                                    <input type="email" class="input" value="test@test.com">
                                 </div>
                                 <div class="">
                                     <label>Datalist:</label>
@@ -821,6 +1016,84 @@
                                         </div>
                                     </div>
                                     <div class="invalid-msg">Text is required!</div>
+                                </div>
+                                <div class="">
+                                    <label>No focus:</label>
+                                    <input type="text" class="input input-nofocus" placeholder="Your info goes here.." />
+                                </div>
+                                <div class="">
+                                    <label>No focus group:</label>
+                                    <div class="input input-nofocus">
+                                        <input type="text" class="" placeholder="Your info goes here.." />
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <label>Helper text:</label>
+                                    <div class="input">
+                                        <input type="text" class="" placeholder="Your info goes here.." />
+                                    </div>
+                                    <span class="help-text">Case insensitive.</span>
+                                    <span class="help-text">Maximum two characters.</span>
+                                </div>
+                                <div class="">
+                                    <label>Helper texts:</label>
+                                    <div class="input">
+                                        <input type="text" class="" placeholder="Your info goes here.." />
+                                    </div>
+                                    <div class="help-text">
+                                        <span>Case insensitive.</span>
+                                        <br>
+                                        <span>Maximum two characters</span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <fieldset>
+                                        <legend>Fieldset</legend>
+                                        <p class="help-text">Please complete this section.</p>
+                                        <p class="help-text">Please complete this section.</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                    </fieldset>
+                                </div>
+                                <div class="">
+                                    <fieldset class="fieldset-clear">
+                                        <legend>Fieldset clear</legend>
+                                        <p class="help-text">Please complete this section.</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                    </fieldset>
+                                </div>
+                                <div class="">
+                                    <fieldset class="fieldset-solid">
+                                        <legend>Fieldset solid</legend>
+                                        <p class="help-text">Please complete this section.</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                    </fieldset>
+                                </div>
+                                <div class="">
+                                    <fieldset disabled>
+                                        <legend>Fieldset Disabled</legend>
+                                        <p class="help-text">Please complete this section.</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                        <label>Your name</label>
+                                        <input type="text" class="input" placeholder="Your info goes here.." />
+                                        <p class="help-text">labels text</p>
+                                    </fieldset>
                                 </div>
                             </div>
                         </form>

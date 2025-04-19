@@ -1,0 +1,79 @@
+@layer components {
+    .form {
+        .form-field {
+            display: flex;
+            align-items: center;
+            gap: --spacing(2);
+
+            label {
+                margin-block: --spacing(0);
+                font-weight: var(--font-weight-normal);
+            }
+        }
+
+        fieldset {
+            /* dimension */
+            padding-block: --spacing(4);
+            padding-inline: --spacing(4);
+
+            /* color */
+            background-color: var(--color-neutral-100);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-neutral-300);
+            box-shadow: var(--shadow-xs);
+
+            legend {
+                padding-inline: --spacing(1);
+
+                color: var(--color-neutral-500);
+                font-weight: var(--font-weight-semibold);
+                font-size: var(--text-lg);
+                line-height: var(--text-lg--line-height);
+            }
+
+            &.fieldset-clear {
+                background-color: transparent;
+                border-width: 0px;
+
+                legend {
+                    padding-inline: --spacing(0);
+                }
+            }
+            &.fieldset-solid {
+                border-width: 0px;
+            }
+        }
+        fieldset legend,
+        label {
+            display: inline-flex;
+            align-items: center;
+            gap: --spacing(2);
+            margin-block-end: --spacing(2);
+
+            /* text */
+            color: var(--color-neutral-500);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .help-text {
+            margin-block-start: --spacing(1);
+            margin-block-end: --spacing(4);
+
+            /* text */
+            color: var(--color-neutral-400);
+            font-size: var(--text-sm);
+            line-height: var(--text-sm--line-height);
+        }
+
+        .invalid-msg,
+        .invalid-label {
+            opacity: 0;
+            margin-block: --spacing(1);
+
+            /* text */
+            color: var(--color-red-400);
+            font-size: var(--text-sm);
+            line-height: var(--text-sm--line-height);
+        }
+    }
+}
