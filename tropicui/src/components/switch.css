@@ -1,24 +1,28 @@
 @layer components {
-    .checkbox {
+    .switch {
         appearance: none;
         cursor: pointer;
+        position: relative;
         /* dimensions */
-        block-size: var(--checkbox-size);
-        min-inline-size: var(--checkbox-size);
+        block-size: var(--switch-height);
+        min-inline-size: var(--switch-width);
 
         /* colors */
-        border: var(--checkbox-border);
-        border-radius: var(--radius-sm);
-        outline: var(--checkbox-focus);
+        border: var(--switch-border);
+        border-radius: var(--switch-height);
+        outline: var(--switch-focus);
         outline-width: 0px;
-        background-color: var(--checkbox-bg);
+        background-color: var(--switch-bg);
         box-shadow: var(--shadow-xs);
 
         /* modifiers */
-        --checkbox-size: --spacing(4.5);
-        --checkbox-bg: var(--color-neutral-50);
-        --checkbox-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
-        --checkbox-focus: 2px solid var(--color-blue-200);
+        --switch-height: --spacing(4.5);
+        --switch-width: calc(var(--switch-height) * 1.8);
+        --switch-thumb-start: --spacing(0.3);
+        --switch-thumb-size: calc(var(--switch-height) - --spacing(1));
+        --switch-bg: var(--color-neutral-200);
+        --switch-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
+        --switch-focus: 2px solid var(--color-blue-200);
 
         /* animation */
         transition-property: background-color;
@@ -27,16 +31,18 @@
 
         &::before {
             content: "";
-            opacity: 0;
-            display: block;
-            block-size: 100%;
-            inline-size: 100%;
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: var(--switch-thumb-start);
+            transform: translateY(-50%);
+            block-size: var(--switch-thumb-size);
+            inline-size: var(--switch-thumb-size);
+            border-radius: calc(infinity * 1px);
             background-color: var(--color-white);
-            /* background-color: red; */
-            clip-path: polygon(90% 26%, 41% 90%, 10% 54%, 21% 42%, 40% 65%, 79% 15%);
+            box-shadow: var(--shadow-sm);
 
             /* animation */
-            transition-property: opacity;
+            transition-property: transform;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
@@ -45,7 +51,7 @@
             background-color: var(--color-blue-400);
 
             &::before {
-                opacity: 1;
+                transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - --spacing(1)), -50%);
             }
         }
 
@@ -53,9 +59,14 @@
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
             /* colors */
+            border-color: var(--color-neutral-300);
             background-color: var(--color-neutral-200);
             box-shadow: none;
-            color: color-mix(in oklab, var(--input-text) 60%, transparent);
+
+            &::before {
+                background-color: var(--color-neutral-300);
+                box-shadow: none;
+            }
         }
 
         /* focus */
@@ -72,46 +83,54 @@
         }
     }
 
-    .checkbox-inline {
+    .switch-inline {
         display: flex;
         flex-direction: row;
         gap: --spacing(4);
     }
 
-    .checkbox-list {
+    .switch-list {
         display: flex;
         flex-direction: column;
         gap: --spacing(2);
     }
 
     /* variations */
-    .checkbox-clear {
+    .switch-clear {
         /* colors */
         border: none;
         box-shadow: none;
         background-color: transparent;
 
+        &::before {
+            --switch-thumb-start: --spacing(0.5);
+        }
+
         &:checked {
-            border: 1px solid var(--color-blue-400);
+            background-color: var(--color-blue-400);
         }
     }
 
-    .checkbox-solid {
+    .switch-solid {
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: var(--color-neutral-100);
+        background-color: var(--color-neutral-200);
+
+        &::before {
+            --switch-thumb-start: --spacing(0.5);
+        }
 
         &:checked {
-            border: 1px solid var(--color-blue-400);
+            background-color: var(--color-blue-400);
         }
     }
 
-    .checkbox-invalid {
+    .switch-invalid {
         &:not(:checked) {
             /* colors */
             border: 1px solid var(--color-red-400);
-            background-color: var(--color-red-50);
+            background-color: var(--color-red-100);
         }
 
         .form-field:has(&:checked) .invalid {
@@ -120,19 +139,19 @@
     }
 
     /* sizes */
-    .checkbox-xs {
-        --checkbox-size: --spacing(3.5);
+    .switch-xs {
+        --switch-height: --spacing(3);
     }
 
-    .checkbox-sm {
-        --checkbox-size: --spacing(4);
+    .switch-sm {
+        --switch-height: --spacing(3.5);
     }
 
-    .checkbox-lg {
-        --checkbox-size: --spacing(6);
+    .switch-lg {
+        --switch-height: --spacing(6);
     }
 
-    .checkbox-xl {
-        --checkbox-size: --spacing(7);
+    .switch-xl {
+        --switch-height: --spacing(7);
     }
 }

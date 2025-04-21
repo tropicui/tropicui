@@ -74,6 +74,7 @@
     svg, img, i {
         .btn & {
             block-size: 1.25em;
+            min-inline-size: 1.25em;
         }
     }
 }

@@ -64,6 +64,7 @@
         /* disabled */
         &:is(:disabled, [disabled]),
         &:has(:disabled, [disabled]) {
+            cursor: not-allowed;
             /* colors */
             background-color: var(--color-neutral-200);
             box-shadow: none;
@@ -86,10 +87,6 @@
             outline-width: 2px;
             outline-style: solid;
             outline-color: var(--color-red-200);
-
-            & ~ .invalid-msg, .invalid-label {
-                opacity: 1;
-            }
         }
 
         /* input group */

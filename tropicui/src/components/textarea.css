@@ -33,6 +33,7 @@
 
         /* disabled */
         &:is(:disabled, [disabled]) {
+            cursor: not-allowed;
             /* colors */
             background-color: var(--color-neutral-200);
             box-shadow: none;

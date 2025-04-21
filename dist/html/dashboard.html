@@ -421,81 +421,369 @@
                 <div class="mb-4"></div>
                 <div class="card card-border card-gutter">
                     <div class="card-header">
-                        <h4>Form</h4>
+                        <h4>Switch</h4>
                     </div>
                     <div class="card-body">
                         <form class="form">
                             <div class="grid grid-cols-4 gap-8">
                                 <div>
-                                    <label>Checkbox:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk1" class="checkbox">
-                                        <label for="cbk1">Enforce</label>
+                                        <label class="label">
+                                            <span>Switch:</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                            </svg>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="switch">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Original:</label>
                                     <div class="form-field">
-                                        <input type="checkbox">
-                                        <label>Text</label>
+                                        <label class="label">
+                                            <span>Switch checked:</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                            </svg>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="switch" checked>
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox disabled:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk2" class="checkbox" disabled>
-                                        <label for="cbk2">Enforce</label>
+                                        <label class="label">Switch disabled:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch" disabled>
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox Solid:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk3" class="checkbox checkbox-solid">
-                                        <label for="cbk3">Enforce</label>
+                                        <label class="label">Switch Solid:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-solid">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox Clear:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk4" class="checkbox checkbox-clear">
-                                        <label for="cbk4">Enforce</label>
+                                        <label class="label">Switch Clear:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-clear">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox XS:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk5" class="checkbox checkbox-xs">
-                                        <label for="cbk5">Enforce</label>
+                                        <label class="label">Switch XS:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-xs">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox SM:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk6" class="checkbox checkbox-sm">
-                                        <label for="cbk6">Enforce</label>
+                                        <label class="label">Switch SM:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-sm">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox LG:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk7" class="checkbox checkbox-lg">
-                                        <label for="cbk7">Enforce</label>
+                                        <label class="label">Switch LG:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-lg">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox XL:</label>
                                     <div class="form-field">
-                                        <input type="checkbox" id="cbk8" class="checkbox checkbox-xl">
-                                        <label for="cbk8">Enforce</label>
+                                        <label class="label">Switch XL:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-xl">
+                                            <span>Enforce</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Checkbox error:</label>
-                                    <div class="form-field field-invalid">
-                                        <input type="checkbox" id="cbk9" class="checkbox">
-                                        <label for="cbk9">Enforce</label>
+                                    <div class="form-field">
+                                        <label class="label">Switch helper text:</label>
+                                        <label>
+                                            <input type="checkbox" class="switch">
+                                            <span>Enforce</span>
+                                        </label>
+                                        <span class="text-sm text-muted">Please check it.</span>
                                     </div>
-                                    <div class="invalid-msg">Must not be empty!</div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Switch error:</label>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                        <label>
+                                            <input type="checkbox" class="switch switch-invalid">
+                                            <span>Enforce</span>
+                                        </label>
+                                        <div class="text-sm text-danger invalid">Must not be empty!</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Switch list:</label>
+                                        <div class="switch-list">
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                        </div>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                    </div>
+                                </div>
+                                <div class="col-span-2">
+                                    <div class="form-field">
+                                        <label class="label">Switch inline:</label>
+                                        <div class="switch-inline">
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="switch">
+                                                <span>Enforce</span>
+                                            </label>
+                                        </div>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="label">Switch more:</label>
+                                    <p>Say whatever</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Checkbox</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-4 gap-8">
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">
+                                            <span>Checkbox:</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                            </svg>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                            </svg>
+                                            <span>Original:</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Text</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">
+                                            <span>Checkbox checked:</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                            </svg>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox" checked>
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                            </svg>
+                                            <span>Original checked:</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked>
+                                            <span>Text</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox disabled:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox" disabled>
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox Solid:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-solid">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox Clear:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-clear">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox XS:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-xs">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox SM:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-sm">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox LG:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-lg">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox XL:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-xl">
+                                            <span>Enforce</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox helper text:</label>
+                                        <label>
+                                            <input type="checkbox" class="checkbox">
+                                            <span>Enforce</span>
+                                        </label>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox error:</label>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                        <label>
+                                            <input type="checkbox" class="checkbox checkbox-invalid">
+                                            <span>Enforce</span>
+                                        </label>
+                                        <div class="text-sm text-danger invalid">Must not be empty!1</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-field">
+                                        <label class="label">Checkbox list:</label>
+                                        <div class="checkbox-list">
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                        </div>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                    </div>
+                                </div>
+                                <div class="col-span-2">
+                                    <div class="form-field">
+                                        <label class="label">Checkbox inline:</label>
+                                        <div class="checkbox-inline">
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="checkbox">
+                                                <span>Enforce</span>
+                                            </label>
+                                        </div>
+                                        <span class="text-sm text-muted">Please check it.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="label">Checkbox more:</label>
+                                    <p>Say whatever</p>
                                 </div>
                             </div>
                         </form>
@@ -508,67 +796,72 @@
                     <div class="card-body">
                         <form class="form">
                             <div class="grid grid-cols-2 gap-8">
-                                <div class="">
-                                    <label>Textarea:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea:</label>
                                     <textarea class="textarea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam esse dicta enim nisi, accusantium optio, sunt atque non sed et modi consectetur quasi tenetur totam perspiciatis aspernatur dignissimos ad iste!</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea:</label>
                                     <textarea class="textarea" placeholder="Please enter your prompt here. (Pictures are not supported)"></textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea disabled:</label>
                                     <textarea class="textarea" disabled>Textfield is disabled</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea disabled:</label>
                                     <textarea class="textarea" placeholder="Please enter your prompt here. (Pictures are not supported)" disabled></textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea clear:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea clear:</label>
                                     <textarea class="textarea textarea-clear">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facere iure, deleniti tenetur labore dolorum perferendis consequatur quae placeat asperiores fugit nulla veritatis animi. Tempora unde rerum sit sequi suscipit.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea clear disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea clear disabled:</label>
                                     <textarea class="textarea textarea-clear" disabled>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facere iure, deleniti tenetur labore dolorum perferendis consequatur quae placeat asperiores fugit nulla veritatis animi. Tempora unde rerum sit sequi suscipit.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea solid:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea solid:</label>
                                     <textarea class="textarea textarea-solid">These texts are not meant to be edited.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea solid disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea solid disabled:</label>
                                     <textarea class="textarea textarea-solid" disabled>These texts are not meant to be edited.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea readonly:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea readonly:</label>
                                     <textarea class="textarea" readonly>These texts are not meant to be edited.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea xs:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea xs:</label>
                                     <textarea class="textarea textarea-xs">Very small text cramp into a tight open wide space.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea sm:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea sm:</label>
                                     <textarea class="textarea textarea-sm">Small text cramp into a tight open wide space.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea lg:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea lg:</label>
                                     <textarea class="textarea textarea-lg">Large text cramp into a tight open wide space.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea xl:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea xl:</label>
                                     <textarea class="textarea textarea-xl">Extra large text fitting into a tight open wide space.</textarea>
                                 </div>
-                                <div class="">
-                                    <label>Textarea invalid class:</label>
-                                    <textarea class="textarea textarea-invalid"></textarea>
-                                    <div class="invalid-msg">Must not be empty!</div>
+                                <div class="form-field">
+                                    <label class="label">Textarea helper:</label>
+                                    <textarea class="textarea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam esse dicta enim nisi, accusantium optio, sunt atque non sed et modi consectetur quasi tenetur totam perspiciatis aspernatur dignissimos ad iste!</textarea>
+                                    <span class="text-sm text-muted">Describe your prompt in detail.</span>
                                 </div>
-                                <div class="">
-                                    <label>Textarea invalid:</label>
+                                <div class="form-field">
+                                    <label class="label">Textarea invalid class:</label>
+                                    <textarea class="textarea textarea-invalid"></textarea>
+                                    <div class="text-sm text-danger invalid">Must not be empty!</div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label">Textarea invalid:</label>
                                     <textarea class="textarea textarea-validate" required></textarea>
-                                    <div class="invalid-msg">Must not be empty!</div>
+                                    <div class="text-sm text-danger invalid">Must not be empty!</div>
                                 </div>
                             </div>
                         </form>
@@ -581,75 +874,75 @@
                     <div class="card-body">
                         <form class="form">
                             <div class="grid grid-cols-2 gap-8">
-                                <div class="">
-                                    <label>First name:</label>
+                                <div class="form-field">
+                                    <label class="label">First name:</label>
                                     <input type="text" class="input" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>Placeholder:</label>
+                                <div class="form-field">
+                                    <label class="label">Placeholder:</label>
                                     <input type="text" class="input" placeholder="First name">
                                 </div>
-                                <div class="">
-                                    <label>Disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Disabled:</label>
                                     <input type="text" class="input" value="Mohd Chan" disabled>
                                 </div>
-                                <div class="">
-                                    <label>Disabled (placeholder):</label>
+                                <div class="form-field">
+                                    <label class="label">Disabled (placeholder):</label>
                                     <input type="text" class="input" placeholder="First name" disabled>
                                 </div>
-                                <div class="">
-                                    <label>Solid:</label>
+                                <div class="form-field">
+                                    <label class="label">Solid:</label>
                                     <input type="text" class="input input-solid" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>Solid disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Solid disabled:</label>
                                     <input type="text" class="input input-solid" value="Mohd Chan" disabled>
                                 </div>
-                                <div class="">
-                                    <label>Clear:</label>
+                                <div class="form-field">
+                                    <label class="label">Clear:</label>
                                     <input type="text" class="input input-clear" value="Mohd Cha">
                                 </div>
-                                <div class="">
-                                    <label>Clear disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Clear disabled:</label>
                                     <input type="text" class="input input-clear" value="Mohd Chan" disabled>
                                 </div>
-                                <div class="">
-                                    <label>X Small:</label>
+                                <div class="form-field">
+                                    <label class="label">X Small:</label>
                                     <input type="text" class="input input-xs" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>Small:</label>
+                                <div class="form-field">
+                                    <label class="label">Small:</label>
                                     <input type="text" class="input input-sm" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>Large:</label>
+                                <div class="form-field">
+                                    <label class="label">Large:</label>
                                     <input type="text" class="input input-lg" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>XL:</label>
+                                <div class="form-field">
+                                    <label class="label">XL:</label>
                                     <input type="text" class="input input-xl" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>Readonly:</label>
+                                <div class="form-field">
+                                    <label class="label">Readonly:</label>
                                     <input type="text" readonly class="input" value="Mohd Chan">
                                 </div>
-                                <div class="">
-                                    <label>Label:</label>
+                                <div class="form-field">
+                                    <label class="label">Label:</label>
                                     <div class="input">
                                         <span>Label</span>
                                         <input type="text" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Labels:</label>
+                                <div class="form-field">
+                                    <label class="label">Labels:</label>
                                     <div class="input">
                                         <span>Label 1 </span>
                                         <span>Label 2 </span>
                                         <input type="text" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Icon:</label>
+                                <div class="form-field">
+                                    <label class="label">Icon:</label>
                                     <div class="input">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
@@ -657,16 +950,16 @@
                                         <input type="text" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Label SM:</label>
+                                <div class="form-field">
+                                    <label class="label">Label SM:</label>
                                     <div class="input input-sm">
                                         <span>Label</span>
                                         <input type="text" value="Mohd Chan">
                                         <span>Label</span>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Icon SM:</label>
+                                <div class="form-field">
+                                    <label class="label">Icon SM:</label>
                                     <div class="input input-sm">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
@@ -677,16 +970,16 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Label XL:</label>
+                                <div class="form-field">
+                                    <label class="label">Label XL:</label>
                                     <div class="input input-xl">
                                         <span>Label</span>
                                         <input type="text" value="Mohd Chan">
                                         <span>Label</span>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Icon XL:</label>
+                                <div class="form-field">
+                                    <label class="label">Icon XL:</label>
                                     <div class="input input-xl">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
@@ -697,15 +990,15 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Label placeholder:</label>
+                                <div class="form-field">
+                                    <label class="label">Label placeholder:</label>
                                     <div class="input">
                                         <span>Label</span>
                                         <input type="text" placeholder="Input placeholder">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Icon placeholder:</label>
+                                <div class="form-field">
+                                    <label class="label">Icon placeholder:</label>
                                     <div class="input">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
@@ -716,16 +1009,16 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Label Disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Label Disabled:</label>
                                     <div class="input">
                                         <span>Label</span>
                                         <input type="text" value="Expired domain" disabled>
                                         <span>Label</span>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Icon Disabled:</label>
+                                <div class="form-field">
+                                    <label class="label">Icon Disabled:</label>
                                     <div class="input">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
@@ -736,56 +1029,56 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Date:</label>
+                                <div class="form-field">
+                                    <label class="label">Date:</label>
                                     <input type="date" class="input">
                                 </div>
-                                <div class="">
-                                    <label>Time:</label>
+                                <div class="form-field">
+                                    <label class="label">Time:</label>
                                     <input type="time" class="input">
                                 </div>
-                                <div class="">
-                                    <label>Date-Time local:</label>
+                                <div class="form-field">
+                                    <label class="label">Date-Time local:</label>
                                     <input type="datetime-local" class="input">
                                 </div>
-                                <div class="">
-                                    <label>Month:</label>
+                                <div class="form-field">
+                                    <label class="label">Month:</label>
                                     <input type="month" class="input">
                                 </div>
-                                <div class="">
-                                    <label>Week:</label>
+                                <div class="form-field">
+                                    <label class="label">Week:</label>
                                     <input type="week" class="input">
                                 </div>
-                                <div class="">
-                                    <label>Password:</label>
+                                <div class="form-field">
+                                    <label class="label">Password:</label>
                                     <input type="password" class="input" value="secret123">
                                 </div>
-                                <div class="">
-                                    <label>Number:</label>
+                                <div class="form-field">
+                                    <label class="label">Number:</label>
                                     <input type="number" class="input" value="24">
                                 </div>
-                                <div class="">
-                                    <label>File:</label>
+                                <div class="form-field">
+                                    <label class="label">File:</label>
                                     <input type="file" class="input">
                                 </div>
-                                <div class="">
-                                    <label>URL:</label>
+                                <div class="form-field">
+                                    <label class="label">URL:</label>
                                     <input type="url" class="input">
                                 </div>
-                                <div class="">
-                                    <label>Color:</label>
+                                <div class="form-field">
+                                    <label class="label">Color:</label>
                                     <input type="color" class="input">
                                 </div>
                                 <div class="col-span-2">
-                                    <label>Range:</label>
+                                    <label class="label">Range:</label>
                                     <input type="range" class="w-full" min="-10" max="10" step="0.5">
                                 </div>
-                                <div class="">
-                                    <label>Email:</label>
+                                <div class="form-field">
+                                    <label class="label">Email:</label>
                                     <input type="email" class="input" value="test@test.com">
                                 </div>
-                                <div class="">
-                                    <label>Datalist:</label>
+                                <div class="form-field">
+                                    <label class="label">Datalist:</label>
                                     <input type="text" list="levels" class="input">
                                     <datalist id="levels">
                                         <option value="Child's Play"></option>
@@ -795,8 +1088,8 @@
                                         <option value="Mayday"></option>
                                     </datalist>
                                 </div>
-                                <div class="">
-                                    <label>Prefix:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix:</label>
                                     <div class="input">
                                         <div class="input-prefix">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -806,8 +1099,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix:</label>
                                     <div class="input">
                                         <input type="text" class="" value="Mohd Chan">
                                         <div class="input-suffix">
@@ -818,8 +1111,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix sm:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix sm:</label>
                                     <div class="input input-sm">
                                         <div class="input-prefix">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -829,8 +1122,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix sm:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix sm:</label>
                                     <div class="input input-sm">
                                         <input type="text" class="" value="Mohd Chan">
                                         <div class="input-suffix">
@@ -841,8 +1134,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix XL:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix XL:</label>
                                     <div class="input input-xl">
                                         <div class="input-prefix">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -852,8 +1145,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix XL:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix XL:</label>
                                     <div class="input input-xl">
                                         <input type="text" class="" value="Mohd Chan">
                                         <div class="input-suffix">
@@ -864,8 +1157,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix Button:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix Button:</label>
                                     <div class="input">
                                         <button class="btn" type="button">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -875,8 +1168,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix Button:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix Button:</label>
                                     <div class="input">
                                         <input type="text" class="" value="Mohd Chan">
                                         <button class="btn" type="button">
@@ -886,8 +1179,8 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix Button sm:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix Button sm:</label>
                                     <div class="input input-sm">
                                         <button class="btn" type="button">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -897,8 +1190,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix Button sm:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix Button sm:</label>
                                     <div class="input input-sm">
                                         <input type="text" class="" value="Mohd Chan">
                                         <button class="btn" type="button">
@@ -908,8 +1201,8 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix Button XL:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix Button XL:</label>
                                     <div class="input input-xl">
                                         <button class="btn" type="button">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -919,8 +1212,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix Button XL:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix Button XL:</label>
                                     <div class="input input-xl">
                                         <input type="text" class="" value="Mohd Chan">
                                         <button class="btn" type="button">
@@ -930,8 +1223,8 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix + Suffix:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix + Suffix:</label>
                                     <div class="input">
                                         <div class="input-prefix">
                                             @
@@ -946,8 +1239,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix + Label + Suffix Button:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix + Label + Suffix Button:</label>
                                     <div class="input">
                                         <button class="btn" type="button">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -959,8 +1252,8 @@
                                         <button class="btn" type="button">Submit</button>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Prefix checkbox:</label>
+                                <div class="form-field">
+                                    <label class="label">Prefix checkbox:</label>
                                     <div class="input">
                                         <div class="input-prefix">
                                             <input type="checkbox">
@@ -973,8 +1266,8 @@
                                         <input type="text" class="" value="Mohd Chan">
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Suffix radio:</label>
+                                <div class="form-field">
+                                    <label class="label">Suffix radio:</label>
                                     <div class="input">
                                         <input type="text" class="" value="Mohd Chan">
                                         <div class="input-suffix">
@@ -982,117 +1275,137 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Validation:</label>
+                                <div class="form-field">
+                                    <label class="label">Validation:</label>
                                     <input type="text" class="input input-validate" required>
-                                    <div class="invalid-msg">Text is required!</div>
+                                    <div class="text-sm text-danger invalid">Text is required!</div>
                                 </div>
-                                <div class="">
-                                    <label>Validation class:</label>
+                                <div class="form-field">
+                                    <label class="label">Validation class:</label>
                                     <input type="text" class="input input-invalid">
-                                    <div class="invalid-msg">Text is required!</div>
+                                    <div class="text-sm text-danger invalid">Text is required!</div>
                                 </div>
-                                <div class="">
-                                    <label>Validation:</label>
+                                <div class="form-field">
+                                    <label class="label">Validation invalid icon:</label>
                                     <div class="input input-validate">
                                         <input type="text" required>
-                                        <div class="invalid-label">
+                                        <div class="invalid text-danger">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="invalid-msg">Text is required!</div>
-                                    <div class="invalid-msg">Email is required!</div>
+                                    <div class="text-sm text-danger invalid">Text is required!</div>
+                                    <div class="text-sm text-danger invalid">Email is required!</div>
                                 </div>
-                                <div class="">
-                                    <label>Validation class:</label>
-                                    <div class="input">
-                                        <input type="text" class="input-invalid">
-                                        <div class="invalid-label">
+                                <div class="form-field">
+                                    <label class="label">Validation class:</label>
+                                    <div class="input input-invalid">
+                                        <input type="text" class="">
+                                        <div class="invalid text-danger">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="invalid-msg">Text is required!</div>
+                                    <div class="text-sm text-danger invalid">Text is required!</div>
                                 </div>
-                                <div class="">
-                                    <label>No focus:</label>
+                                <div class="form-field">
+                                    <label class="label">No focus:</label>
                                     <input type="text" class="input input-nofocus" placeholder="Your info goes here.." />
                                 </div>
-                                <div class="">
-                                    <label>No focus group:</label>
+                                <div class="form-field">
+                                    <label class="label">No focus group:</label>
                                     <div class="input input-nofocus">
                                         <input type="text" class="" placeholder="Your info goes here.." />
                                     </div>
                                 </div>
-                                <div class="">
-                                    <label>Helper text:</label>
+                                <div class="form-field">
+                                    <label class="label">Helper text:</label>
                                     <div class="input">
                                         <input type="text" class="" placeholder="Your info goes here.." />
                                     </div>
-                                    <span class="help-text">Case insensitive.</span>
-                                    <span class="help-text">Maximum two characters.</span>
+                                    <span class="text-sm text-muted">Case insensitive.</span>
+                                    <span class="text-sm text-muted">Maximum two characters.</span>
                                 </div>
-                                <div class="">
-                                    <label>Helper texts:</label>
+                                <div class="form-field">
+                                    <label class="label">Helper texts:</label>
                                     <div class="input">
                                         <input type="text" class="" placeholder="Your info goes here.." />
                                     </div>
-                                    <div class="help-text">
+                                    <div class="text-sm text-muted">
                                         <span>Case insensitive.</span>
-                                        <br>
                                         <span>Maximum two characters</span>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <fieldset>
+                                <div>
+                                    <fieldset class="fieldset">
                                         <legend>Fieldset</legend>
-                                        <p class="help-text">Please complete this section.</p>
-                                        <p class="help-text">Please complete this section.</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
+                                        <p class="text-sm text-muted">Please complete this section.</p>
+                                        <p class="text-sm text-muted">Please complete this section.</p>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
                                     </fieldset>
                                 </div>
-                                <div class="">
-                                    <fieldset class="fieldset-clear">
+                                <div class="form-field">
+                                    <fieldset class="fieldset fieldset-clear">
                                         <legend>Fieldset clear</legend>
-                                        <p class="help-text">Please complete this section.</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
+                                        <p class="text-sm text-muted">Please complete this section.</p>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
                                     </fieldset>
                                 </div>
-                                <div class="">
-                                    <fieldset class="fieldset-solid">
+                                <div class="form-field">
+                                    <fieldset class="fieldset fieldset-solid">
                                         <legend>Fieldset solid</legend>
-                                        <p class="help-text">Please complete this section.</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
+                                        <p class="text-sm text-muted">Please complete this section.</p>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
                                     </fieldset>
                                 </div>
-                                <div class="">
-                                    <fieldset disabled>
-                                        <legend>Fieldset Disabled</legend>
-                                        <p class="help-text">Please complete this section.</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
-                                        <label>Your name</label>
-                                        <input type="text" class="input" placeholder="Your info goes here.." />
-                                        <p class="help-text">labels text</p>
+                                <div class="form-field">
+                                    <fieldset class="fieldset" disabled>
+                                        <legend class="label">
+                                            <span>Disabled</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                            </svg>
+                                        </legend>
+                                        <p class="text-sm text-muted">Please complete this section.</p>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="label">Your name</label>
+                                            <input type="text" class="input" placeholder="Your info goes here.." />
+                                            <p class="text-sm text-muted">labels text</p>
+                                        </div>
                                     </fieldset>
                                 </div>
                             </div>
