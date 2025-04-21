@@ -1546,19 +1546,25 @@ i.hi-lg {
     cursor: pointer;
     block-size: var(--checkbox-size);
     min-inline-size: var(--checkbox-size);
-    border: var(--checkbox-border);
+    border: 1px solid var(--checkbox-border);
     border-radius: var(--radius-sm);
     outline: var(--checkbox-focus);
-    outline-width: 0px;
+    outline-offset: 0px;
     background-color: var(--checkbox-bg);
     box-shadow: var(--shadow-xs);
     --checkbox-size: calc(var(--spacing) * 4.5);
     --checkbox-bg: var(--color-neutral-50);
-    --checkbox-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
-    --checkbox-focus: 2px solid var(--color-blue-200);
+    --checkbox-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+    --checkbox-focus: 0px solid var(--color-blue-200);
     transition-property: background-color;
     transition-duration: var(--tt-duration, var(--default-transition-duration));
     transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    &:hover {
+      --checkbox-bg: var(--color-neutral-100);
+    }
+    &:active {
+      --checkbox-bg: var(--color-neutral-200);
+    }
     &::before {
       content: "";
       opacity: 0;
@@ -1571,7 +1577,12 @@ i.hi-lg {
       transition-duration: var(--tt-duration, var(--default-transition-duration));
       transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     }
-    &:checked {
+    &:indeterminate {
+      &::before {
+        clip-path: polygon(10% 40%, 90% 40%, 90% 60%, 10% 60%);
+      }
+    }
+    &:checked, &:indeterminate {
       background-color: var(--color-blue-400);
       &::before {
         opacity: 1;
@@ -1581,13 +1592,22 @@ i.hi-lg {
       cursor: not-allowed;
       background-color: var(--color-neutral-200);
       box-shadow: none;
-      color: color-mix(in oklab, var(--input-text) 60%, transparent);
+      &:checked {
+        background-color: var(--color-neutral-300);
+        &::before {
+          background-color: var(--color-neutral-100);
+        }
+      }
+      label:has(&) {
+        color: var(--color-neutral-400);
+      }
     }
     &:focus-visible {
       outline-width: 2px;
       border-color: var(--color-blue-400);
     }
     label:has(&) {
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: calc(var(--spacing) * 2);
@@ -1603,20 +1623,48 @@ i.hi-lg {
     flex-direction: column;
     gap: calc(var(--spacing) * 2);
   }
-  .checkbox-clear {
-    border: none;
+  .checkbox-outline, .checkbox-outline-bold {
+    border-color: color-mix(in oklab, var(--color-black) 25%, transparent);
     box-shadow: none;
     background-color: transparent;
-    &:checked {
-      border: 1px solid var(--color-blue-400);
+    &:hover {
+      border-color: color-mix(in oklab, var(--color-black) 35%, transparent);
+    }
+    &:active {
+      border-color: color-mix(in oklab, var(--color-black) 45%, transparent);
+    }
+    &:is(:disabled, [disabled]) {
+      border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+      background-color: transparent;
+      &:checked, &:indeterminate {
+        border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+        background-color: transparent;
+        &::before {
+          background-color: var(--color-neutral-300);
+        }
+      }
+    }
+    &:checked, &:indeterminate {
+      border-color: var(--color-blue-400);
+      background-color: transparent;
+      &::before {
+        background-color: var(--color-blue-400);
+      }
     }
   }
+  .checkbox-outline-bold {
+    border-width: 2px;
+  }
   .checkbox-solid {
+    padding: calc(var(--spacing) * 0.25);
     border: none;
     box-shadow: none;
-    background-color: var(--color-neutral-100);
-    &:checked {
-      border: 1px solid var(--color-blue-400);
+    --checkbox-bg: var(--color-neutral-100);
+    &:hover {
+      --checkbox-bg: var(--color-neutral-200);
+    }
+    &:active {
+      --checkbox-bg: var(--color-neutral-300);
     }
   }
   .checkbox-invalid {
@@ -2288,6 +2336,120 @@ i.hi-lg {
   }
 }
 @layer components {
+  .radio {
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    block-size: var(--radio-size);
+    min-inline-size: var(--radio-size);
+    border: var(--radio-border);
+    border-radius: 50%;
+    outline: var(--radio-focus);
+    outline-width: 0px;
+    background-color: var(--radio-bg);
+    box-shadow: var(--shadow-xs);
+    --radio-size: calc(var(--spacing) * 4.5);
+    --radio-bg: var(--color-neutral-50);
+    --radio-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
+    --radio-focus: 2px solid var(--color-blue-200);
+    transition-property: border-color;
+    transition-duration: var(--tt-duration, var(--default-transition-duration));
+    transition-duration: 1s;
+    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    &::before {
+      content: "";
+      opacity: 0;
+      display: block;
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -50%);
+      block-size: calc(var(--radio-size) * 0.6);
+      inline-size: calc(var(--radio-size) * 0.6);
+      border-radius: 50%;
+      background-color: var(--color-blue-400);
+      transition-property: opacity;
+      transition-duration: var(--tt-duration, var(--default-transition-duration));
+      transition-duration: 1s;
+      transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    }
+    &:checked {
+      border-color: var(--color-blue-400);
+      &::before {
+        opacity: 1;
+      }
+    }
+    &:is(:disabled, [disabled]) {
+      cursor: not-allowed;
+      border-color: color-mix(in oklab, var(--color-black) 5%, transparent);
+      background-color: var(--color-neutral-200);
+      box-shadow: none;
+      &:checked {
+        border-color: color-mix(in oklab, var(--color-black) 15%, transparent);
+        &::before {
+          background-color: var(--color-neutral-400);
+        }
+      }
+      label:has(&) {
+        color: var(--color-neutral-400);
+      }
+    }
+    &:focus-visible {
+      outline-width: 2px;
+      border-color: var(--color-blue-400);
+    }
+    label:has(&) {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(var(--spacing) * 2);
+    }
+  }
+  .radio-inline {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--spacing) * 4);
+  }
+  .radio-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+  }
+  .radio-clear {
+    border-color: transparent;
+    box-shadow: none;
+    background-color: transparent;
+    &:checked {
+      border: 1px solid var(--color-blue-400);
+    }
+  }
+  .radio-solid {
+    border: none;
+    box-shadow: none;
+    background-color: var(--color-neutral-200);
+  }
+  .radio-invalid {
+    &:not(:checked) {
+      border: 1px solid var(--color-red-400);
+      background-color: var(--color-red-50);
+      .form-field:has(&) .invalid-msg {
+        opacity: 1;
+      }
+    }
+  }
+  .radio-xs {
+    --radio-size: calc(var(--spacing) * 3.5);
+  }
+  .radio-sm {
+    --radio-size: calc(var(--spacing) * 4);
+  }
+  .radio-lg {
+    --radio-size: calc(var(--spacing) * 6);
+  }
+  .radio-xl {
+    --radio-size: calc(var(--spacing) * 7);
+  }
+}
+@layer components {
   .switch {
     appearance: none;
     cursor: pointer;
@@ -2336,6 +2498,15 @@ i.hi-lg {
       border-color: var(--color-neutral-300);
       background-color: var(--color-neutral-200);
       box-shadow: none;
+      &:checked {
+        background-color: var(--color-neutral-300);
+        &::before {
+          background-color: var(--color-neutral-100);
+        }
+      }
+      label:has(&) {
+        color: var(--color-neutral-400);
+      }
       &::before {
         background-color: var(--color-neutral-300);
         box-shadow: none;

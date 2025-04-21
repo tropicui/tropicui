@@ -1,0 +1,153 @@
+@layer components {
+    .radio {
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+        /* dimensions */
+        block-size: var(--radio-size);
+        min-inline-size: var(--radio-size);
+
+        /* colors */
+        border: var(--radio-border);
+        border-radius: 50%;
+        outline: var(--radio-focus);
+        outline-width: 0px;
+        background-color: var(--radio-bg);
+        box-shadow: var(--shadow-xs);
+
+        /* modifiers */
+        --radio-size: --spacing(4.5);
+        --radio-bg: var(--color-neutral-50);
+        --radio-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
+        --radio-focus: 2px solid var(--color-blue-200);
+
+        /* animation */
+        transition-property: border-color;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-duration: 1s;
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        &::before {
+            content: "";
+            opacity: 0;
+            display: block;
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+            block-size: calc(var(--radio-size) * 0.6);
+            inline-size: calc(var(--radio-size) * 0.6);
+            border-radius: 50%;
+            background-color: var(--color-blue-400);
+
+            /* animation */
+            transition-property: opacity;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-duration: 1s;
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+        }
+
+        &:checked {
+            border-color: var(--color-blue-400);
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        /* disabled */
+        &:is(:disabled, [disabled]) {
+            cursor: not-allowed;
+            /* colors */
+            border-color: color-mix(in oklab, var(--color-black) 5%, transparent);
+            background-color: var(--color-neutral-200);
+            box-shadow: none;
+
+            &:checked {
+                border-color: color-mix(in oklab, var(--color-black) 15%, transparent);
+    
+                &::before {
+                    background-color: var(--color-neutral-400);
+                }
+            }
+
+            label:has(&) {
+                color: var(--color-neutral-400);
+            }
+        }
+
+        /* focus */
+        &:focus-visible {
+            outline-width: 2px;
+            border-color: var(--color-blue-400);
+        }
+
+        /* enclosing label */
+        label:has(&) {
+            display: inline-flex;
+            align-items: center;
+            gap: --spacing(2);
+        }
+    }
+
+    .radio-inline {
+        display: flex;
+        flex-direction: row;
+        gap: --spacing(4);
+    }
+
+    .radio-list {
+        display: flex;
+        flex-direction: column;
+        gap: --spacing(2);
+    }
+
+    /* variations */
+    .radio-clear {
+        /* colors */
+        border-color: transparent;
+        box-shadow: none;
+        background-color: transparent;
+
+        &:checked {
+            border: 1px solid var(--color-blue-400);
+        }
+    }
+
+    .radio-solid {
+        /* colors */
+        border: none;
+        box-shadow: none;
+        background-color: var(--color-neutral-200);
+
+    }
+
+    .radio-invalid {
+        &:not(:checked) {
+            /* colors */
+            border: 1px solid var(--color-red-400);
+            background-color: var(--color-red-50);
+
+            .form-field:has(&) .invalid-msg {
+                opacity: 1;
+            }
+        }
+    }
+
+    /* sizes */
+    .radio-xs {
+        --radio-size: --spacing(3.5);
+    }
+
+    .radio-sm {
+        --radio-size: --spacing(4);
+    }
+
+    .radio-lg {
+        --radio-size: --spacing(6);
+    }
+
+    .radio-xl {
+        --radio-size: --spacing(7);
+    }
+}

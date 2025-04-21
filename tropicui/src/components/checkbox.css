@@ -7,23 +7,30 @@
         min-inline-size: var(--checkbox-size);
 
         /* colors */
-        border: var(--checkbox-border);
+        border: 1px solid var(--checkbox-border);
         border-radius: var(--radius-sm);
         outline: var(--checkbox-focus);
-        outline-width: 0px;
+        outline-offset: 0px;
         background-color: var(--checkbox-bg);
         box-shadow: var(--shadow-xs);
 
         /* modifiers */
         --checkbox-size: --spacing(4.5);
         --checkbox-bg: var(--color-neutral-50);
-        --checkbox-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
-        --checkbox-focus: 2px solid var(--color-blue-200);
+        --checkbox-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+        --checkbox-focus: 0px solid var(--color-blue-200);
 
         /* animation */
         transition-property: background-color;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        &:hover {
+            --checkbox-bg: var(--color-neutral-100);
+        }
+        &:active {
+            --checkbox-bg: var(--color-neutral-200);
+        }
 
         &::before {
             content: "";
@@ -41,7 +48,14 @@
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
 
-        &:checked {
+        /* indeterminate */
+        &:indeterminate {
+            &::before {
+                clip-path: polygon(10% 40%, 90% 40%, 90% 60%, 10% 60%);
+            }
+        }
+
+        &:checked, &:indeterminate {
             background-color: var(--color-blue-400);
 
             &::before {
@@ -55,7 +69,18 @@
             /* colors */
             background-color: var(--color-neutral-200);
             box-shadow: none;
-            color: color-mix(in oklab, var(--input-text) 60%, transparent);
+
+            &:checked {
+                background-color: var(--color-neutral-300);
+    
+                &::before {
+                    background-color: var(--color-neutral-100);
+                }
+            }
+
+            label:has(&) {
+                color: var(--color-neutral-400);
+            }
         }
 
         /* focus */
@@ -66,6 +91,7 @@
 
         /* enclosing label */
         label:has(&) {
+            cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: --spacing(2);
@@ -85,25 +111,59 @@
     }
 
     /* variations */
-    .checkbox-clear {
+    .checkbox-outline,
+    .checkbox-outline-bold {
         /* colors */
-        border: none;
+        border-color: color-mix(in oklab, var(--color-black) 25%, transparent);
         box-shadow: none;
         background-color: transparent;
 
-        &:checked {
-            border: 1px solid var(--color-blue-400);
+        &:hover {
+            border-color: color-mix(in oklab, var(--color-black) 35%, transparent);
+        }
+        &:active {
+            border-color: color-mix(in oklab, var(--color-black) 45%, transparent);
+        }
+
+        &:is(:disabled, [disabled]) {
+            border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+            background-color: transparent;
+
+            &:checked, &:indeterminate {
+                border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+                background-color: transparent;
+    
+                &::before {
+                    background-color: var(--color-neutral-300);
+                }
+            }
+        }
+
+        &:checked, &:indeterminate {
+            border-color: var(--color-blue-400);
+            background-color: transparent;
+
+            &::before {
+                background-color: var(--color-blue-400);
+            }
         }
     }
 
+    .checkbox-outline-bold {
+        border-width: 2px;
+    }
+
     .checkbox-solid {
+        padding: --spacing(0.25);
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: var(--color-neutral-100);
-
-        &:checked {
-            border: 1px solid var(--color-blue-400);
+        --checkbox-bg: var(--color-neutral-100);
+        &:hover {
+            --checkbox-bg: var(--color-neutral-200);
+        }
+        &:active {
+            --checkbox-bg: var(--color-neutral-300);
         }
     }
 

@@ -63,6 +63,18 @@
             background-color: var(--color-neutral-200);
             box-shadow: none;
 
+            &:checked {
+                background-color: var(--color-neutral-300);
+    
+                &::before {
+                    background-color: var(--color-neutral-100);
+                }
+            }
+
+            label:has(&) {
+                color: var(--color-neutral-400);
+            }
+
             &::before {
                 background-color: var(--color-neutral-300);
                 box-shadow: none;
