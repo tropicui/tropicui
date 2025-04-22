@@ -1,28 +1,45 @@
 @layer components {
     .switch {
+        /* layout */
         appearance: none;
         cursor: pointer;
         position: relative;
         /* dimensions */
         block-size: var(--switch-height);
         min-inline-size: var(--switch-width);
+        inset-block-start: var(--switch-margin);
 
         /* colors */
-        border: var(--switch-border);
+        border: 1px solid var(--switch-border);
         border-radius: var(--switch-height);
-        outline: var(--switch-focus);
-        outline-width: 0px;
+        outline: 0px solid var(--switch-focus-outline);
+        outline-offset: 0px;
         background-color: var(--switch-bg);
         box-shadow: var(--shadow-xs);
 
         /* modifiers */
         --switch-height: --spacing(4.5);
         --switch-width: calc(var(--switch-height) * 1.8);
+        --switch-margin: 0.2em;
         --switch-thumb-start: --spacing(0.3);
         --switch-thumb-size: calc(var(--switch-height) - --spacing(1));
+        --switch-thumb-bg: var(--color-white);
         --switch-bg: var(--color-neutral-200);
-        --switch-border: 1px solid color-mix(in oklab, var(--color-black) 15%, transparent);
-        --switch-focus: 2px solid var(--color-blue-200);
+        --switch-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+        --switch-focus-outline: var(--color-blue-200);
+        --switch-focus-border: var(--color-blue-400);
+        --switch-checked-bg: var(--color-blue-400);
+        --switch-invalid-bg: var(--color-red-100);
+        --switch-invalid-border: var(--color-red-400);
+        --switch-solid-bg: var(--color-neutral-200);
+        --switch-outline: var(--color-neutral-300);
+        --switch-outline-disabled: var(--color-neutral-200);
+        --switch-outline-disabled-checked: var(--color-neutral-300);
+        --switch-disabled-bg: var(--color-neutral-200);
+        --switch-disabled-border: var(--color-neutral-300);
+        --switch-disabled-checked-bg: var(--color-neutral-300);
+        --switch-disabled-thumb-bg: var(--color-neutral-100);
+        --switch-disabled-thumb-checked-bg: var(--color-neutral-300);
 
         /* animation */
         transition-property: background-color;
@@ -38,7 +55,7 @@
             block-size: var(--switch-thumb-size);
             inline-size: var(--switch-thumb-size);
             border-radius: calc(infinity * 1px);
-            background-color: var(--color-white);
+            background-color: var(--switch-thumb-bg);
             box-shadow: var(--shadow-sm);
 
             /* animation */
@@ -48,7 +65,7 @@
         }
 
         &:checked {
-            background-color: var(--color-blue-400);
+            background-color: var(--switch-checked-bg);
 
             &::before {
                 transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - --spacing(1)), -50%);
@@ -59,24 +76,24 @@
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
             /* colors */
-            border-color: var(--color-neutral-300);
-            background-color: var(--color-neutral-200);
+            border-color: var(--switch-disabled-border);
+            background-color: var(--switch-disabled-bg);
             box-shadow: none;
 
             &:checked {
-                background-color: var(--color-neutral-300);
+                background-color: var(--switch-disabled-checked-bg);
     
                 &::before {
-                    background-color: var(--color-neutral-100);
+                    background-color: var(--switch-disabled-thumb-bg);
                 }
             }
 
             label:has(&) {
-                color: var(--color-neutral-400);
+                color: var(--label-disabled);
             }
 
             &::before {
-                background-color: var(--color-neutral-300);
+                background-color: var(--switch-disabled-thumb-checked-bg);
                 box-shadow: none;
             }
         }
@@ -84,13 +101,16 @@
         /* focus */
         &:focus-visible {
             outline-width: 2px;
-            border-color: var(--color-blue-400);
+            border-color: var(--switch-focus-border);
         }
 
         /* enclosing label */
         label:has(&) {
+            /* layout */
+            cursor: pointer;
             display: inline-flex;
-            align-items: center;
+            align-items: start;
+            justify-content: start;
             gap: --spacing(2);
         }
     }
@@ -108,18 +128,65 @@
     }
 
     /* variations */
-    .switch-clear {
+    .switch-outline,
+    .switch-outline-bold {
         /* colors */
-        border: none;
+        border-color: var(--switch-outline);
         box-shadow: none;
         background-color: transparent;
 
         &::before {
-            --switch-thumb-start: --spacing(0.5);
+            /* colors */
+            background-color: var(--switch-outline);
+            box-shadow: none;
+        }
+
+        /* disabled */
+        &:is(:disabled, [disabled]) {
+            /* colors */
+            border-color: var(--switch-outline-disabled);
+            background-color: transparent;
+
+            &::before {
+                /* colors */
+                background-color: var(--switch-outline-disabled);
+            }
+
+            &:checked {
+                /* colors */
+                border-color: var(--switch-outline-disabled-checked);
+                background-color: transparent;
+
+                &::before {
+                    /* colors */
+                    background-color: var(--switch-outline-disabled-checked);
+                }
+            }
         }
 
         &:checked {
-            background-color: var(--color-blue-400);
+            border-color: var(--switch-checked-bg);
+            background-color: var(--color-white);
+
+            &::before {
+                /* colors */
+                background-color: var(--switch-checked-bg);
+            }
+        }
+    }
+
+    .switch-outline-bold {
+        border-width: 2px;
+
+        /* modifiers */
+        --switch-thumb-start: --spacing(0.2);
+        --switch-thumb-size: calc(var(--switch-height) - --spacing(1.5));
+
+        /* checked */
+        &:checked {
+            &::before {
+                transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - --spacing(1.5)), -50%);
+            }
         }
     }
 
@@ -127,22 +194,22 @@
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: var(--color-neutral-200);
+        background-color: var(--switch-solid-bg);
 
         &::before {
             --switch-thumb-start: --spacing(0.5);
         }
 
         &:checked {
-            background-color: var(--color-blue-400);
+            background-color: var(--switch-checked-bg);
         }
     }
 
     .switch-invalid {
         &:not(:checked) {
             /* colors */
-            border: 1px solid var(--color-red-400);
-            background-color: var(--color-red-100);
+            border: 1px solid var(--switch-invalid-border);
+            background-color: var(--switch-invalid-bg);
         }
 
         .form-field:has(&:checked) .invalid {
@@ -161,9 +228,11 @@
 
     .switch-lg {
         --switch-height: --spacing(6);
+        --switch-margin: 0.1em;
     }
 
     .switch-xl {
         --switch-height: --spacing(7);
+        --switch-margin: 0em;
     }
 }

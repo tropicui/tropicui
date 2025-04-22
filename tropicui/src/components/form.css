@@ -5,7 +5,7 @@
             grid-template-columns: 1fr;
             align-content: start;
             align-items: start;
-            gap: --spacing(2);
+            gap: --spacing(3);
 
             /* modifiers */
             --field-cols: 1;
@@ -51,6 +51,10 @@
             &.fieldset-solid {
                 border-width: 0px;
             }
+        }
+
+        label {
+            --label-disabled: var(--color-neutral-400);
         }
 
         .label {

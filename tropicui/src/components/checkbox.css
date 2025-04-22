@@ -1,7 +1,9 @@
 @layer components {
     .checkbox {
+        /* layout */
         appearance: none;
         cursor: pointer;
+
         /* dimensions */
         block-size: var(--checkbox-size);
         min-inline-size: var(--checkbox-size);
@@ -9,38 +11,64 @@
         /* colors */
         border: 1px solid var(--checkbox-border);
         border-radius: var(--radius-sm);
-        outline: var(--checkbox-focus);
+        outline: 0px solid var(--checkbox-focus-outline);
         outline-offset: 0px;
         background-color: var(--checkbox-bg);
         box-shadow: var(--shadow-xs);
-
-        /* modifiers */
-        --checkbox-size: --spacing(4.5);
-        --checkbox-bg: var(--color-neutral-50);
-        --checkbox-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-        --checkbox-focus: 0px solid var(--color-blue-200);
 
         /* animation */
         transition-property: background-color;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
+        /* modifiers */
+        --checkbox-size: --spacing(4.5);
+        --checkbox-bg: var(--color-neutral-50);
+        --checkbox-hover-bg: var(--color-neutral-100);
+        --checkbox-active-bg: var(--color-neutral-200);
+        --checkbox-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+        --checkbox-focus-outline: var(--color-blue-200);
+        --checkbox-focus-border: var(--color-blue-400);
+        --checkbox-checked: var(--color-white);
+        --checkbox-checked-bg: var(--color-blue-400);
+        --checkbox-disabled-bg: var(--color-neutral-200);
+        --checkbox-disabled-checked: var(--color-neutral-100);
+        --checkbox-disabled-checked-bg: var(--color-neutral-300);
+        --checkbox-invalid-bg: var(--color-red-50);
+        --checkbox-invalid-border: var(--color-red-400);
+        --checkbox-outline-border: var(--color-neutral-300);
+        --checkbox-outline-hover-border: var(--color-neutral-400);
+        --checkbox-outline-active-border: var(--color-neutral-500);
+        --checkbox-outline-checked: var(--color-blue-400);
+        --checkbox-outline-disabled: var(--color-neutral-200);
+        --checkbox-solid-bg: var(--color-neutral-100);
+        --checkbox-solid-hover-bg: var(--color-neutral-200);
+        --checkbox-solid-active-bg: var(--color-neutral-300);
+
+        /* hover */
         &:hover {
-            --checkbox-bg: var(--color-neutral-100);
-        }
-        &:active {
-            --checkbox-bg: var(--color-neutral-200);
+            --checkbox-bg: var(--checkbox-hover-bg);
         }
 
+        /* active */
+        &:active {
+            --checkbox-bg: var(--checkbox-active-bg);
+        }
+
+        /* check mark */
         &::before {
+            /* layout */
             content: "";
+            clip-path: polygon(90% 26%, 41% 90%, 10% 54%, 21% 42%, 40% 65%, 79% 15%);
             opacity: 0;
             display: block;
+
+            /* dimensions */
             block-size: 100%;
             inline-size: 100%;
-            background-color: var(--color-white);
-            /* background-color: red; */
-            clip-path: polygon(90% 26%, 41% 90%, 10% 54%, 21% 42%, 40% 65%, 79% 15%);
+
+            /* colors */
+            background-color: var(--checkbox-checked);
 
             /* animation */
             transition-property: opacity;
@@ -55,8 +83,9 @@
             }
         }
 
+        /* checked */
         &:checked, &:indeterminate {
-            background-color: var(--color-blue-400);
+            background-color: var(--checkbox-checked-bg);
 
             &::before {
                 opacity: 1;
@@ -65,46 +94,56 @@
 
         /* disabled */
         &:is(:disabled, [disabled]) {
+            /* layout */
             cursor: not-allowed;
+
             /* colors */
-            background-color: var(--color-neutral-200);
+            background-color: var(--checkbox-disabled-bg);
             box-shadow: none;
 
             &:checked {
-                background-color: var(--color-neutral-300);
+                background-color: var(--checkbox-disabled-checked-bg);
     
                 &::before {
-                    background-color: var(--color-neutral-100);
+                    background-color: var(--checkbox-disabled-checked);
                 }
             }
 
             label:has(&) {
-                color: var(--color-neutral-400);
+                color: var(--label-disabled);
             }
         }
 
         /* focus */
         &:focus-visible {
+            /* colors */
             outline-width: 2px;
-            border-color: var(--color-blue-400);
+            border-color: var(--checkbox-focus-border);
         }
 
         /* enclosing label */
         label:has(&) {
+            /* layout */
             cursor: pointer;
             display: inline-flex;
-            align-items: center;
+            align-items: start;
+            justify-content: start;
             gap: --spacing(2);
+
+            /* text */
+            line-height: var(--text-3xl--line-height);
         }
     }
 
     .checkbox-inline {
+        /* layout */
         display: flex;
         flex-direction: row;
         gap: --spacing(4);
     }
 
     .checkbox-list {
+        /* layout */
         display: flex;
         flex-direction: column;
         gap: --spacing(2);
@@ -114,37 +153,37 @@
     .checkbox-outline,
     .checkbox-outline-bold {
         /* colors */
-        border-color: color-mix(in oklab, var(--color-black) 25%, transparent);
+        border-color: var(--checkbox-outline-border);
         box-shadow: none;
         background-color: transparent;
 
         &:hover {
-            border-color: color-mix(in oklab, var(--color-black) 35%, transparent);
+            border-color: var(--checkbox-outline-hover-border);
         }
         &:active {
-            border-color: color-mix(in oklab, var(--color-black) 45%, transparent);
+            border-color: var(--checkbox-outline-active-border);
         }
 
         &:is(:disabled, [disabled]) {
-            border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+            border-color: var(--checkbox-outline-disabled);
             background-color: transparent;
 
             &:checked, &:indeterminate {
-                border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+                border-color: var(--checkbox-outline-disabled);
                 background-color: transparent;
     
                 &::before {
-                    background-color: var(--color-neutral-300);
+                    background-color: var(--checkbox-outline-disabled);
                 }
             }
         }
 
         &:checked, &:indeterminate {
-            border-color: var(--color-blue-400);
+            border-color: var(--checkbox-outline-checked);
             background-color: transparent;
 
             &::before {
-                background-color: var(--color-blue-400);
+                background-color: var(--checkbox-outline-checked);
             }
         }
     }
@@ -154,24 +193,30 @@
     }
 
     .checkbox-solid {
+        /* layout */
         padding: --spacing(0.25);
+
         /* colors */
         border: none;
         box-shadow: none;
-        --checkbox-bg: var(--color-neutral-100);
+        --checkbox-bg: var(--checkbox-solid-bg);
+
+        /* hover */
         &:hover {
-            --checkbox-bg: var(--color-neutral-200);
+            --checkbox-bg: var(--checkbox-solid-hover-bg);
         }
+
+        /* active */
         &:active {
-            --checkbox-bg: var(--color-neutral-300);
+            --checkbox-bg: var(--checkbox-solid-active-bg);
         }
     }
 
     .checkbox-invalid {
         &:not(:checked) {
             /* colors */
-            border: 1px solid var(--color-red-400);
-            background-color: var(--color-red-50);
+            border: 1px solid var(--checkbox-invalid-border);
+            background-color: var(--checkbox-invalid-bg);
         }
 
         .form-field:has(&:checked) .invalid {
