@@ -17,7 +17,7 @@
         box-shadow: var(--shadow-xs);
 
         /* animation */
-        transition-property: background-color;
+        transition-property: border-color, background-color;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
@@ -121,6 +121,14 @@
             border-color: var(--checkbox-focus-border);
         }
 
+        /* validate */
+        &.checkbox-validate:invalid,
+        &.checkbox-invalid:not(:checked) {
+            /* colors */
+            border: 1px solid var(--checkbox-invalid-border);
+            background-color: var(--checkbox-invalid-bg);
+        }
+
         /* enclosing label */
         label:has(&) {
             /* layout */
@@ -209,18 +217,6 @@
         /* active */
         &:active {
             --checkbox-bg: var(--checkbox-solid-active-bg);
-        }
-    }
-
-    .checkbox-invalid {
-        &:not(:checked) {
-            /* colors */
-            border: 1px solid var(--checkbox-invalid-border);
-            background-color: var(--checkbox-invalid-bg);
-        }
-
-        .form-field:has(&:checked) .invalid {
-            opacity: 0;
         }
     }
 

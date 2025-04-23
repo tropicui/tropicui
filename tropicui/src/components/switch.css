@@ -104,6 +104,14 @@
             border-color: var(--switch-focus-border);
         }
 
+        /* validate */
+        &.switch-validate:invalid,
+        &.switch-invalid:not(:checked) {
+            /* colors */
+            border: 1px solid var(--switch-invalid-border);
+            background-color: var(--switch-invalid-bg);
+        }
+
         /* enclosing label */
         label:has(&) {
             /* layout */
@@ -202,18 +210,6 @@
 
         &:checked {
             background-color: var(--switch-checked-bg);
-        }
-    }
-
-    .switch-invalid {
-        &:not(:checked) {
-            /* colors */
-            border: 1px solid var(--switch-invalid-border);
-            background-color: var(--switch-invalid-bg);
-        }
-
-        .form-field:has(&:checked) .invalid {
-            opacity: 0;
         }
     }
 

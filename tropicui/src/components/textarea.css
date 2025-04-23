@@ -2,7 +2,6 @@
     .textarea {
         /* dimensions */
         block-size: --spacing(24);
-        inline-size: 100%;
         padding-block: --spacing(2);
         padding-inline: --spacing(4);
 

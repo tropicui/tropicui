@@ -99,7 +99,9 @@
         }
 
         /* invalid */
-        &:invalid {
+        &.radio-validate:invalid,
+        &.radio-invalid:not(:checked) {
+            /* colors */
             border-color: var(--radio-invalid-border);
             background-color: var(--radio-invalid-bg);
         }
@@ -149,18 +151,6 @@
         /* disabled */
         &:is(:disabled, [disabled]) {
             background-color: var(--color-neutral-300);
-        }
-    }
-
-    .radio-invalid {
-        &:not(:checked) {
-            /* colors */
-            border: 1px solid var(--color-red-400);
-            background-color: var(--color-red-50);
-
-            .form-field:has(&) .invalid-msg {
-                opacity: 1;
-            }
         }
     }
 

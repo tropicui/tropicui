@@ -1574,7 +1574,7 @@ i.hi-lg {
     outline-offset: 0px;
     background-color: var(--checkbox-bg);
     box-shadow: var(--shadow-xs);
-    transition-property: background-color;
+    transition-property: border-color, background-color;
     transition-duration: var(--tt-duration, var(--default-transition-duration));
     transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     --checkbox-size: calc(var(--spacing) * 4.5);
@@ -1649,6 +1649,10 @@ i.hi-lg {
       outline-width: 2px;
       border-color: var(--checkbox-focus-border);
     }
+    &.checkbox-validate:invalid, &.checkbox-invalid:not(:checked) {
+      border: 1px solid var(--checkbox-invalid-border);
+      background-color: var(--checkbox-invalid-bg);
+    }
     label:has(&) {
       cursor: pointer;
       display: inline-flex;
@@ -1710,15 +1714,6 @@ i.hi-lg {
     }
     &:active {
       --checkbox-bg: var(--checkbox-solid-active-bg);
-    }
-  }
-  .checkbox-invalid {
-    &:not(:checked) {
-      border: 1px solid var(--checkbox-invalid-border);
-      background-color: var(--checkbox-invalid-bg);
-    }
-    .form-field:has(&:checked) .invalid {
-      opacity: 0;
     }
   }
   .checkbox-xs {
@@ -1928,9 +1923,8 @@ i.hi-lg {
         font-size: var(--text-lg);
         line-height: var(--text-lg--line-height);
       }
-      &.fieldset-clear {
+      &.fieldset-outline {
         background-color: transparent;
-        border-width: 0px;
         box-shadow: none;
         legend {
           padding-inline: calc(var(--spacing) * 0);
@@ -1938,6 +1932,7 @@ i.hi-lg {
       }
       &.fieldset-solid {
         border-width: 0px;
+        background-color: var(--color-neutral-200);
       }
     }
     label {
@@ -1959,6 +1954,9 @@ i.hi-lg {
       :where(.form-field:has(:invalid, [class*="-invalid"])) & {
         opacity: 1;
       }
+      transition-property: opacity;
+      transition-duration: var(--tt-duration, var(--default-transition-duration));
+      transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     }
   }
 }
@@ -2478,7 +2476,7 @@ i.hi-lg {
       gap: calc(var(--spacing) * 2);
       line-height: var(--text-3xl--line-height);
     }
-    &:invalid {
+    &.radio-validate:invalid, &.radio-invalid:not(:checked) {
       border-color: var(--radio-invalid-border);
       background-color: var(--radio-invalid-bg);
     }
@@ -2517,15 +2515,6 @@ i.hi-lg {
       background-color: var(--color-neutral-300);
     }
   }
-  .radio-invalid {
-    &:not(:checked) {
-      border: 1px solid var(--color-red-400);
-      background-color: var(--color-red-50);
-      .form-field:has(&) .invalid-msg {
-        opacity: 1;
-      }
-    }
-  }
   .radio-xs {
     --radio-size: calc(var(--spacing) * 3.5);
   }
@@ -2537,6 +2526,123 @@ i.hi-lg {
   }
   .radio-xl {
     --radio-size: calc(var(--spacing) * 7);
+  }
+}
+@layer components {
+  .select {
+    appearance: none;
+    cursor: pointer;
+    block-size: var(--select-height);
+    padding-inline: calc(var(--spacing) * 3) calc(var(--spacing) * 8);
+    border: 1px solid var(--select-border);
+    border-radius: var(--radius-sm);
+    outline: 0px solid var(--select-focus-outline);
+    outline-offset: 0px;
+    background-color: var(--select-bg);
+    box-shadow: var(--shadow-xs);
+    color: var(--select-text);
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: var(--tt-duration, var(--default-transition-duration));
+    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em;
+    --select-height: calc(var(--spacing) * 9);
+    --select-bg: var(--color-neutral-50);
+    --select-hover-bg: var(--color-neutral-100);
+    --select-active-bg: var(--color-neutral-200);
+    --select-border: color-mix(in srgb, #000 15%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --select-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+    }
+    --select-focus-outline: var(--color-blue-200);
+    --select-focus-border: var(--color-blue-400);
+    --select-disabled-bg: var(--color-neutral-200);
+    --select-invalid-bg: var(--color-red-50);
+    --select-invalid-border: var(--color-red-400);
+    --select-outline-border: var(--color-neutral-300);
+    --select-outline-hover-border: var(--color-neutral-400);
+    --select-outline-active-border: var(--color-neutral-500);
+    --select-outline-disabled: var(--color-neutral-200);
+    --select-solid-bg: var(--color-neutral-100);
+    --select-solid-hover-bg: var(--color-neutral-200);
+    --select-solid-active-bg: var(--color-neutral-300);
+    --select-text: var(--color-neutral-800);
+    --placeholder-color: var(--color-neutral-400);
+    &:hover {
+      --select-bg: var(--select-hover-bg);
+      border-color: var(--select-outline-hover-border);
+    }
+    &:active {
+      --select-bg: var(--select-active-bg);
+    }
+    &:is(:disabled, [disabled]) {
+      cursor: not-allowed;
+      opacity: 0.7;
+      background-color: var(--select-disabled-bg);
+      box-shadow: none;
+      border-color: var(--select-outline-disabled);
+      color: var(--select-disabled);
+    }
+    &:focus-visible {
+      outline-width: 2px;
+      border-color: var(--select-focus-border);
+    }
+    &.select-validate:invalid, &.select-invalid {
+      border: 1px solid var(--select-invalid-border);
+      background-color: var(--select-invalid-bg);
+    }
+  }
+  .select-outline, .select-outline-bold {
+    border-color: var(--select-outline-border);
+    box-shadow: none;
+    background-color: transparent;
+    &:hover {
+      border-color: var(--select-outline-hover-border);
+    }
+    &:active {
+      border-color: var(--select-outline-active-border);
+    }
+    &:is(:disabled, [disabled]) {
+      border-color: var(--select-outline-disabled);
+      background-color: transparent;
+    }
+  }
+  .select-outline-bold {
+    border-width: 2px;
+  }
+  .select-clear {
+    border-color: transparent;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  .select-solid {
+    border: none;
+    box-shadow: none;
+    --select-bg: var(--select-solid-bg);
+    &:hover {
+      --select-bg: var(--select-solid-hover-bg);
+    }
+    &:active {
+      --select-bg: var(--select-solid-active-bg);
+    }
+  }
+  .select-xs {
+    --select-height: calc(var(--spacing) * 7);
+    font-size: var(--text-xs);
+  }
+  .select-sm {
+    --select-height: calc(var(--spacing) * 8);
+    font-size: var(--text-sm);
+  }
+  .select-lg {
+    --select-height: calc(var(--spacing) * 11);
+    font-size: var(--text-lg);
+  }
+  .select-xl {
+    --select-height: calc(var(--spacing) * 12);
+    font-size: var(--text-xl);
   }
 }
 @layer components {
@@ -2625,6 +2731,10 @@ i.hi-lg {
       outline-width: 2px;
       border-color: var(--switch-focus-border);
     }
+    &.switch-validate:invalid, &.switch-invalid:not(:checked) {
+      border: 1px solid var(--switch-invalid-border);
+      background-color: var(--switch-invalid-bg);
+    }
     label:has(&) {
       cursor: pointer;
       display: inline-flex;
@@ -2692,15 +2802,6 @@ i.hi-lg {
     }
     &:checked {
       background-color: var(--switch-checked-bg);
-    }
-  }
-  .switch-invalid {
-    &:not(:checked) {
-      border: 1px solid var(--switch-invalid-border);
-      background-color: var(--switch-invalid-bg);
-    }
-    .form-field:has(&:checked) .invalid {
-      opacity: 0;
     }
   }
   .switch-xs {
@@ -2793,7 +2894,6 @@ i.hi-lg {
 @layer components {
   .textarea {
     block-size: calc(var(--spacing) * 24);
-    inline-size: 100%;
     padding-block: calc(var(--spacing) * 2);
     padding-inline: calc(var(--spacing) * 4);
     border: var(--textarea-border);

@@ -39,9 +39,8 @@
                 line-height: var(--text-lg--line-height);
             }
 
-            &.fieldset-clear {
+            &.fieldset-outline {
                 background-color: transparent;
-                border-width: 0px;
                 box-shadow: none;
 
                 legend {
@@ -50,6 +49,7 @@
             }
             &.fieldset-solid {
                 border-width: 0px;
+                background-color: var(--color-neutral-200);
             }
         }
 
@@ -79,6 +79,11 @@
             :where(.form-field:has(:invalid, [class*="-invalid"])) & {
                 opacity: 1;
             }
+
+            /* animation */
+            transition-property: opacity;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
     }
 }
