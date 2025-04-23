@@ -4,6 +4,7 @@
         appearance: none;
         cursor: pointer;
         position: relative;
+
         /* dimensions */
         block-size: var(--switch-height);
         min-inline-size: var(--switch-width);
@@ -141,7 +142,7 @@
         /* colors */
         border-color: var(--switch-outline);
         box-shadow: none;
-        background-color: transparent;
+        background: none;
 
         &::before {
             /* colors */
@@ -153,7 +154,7 @@
         &:is(:disabled, [disabled]) {
             /* colors */
             border-color: var(--switch-outline-disabled);
-            background-color: transparent;
+            background: none;
 
             &::before {
                 /* colors */
@@ -163,7 +164,7 @@
             &:checked {
                 /* colors */
                 border-color: var(--switch-outline-disabled-checked);
-                background-color: transparent;
+                background: none;
 
                 &::before {
                     /* colors */

@@ -96,7 +96,7 @@
         /* colors */
         border-color: var(--select-outline-border);
         box-shadow: none;
-        background-color: transparent;
+        background: none;
 
         &:hover {
             border-color: var(--select-outline-hover-border);
@@ -107,7 +107,7 @@
 
         &:is(:disabled, [disabled]) {
             border-color: var(--select-outline-disabled);
-            background-color: transparent;
+            background: none;
         }
     }
 
@@ -119,7 +119,7 @@
         /* colors */
         border-color: transparent;
         box-shadow: none;
-        background-color: transparent;
+        background: none;
     }
 
     .select-solid {

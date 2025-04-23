@@ -161,7 +161,7 @@
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: transparent;
+        background: none;
     }
 
     .input-solid {

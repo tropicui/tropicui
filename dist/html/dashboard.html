@@ -130,7 +130,8 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                                 </svg>
-                                <span>Customers</span>
+                                <span class="grow">Customers</span>
+                                <span class="counter size-4">1</span>
                             </a>
                         </li>
                         <li>
@@ -297,7 +298,6 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                                 </svg>
                                 <span class="grow">Apps</span>
-                                <span class="badge badge-circle size-4">1</span>
                             </a>
                         </li>
                         <li>
@@ -419,6 +419,110 @@
                     Warning!
                 </div>
                 <div class="mb-4"></div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>spinner</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-4 gap-8">
+
+                                <!-- Basic spinner -->
+                                <div class="spinner"></div>
+
+                                <!-- Spinner with size variant -->
+                                <div class="spinner spinner-xs"></div>
+                                <div class="spinner spinner-sm"></div>
+                                <div class="spinner spinner-lg"></div>
+                                <div class="spinner spinner-xl"></div>
+
+                                <!-- Spinner with color variant -->
+                                <div class="spinner spinner-clear"></div>
+                                <div class="spinner spinner-solid"></div>
+
+                                <!-- Spinner with text -->
+                                <div>
+                                    <label>
+                                        <div class="spinner spinner-sm"></div>
+                                        <span class="text-sm">Loading...</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Badge</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-4 gap-8">
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge">Badge</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-xs">Badge XS</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-sm">Badge SM</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-lg">Badge LG</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-xl">Badge XL</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-circle">Circle</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-solid">Solid</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-outline">Outline</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-outline-bold">Bold</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="badge badge-dashed">Dashed</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    <span class="badge">
+                                        <span class="badge-status"></span>
+                                        Badge
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-xs">
+                                        <span class="badge-status"></span>
+                                        Badge
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm">
+                                        <span class="badge-status"></span>
+                                        Badge
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-lg">
+                                        <span class="badge-status"></span>
+                                        Badge
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-xl">
+                                        <span class="badge-status"></span>
+                                        Badge
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="card card-border card-gutter">
                     <div class="card-header">
                         <h4>Select</h4>

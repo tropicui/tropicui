@@ -1,0 +1,29 @@
+@layer components {
+    .counter {
+        /* layout */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        /* dimensions */
+        block-size: var(--counter-size);
+        inline-size: var(--counter-size);
+
+        /* color */
+        border-radius: var(--radius-sm);
+        background-color: var(--counter-bg);
+        color: var(--counter-fg);
+
+        /* text */
+        font-size: var(--counter-font-size);
+        font-weight: var(--font-weight-medium);
+        line-height: var(--counter-line-height);
+
+        /* modifiers */
+        --counter-size: --spacing(7);
+        --counter-font-size: var(--text-xs);
+        --counter-line-height: var(--text-xs--line-height);
+        --counter-bg: var(--color-neutral-400);
+        --counter-fg: var(--color-neutral-100);
+    }
+}

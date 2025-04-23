@@ -40,7 +40,7 @@
             }
 
             &.fieldset-outline {
-                background-color: transparent;
+                background: none;
                 box-shadow: none;
 
                 legend {

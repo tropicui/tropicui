@@ -163,7 +163,7 @@
         /* colors */
         border-color: var(--checkbox-outline-border);
         box-shadow: none;
-        background-color: transparent;
+        background: none;
 
         &:hover {
             border-color: var(--checkbox-outline-hover-border);
@@ -174,11 +174,11 @@
 
         &:is(:disabled, [disabled]) {
             border-color: var(--checkbox-outline-disabled);
-            background-color: transparent;
+            background: none;
 
             &:checked, &:indeterminate {
                 border-color: var(--checkbox-outline-disabled);
-                background-color: transparent;
+                background: none;
     
                 &::before {
                     background-color: var(--checkbox-outline-disabled);
@@ -188,7 +188,7 @@
 
         &:checked, &:indeterminate {
             border-color: var(--checkbox-outline-checked);
-            background-color: transparent;
+            background: none;
 
             &::before {
                 background-color: var(--checkbox-outline-checked);
