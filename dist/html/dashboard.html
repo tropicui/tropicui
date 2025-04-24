@@ -131,7 +131,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                                 </svg>
                                 <span class="grow">Customers</span>
-                                <span class="counter size-4">1</span>
+                                <span class="tag tag-solid tag-danger tag-xs p-0">1</span>
                             </a>
                         </li>
                         <li>
@@ -375,7 +375,7 @@
                     <ul>
                         <li>
                             <a href="#" class="btn btn-clear">
-                                <span class="avatar">AB</span>
+                                <span class="avatar avatar-circle avatar-sm">AB</span>
                                 <span class="grow">Admin</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
@@ -421,7 +421,158 @@
                 <div class="mb-4"></div>
                 <div class="card card-border card-gutter">
                     <div class="card-header">
-                        <h4>spinner</h4>
+                        <h4>Avatar</h4>
+                    </div>
+                    <div class="card-body bg-neutral-50">
+                        <div class="grid grid-cols-4 gap-8">
+                            <!-- Basic avatar with image -->
+                            <div class="avatar">
+                                <img src="../assets/img/user1.jpg" alt="User Name">
+                            </div>
+                            
+                            <!-- Avatar with initials -->
+                            <div class="avatar">
+                                JD
+                            </div>
+                            
+                            <!-- Avatar with status -->
+                            <div class="relative w-fit">
+                                <div class="avatar">
+                                    <img src="../assets/img/user1.jpg" alt="User Name">
+                                </div>
+                                <span class="badge badge-bottom-right status status-round status-lg status-online"></span>
+                            </div>
+                            
+                            <!-- Avatar group -->
+                            <div class="avatar-group">
+                                <div class="avatar">
+                                    <img src="../assets/img/user1.jpg" alt="User 1">
+                                </div>
+                                <div class="avatar">
+                                    OO
+                                </div>
+                                <div class="avatar">
+                                    <img src="../assets/img/user1.jpg" alt="User 3">
+                                </div>
+                            </div>
+  
+                            <div class="avatar avatar-xs">
+                                <img src="../assets/img/user1.jpg" alt="User Name">
+                            </div>
+                            <div class="avatar avatar-sm">
+                                <img src="../assets/img/user1.jpg" alt="User Name">
+                            </div>
+                            <div class="avatar avatar-lg">
+                                <img src="../assets/img/user1.jpg" alt="User Name">
+                            </div>
+                            <div class="avatar avatar-xl">
+                                <img src="../assets/img/user1.jpg" alt="User Name">
+                            </div>
+  
+                            <div class="avatar avatar-xs">
+                                XZ
+                            </div>
+                            <div class="avatar avatar-sm">
+                                XZ
+                            </div>
+                            <div class="avatar avatar-lg">
+                                XZ
+                            </div>
+                            <div class="avatar avatar-xl">
+                                XZ
+                            </div>
+                            <!-- Basic avatar with image -->
+                            <div class="avatar avatar-circle">
+                                <img src="../assets/img/user1.jpg" alt="User Name">
+                            </div>
+                            
+                            <!-- Avatar with initials -->
+                            <div class="avatar avatar-circle">
+                                JD
+                            </div>
+                            
+                            <!-- Avatar with status -->
+                            <div class="relative w-fit">
+                                <div class="avatar avatar-circle">
+                                    <img src="../assets/img/user1.jpg" alt="User Name">
+                                </div>
+                                <span class="badge badge-bottom-right badge-inner status status-round status-lg status-online"></span>
+                            </div>
+                            
+                            <!-- Avatar group -->
+                            <div class="avatar-group-compact">
+                                <div class="avatar avatar-circle">
+                                    <img src="../assets/img/user1.jpg" alt="User 1">
+                                </div>
+                                <div class="avatar avatar-circle">
+                                    MM
+                                </div>
+                                <div class="avatar avatar-circle">
+                                    <img src="../assets/img/user1.jpg" alt="User 3">
+                                </div>
+                                <div class="avatar avatar-circle">
+                                    +99
+                                </div>
+                            </div>
+
+                            <div class="avatar avatar-circle avatar-ring">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Badge / Indicator</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-4 gap-8">
+                                <div class="relative w-fit">
+                                    <div class="badge badge-top-right status"></div>
+                                    <button class="btn relative">
+                                        Hello
+                                    </button>
+                                </div>
+                                <div class="relative w-fit">
+                                    <div class="badge badge-top-right status"></div>
+                                    <div class="badge badge-top-right status animate-ping"></div>
+                                    <button class="btn relative">
+                                        Hello
+                                    </button>
+                                </div>
+                                <div class="relative w-fit">
+                                    <div class="badge badge-top-right tag tag-pill">+123</div>
+                                    <button class="btn relative">
+                                        Hello
+                                    </button>
+                                </div>
+
+                                <!-- Example with different positions -->
+                                <div class="relative w-fit">
+                                    <button class="btn"><div class="spinner"></div></button>
+                                    <span class="badge badge-top-left status animate-pulse"></span>
+                                    <span class="badge badge-top-right status status-round"></span>
+                                    <span class="badge badge-top-right status status-round animate-ping"></span>
+                                    <span class="badge badge-bottom-left status animate-bounce"></span>
+                                    <span class="badge badge-bottom-right status animate-spin"></span>
+                                </div>
+
+                                <div class="relative w-fit">
+                                    <button class="btn rounded-full">Inner</button>
+                                    <span class="badge badge-inner badge-top-left status animate-pulse"></span>
+                                    <span class="badge badge-inner badge-top-right status status-round"></span>
+                                    <span class="badge badge-inner badge-top-right status status-round animate-ping"></span>
+                                    <span class="badge badge-inner badge-bottom-left status animate-bounce"></span>
+                                    <span class="badge badge-inner badge-bottom-right status animate-spin"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Spinner</h4>
                     </div>
                     <div class="card-body">
                         <form class="form">
@@ -454,70 +605,144 @@
                 </div>
                 <div class="card card-border card-gutter">
                     <div class="card-header">
-                        <h4>Badge</h4>
+                        <h4>Status</h4>
                     </div>
                     <div class="card-body">
                         <form class="form">
                             <div class="grid grid-cols-4 gap-8">
                                 <div>
-                                    A starting sentence in paragraph. This is a <span class="badge">Badge</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-xs">Badge XS</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-sm">Badge SM</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-lg">Badge LG</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-xl">Badge XL</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-circle">Circle</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-solid">Solid</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-outline">Outline</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-outline-bold">Bold</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    A starting sentence in paragraph. This is a <span class="badge badge-dashed">Dashed</span> for example. In summary, we concluded.
-                                </div>
-                                <div>
-                                    <span class="badge">
-                                        <span class="badge-status"></span>
-                                        Badge
+                                    <span class="tag">
+                                        <span class="status"></span>
+                                        Status
                                     </span>
                                 </div>
                                 <div>
-                                    <span class="badge badge-xs">
-                                        <span class="badge-status"></span>
-                                        Badge
+                                    <span class="tag tag-xs">
+                                        <span class="status status-xs"></span>
+                                        Status XS
                                     </span>
                                 </div>
                                 <div>
-                                    <span class="badge badge-sm">
-                                        <span class="badge-status"></span>
-                                        Badge
+                                    <span class="tag tag-sm">
+                                        <span class="status status-sm"></span>
+                                        Status SM
                                     </span>
                                 </div>
                                 <div>
-                                    <span class="badge badge-lg">
-                                        <span class="badge-status"></span>
-                                        Badge
+                                    <span class="tag tag-lg">
+                                        <span class="status status-lg"></span>
+                                        Status LG
                                     </span>
                                 </div>
                                 <div>
-                                    <span class="badge badge-xl">
-                                        <span class="badge-status"></span>
-                                        Badge
+                                    <span class="tag tag-xl">
+                                        <span class="status status-xl"></span>
+                                        Status XL
                                     </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-round"></span>
+                                        Round
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-xs status-round"></span>
+                                        Round XS
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-outline"></span>
+                                        Outline
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-outline-bold"></span>
+                                        Bold
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <div class="stack">
+                                            <span class="status"></span>
+                                            <span class="status absolute animate-ping"></span>
+                                        </div>
+                                        Ping
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <div class="stack">
+                                            <span class="status status-outline-bold"></span>
+                                            <span class="status status-outline-bold absolute animate-ping"></span>
+                                        </div>
+                                        Ping
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <div class="stack">
+                                            <span class="status status-round"></span>
+                                            <span class="status status-round absolute animate-ping"></span>
+                                        </div>
+                                        Ping
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-round animate-pulse"></span>
+                                        Pulse
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status animate-bounce"></span>
+                                        Bounce
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Tag</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="grid grid-cols-4 gap-8">
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag">Tag</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-xs">Tag XS</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-sm">Tag SM</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-lg">Tag LG</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-xl">Tag XL</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-pill">Pill</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-solid">Solid</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-outline">Outline</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-outline-bold">Bold</span> for example. In summary, we concluded.
+                                </div>
+                                <div>
+                                    A starting sentence in paragraph. This is a <span class="tag tag-dashed">Dashed</span> for example. In summary, we concluded.
                                 </div>
                             </div>
                         </form>
@@ -3069,7 +3294,7 @@
                 </div>
                 <div class="card card-border card-gutter">
                     <div class="card-body">
-                        <i class="hi hi-arrow-path"></i>
+                        <h4 class="card-title">Accordion</h4>
                         <details name="tech" class="accordion mb-2">
                             <summary>Bootstrap</summary>
                             <p>The ultimate template library for your projects to save time repeating.</p>
@@ -3081,6 +3306,12 @@
                         </details>
                         <details name="tech" class="accordion mb-2">
                             <summary>GitHub</summary>
+                            <span>Organise and collaborate on your projects.</span>
+                            <span>Organise and collaborate on your projects.</span>
+                        </details>
+                        <div class="h-10">Collapse</div>
+                        <details class="accordion mb-2">
+                            <summary>Solo</summary>
                             <span>Organise and collaborate on your projects.</span>
                             <span>Organise and collaborate on your projects.</span>
                         </details>

@@ -1,25 +1,129 @@
+/*
+Avatar component styles.
+
+@description Provides a flexible, customizable avatar component for displaying user images, initials, or icons with consistent styling.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --avatar-size - Controls the overall size of the avatar
+@property {string} --avatar-border - Sets the border color for the avatar
+@property {string} --avatar-bg - Background color of the avatar
+@property {string} --avatar-fg - Foreground (text) color of the avatar
+@property {string} --avatar-border-width - Width of the avatar border
+*/
 @layer components {
     .avatar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        /* dimension */
-        width: var(--av-size);
-        height: var(--av-size);
-        min-width: var(--av-size);
-        min-height: var(--av-size);
-        /* text */
+        /* layout */
+        align-content: center;
         text-align: center;
-        font-size: var(--text-sm);
-        line-height: var(--leading-relaxed);
+        position: relative;
+        
+        /* dimension */
+        block-size: var(--avatar-size);
+        inline-size: var(--avatar-size);
+
         /* color */
-        background-color: var(--color-neutral-200);
-        border: 2px solid var(--color-neutral-50);
-        border-radius: calc(infinity * 1px);
-        box-shadow: var(--tt-ring-shadow), var(--shadow-sm);
-        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-300, currentColor);
+        outline: var(--avatar-outline-width) solid var(--avatar-outline);
+        border-radius: var(--avatar-border-radius);
+        background-color: var(--avatar-bg);
+        color: var(--avatar-fg);
+        
+        /* text */
+        font-weight: var(--font-weight-medium);
+        font-size: calc(var(--avatar-size) * 0.4);
+        line-height: 1;
+        text-transform: uppercase;
+        overflow: hidden;
+
         /* modifiers */
-        --av-size: --spacing(6.5);
+        --avatar-size: --spacing(10);
+        --avatar-outline-width: 2px;
+        --avatar-outline: var(--color-white);
+        --avatar-border-radius: var(--radius-md);
+        --avatar-bg: var(--color-neutral-300);
+        --avatar-fg: var(--color-neutral-700);
+        --avatar-group-gap: 3;
+
+        /* Avatar image */
+        img {
+            block-size: 100%;
+            inline-size: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    /* variants */
+    .avatar-circle {
+        --avatar-border-radius: calc(infinity * 1px);
+    }
+
+    /* sizes */
+    .avatar-xs {
+        --avatar-size: --spacing(6);
+    }
+
+    .avatar-sm {
+        --avatar-size: --spacing(8);
+    }
+
+    .avatar-lg {
+        --avatar-size: --spacing(12);
+    }
+
+    .avatar-xl {
+        --avatar-size: --spacing(16);
+        --avatar-outline-width: 3px;
+    }
+
+    /* with border */
+    .avatar-ring {
+        outline: 2px solid var(--color-blue-400);
+        border: var(--avatar-outline-width) solid var(--avatar-outline);
+    }
+
+    /* colors */
+    .avatar-primary {
+        --avatar-bg: var(--color-primary-100);
+        --avatar-fg: var(--color-primary-700);
+    }
+
+    .avatar-secondary {
+        --avatar-bg: var(--color-secondary-100);
+        --avatar-fg: var(--color-secondary-700);
+    }
+
+    .avatar-success {
+        --avatar-bg: var(--color-green-100);
+        --avatar-fg: var(--color-green-700);
+    }
+
+    .avatar-danger {
+        --avatar-bg: var(--color-red-100);
+        --avatar-fg: var(--color-red-700);
+    }
+
+    .avatar-warning {
+        --avatar-bg: var(--color-yellow-100);
+        --avatar-fg: var(--color-yellow-700);
+    }
+
+    /* avatar group */
+    .avatar-group,
+    .avatar-group-compact {
+        display: flex;
+
+        .avatar {
+            margin-inline-start: calc(var(--avatar-size) / var(--avatar-group-gap) * -1);
+
+            &:first-child {
+                margin-inline-start: 0;
+            }
+        }
+    }
+    .avatar-group-compact {
+        .avatar {
+            --avatar-group-gap: 1.5;
+        }
     }
 }

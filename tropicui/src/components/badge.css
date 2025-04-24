@@ -1,80 +1,55 @@
+/*
+Badge component styles.
+
+@description Provides an indicator that can be positioned at any of the outer corners of a parent element.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+*/
 @layer components {
     .badge {
         /* layout */
-        display: inline-flex;
-        align-items: center;
-        gap: --spacing(2);
-        
-        /* dimension */
-        block-size: var(--badge-size);
-        padding-inline: --spacing(2);
-
-        /* color */
-        border: 1px solid var(--badge-border);
-        border-radius: var(--radius-sm);
-        background-color: var(--badge-bg);
-        color: var(--badge-fg);
-
-        /* text */
-
-        /* modifiers */
-        --badge-size: --spacing(7);
-        --badge-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-        --badge-bg: var(--color-neutral-100);
-        --badge-fg: var(--color-neutral-600);
+        position: absolute;
+        z-index: 1;
     }
+    
+    /* Position modifiers */
+    .badge-top-left {
+        translate: -50% -50%;
+        inset-block-start: 0;
+        inset-inline-start: 0;
 
-    .badge-solid {
-        border: none;
+        &.badge-inner {
+            translate: -25% -25%;
+        }
     }
+    
+    .badge-top-right {
+        translate: 50% -50%;
+        inset-block-start: 0;
+        inset-inline-end: 0;
 
-    .badge-outline,
-    .badge-outline-bold {
-        --badge-border: var(--color-neutral-400);
-        background: none;
+        &.badge-inner {
+            translate: 25% -25%;
+        }
     }
+    
+    .badge-bottom-left {
+        translate: -50% 50%;
+        inset-block-end: 0;
+        inset-inline-start: 0;
 
-    .badge-outline-bold {
-        border-width: 2px;
+        &.badge-inner {
+            translate: -25% 25%;
+        }
     }
+    
+    .badge-bottom-right {
+        translate: 50% 50%;
+        inset-block-end: 0;
+        inset-inline-end: 0;
 
-    .badge-dashed {
-        --badge-border: var(--color-neutral-400);
-        border-style: dashed;
-    }
-
-    .badge-circle {
-        border-radius: calc(infinity * 1px);
-        padding-inline: --spacing(3);
-    }
-
-    .badge-status {
-        block-size: calc(var(--badge-size) / 2.5);
-        inline-size: calc(var(--badge-size) / 2.5);
-        border-radius: var(--radius-xs);
-        /* border-radius: calc(infinity * 1px); */
-        background-color: var(--color-neutral-400);
-    }
-
-    /* sizes */
-    .badge-xs {
-        --badge-size: --spacing(5);
-        font-size: var(--text-xs);
-        line-height: var(--text-xs--line-height);
-    }
-    .badge-sm {
-        --badge-size: --spacing(6);
-        font-size: var(--text-sm);
-        line-height: var(--text-sm--line-height);
-    }
-    .badge-lg {
-        --badge-size: --spacing(8);
-        font-size: var(--text-lg);
-        line-height: var(--text-lg--line-height);
-    }
-    .badge-xl {
-        --badge-size: --spacing(9);
-        font-size: var(--text-xl);
-        line-height: var(--text-xl--line-height);
+        &.badge-inner {
+            translate: 25% 25%;
+        }
     }
 }

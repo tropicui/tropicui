@@ -16,7 +16,6 @@
 @import "./src/components/button.css";
 @import "./src/components/card.css";
 @import "./src/components/checkbox.css";
-@import "./src/components/counter.css";
 @import "./src/components/divider.css";
 @import "./src/components/dropdown.css";
 @import "./src/components/form.css";
@@ -27,10 +26,13 @@
 @import "./src/components/radio.css";
 @import "./src/components/select.css";
 @import "./src/components/spinner.css";
+@import "./src/components/status.css";
 @import "./src/components/switch.css";
 @import "./src/components/tab.css";
 @import "./src/components/table.css";
+@import "./src/components/tag.css";
 @import "./src/components/textarea.css";
 @import "./src/components/toast.css";
 @import "./src/components/tooltip.css";
 @import "./src/utilities/spacer.css";
+@import "./src/utilities/stack.css";

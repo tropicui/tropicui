@@ -1,0 +1,64 @@
+@layer components {
+    .status {
+        /* layout */
+        display: inline-block;
+        aspect-ratio: 1;
+
+        /* dimension */
+        block-size: var(--status-size);
+        inline-size: var(--status-size);
+        border-radius: var(--radius-sm);
+
+        /* color */
+        background-color: var(--status-bg);
+
+        /* modifiers */
+        --status-size: --spacing(3);
+        --status-bg: var(--color-neutral-400);
+    }
+
+    /* variants */
+    /* circle */
+    .status-round {
+        border-radius: calc(infinity * 1px);
+    }
+
+    /* outline */
+    .status-outline,
+    .status-outline-bold {
+        border: 1px solid var(--status-bg);
+        background: none;
+    }
+    .status-outline-bold {
+        border-width: 2px;
+    }
+
+    /* colors */
+    .status-online {
+        border: 2px solid var(--color-white);
+        --status-bg: var(--color-green-500);
+    }
+
+    /* sizes */
+    .status-xs {
+        &:not(.status-round) {
+            border-radius: var(--radius-xs);
+        }
+        --status-size: --spacing(2);
+    }
+
+    .status-sm {
+        &:not(.status-round) {
+            border-radius: var(--radius-xs);
+        }
+        --status-size: --spacing(2.5);
+    }
+
+    .status-lg {
+        --status-size: --spacing(4);
+    }
+
+    .status-xl {
+        --status-size: --spacing(5);
+    }
+}

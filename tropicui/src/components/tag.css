@@ -1,0 +1,93 @@
+/*
+Tag component styles.
+
+@description Provides a flexible, centered inline-flex container with predefined sizing, color, and typography variables for consistent tag appearance.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --tag-size - Controls the overall size of the tag
+@property {string} --tag-border - Sets the border color for the tag
+@property {string} --tag-bg - Background color of the tag
+@property {string} --tag-fg - Foreground (text) color of the tag
+*/
+@layer components {
+    .tag {
+        /* layout */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: --spacing(2);
+        
+        /* dimension */
+        block-size: var(--tag-size);
+        min-inline-size: var(--tag-size);
+        padding-inline: --spacing(2);
+
+        /* color */
+        border: 1px solid var(--tag-border);
+        border-radius: var(--radius-sm);
+        background-color: var(--tag-bg);
+        color: var(--tag-fg);
+
+        /* text */
+
+        /* modifiers */
+        --tag-size: --spacing(7);
+        --tag-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+        --tag-bg: var(--color-neutral-100);
+        --tag-fg: var(--color-neutral-600);
+    }
+
+    /* variants */
+    .tag-solid {
+        border: none;
+    }
+
+    .tag-outline,
+    .tag-outline-bold {
+        --tag-border: var(--color-neutral-400);
+        background: none;
+    }
+
+    .tag-outline-bold {
+        border-width: 2px;
+    }
+
+    .tag-dashed {
+        --tag-border: var(--color-neutral-400);
+        border-style: dashed;
+    }
+
+    .tag-pill {
+        border-radius: calc(infinity * 1px);
+        padding-inline: --spacing(3);
+    }
+
+    /* colors */
+    .tag-danger {
+        --tag-bg: var(--color-red-500);
+        --tag-fg: var(--color-white);
+    }
+
+    /* sizes */
+    .tag-xs {
+        --tag-size: --spacing(5);
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+    }
+    .tag-sm {
+        --tag-size: --spacing(6);
+        font-size: var(--text-sm);
+        line-height: var(--text-sm--line-height);
+    }
+    .tag-lg {
+        --tag-size: --spacing(8);
+        font-size: var(--text-lg);
+        line-height: var(--text-lg--line-height);
+    }
+    .tag-xl {
+        --tag-size: --spacing(9);
+        font-size: var(--text-xl);
+        line-height: var(--text-xl--line-height);
+    }
+}
