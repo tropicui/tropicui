@@ -20,6 +20,7 @@
         --input-text: var(--color-neutral-800);
         --input-label: var(--color-neutral-400);
         --input-size: --spacing(9);
+        --btn-radius: none;
 
         /* input field */
         &:is(input), input {
@@ -73,7 +74,7 @@
         /* focus */
         &:not(.input-nofocus):focus-visible,
         &:not(.input-nofocus):has(:focus-visible) {
-            outline-width: 2px;
+            outline-width: 3px;
             border-color: var(--color-blue-400);
             background-color: var(--color-white);
         }

@@ -4,6 +4,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: --spacing(1);
+
         .tab {
             /* functionality */
             input[type="radio"] {
@@ -17,6 +18,12 @@
                 }
             }
         }
+
+        /* modifiers */
+        --btn-border: none;
+        --btn-radius: none;
+        --btn-shadow: none;
+
         .tab-content {
             display: none;
             order: calc(infinity);

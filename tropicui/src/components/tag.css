@@ -21,7 +21,7 @@ Tag component styles.
         /* dimension */
         block-size: var(--tag-size);
         min-inline-size: var(--tag-size);
-        padding-inline: --spacing(2);
+        padding-inline: --spacing(1);
 
         /* color */
         border: 1px solid var(--tag-border);
@@ -34,8 +34,8 @@ Tag component styles.
         /* modifiers */
         --tag-size: --spacing(7);
         --tag-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-        --tag-bg: var(--color-neutral-100);
-        --tag-fg: var(--color-neutral-600);
+        --tag-bg: var(--color-base);
+        --tag-fg: var(--color-base-content);
     }
 
     /* variants */
@@ -64,9 +64,21 @@ Tag component styles.
     }
 
     /* colors */
+    .tag-primary {
+        --tag-bg: var(--color-primary);
+        --tag-fg: var(--color-primary-content);
+    }
     .tag-danger {
-        --tag-bg: var(--color-red-500);
-        --tag-fg: var(--color-white);
+        --tag-bg: var(--color-danger);
+        --tag-fg: var(--color-danger-content);
+    }
+    .tag-warning {
+        --tag-bg: var(--color-warning);
+        --tag-fg: var(--color-warning-content);
+    }
+    .tag-success {
+        --tag-bg: var(--color-success);
+        --tag-fg: var(--color-success-content);
     }
 
     /* sizes */

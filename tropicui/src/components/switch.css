@@ -16,7 +16,7 @@
         outline: 0px solid var(--switch-focus-outline);
         outline-offset: 0px;
         background-color: var(--switch-bg);
-        box-shadow: var(--shadow-xs);
+        box-shadow: var(--inset-shadow-sm), var(--shadow-xs);
 
         /* modifiers */
         --switch-height: --spacing(4.5);

@@ -38,9 +38,6 @@
                         transition-duration: var(--tt-duration, var(--default-transition-duration));
                         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
                         > li {
-                            .btn {
-                                color: var(--color-neutral-400);
-                            }
                             > .btn {
                                 padding-inline-start: --spacing(9);
                             }
@@ -86,10 +83,6 @@
                     justify-content: center;
                 }
             }
-        }
-        .btn {
-            display: flex;
-            justify-content: stretch;
         }
     }
 }

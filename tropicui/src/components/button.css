@@ -1,46 +1,75 @@
 @layer components {
     .btn {
+        /* layout */
         cursor: pointer;
-        /* inline-flex for flexible size */
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: --spacing(2);
+
         /* dimensions */
-        block-size: var(--btn-min-size);
-        min-inline-size: var(--btn-min-size);
-        padding-inline: --spacing(2);
+        block-size: var(--btn-size);
+        min-inline-size: var(--btn-size);
+        padding-inline: calc(var(--btn-size) / 2.5);
         padding-block: --spacing(1);
+
         /* text */
         overflow: hidden;
         text-wrap: nowrap;
         text-decoration: none;
+
         /* colors */
+        border: var(--btn-border-width, 1px) var(--btn-border-style, solid) var(--btn-border, color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 10%));
+        border-radius: var(--btn-radius, var(--radius-md));
+        outline: 0px solid var(--btn-focus-outline);
+        outline-offset: 1px;
         background-color: var(--btn-bg);
+        box-shadow:
+            var(--btn-shadow, var(--shadow-xs))
+            ,inset 0 1px 0 0 color-mix(in oklab, var(--color-white) 25%, transparent)
+            ;
         color: var(--btn-fg);
-        /* states */
-        &:hover {
-            color: var(--btn-fg);
-            background-color: var(--btn-hover);
-        }
-        &:focus-visible {
-            background-color: var(--btn-focus);
-        }
-        &:active {
-            background-color: var(--btn-active);
-        }
-        &:has(input:checked):not(:hover) {
-            background-color: var(--btn-highlight);
-        }
+
+        /* animation */
+        transition-property: background-color, border-color, box-shadow, color;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
         /* modifiers */
-        --btn-bg: var(--color-neutral-100);
-        --btn-fg: var(--color-neutral-600);
-        --btn-border: none;
+        --btn-bg: var(--btn-color, var(--color-base));
+        --btn-fg: var(--color-base-content);
         --btn-hover: var(--color-neutral-200);
-        --btn-focus: var(--color-neutral-200);
-        --btn-active: var(--color-neutral-300);
         --btn-highlight: var(--color-white);
-        --btn-min-size: --spacing(9);
+        --btn-size: --spacing(10);
+        --btn-focus-outline: var(--color-blue-300);
+
+        /* states */
+        @media (hover: hover) {
+            &:hover {
+                --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 5%);
+            }
+        }
+
+        &:focus-visible {
+            outline-width: 2px;
+        }
+
+        &:is(:active, .btn-active) {
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 10%);
+            --btn-shadow: none;
+        }
+
+        &:is(:disabled, [disabled], .btn-disabled) {
+            pointer-events: none;
+            color: color-mix(in oklab, var(--btn-fg, var(--color-base-content)), var(--color-white) 35%);
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-white) 25%);
+            --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-white) 25%);
+        }
+
+        /* highlight selected tab button */
+        &:has(input:checked):not(:hover) {
+            --btn-bg: var(--btn-highlight);
+        }
     }
     .btn-icon {
         border: 2px solid var(--color-neutral-50);
@@ -48,27 +77,156 @@
         padding-inline: 0;
         --tt-ring-shadow: 0 0 0 1px var(--color-neutral-300, currentColor);
     }
-    .btn-block {
-        display: flex;
+
+    /* colors */
+    .btn-primary {
+        --btn-color: var(--color-primary);
+        --btn-fg: var(--color-primary-content);
     }
+
+    .btn-danger {
+        --btn-color: var(--color-danger);
+        --btn-fg: var(--color-danger-content);
+    }
+
+    .btn-warning {
+        --btn-color: var(--color-warning);
+        --btn-fg: var(--color-warning-content);
+    }
+
+    .btn-success {
+        --btn-color: var(--color-success);
+        --btn-fg: var(--color-success-content);
+    }
+
+    /* variants */
+    .btn-link {
+        --btn-bg: none;
+        --btn-fg: var(--btn-color, var(--color-base-content));
+        --btn-border: transparent;
+        --btn-shadow: none;
+        @media (hover: hover) {
+            &:hover {
+                --btn-bg: none;
+                text-decoration: underline;
+            }
+        }
+        &:active {
+            --btn-bg: none;
+            --btn-fg: color-mix(in oklab, var(--btn-color, var(--color-base-content)), var(--color-black) 20%);
+            text-decoration: underline;
+        }
+        &:is(:disabled, [disabled], .btn-disabled) {
+            --btn-bg: none;
+            --btn-border: transparent;
+        }
+    }
+
     .btn-clear {
         --btn-bg: none;
+        --btn-fg: var(--btn-color, var(--color-base-content));
+        --btn-border: transparent;
+        --btn-shadow: none;
+        @media (hover: hover) {
+            &:hover {
+                --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 10%, var(--color-white));
+            }
+        }
+        &:active {
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 25%, var(--color-white));
+        }
+        &:is(:disabled, [disabled], .btn-disabled) {
+            --btn-bg: none;
+            --btn-border: transparent;
+        }
     }
-    .btn-rounded {
-        border-radius: var(--radius-sm);
+
+    .btn-soft {
+        --btn-border: transparent;
+        &:not(:hover, :active, .btn-active) {
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 10%, var(--color-white));
+            --btn-fg: var(--btn-color, var(--color-base-content));
+            --btn-shadow: none;
+        }
+        @media (hover: none) {
+            &:not(:active, .btn-active) {
+                --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 10%, var(--color-white));
+                --btn-fg: var(--btn-color, var(--color-base-content));
+                --btn-shadow: none;
+            }
+        }
+        &:is(:disabled, [disabled], .btn-disabled) {
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 6%, var(--color-white));
+            --btn-border: transparent;
+        }
     }
-    .btn-white {
-        border: 1px solid var(--color-neutral-200);
-        box-shadow: var(--shadow-xs);
-        --btn-bg: var(--color-white);
-        --btn-hover: var(--color-white);
-        --btn-focus: var(--color-white);
-        --btn-active: var(--color-white);
+
+    .btn-outline,
+    .btn-outline-bold,
+    .btn-dashed,
+    .btn-dashed-bold {
+        &:not(:hover, :active, .btn-active) {
+            --btn-bg: none;
+            --btn-fg: var(--btn-color, var(--color-base-content));
+        }
+        @media (hover: none) {
+            &:not(:active, .btn-active) {
+                --btn-bg: none;
+                --btn-fg: var(--btn-color, var(--color-base-content));
+            }
+        }
+    }
+
+    .btn-outline-bold,
+    .btn-dashed-bold {
+        --btn-shadow: none;
+        --btn-border-width: 2px;
+    }
+
+    .btn-dashed,
+    .btn-dashed-bold {
+        --btn-border-style: dashed;
+        @media (hover: hover) {
+            &:hover {
+                --btn-border: transparent;
+            }
+        }
+        &:active {
+            --btn-border: transparent;
+        }
     }
 
     /* sizes */
+    .btn-xs {
+        --btn-size: --spacing(6);
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+    }
     .btn-sm {
-        --btn-min-size: --spacing(7);
+        --btn-size: --spacing(8);
+        font-size: var(--text-sm);
+        line-height: var(--text-sm--line-height);
+    }
+    .btn-lg {
+        --btn-size: --spacing(11);
+        font-size: var(--text-lg);
+        line-height: var(--text-lg--line-height);
+    }
+    .btn-xl {
+        --btn-size: --spacing(13);
+        font-size: var(--text-xl);
+        line-height: var(--text-xl--line-height);
+    }
+    .btn-2xl {
+        --btn-size: --spacing(15);
+        font-size: var(--text-2xl);
+        line-height: var(--text-2xl--line-height);
+    }
+    .btn-wide {
+        min-inline-size: --spacing(64);
+    }
+    .btn-block {
+        inline-size: 100%;
     }
 
     svg, img, i {

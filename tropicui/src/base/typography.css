@@ -62,8 +62,8 @@
     }
 
     code, kbd, samp, var, pre {
+        background-color: var(--color-neutral-400);
         @apply
-            bg-base-subtle
             border
             rounded-md
             py-0.5
@@ -74,10 +74,8 @@
     }
 
     mark {
-        @apply
-            bg-info
-            text-info-content
-        ;
+        background-color: var(--color-sky-500);
+        color: var(--color-sky-50);
     }
 
 }
