@@ -1,81 +1,68 @@
 @layer base {
     h1, .h1 {
-        @apply
-            text-5xl/16
-        ;
+        font-size: var(--text-5xl);
+        line-height: var(--text-5xl--line-height);
     }
     h2, .h2 {
-        @apply
-            text-4xl/14
-        ;
+        font-size: var(--text-4xl);
+        line-height: var(--text-4xl--line-height);
     }
     h3, .h3 {
-        @apply
-            text-3xl/12
-        ;
+        font-size: var(--text-3xl);
+        line-height: var(--text-3xl--line-height);
     }
     h4, .h4 {
-        @apply
-            text-2xl/10
-        ;
+        font-size: var(--text-2xl);
+        line-height: var(--text-2xl--line-height);
     }
     h5, .h5 {
-        @apply
-            text-xl/8
-        ;
+        font-size: var(--text-xl);
+        line-height: var(--text-xl--line-height);
     }
     h6, .h6 {
-        @apply
-            text-lg/6
-        ;
+        font-size: var(--text-lg);
+        line-height: var(--text-lg--line-height);
     }
 
     blockquote, .blockquote {
-        @apply
-            ps-12
-        ;
+        padding-inline-start: --spacing(12);
 
         & > p {
-            @apply
-                leading-relaxed
-            ;
+            line-height: var(--leading-relaxed);
         }
         & > .blockquote-footer::before {
-            @apply
-                content-["—_"]
-            ;
+            content: "— ";
         }
     }
 
     ul.list-styled {
-        @apply
-            list-disc
-            px-6
-        ;
+        list-style-type: disc;
+        padding-inline: --spacing(6);
     }
 
     ol.list-styled {
-        @apply
-            list-decimal
-            px-6
-        ;
+        list-style-type: decimal;
+        padding-inline: --spacing(6);
     }
 
     code, kbd, samp, var, pre {
-        background-color: var(--color-neutral-400);
-        @apply
-            border
-            rounded-md
-            py-0.5
-            px-1
-            h-fit
-            w-fit
-        ;
+        background-color: var(--color-base);
+        border: 1px solid color-mix(in oklab, var(--color-base), var(--color-black) 10%);
+        border-radius: var(--radius-md);
+        padding-block: --spacing(0.5);
+        padding-inline: --spacing(1);
+        block-size: fit-content;
+        inline-size: fit-content;
     }
 
     mark {
-        background-color: var(--color-sky-500);
-        color: var(--color-sky-50);
+        background-color: var(--color-accent);
+        color: var(--color-accent-content);
     }
 
+    small {
+        font-size: var(--text-sm);
+        line-height: var(--text-sm--line-height);
+        color: color-mix(in oklab, var(--color-base-content) 50%, var(--color-white));
+    }
 }

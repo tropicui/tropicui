@@ -1,9 +1,23 @@
 @layer components {
     .breadcrumb {
-        ol {
+        ol, ul {
+            /* layout */
             display: inline-flex;
+            gap: --spacing(2);
+
             li {
-                margin-inline: --spacing(2);
+                /* layout */
+                display: flex;
+                gap: --spacing(2);
+
+                /* text */
+                color: var(--color-base-content);
+
+                /* divider */
+                &:not(:first-child)::before {
+                    content: "/";
+                    display: block;
+                }
             }
         }
     }

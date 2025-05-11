@@ -3,6 +3,7 @@
 @import "./src/base/typography.css";
 @import "./src/base/heroicons.css";
 @import "./src/themes/default.css";
+@import "./src/themes/theme.css";
 @import "./src/layouts/footer.css";
 @import "./src/layouts/main.css";
 @import "./src/layouts/sidebar.css";
@@ -20,6 +21,7 @@
 @import "./src/components/dropdown.css";
 @import "./src/components/form.css";
 @import "./src/components/input.css";
+@import "./src/components/join.css";
 @import "./src/components/menu.css";
 @import "./src/components/modal.css";
 @import "./src/components/popover.css";
@@ -34,5 +36,6 @@
 @import "./src/components/textarea.css";
 @import "./src/components/toast.css";
 @import "./src/components/tooltip.css";
+@import "./src/utilities/animation.css";
 @import "./src/utilities/spacer.css";
 @import "./src/utilities/stack.css";

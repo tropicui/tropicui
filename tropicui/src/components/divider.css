@@ -7,12 +7,11 @@
 
         &::before,
         &::after {
-            @apply
-                content-['']
-                border-b-(length:--divider-width)
-                border-(--divider-border)
-                h-0.25
-                w-full
+            content: '';
+            border-block-end-width: var(--divider-width);
+            border-color: var(--divider-border);
+            block-size: --spacing(0.25);
+            inline-size: 100%;
         }
         &:not(:empty) {
             gap: --spacing(4);
@@ -31,41 +30,38 @@
     }
     .divider-horizontal {
         &.divider {
-            @apply
-                flex-col
-                h-full
-            ;
+            flex-direction: column;
+            block-size: 100%;
             &::before,
             &::after {
-                @apply
-                    border-s-(length:--divider-width)
-                    h-full
-                    w-0.25
+                border-inline-start-width: var(--divider-width);
+                block-size: 100%;
+                inline-size: --spacing(0.25);
             }
             &::before {
-                height: var(--divider-start);
+                block-size: var(--divider-start);
             }
             &::after {
-                height: var(--divider-end);
+                block-size: var(--divider-end);
             }
         }
     }
     .divider-dashed {
         &::before,
         &::after {
-            @apply border-dashed;
+            border-style: dashed;
         }
     }
     .divider-dotted {
         &::before,
         &::after {
-            @apply border-dotted;
+            border-style: dotted;
         }
     }
     .divider-solid {
         &::before,
         &::after {
-            @apply border-solid;
+            border-style: solid;
         }
     }
     .divider-neutral {
@@ -103,12 +99,12 @@
     }
     .divider-start-0 {
         &::before {
-            @apply content-none;
+            content: none;
         }
     }
     .divider-end-0 {
         &::after {
-            @apply content-none;
+            content: none;
         }
     }
 }

@@ -1,8 +1,10 @@
 @layer components {
     .radio {
+        /* layout */
         position: relative;
         appearance: none;
         cursor: pointer;
+
         /* dimensions */
         block-size: var(--radio-size);
         min-inline-size: var(--radio-size);

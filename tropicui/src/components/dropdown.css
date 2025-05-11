@@ -1,5 +1,6 @@
 @layer components {
     .dropdown {
+        /* layout */
         position: relative;
         display: inline-block;
         /* this will only activate when the focus is from mouse, not keyboard */
@@ -8,8 +9,8 @@
             visibility: visible;
         }
         ul {
+            /* layout */
             display: block;
-            /* position */
             position: absolute;
             top: 100%;
             bottom: auto;

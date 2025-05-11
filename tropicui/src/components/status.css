@@ -7,14 +7,14 @@
         /* dimension */
         block-size: var(--status-size);
         inline-size: var(--status-size);
-        border-radius: var(--radius-sm);
+        border-radius: var(--radius-control);
 
         /* color */
         background-color: var(--status-bg);
 
         /* modifiers */
         --status-size: --spacing(3);
-        --status-bg: var(--color-neutral-400);
+        --status-bg: var(--color-base-medium);
     }
 
     /* variants */
@@ -33,10 +33,40 @@
         border-width: 2px;
     }
 
+    .status-ring {
+        outline: 2px solid var(--status-ring, var(--color-white));
+    }
+
     /* colors */
-    .status-online {
-        border: 2px solid var(--color-white);
-        --status-bg: var(--color-green-500);
+    .status-primary {
+        --status-bg: var(--color-primary);
+    }
+    .status-accent {
+        --status-bg: var(--color-accent);
+    }
+    .status-warning {
+        --status-bg: var(--color-warning);
+    }
+    .status-danger {
+        --status-bg: var(--color-danger);
+    }
+    .status-success {
+        --status-bg: var(--color-success);
+    }
+    .status-ring-primary {
+        --status-ring: var(--color-primary);
+    }
+    .status-ring-accent {
+        --status-ring: var(--color-accent);
+    }
+    .status-ring-warning {
+        --status-ring: var(--color-warning);
+    }
+    .status-ring-danger {
+        --status-ring: var(--color-danger);
+    }
+    .status-ring-success {
+        --status-ring: var(--color-success);
     }
 
     /* sizes */

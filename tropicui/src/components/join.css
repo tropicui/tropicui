@@ -1,0 +1,8 @@
+@layer components {
+    .join {
+        /* layout */
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--join-gap, var(--spacing-2));
+    }
+}

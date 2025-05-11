@@ -1,6 +1,9 @@
 @layer components {
     .modal {
+        /* layout */
         opacity: 0;
+
+        /* dimensions */
         min-block-size: var(--modal-block);
         inline-size: var(--modal-inline);
 

@@ -21,7 +21,7 @@
             mask-repeat: no-repeat;
             mask-type: alpha;
             background-color: currentColor;
-            color: var(--color-neutral-500);
+            color: var(--color-base-content);
             inline-size: --spacing(5);
             /* animation */
             transition-property: rotate;
@@ -44,7 +44,7 @@
             overflow-y: clip;
             padding-inline: --spacing(4);
             /* colors */
-            color: var(--color-neutral-500);
+            color: var(--color-base-content);
             /* animation */
             transition-property: block-size, content-visibility, opacity, padding-block;
             transition-duration: var(--tt-duration, var(--default-transition-duration));

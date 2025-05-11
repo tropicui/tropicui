@@ -10,7 +10,7 @@
     <div class="layout bg-white h-screen">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <span class="sidebar-logo">
+                <span class="avatar avatar-sm avatar-ring">
                     <span class="font-extrabold">T</span>
                 </span>
                 <span class="sidebar-title">TropicUI</span>
@@ -57,18 +57,6 @@
                             <div class="divider">
                                 <span class="text-sm font-medium text-neutral-400">CATALOG</span>
                             </div>
-                        </li>
-                        <li>
-                            <details>
-                                <summary>Dropdown</summary>
-                                <details>
-                                    <summary>Level 1</summary>
-                                    <details>
-                                        <summary>Level 2</summary>
-                                        Holla
-                                    </details>
-                                </details>
-                            </details>
                         </li>
                         <li>
                             <a href="#" class="btn">
@@ -414,19 +402,26 @@
                 <nav class="breadcrumb">
                     <ol>
                         <li>
-                            <a href="#">Home</a>
+                            <a href="#" class="btn btn-link btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                </svg>
+                                <span>Home</span>
+                            </a>
                         </li>
-                        <li>/</li>
                         <li>
-                            <a href="#">Catalog</a>
+                            <a href="#" class="btn btn-link">Catalog</a>
                         </li>
-                        <li>/</li>
                         <li>
-                            <a href="#">Products</a>
+                            <a href="#" class="btn btn-link">Products</a>
                         </li>
-                        <li>/</li>
                         <li>
-                            <a href="#">Edit</a>
+                            <a href="#" class="btn btn-link btn-accent">
+                                <span>Edit</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                </svg>
+                            </a>
                         </li>
                     </ol>
                 </nav>
@@ -438,10 +433,34 @@
                 </div>
             </header>
             <main class="">
-                <div class="alert alert-danger">
+                <div class="alert alert-warning">
                     Warning!
                 </div>
                 <div class="mb-4"></div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Shadow</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="grid grid-cols-3 gap-16">
+                            <div class="card card-border card-low">
+                                <div class="card-body">
+                                    <h1>Low</h1>
+                                </div>
+                            </div>
+                            <div class="card card-border card-medium">
+                                <div class="card-body">
+                                    <h1>Medium</h1>
+                                </div>
+                            </div>
+                            <div class="card card-border card-high">
+                                <div class="card-body">
+                                    <h1>High</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card card-border card-gutter">
                     <div class="card-header">
                         <h4>Button</h4>
@@ -709,10 +728,56 @@
                             <div class="col-span-3">
                                 <button class="btn btn-block btn-primary">Primary</button>
                             </div>
+                            <div>
+                                <div class="join">
+                                    <button class="btn">Button A</button>
+                                    <button class="btn">Button b</button>
+                                    <button class="btn">Button C</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="join join-block">
+                                    <button class="btn">Button A</button>
+                                    <button class="btn">Button b</button>
+                                    <button class="btn">Button C</button>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-pill">Pill Button</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-round">P</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0-3-3m3 3 3-3m-8.25 6a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="btn btn-icon btn-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="btn btn-icon btn-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="btn bg-purple-500 hover:bg-purple-400 active:bg-purple-600 text-white border-purple-800">
+                                    Button
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card card-border card-gutter">
+                <div class="card card-border card-gutter shadow-xs">
                     <div class="card-header">
                         <h4>Dropdown</h4>
                     </div>
@@ -752,7 +817,7 @@
                                 <div class="avatar">
                                     <img src="../assets/img/user1.jpg" alt="User Name">
                                 </div>
-                                <span class="badge badge-bottom-right status status-round status-lg status-online"></span>
+                                <span class="badge badge-bottom-right status status-round status-ring status-success"></span>
                             </div>
                             
                             <!-- Avatar group -->
@@ -808,7 +873,7 @@
                                 <div class="avatar avatar-circle">
                                     <img src="../assets/img/user1.jpg" alt="User Name">
                                 </div>
-                                <span class="badge badge-bottom-right badge-inner status status-round status-lg status-online"></span>
+                                <span class="badge badge-bottom-right badge-tight status status-round status-ring status-success"></span>
                             </div>
                             
                             <!-- Avatar group -->
@@ -830,6 +895,95 @@
                             <div class="avatar avatar-circle avatar-ring">
                                 <img src="../assets/img/user1.jpg" alt="User 3">
                             </div>
+
+                            <div class="avatar avatar-ring">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+
+                            <div class="avatar avatar-ring">
+                                RG
+                            </div>
+
+                            <div class="avatar avatar-circle avatar-ring avatar-active">
+                                RG
+                            </div>
+
+                            <div class="avatar avatar-circle avatar-active">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+
+                            <div class="avatar avatar-active">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+
+                            <div class="avatar avatar-active">
+                                RG
+                            </div>
+
+                            <div class="avatar avatar-circle avatar-active">
+                                RG
+                            </div>
+
+                            <div class="avatar avatar-primary">
+                                PR
+                            </div>
+                            <div class="avatar avatar-accent">
+                                PR
+                            </div>
+                            <div class="avatar avatar-danger">
+                                PR
+                            </div>
+                            <div class="avatar avatar-warning">
+                                PR
+                            </div>
+                            <div class="avatar avatar-success">
+                                PR
+                            </div>
+                            <div class="avatar avatar-ring avatar-primary">
+                                PR
+                            </div>
+                            <div class="avatar avatar-ring avatar-accent">
+                                PR
+                            </div>
+                            <div class="avatar avatar-ring avatar-danger">
+                                PR
+                            </div>
+                            <div class="avatar avatar-ring avatar-warning">
+                                PR
+                            </div>
+                            <div class="avatar avatar-ring avatar-success">
+                                PR
+                            </div>
+                            <div class="avatar avatar-ring avatar-primary">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+                            <div class="avatar avatar-ring avatar-accent">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+                            <div class="avatar avatar-ring avatar-danger">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+                            <div class="avatar avatar-ring avatar-warning">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+                            <div class="avatar avatar-ring avatar-success">
+                                <img src="../assets/img/user1.jpg" alt="User 3">
+                            </div>
+                            <div class="avatar avatar-active avatar-primary">
+                                PR
+                            </div>
+                            <div class="avatar avatar-active avatar-accent">
+                                PR
+                            </div>
+                            <div class="avatar avatar-active avatar-danger">
+                                PR
+                            </div>
+                            <div class="avatar avatar-active avatar-warning">
+                                PR
+                            </div>
+                            <div class="avatar avatar-active avatar-success">
+                                PR
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -840,43 +994,83 @@
                     <div class="card-body">
                         <form class="form">
                             <div class="grid grid-cols-4 gap-8">
-                                <div class="relative w-fit">
-                                    <div class="badge badge-top-right status"></div>
-                                    <button class="btn relative">
+                                <div class="badge">
+                                    <div class="badge-top-right status"></div>
+                                    <button class="btn">
                                         Hello
                                     </button>
                                 </div>
-                                <div class="relative w-fit">
-                                    <div class="badge badge-top-right status"></div>
-                                    <div class="badge badge-top-right status animate-ping"></div>
-                                    <button class="btn relative">
+                                <div class="badge">
+                                    <div class="badge-top-right status"></div>
+                                    <div class="badge-top-right status animate-ping"></div>
+                                    <button class="btn">
                                         Hello
                                     </button>
                                 </div>
-                                <div class="relative w-fit">
-                                    <div class="badge badge-top-right tag tag-pill">+123</div>
-                                    <button class="btn relative">
+                                <div class="badge">
+                                    <div class="badge-top-right tag tag-pill">+123</div>
+                                    <button class="btn">
                                         Hello
                                     </button>
                                 </div>
 
                                 <!-- Example with different positions -->
-                                <div class="relative w-fit">
+                                <div class="badge">
                                     <button class="btn"><div class="spinner"></div></button>
-                                    <span class="badge badge-top-left status animate-pulse"></span>
-                                    <span class="badge badge-top-right status status-round"></span>
-                                    <span class="badge badge-top-right status status-round animate-ping"></span>
-                                    <span class="badge badge-bottom-left status animate-bounce"></span>
-                                    <span class="badge badge-bottom-right status animate-spin"></span>
+                                    <span class="badge-top-left status animate-pulse"></span>
+                                    <span class="badge-top-right status status-round"></span>
+                                    <span class="badge-top-right status status-round animate-ping"></span>
+                                    <span class="badge-bottom-left status animate-bounce"></span>
+                                    <span class="badge-bottom-right status animate-spin"></span>
                                 </div>
 
-                                <div class="relative w-fit">
-                                    <button class="btn rounded-full">Inner</button>
-                                    <span class="badge badge-inner badge-top-left status animate-pulse"></span>
-                                    <span class="badge badge-inner badge-top-right status status-round"></span>
-                                    <span class="badge badge-inner badge-top-right status status-round animate-ping"></span>
-                                    <span class="badge badge-inner badge-bottom-left status animate-bounce"></span>
-                                    <span class="badge badge-inner badge-bottom-right status animate-spin"></span>
+                                <div class="badge">
+                                    <button class="btn btn-pill">Tight</button>
+                                    <span class="badge-tight badge-top-left status animate-pulse"></span>
+                                    <span class="badge-tight badge-top-right status status-round"></span>
+                                    <span class="badge-tight badge-top-right status status-round animate-ping"></span>
+                                    <span class="badge-tight badge-bottom-left status animate-bounce"></span>
+                                    <span class="badge-tight badge-bottom-right status animate-spin"></span>
+                                </div>
+
+                                <div class="badge">
+                                    <button class="btn">Tight</button>
+                                    <span class="badge-tight badge-top-left status animate-pulse"></span>
+                                    <span class="badge-tight badge-top-right status status-round"></span>
+                                    <span class="badge-tight badge-top-right status status-round animate-ping"></span>
+                                    <span class="badge-tight badge-bottom-left status animate-bounce"></span>
+                                    <span class="badge-tight badge-bottom-right status animate-spin"></span>
+                                </div>
+
+                                <div class="badge">
+                                    <div class="badge-top-left status status-primary"></div>
+                                    <div class="badge-top-right status status-warning"></div>
+                                    <div class="badge-bottom-left status status-danger"></div>
+                                    <div class="badge-bottom-right status status-success"></div>
+                                    <button class="btn">
+                                        Colors
+                                    </button>
+                                </div>
+
+                                <div class="badge">
+                                    <div class="badge-top-left status status-ring status-success"></div>
+                                    <div class="badge-top-right status status-ring status-ring-danger status-success"></div>
+                                    <div class="badge-bottom-left status status-ring status-ring-primary status-success"></div>
+                                    <div class="badge-bottom-right status status-ring status-ring-accent status-success"></div>
+                                    <button class="btn">
+                                        Rings
+                                    </button>
+                                </div>
+
+                                <div class="badge">
+                                    <div class="badge-top-left status status-accent"></div>
+                                    <div class="badge-top-right status status-warning animate-pulse"></div>
+                                    <div class="badge-bottom-left status status-danger"></div>
+                                    <div class="badge-bottom-left status status-danger animate-ping"></div>
+                                    <div class="badge-bottom-right status status-success animate-spin-occilate"></div>
+                                    <button class="btn">
+                                        Animate
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -899,9 +1093,17 @@
                                 <div class="spinner spinner-lg"></div>
                                 <div class="spinner spinner-xl"></div>
 
-                                <!-- Spinner with color variant -->
+                                <!-- Spinner with style variant -->
                                 <div class="spinner spinner-clear"></div>
                                 <div class="spinner spinner-solid"></div>
+
+                                <!-- Spinner with color variant -->
+                                <div class="spinner spinner-primary"></div>
+                                <div class="spinner spinner-accent"></div>
+                                <div class="spinner spinner-warning"></div>
+                                <div class="spinner spinner-danger"></div>
+                                <div class="spinner spinner-success"></div>
+
 
                                 <!-- Spinner with text -->
                                 <div>
@@ -1015,6 +1217,36 @@
                                         Bounce
                                     </span>
                                 </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-primary"></span>
+                                        Primary
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-accent"></span>
+                                        Accent
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-warning"></span>
+                                        Warning
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-danger"></span>
+                                        Danger
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <span class="status status-success"></span>
+                                        Success
+                                    </span>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -1064,7 +1296,13 @@
                                       </span> for example. In summary, we concluded.
                                 </div>
                                 <div>
+                                    A standard <span class="tag tag-pill">Pill</span> shaped tag.
+                                </div>
+                                <div>
                                     <span class="tag tag-primary">Primary</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-accent">Accent</span>
                                 </div>
                                 <div>
                                     <span class="tag tag-warning">Warning</span>
@@ -1074,6 +1312,51 @@
                                 </div>
                                 <div>
                                     <span class="tag tag-success">Success</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-solid tag-primary">Primary</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-solid tag-accent">Accent</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-solid tag-warning">Warning</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-solid tag-danger">Danger</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-solid tag-success">Success</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-outline tag-primary">Primary</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-outline tag-accent">Accent</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-outline tag-warning">Warning</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-outline tag-danger">Danger</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-outline tag-success">Success</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-dashed tag-soft tag-primary">Primary</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-dashed tag-soft tag-accent">Accent</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-dashed tag-soft tag-warning">Warning</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-dashed tag-soft tag-danger">Danger</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-dashed tag-soft tag-success">Success</span>
                                 </div>
                             </div>
                         </form>
@@ -3243,9 +3526,85 @@
                         </dialog>
                     </div>
                 </div>
+                <div class="relative">
                 <div class="card card-border card-gutter">
                     <div class="card-body">
                         <div class="grid grid-cols-3 gap-2">
+                            <div>
+                                <div class="popover popover-bottom-start">
+                                    <button class="btn popover-toggle">Popover Bottom Start</button>
+                                    <div class="popover-content ">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="popover open popover-bottom">
+                                    <button class="btn popover-toggle">Popover Bottom</button>
+                                    <div class="popover-content ">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="popover popover-bottom-end">
+                                    <button class="btn popover-toggle">Popover Bottom End</button>
+                                    <div class="popover-content ">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="popover popover-right-start">
+                                    <button class="btn popover-toggle">Popover Right Start</button>
+                                    <div class="popover-content ">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-start-3 text-right">
+                                <div class="popover popover-left-start">
+                                    <button class="btn popover-toggle">Popover Left Start</button>
+                                    <div class="popover-content ">
+                                        <p>This is the content within the popover.</p>
+                                        <p>You can put whatever you wanted in here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="popover popover-right">
+                                    <button class="btn popover-toggle">Popover Right</button>
+                                    <div class="popover-content ">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-start-3 text-right">
+                                <div class="popover open popover-left">
+                                    <button class="btn popover-toggle">Popover Left</button>
+                                    <div class="popover-content ">
+                                        <p>This is the content within the popover.</p>
+                                        <p>You can put whatever you wanted in here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="popover popover-right-end">
+                                    <button class="btn popover-toggle">Popover Right End</button>
+                                    <div class="popover-content ">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-start-3 text-right">
+                                <div class="popover popover-left-end">
+                                    <button class="btn popover-toggle">Popover Left End</button>
+                                    <div class="popover-content ">
+                                        <p>This is the content within the popover.</p>
+                                        <p>You can put whatever you wanted in here.</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div>
                                 <div class="popover popover-top-start">
                                     <button class="btn popover-toggle">Popover Top Start</button>
@@ -3273,122 +3632,48 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="popover popover-left-start">
-                                    <button class="btn popover-toggle">Popover Left Start</button>
-                                    <div class="popover-content ">
-                                        <p>This is the content within the popover.</p>
-                                        <p>You can put whatever you wanted in here.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-start-3 text-right">
-                                <div class="popover popover-right-start">
-                                    <button class="btn popover-toggle">Popover Right Start</button>
-                                    <div class="popover-content ">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="popover open popover-left">
-                                    <button class="btn popover-toggle">Popover Left</button>
-                                    <div class="popover-content ">
-                                        <p>This is the content within the popover.</p>
-                                        <p>You can put whatever you wanted in here.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-start-3 text-right">
-                                <div class="popover popover-right">
-                                    <button class="btn popover-toggle">Popover Right</button>
-                                    <div class="popover-content ">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="popover popover-left-end">
-                                    <button class="btn popover-toggle">Popover Left End</button>
-                                    <div class="popover-content ">
-                                        <p>This is the content within the popover.</p>
-                                        <p>You can put whatever you wanted in here.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-start-3 text-right">
-                                <div class="popover popover-right-end">
-                                    <button class="btn popover-toggle">Popover Right End</button>
-                                    <div class="popover-content ">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="popover popover-bottom-start">
-                                    <button class="btn popover-toggle">Popover Bottom Start</button>
-                                    <div class="popover-content ">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <div class="popover popover-bottom">
-                                    <button class="btn popover-toggle">Popover Bottom</button>
-                                    <div class="popover-content ">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <div class="popover popover-bottom-end">
-                                    <button class="btn popover-toggle">Popover Bottom End</button>
-                                    <div class="popover-content ">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil. Accusantium assumenda similique expedita explicabo provident praesentium debitis dolore molestiae. Quas, laboriosam. Expedita minima iusto quisquam aperiam illo similique earum.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
                 <div class="card card-border card-gutter">
                     <div class="card-body">
                         <div class="grid grid-cols-3 gap-2">
                             <div>
-                                <button class="btn tooltip tooltip-top-start" data-tooltip="Do not click this">tooltip Top Start</button>
+                                <button class="btn tooltip tooltip-bottom-start" data-tooltip="Do not click this">tooltip Bottom Start</button>
                             </div>
                             <div class="text-center">
+                                <button class="btn tooltip tooltip-bottom" data-tooltip="Do not click this">tooltip Bottom hover</button>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn tooltip tooltip-bottom-end" data-tooltip="Do not click this">tooltip Bottom End</button>
+                            </div>
+                            <div>
+                                <button class="btn tooltip tooltip-right-start h-12" data-tooltip="Do not click this">tooltip Right Start</button>
+                            </div>
+                            <div class="col-start-3 text-right">
+                                <button class="btn tooltip tooltip-left-start h-12" data-tooltip="Do not click this">tooltip Left Start</button>
+                            </div>
+                            <div>
+                                <button class="btn tooltip tooltip-right h-12" data-tooltip="Do not click this">tooltip Right</button>
+                            </div>
+                            <div class="col-start-3 text-right">
+                                <button class="btn tooltip tooltip-left h-12" data-tooltip="Do not click this">tooltip Left</button>
+                            </div>
+                            <div>
+                                <button class="btn tooltip tooltip-right-end h-12" data-tooltip="Do not click this">tooltip Right End</button>
+                            </div>
+                            <div class="col-start-3 text-right">
+                                <button class="btn tooltip tooltip-left-end h-12" data-tooltip="Do not click this">tooltip Left End</button>
+                            </div>
+                            <div>
+                                <button class="btn tooltip tooltip-top-start" data-tooltip="Do not click this">tooltip Top Start</button>
+                            </div>
+                            <div>
                                 <button class="btn tooltip tooltip-top open" data-tooltip="Do not click this">tooltip Top</button>
                             </div>
                             <div class="text-right">
                                 <button class="btn tooltip tooltip-top-end" data-tooltip="Do not click this">tooltip Top End</button>
-                            </div>
-                            <div>
-                                <button class="btn tooltip tooltip-left-start h-12" data-tooltip="Do not click this">tooltip Left Start</button>
-                            </div>
-                            <div class="col-start-3 text-right">
-                                <button class="btn tooltip tooltip-right-start h-12" data-tooltip="Do not click this">tooltip Right Start</button>
-                            </div>
-                            <div>
-                                <button class="btn tooltip tooltip-left h-12" data-tooltip="Do not click this">tooltip Left</button>
-                            </div>
-                            <div class="col-start-3 text-right">
-                                <button class="btn tooltip tooltip-right h-12" data-tooltip="Do not click this">tooltip Right</button>
-                            </div>
-                            <div>
-                                <button class="btn tooltip tooltip-left-end h-12" data-tooltip="Do not click this">tooltip Left End</button>
-                            </div>
-                            <div class="col-start-3 text-right">
-                                <button class="btn tooltip tooltip-right-end h-12" data-tooltip="Do not click this">tooltip Right End</button>
-                            </div>
-                            <div>
-                                <button class="btn tooltip tooltip-bottom-start" data-tooltip="Do not click this">tooltip Bottom Start</button>
-                            </div>
-                            <div>
-                                <button class="btn tooltip tooltip-bottom open" data-tooltip="Do not click this">tooltip Bottom hover</button>
-                            </div>
-                            <div class="text-right">
-                                <button class="btn tooltip tooltip-bottom-end" data-tooltip="Do not click this">tooltip Bottom End</button>
                             </div>
                         </div>
                     </div>
@@ -3399,12 +3684,12 @@
                             <h4>Group</h4>
                         </div>
                         <div class="card-toolbar">
-                            <div class="dropdown dropdown-left">
-                                <a href="#" class="btn">
+                            <div class="dropdown dropdown-left dropdown-up">
+                                <button class="btn btn-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                                     </svg>
-                                </a>
+                                </button>
                                 <ul>
                                     <li>
                                         <a href="#" class="btn btn-clear">
@@ -3427,11 +3712,11 @@
                     </div>
                     <div class="card-body min-h-48">
                         <div class="dropdown">
-                            <a href="#" class="btn">
+                            <button class="btn btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                                 </svg>
-                            </a>
+                            </button>
                             <ul>
                                 <li>
                                     <a href="#" class="btn btn-clear">
@@ -3451,7 +3736,7 @@
                             </ul>
                         </div>
                         <div class="dropdown dropdown-up">
-                            <a href="#" class="btn">
+                            <a class="btn btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                                 </svg>
@@ -3478,7 +3763,7 @@
                 </div>
                 <div class="card card-border card-gutter">
                     <div class="tabs">
-                        <label class="tab btn">
+                        <label class="tab btn btn-sm btn-pill">
                             <input type="radio" name="tab" checked>
                             Tab 1
                         </label>
@@ -3487,7 +3772,7 @@
                                 <p>Tab 1 content</p>
                             </div>
                         </div>
-                        <label class="tab btn">
+                        <label class="tab btn btn-sm btn-pill">
                             <input type="radio" name="tab">
                             Tab 2
                         </label>
@@ -3496,7 +3781,7 @@
                                 <p>Tab 2 content</p>
                             </div>
                         </div>
-                        <label class="tab btn">
+                        <label class="tab btn btn-sm btn-pill">
                             <input type="radio" name="tab">
                             Tab 3
                         </label>
@@ -3507,8 +3792,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card-border card-gutter rounded-xl overflow-hidden">
-                    <div class="overflow-x-auto ">
+                <div class="card card-border card-gutter">
+                    <div class="overflow-x-auto">
                         <table class="table table-hover table-striped table-compact">
                             <thead>
                                 <tr>
@@ -3565,9 +3850,9 @@
                         </table>
                     </div>
                 </div>
-                <div class="card card-border card-gutter">
-                    <div class="overflow-x-auto ">
-                        <table class="table table-hover ">
+                <div class="card card-border card-gutter  ">
+                    <div class=" overflow-x-auto">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>No.</th>

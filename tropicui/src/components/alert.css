@@ -1,60 +1,36 @@
 @layer components {
     .alert {
-        @apply
-            grid
-            grid-flow-col
-            grid-cols-[auto_1fr]
-            items-center
-            gap-2
-            border
-            border-(--alert-border)
-            rounded
-            bg-(--alert-bg)
-            shadow-[inset_0_1px_--theme(--color-white/.1),0_2px_2px_--theme(--color-black/.05)]
-            text-(--alert-fg)
-            py-4
-            px-4
-        ;
-        --alert-border: color-mix(in oklab,var(--alert-color),white 15%);
-        --alert-bg: var(--alert-color);
-        --alert-color: var(--color-neutral-300);
+        /* layout */
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: --spacing(2);
+
+        /* dimensions */
+        padding: --spacing(4);
+
+        /* colors */
+        border: 1px solid var(--alert-border);
+        border-radius: var(--radius-sm);
+        background-color: var(--alert-bg);
+        box-shadow: var(--shadow-sm);
+        color: var(--alert-fg);
+
+        /* modifiers */
+        --alert-bg: var(--alert-color, var(--color-base));
         --alert-fg: var(--color-base-content);
+        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base)), var(--color-white) 15%);
+
         i {
-            @apply
-                text-(--alert-fg)
-            ;
+            color: var(--alert-fg);
         }
     }
-    .alert-sm {
-        @apply
-            py-2
-        ;
-    }
-    .alert-lg {
-        @apply
-            py-6
-        ;
-    }
-    .alert-xl {
-        @apply
-            py-8
-        ;
-    }
-    .alert-neutral {
-        --alert-color: var(--color-neutral);
-        --alert-fg: var(--color-neutral-content);
-    }
+
+    /* colors */
     .alert-primary {
         --alert-color: var(--color-primary);
         --alert-fg: var(--color-primary-content);
-    }
-    .alert-secondary {
-        --alert-color: var(--color-secondary);
-        --alert-fg: var(--color-secondary-content);
-    }
-    .alert-info {
-        --alert-color: var(--color-info);
-        --alert-fg: var(--color-info-content);
     }
     .alert-accent {
         --alert-color: var(--color-accent);
@@ -72,31 +48,36 @@
         --alert-color: var(--color-danger);
         --alert-fg: var(--color-danger-content);
     }
-    .alert-soft {
-        --alert-bg: color-mix(in oklab,var(--alert-color), white 90%);
-        --alert-fg: var(--alert-color);
-    }
-    .alert-outline {
-        @apply
-            shadow-none
-        ;
+
+    /* outline styles */
+    .alert-outline,
+    .alert-outline-bold,
+    .alert-dashed,
+    .alert-dashed-bold,
+    .alert-dotted,
+    .alert-dotted-bold {
+        box-shadow: none;
         --alert-bg: transparent;
-        --alert-fg: var(--alert-color);
+        --alert-fg: var(--alert-color, var(--color-base-content));
+        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base)), var(--color-black) 10%);
     }
-    .alert-outline-dashed {
-        @apply
-            shadow-none
-            border-dashed
-        ;
-        --alert-bg: color-mix(in oklab,var(--alert-color), white 90%);
-        --alert-fg: var(--alert-color);
+    .alert-dashed,
+    .alert-dashed-bold {
+        border-style: dashed;
     }
-    .alert-outline-dotted {
-        @apply
-            shadow-none
-            border-dotted
-        ;
-        --alert-bg: color-mix(in oklab,var(--alert-color), white 90%);
-        --alert-fg: var(--alert-color);
+    .alert-dotted,
+    .alert-dotted-bold {
+        border-style: dotted;
+    }
+    .alert-outline-bold,
+    .alert-dashed-bold,
+    .alert-dotted-bold {
+        border-width: 2px;
+    }
+
+    /* variants */
+    .alert-soft {
+        --alert-bg: color-mix(in oklab, var(--alert-color, var(--color-base)) 10%, var(--color-white));
+        --alert-fg: var(--alert-color, var(--color-base-content));
     }
 }

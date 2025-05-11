@@ -23,11 +23,11 @@ Avatar component styles.
         inline-size: var(--avatar-size);
 
         /* color */
-        outline: var(--avatar-outline-width) solid var(--avatar-outline);
+        border: 2px solid var(--color-white);
         border-radius: var(--avatar-border-radius);
-        background-color: var(--avatar-bg);
-        color: var(--avatar-fg);
-        
+        background-color: var(--avatar-bg, var(--color-base));
+        color: var(--avatar-fg, var(--color-base-content));
+
         /* text */
         font-weight: var(--font-weight-medium);
         font-size: calc(var(--avatar-size) * 0.4);
@@ -36,12 +36,9 @@ Avatar component styles.
         overflow: hidden;
 
         /* modifiers */
+        --avatar-bg: var(--avatar-color, var(--color-base));
         --avatar-size: --spacing(10);
-        --avatar-outline-width: 2px;
-        --avatar-outline: var(--color-white);
         --avatar-border-radius: var(--radius-md);
-        --avatar-bg: var(--color-neutral-300);
-        --avatar-fg: var(--color-neutral-700);
         --avatar-group-gap: 3;
 
         /* Avatar image */
@@ -73,39 +70,42 @@ Avatar component styles.
 
     .avatar-xl {
         --avatar-size: --spacing(16);
-        --avatar-outline-width: 3px;
+        border-width: 3px;
     }
 
     /* with border */
+    .avatar-active {
+        outline: 2px solid var(--color-accent);
+    }
+
     .avatar-ring {
-        outline: 2px solid var(--color-blue-400);
-        border: var(--avatar-outline-width) solid var(--avatar-outline);
+        outline: 1px solid color-mix(in oklab, var(--avatar-color, var(--color-base)), var(--color-black) 10%);
     }
 
     /* colors */
     .avatar-primary {
-        --avatar-bg: var(--color-primary-100);
-        --avatar-fg: var(--color-primary-700);
+        --avatar-color: var(--color-primary);
+        --avatar-fg: var(--color-primary-content);
     }
 
-    .avatar-secondary {
-        --avatar-bg: var(--color-secondary-100);
-        --avatar-fg: var(--color-secondary-700);
+    .avatar-accent {
+        --avatar-color: var(--color-accent);
+        --avatar-fg: var(--color-accent-content);
     }
 
     .avatar-success {
-        --avatar-bg: var(--color-green-100);
-        --avatar-fg: var(--color-green-700);
+        --avatar-color: var(--color-success);
+        --avatar-fg: var(--color-success-content);
     }
 
     .avatar-danger {
-        --avatar-bg: var(--color-red-100);
-        --avatar-fg: var(--color-red-700);
+        --avatar-color: var(--color-danger);
+        --avatar-fg: var(--color-danger-content);
     }
 
     .avatar-warning {
-        --avatar-bg: var(--color-yellow-100);
-        --avatar-fg: var(--color-yellow-700);
+        --avatar-color: var(--color-warning);
+        --avatar-fg: var(--color-warning-content);
     }
 
     /* avatar group */

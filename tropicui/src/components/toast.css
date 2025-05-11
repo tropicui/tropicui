@@ -1,10 +1,12 @@
 @layer components {
     .toast {
+        /* layout */
         display: flex;
         opacity: 1;
         visibility: visible;
-
         align-items: start;
+
+        /* dimensions */
         min-block-size: --spacing(12);
         inline-size: var(--toast-size);
         padding: --spacing(2);

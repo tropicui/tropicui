@@ -11,7 +11,6 @@
         block-size: var(--btn-size);
         min-inline-size: var(--btn-size);
         padding-inline: calc(var(--btn-size) / 2.5);
-        padding-block: --spacing(1);
 
         /* text */
         overflow: hidden;
@@ -19,13 +18,15 @@
         text-decoration: none;
 
         /* colors */
-        border: var(--btn-border-width, 1px) var(--btn-border-style, solid) var(--btn-border, color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 10%));
-        border-radius: var(--btn-radius, var(--radius-md));
-        outline: 0px solid var(--btn-focus-outline);
+        border-width: var(--btn-border-width, 1px);
+        border-style: var(--btn-border-style, solid);
+        border-color: var(--btn-border, color-mix(in oklab, var(--btn-color, var(--color-base-border)), var(--color-black) 6%));
+        border-radius: var(--btn-radius, var(--radius-control));
+        outline: 0px solid var(--btn-focus-outline, var(--color-accent));
         outline-offset: 1px;
         background-color: var(--btn-bg);
         box-shadow:
-            var(--btn-shadow, var(--shadow-xs))
+            var(--btn-shadow, var(--shadow-low))
             ,inset 0 1px 0 0 color-mix(in oklab, var(--color-white) 25%, transparent)
             ;
         color: var(--btn-fg);
@@ -38,10 +39,8 @@
         /* modifiers */
         --btn-bg: var(--btn-color, var(--color-base));
         --btn-fg: var(--color-base-content);
-        --btn-hover: var(--color-neutral-200);
         --btn-highlight: var(--color-white);
         --btn-size: --spacing(10);
-        --btn-focus-outline: var(--color-blue-300);
 
         /* states */
         @media (hover: hover) {
@@ -55,7 +54,7 @@
         }
 
         &:is(:active, .btn-active) {
-            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 10%);
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 12%);
             --btn-shadow: none;
         }
 
@@ -72,16 +71,18 @@
         }
     }
     .btn-icon {
-        border: 2px solid var(--color-neutral-50);
-        box-shadow: var(--tt-ring-shadow), var(--shadow-sm);
         padding-inline: 0;
-        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-300, currentColor);
     }
 
     /* colors */
     .btn-primary {
         --btn-color: var(--color-primary);
         --btn-fg: var(--color-primary-content);
+    }
+
+    .btn-accent {
+        --btn-color: var(--color-accent);
+        --btn-fg: var(--color-accent-content);
     }
 
     .btn-danger {
@@ -100,20 +101,32 @@
     }
 
     /* variants */
+    .btn-pill {
+        --btn-radius: calc(infinity * 1px);
+    }
+
+    .btn-round {
+        inline-size: var(--btn-size);
+        --btn-radius: calc(infinity * 1px);
+    }
+
     .btn-link {
+        --btn-size: fit-content;
         --btn-bg: none;
         --btn-fg: var(--btn-color, var(--color-base-content));
         --btn-border: transparent;
         --btn-shadow: none;
+
         @media (hover: hover) {
             &:hover {
                 --btn-bg: none;
+                --btn-fg: color-mix(in oklab, var(--btn-color, var(--color-base-content)), var(--color-black) 10%);
                 text-decoration: underline;
             }
         }
-        &:active {
+        &:is(:active, .btn-active) {
             --btn-bg: none;
-            --btn-fg: color-mix(in oklab, var(--btn-color, var(--color-base-content)), var(--color-black) 20%);
+            --btn-fg: color-mix(in oklab, var(--btn-color, var(--color-base-content)), var(--color-black) 30%);
             text-decoration: underline;
         }
         &:is(:disabled, [disabled], .btn-disabled) {
@@ -132,7 +145,7 @@
                 --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 10%, var(--color-white));
             }
         }
-        &:active {
+        &:is(:active, .btn-active) {
             --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)) 25%, var(--color-white));
         }
         &:is(:disabled, [disabled], .btn-disabled) {
@@ -191,7 +204,7 @@
                 --btn-border: transparent;
             }
         }
-        &:active {
+        &:is(:active, .btn-active) {
             --btn-border: transparent;
         }
     }

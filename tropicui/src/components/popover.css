@@ -63,7 +63,7 @@
             margin-block-end: var(--popover-content-margin);
         }
         .popover.popover-bottom & {
-            left: 50%;
+            inset-inline-start: 50%;
             transform: translateX(-50%);
             transform-origin: top left;
             margin-block-start: var(--popover-content-margin);
@@ -86,15 +86,15 @@
             margin-inline-end: var(--popover-content-margin);
         }
         .popover.popover-left-start & {
-            bottom: 0;
-            right: 100%;
-            transform-origin: bottom right;
-            margin-inline-end: var(--popover-content-margin);
-        }
-        .popover.popover-left-end & {
             top: 0;
             right: 100%;
             transform-origin: top right;
+            margin-inline-end: var(--popover-content-margin);
+        }
+        .popover.popover-left-end & {
+            bottom: 0;
+            right: 100%;
+            transform-origin: bottom right;
             margin-inline-end: var(--popover-content-margin);
         }
         .popover.popover-right & {
@@ -105,15 +105,15 @@
             margin-inline-start: var(--popover-content-margin);
         }
         .popover.popover-right-start & {
-            bottom: 0;
-            left: 100%;
-            transform-origin: bottom left;
-            margin-inline-start: var(--popover-content-margin);
-        }
-        .popover.popover-right-end & {
             top: 0;
             left: 100%;
             transform-origin: top left;
+            margin-inline-start: var(--popover-content-margin);
+        }
+        .popover.popover-right-end & {
+            bottom: 0;
+            left: 100%;
+            transform-origin: bottom left;
             margin-inline-start: var(--popover-content-margin);
         }
     }

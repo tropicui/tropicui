@@ -1,6 +1,7 @@
 @layer components {
     .form {
         .form-field {
+            /* layout */
             display: grid;
             grid-template-columns: 1fr;
             align-content: start;

@@ -1,5 +1,6 @@
 @layer components {
     .input {
+        /* layout */
         overflow: hidden;
         /* dimensions */
         block-size: var(--input-size);
@@ -74,7 +75,7 @@
         /* focus */
         &:not(.input-nofocus):focus-visible,
         &:not(.input-nofocus):has(:focus-visible) {
-            outline-width: 3px;
+            outline-width: 2px;
             border-color: var(--color-blue-400);
             background-color: var(--color-white);
         }

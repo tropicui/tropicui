@@ -1,6 +1,6 @@
 @layer components {
     .tabs {
-        /* functionality */
+        /* layout */
         display: flex;
         flex-wrap: wrap;
         gap: --spacing(1);
@@ -18,11 +18,6 @@
                 }
             }
         }
-
-        /* modifiers */
-        --btn-border: none;
-        --btn-radius: none;
-        --btn-shadow: none;
 
         .tab-content {
             display: none;
