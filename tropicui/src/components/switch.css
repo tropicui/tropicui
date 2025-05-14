@@ -89,10 +89,6 @@
                 }
             }
 
-            label:has(&) {
-                color: var(--label-disabled);
-            }
-
             &::before {
                 background-color: var(--switch-disabled-thumb-checked-bg);
                 box-shadow: none;

@@ -1,50 +1,72 @@
+/*
+Accordion component styles.
+
+@description Provides a collapsible content container with animated transitions for showing and hiding content sections.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+*/
 @layer components {
     .accordion {
         @media (prefers-reduced-motion: no-preference) {
             interpolate-size: allow-keywords;
         }
-        border: 1px solid var(--color-neutral-200);
-        border-radius: var(--radius-sm);
+
+        /* color */
+        border: 1px solid var(--color-base-border);
+        border-radius: var(--radius-control);
+
         summary {
+            /* layout */
             display: flex;
             justify-content: space-between;
             cursor: pointer;
             padding-inline: --spacing(4);
             padding-block: --spacing(4);
         }
+
         summary::marker {
             content: "";
         }
+
         summary::after {
+            /* icon */
             content: "";
             mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>');
             mask-repeat: no-repeat;
             mask-type: alpha;
             background-color: currentColor;
-            color: var(--color-base-content);
+            color: var(--color-base-foreground);
             inline-size: --spacing(5);
+
             /* animation */
             transition-property: rotate;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
+
         &[open] {
             summary::after {
                 rotate: 180deg;
             }
+
             &::details-content {
+                /* layout */
                 opacity: 1;
                 block-size: auto;
                 padding-block-end: --spacing(4);
             }
         }
+
         &::details-content {
+            /* layout */
             opacity: 0;
             block-size: 0;
             overflow-y: clip;
             padding-inline: --spacing(4);
+
             /* colors */
-            color: var(--color-base-content);
+            color: var(--color-base-foreground);
+
             /* animation */
             transition-property: block-size, content-visibility, opacity, padding-block;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
@@ -52,7 +74,5 @@
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
         }
-        /* modifiers */
-        
     }
 }

@@ -1,3 +1,16 @@
+/*
+Alert component styles.
+
+@description Provides a flexible, customizable alert component for displaying notifications, warnings, and status messages with consistent styling.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --alert-bg - Background color of the alert
+@property {string} --alert-fg - Text color of the alert content
+@property {string} --alert-border - Border color of the alert
+@property {string} --alert-color - Base color that influences background, text, and border colors
+@property {string} --alert-soft-bg - Background color of the alert for soft variant
+*/
 @layer components {
     .alert {
         /* layout */
@@ -12,15 +25,16 @@
 
         /* colors */
         border: 1px solid var(--alert-border);
-        border-radius: var(--radius-sm);
+        border-radius: var(--radius-control);
         background-color: var(--alert-bg);
-        box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-low);
         color: var(--alert-fg);
 
         /* modifiers */
         --alert-bg: var(--alert-color, var(--color-base));
-        --alert-fg: var(--color-base-content);
-        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base)), var(--color-white) 15%);
+        --alert-fg: var(--color-base-foreground);
+        --alert-soft-bg: color-mix(in oklab, var(--alert-color) 10%, var(--color-white));
+        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base-border)), var(--color-white) 15%);
 
         i {
             color: var(--alert-fg);
@@ -49,6 +63,13 @@
         --alert-fg: var(--color-danger-content);
     }
 
+    /* variants */
+    .alert-soft {
+        --alert-bg: var(--alert-soft-bg, var(--color-base));
+        --alert-fg: var(--alert-color, var(--color-base-foreground));
+        --alert-border: transparent;
+    }
+
     /* outline styles */
     .alert-outline,
     .alert-outline-bold,
@@ -56,28 +77,28 @@
     .alert-dashed-bold,
     .alert-dotted,
     .alert-dotted-bold {
-        box-shadow: none;
-        --alert-bg: transparent;
-        --alert-fg: var(--alert-color, var(--color-base-content));
-        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base)), var(--color-black) 10%);
+        --alert-fg: var(--alert-color, var(--color-base-foreground));
+        --alert-border: var(--alert-color, var(--color-base-border));
+
+        &:not(.alert-soft) {
+            box-shadow: none;
+            --alert-bg: transparent;
+        }
     }
+
     .alert-dashed,
     .alert-dashed-bold {
         border-style: dashed;
     }
+
     .alert-dotted,
     .alert-dotted-bold {
         border-style: dotted;
     }
+
     .alert-outline-bold,
     .alert-dashed-bold,
     .alert-dotted-bold {
         border-width: 2px;
-    }
-
-    /* variants */
-    .alert-soft {
-        --alert-bg: color-mix(in oklab, var(--alert-color, var(--color-base)) 10%, var(--color-white));
-        --alert-fg: var(--alert-color, var(--color-base-content));
     }
 }

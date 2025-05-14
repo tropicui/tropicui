@@ -1,22 +1,31 @@
+/*
+Breadcrumb component styles.
+
+@description Provides a navigation aid that shows the user's location in a hierarchical structure with a consistent path-based display.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --breadcrumb-gap - Gap between breadcrumb items
+*/
 @layer components {
     .breadcrumb {
+        /* modifiers */
+        --breadcrumb-gap: --spacing(2);
+
         ol, ul {
             /* layout */
-            display: inline-flex;
-            gap: --spacing(2);
+            display: flex;
+            gap: var(--breadcrumb-gap);
 
             li {
                 /* layout */
                 display: flex;
-                gap: --spacing(2);
-
-                /* text */
-                color: var(--color-base-content);
+                align-items: center;
+                gap: var(--breadcrumb-gap);
 
                 /* divider */
                 &:not(:first-child)::before {
                     content: "/";
-                    display: block;
                 }
             }
         }

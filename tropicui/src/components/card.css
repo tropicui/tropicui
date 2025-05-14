@@ -1,10 +1,24 @@
+/*
+Card component styles.
+
+@description Provides a flexible, customizable card component for displaying content in a contained box with consistent styling for headers, bodies, and footers.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --card-bg - Background color of the card
+@property {string} --card-header-bg - Background color of the card header
+@property {string} --card-footer-bg - Background color of the card footer
+@property {string} --card-border - Border color of the card
+@property {string} --card-border-width - Width of the card border
+@property {string} --card-radius - The rounded corner radius of the card
+@property {string} --card-header-size - Height of the card header
+@property {string} --card-footer-size - Height of the card footer
+*/
 @layer components {
     .card {
-        /* layout */
-
         /* colors */
         background-color: var(--card-bg);
-        border: var(--card-border-width) solid var(--color-base-border);
+        border: var(--card-border-width) solid var(--card-border);
         border-radius: var(--card-radius);
         box-shadow: var(--shadow-low);
 
@@ -12,6 +26,7 @@
         --card-bg: var(--color-white);
         --card-header-bg: var(--color-white);
         --card-footer-bg: var(--color-white);
+        --card-border: var(--color-base-border);
         --card-border-width: 0px;
         --card-radius: var(--radius-container);
         --card-header-size: --spacing(14);
@@ -43,8 +58,8 @@
         .card-header {
             /* layout */
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: --spacing(4);
 
             /* dimensions */
             min-block-size: var(--card-header-size);
@@ -52,7 +67,7 @@
             padding-inline: --spacing(6);
 
             /* colors */
-            border-block-end: 1px solid var(--color-base-border);
+            border-block-end: 1px solid var(--card-border);
             background-color: var(--card-header-bg);
 
             &.card-sticky {
@@ -61,14 +76,14 @@
                 z-index: 10;
             }
 
-            .card-title,
-            .card-toolbar {
+            .card-title {
                 display: flex;
                 align-items: baseline;
                 gap: --spacing(2);
             }
         }
 
+        /* card image */
         .card-figure {
             overflow: hidden;
         }
@@ -81,18 +96,24 @@
 
         .card-actions {
             display: flex;
+            align-items: center;
             flex-wrap: wrap;
-            gap: --spacing(3);
+            gap: --spacing(4);
         }
 
         .card-footer {
+            /* layout */
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: --spacing(4);
+
+            /* dimensions */
             min-block-size: var(--card-footer-size);
             padding-block: --spacing(4);
             padding-inline: --spacing(6);
-            border-block-start: 1px solid var(--color-base-border);
+
+            /* colors */
+            border-block-start: 1px solid var(--card-border);
             background-color: var(--card-footer-bg);
 
             &.card-sticky {
@@ -105,16 +126,6 @@
         :where(.alert) {
             border-radius: 0;
             box-shadow: none;
-        }
-
-        &.card-low {
-            box-shadow: var(--shadow-low);
-        }
-        &.card-medium {
-            box-shadow: var(--shadow-medium);
-        }
-        &.card-high {
-            box-shadow: var(--shadow-high);
         }
     }
 

@@ -20,7 +20,7 @@ Badge component styles.
         z-index: 1;
     }
     
-    /* Position modifiers */
+    /* Positions */
     .badge-top-left {
         translate: -50% -50%;
         inset-block-start: 0;

@@ -14,7 +14,7 @@
 
         /* modifiers */
         --status-size: --spacing(3);
-        --status-bg: var(--color-base-medium);
+        --status-bg: var(--color-base-dense);
     }
 
     /* variants */
@@ -90,5 +90,9 @@
 
     .status-xl {
         --status-size: --spacing(5);
+    }
+
+    .status-2xl {
+        --status-size: --spacing(6);
     }
 }

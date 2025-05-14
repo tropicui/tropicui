@@ -5,11 +5,14 @@ Avatar component styles.
 
 @layer components - Applies styles at the component layer of the CSS cascade.
 
-@property {string} --avatar-size - Controls the overall size of the avatar
-@property {string} --avatar-border - Sets the border color for the avatar
 @property {string} --avatar-bg - Background color of the avatar
-@property {string} --avatar-fg - Foreground (text) color of the avatar
-@property {string} --avatar-border-width - Width of the avatar border
+@property {string} --avatar-fg - Foreground text color of the avatar
+@property {string} --avatar-color - Base color that influences background colors and outline colors
+@property {string} --avatar-active - Color of the avatar outline when active
+@property {string} --avatar-ring - Color of the avatar outline
+@property {string} --avatar-size - Controls the overall size of the avatar
+@property {string} --avatar-border-radius - The rounded corner radius of the avatar
+@property {string} --avatar-group-gap - The gap between avatars in a group
 */
 @layer components {
     .avatar {
@@ -25,8 +28,8 @@ Avatar component styles.
         /* color */
         border: 2px solid var(--color-white);
         border-radius: var(--avatar-border-radius);
-        background-color: var(--avatar-bg, var(--color-base));
-        color: var(--avatar-fg, var(--color-base-content));
+        background-color: var(--avatar-bg);
+        color: var(--avatar-fg, var(--color-base-foreground));
 
         /* text */
         font-weight: var(--font-weight-medium);
@@ -36,10 +39,12 @@ Avatar component styles.
         overflow: hidden;
 
         /* modifiers */
-        --avatar-bg: var(--avatar-color, var(--color-base));
+        --avatar-bg: var(--avatar-color, var(--color-base-airy));
         --avatar-size: --spacing(10);
-        --avatar-border-radius: var(--radius-md);
+        --avatar-border-radius: var(--radius-control);
         --avatar-group-gap: 3;
+        --avatar-active: var(--color-accent);
+        --avatar-ring: var(--avatar-color, var(--color-base));
 
         /* Avatar image */
         img {
@@ -75,11 +80,11 @@ Avatar component styles.
 
     /* with border */
     .avatar-active {
-        outline: 2px solid var(--color-accent);
+        outline: 2px solid var(--avatar-active);
     }
 
     .avatar-ring {
-        outline: 1px solid color-mix(in oklab, var(--avatar-color, var(--color-base)), var(--color-black) 10%);
+        outline: 1px solid var(--avatar-ring);
     }
 
     /* colors */

@@ -2,31 +2,33 @@
     .input {
         /* layout */
         overflow: hidden;
+
         /* dimensions */
         block-size: var(--input-size);
 
         /* colors */
-        border: var(--input-border);
-        border-radius: var(--radius-md);
-        outline: var(--input-focus);
+        border: 1px solid var(--input-border);
+        border-radius: var(--radius-control);
+        outline: 0px solid var(--input-focus);
         background-color: var(--input-bg);
-        box-shadow: var(--shadow-xs);
-
-        /* text */
+        box-shadow: var(--shadow-low);
 
         /* modifiers */
-        --input-bg: var(--color-neutral-50);
-        --input-border: 1px solid var(--color-neutral-300);
-        --input-focus: 0px solid var(--color-blue-200);
-        --input-text: var(--color-neutral-800);
-        --input-label: var(--color-neutral-400);
-        --input-size: --spacing(9);
+        --input-bg: var(--color-base);
+        --input-border: var(--input-color, var(--color-base-border));
+        --input-focus: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
+        --input-text: var(--color-base-foreground);
+        --input-label: var(--color-base-dense);
+        --input-size: --spacing(10);
         --btn-radius: none;
 
         /* input field */
         &:is(input), input {
+            /* layout */
             overflow: hidden;
             inline-size: 100%;
+
+            /* dimensions */
             padding-inline: --spacing(4);
 
             /* text */
@@ -37,7 +39,7 @@
             }
 
             &:read-only:not(:disabled, [disabled]) {
-                background-color: var(--color-neutral-200);
+                background-color: var(--color-base-border);
             }
 
             &:is([type="file"]) {
@@ -53,12 +55,16 @@
                     margin-inline-end: --spacing(4);
 
                     /* color */
-                    background-color: var(--color-neutral-100);
-                    border-inline-end: var(--input-border);
+                    background-color: var(--input-bg);
+                    border-inline-end: 1px solid var(--color-base-border);
                 }
 
                 &::file-selector-button:hover {
-                    background-color: var(--color-neutral-200);
+                    background-color: color-mix(in oklab, var(--input-bg), var(--color-black) 6%);
+                }
+
+                &::file-selector-button:active {
+                    background-color: color-mix(in oklab, var(--input-bg), var(--color-black) 12%);
                 }
             }
         }
@@ -68,15 +74,15 @@
         &:has(:disabled, [disabled]) {
             cursor: not-allowed;
             /* colors */
-            background-color: var(--color-neutral-200);
+            background-color: var(--color-base-border);
             box-shadow: none;
         }
 
         /* focus */
         &:not(.input-nofocus):focus-visible,
         &:not(.input-nofocus):has(:focus-visible) {
-            outline-width: 2px;
-            border-color: var(--color-blue-400);
+            outline-width: 3px;
+            border-color: var(--input-color, var(--color-accent));
             background-color: var(--color-white);
         }
 
@@ -85,10 +91,9 @@
         &.input-validate:has(:invalid),
         &.input-invalid,
         &:has(.input-invalid) {
-            border-color: var(--color-red-400);
-            outline-width: 2px;
+            --input-color: var(--color-danger);
+            outline-width: 3px;
             outline-style: solid;
-            outline-color: var(--color-red-200);
         }
 
         /* input group */
@@ -120,10 +125,10 @@
                 min-inline-size: var(--input-size);
 
                 &:has(~ input) {
-                    border-inline-end: var(--input-border);
+                    border-inline-end: 1px solid var(--color-base-border);
                 }
                 &:not(:has(~ input)) {
-                    border-inline-start: var(--input-border);
+                    border-inline-start: 1px solid var(--color-base-border);
                 }
             }
         }
@@ -145,15 +150,15 @@
                 justify-items: center;
                 text-align: center;
                 padding-inline: --spacing(2);
-                background-color: var(--color-neutral-100);
+                background-color: var(--color-base-airy);
             }
 
             .input-prefix {
-                border-inline-end: var(--input-border);
+                border-inline-end: 1px solid var(--color-base-border);
             }
     
             .input-suffix {
-                border-inline-start: var(--input-border);
+                border-inline-start: 1px solid var(--color-base-border);
             }
         }
     }
@@ -170,7 +175,35 @@
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: var(--color-neutral-100);
+        background-color: var(--color-base-airy);
+    }
+
+    .input.input-outline,
+    .input.input-outline-bold {
+        /* colors */
+        background: none;
+        box-shadow: none;
+    }
+
+    .input-outline-bold {
+        border-width: 2px;
+    }
+
+    /* colors */
+    .input-primary {
+        --input-color: var(--color-primary);
+    }
+    .input-accent {
+        --input-color: var(--color-accent);
+    }
+    .input-success {
+        --input-color: var(--color-success);
+    }
+    .input-warning {
+        --input-color: var(--color-warning);
+    }
+    .input-danger {
+        --input-color: var(--color-danger);
     }
 
     /* sizes */

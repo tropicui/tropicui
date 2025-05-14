@@ -10,7 +10,7 @@
             interpolate-size: allow-keywords;
         }
         /* text */
-        font-weight: var(--font-weight-medium);
+        /* font-weight: var(--font-weight-medium); */
         /* level 1 */
         > ul {
             > li {

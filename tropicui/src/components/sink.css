@@ -1,0 +1,20 @@
+@layer components {
+    .sink {
+        /* layout */
+        display: grid;
+        gap: --spacing(1.5);
+
+        /* dimensions */
+        block-size: fit-content;
+        padding: --spacing(1.5);
+
+        /* colors */
+        background-color: var(--color-base-airy);
+        border-radius: var(--radius-container);
+        box-shadow: var(--inset-low);
+    }
+
+    .sink-fit {
+        inline-size: fit-content;
+    }
+}

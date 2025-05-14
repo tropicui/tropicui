@@ -1,3 +1,10 @@
+/*
+Form component and field styles.
+
+@description Provides a flexible form component with field styles for various input types.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+*/
 @layer components {
     .form {
         .form-field {
@@ -26,15 +33,15 @@
             padding-inline: --spacing(4);
 
             /* color */
-            background-color: var(--color-neutral-100);
+            background-color: var(--color-base-airy);
             border-radius: var(--radius-md);
-            border: 1px solid var(--color-neutral-300);
+            border: 1px solid var(--color-base-border);
             box-shadow: var(--shadow-xs);
 
             legend {
                 padding-inline: --spacing(1);
 
-                color: var(--color-neutral-500);
+                color: var(--color-base-content);
                 font-weight: var(--font-weight-medium);
                 font-size: var(--text-lg);
                 line-height: var(--text-lg--line-height);
@@ -50,12 +57,15 @@
             }
             &.fieldset-solid {
                 border-width: 0px;
-                background-color: var(--color-neutral-200);
+                background-color: var(--color-base);
             }
         }
 
         label {
-            --label-disabled: var(--color-neutral-400);
+            &:has(:disabled, [disabled]) {
+                pointer-events: none;
+                color: color-mix(in oklab, var(--color-base-foreground), var(--color-white) 40%);
+            }
         }
 
         .label {
@@ -64,7 +74,7 @@
             gap: --spacing(1);
 
             /* text */
-            color: var(--color-neutral-500);
+            color: var(--color-base-foreground);
             font-weight: var(--font-weight-medium);
 
             svg, img, i {

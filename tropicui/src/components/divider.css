@@ -1,3 +1,17 @@
+/*
+Divider component styles.
+
+@description Provides a flexible, customizable divider component for separating content sections with optional text labels and various styling options.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --divider-border - Color of the divider line
+@property {string} --divider-color - Base color that influences the divider appearance
+@property {string} --divider-color-modifier - Modifier that can adjust the divider color
+@property {string} --divider-width - Thickness of the divider line
+@property {string} --divider-start - Width/height of the divider before content
+@property {string} --divider-end - Width/height of the divider after content
+*/
 @layer components {
     .divider {
         display: flex;
@@ -22,8 +36,7 @@
         &::after {
             width: var(--divider-end);
         }
-        --divider-border: var(--divider-color-modifier, var(--divider-color));
-        --divider-color: var(--color-neutral-300);
+        --divider-border: var(--divider-color-modifier, var(--divider-color, var(--color-base-border)));
         --divider-width: 1px;
         --divider-start: 100%;
         --divider-end: 100%;
@@ -64,17 +77,8 @@
             border-style: solid;
         }
     }
-    .divider-neutral {
-        --divider-color: var(--color-neutral);
-    }
     .divider-primary {
         --divider-color: var(--color-primary);
-    }
-    .divider-secondary {
-        --divider-color: var(--color-secondary);
-    }
-    .divider-info {
-        --divider-color: var(--color-info);
     }
     .divider-accent {
         --divider-color: var(--color-accent);
@@ -89,7 +93,7 @@
         --divider-color: var(--color-danger);
     }
     .divider-subtle {
-        --divider-color-modifier: color-mix(in oklch,var(--divider-color) 20%,white);
+        --divider-color-modifier: color-mix(in oklch, var(--divider-color, var(--color-base-border)) 20%, white);
     }
     .divider-start {
         --divider-start: calc(var(--spacing) * 10);

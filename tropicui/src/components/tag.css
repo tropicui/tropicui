@@ -24,16 +24,22 @@ Tag component styles.
         padding-inline: --spacing(2);
 
         /* color */
-        border: 1px solid var(--tag-border, var(--color-base-border));
-        border-radius: var(--radius-control);
-        background-color: var(--tag-bg, var(--color-base));
-        color: var(--tag-fg, var(--color-base-content));
+        border: 1px solid var(--tag-border);
+        border-radius: var(--tag-radius);
+        background-color: var(--tag-bg);
+        color: var(--tag-fg);
 
         /* text */
+        font-size: calc(var(--tag-size) * 0.6);
+        line-height: 1;
 
         /* modifiers */
-        --tag-size: --spacing(7);
+        --tag-size: --spacing(6);
         --tag-bg: var(--tag-color, var(--color-base));
+        --tag-fg: var(--color-base-foreground);
+        --tag-soft-bg: color-mix(in oklab, var(--tag-color) 10%, var(--color-white));
+        --tag-border: color-mix(in oklab, var(--tag-color, var(--color-base-border)), var(--color-black) 12%);
+        --tag-radius: var(--radius-control);
     }
 
     /* colors */
@@ -60,24 +66,31 @@ Tag component styles.
 
     /* variants */
     .tag-solid {
-        border: none;
+        --tag-border: transparent;
     }
 
     .tag-soft {
-        --tag-bg: color-mix(in oklab, var(--tag-color, var(--color-base-medium)) 10%, var(--color-white));
-        --tag-fg: var(--tag-color);
-    }
+        --tag-bg: var(--tag-soft-bg, var(--color-base));
+        --tag-fg: var(--tag-color, var(--color-base-foreground));
 
+        --tag-border: transparent;
+    }
+    
     .tag-outline,
-    .tag-outline-bold {
-        --tag-border: var(--tag-color, var(--color-base-medium));
-        --tag-fg: var(--tag-color);
-        background: none;
+    .tag-outline-bold,
+    .tag-dashed,
+    .tag-dashed-bold {
+        --tag-fg: var(--tag-color, var(--color-base-foreground));
+        --tag-border: var(--tag-color, var(--color-base-border));
+
+        &:not(.tag-soft) {
+            box-shadow: none;
+            --tag-bg: transparent;
+        }
     }
 
     .tag-dashed,
     .tag-dashed-bold {
-        --tag-border: var(--tag-color, var(--color-base-medium));
         border-style: dashed;
     }
 
@@ -87,29 +100,32 @@ Tag component styles.
     }
 
     .tag-pill {
-        border-radius: calc(infinity * 1px);
+        --tag-radius: calc(infinity * 1px);
         padding-inline: --spacing(3);
     }
 
     /* sizes */
     .tag-xs {
-        --tag-size: --spacing(5);
-        font-size: var(--text-xs);
-        line-height: var(--text-xs--line-height);
+        --tag-size: --spacing(4);
     }
     .tag-sm {
-        --tag-size: --spacing(6);
-        font-size: var(--text-sm);
-        line-height: var(--text-sm--line-height);
+        --tag-size: --spacing(5);
     }
     .tag-lg {
-        --tag-size: --spacing(8);
-        font-size: var(--text-lg);
-        line-height: var(--text-lg--line-height);
+        --tag-size: --spacing(7);
     }
     .tag-xl {
+        --tag-size: --spacing(8);
+    }
+    .tag-2xl {
         --tag-size: --spacing(9);
-        font-size: var(--text-xl);
-        line-height: var(--text-xl--line-height);
+    }
+
+    /* icon */
+    svg, img, i {
+        .tag & {
+            block-size: 1.25em;
+            min-inline-size: 1.25em;
+        }
     }
 }
