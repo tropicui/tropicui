@@ -1,5 +1,21 @@
+/*
+Spinner component styles.
+
+@description Provides a flexible, customizable loading spinner component with various sizes, colors, and styles. Supports different visual variants for indicating loading or processing states.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --spinner-size - Controls the overall size of the spinner
+@property {string} --spinner-border-width - Controls the thickness of the spinner's border
+@property {string} --spinner-border - Color of the spinner's circular track
+@property {string} --spinner-accent - Color of the spinner's moving part that indicates animation
+*/
 @layer components {
     .spinner {
+        /* modifiers */
+        --spinner-size: --spacing(5);
+        --spinner-border-width: 2px;
+
         /* layout */
         display: inline-flex;
         align-items: center;
@@ -11,15 +27,11 @@
 
         /* color */
         border: var(--spinner-border-width) solid var(--spinner-border, var(--color-base-border));
-        border-top-color: var(--spinner-accent, var(--color-base-medium));
+        border-top-color: var(--spinner-accent, var(--color-base-dense));
         border-radius: calc(infinity * 1px);
-        
+
         /* animation */
         animation: spin 0.8s linear infinite;
-
-        /* modifiers */
-        --spinner-size: --spacing(5);
-        --spinner-border-width: 2px;
 
         label:has(&) {
             display: inline-flex;

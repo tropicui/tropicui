@@ -1,0 +1,7 @@
+[data-theme="solar"] {
+    color-scheme: light;
+
+    --color-primary: var(--color-amber-700);
+
+    --radius: 0.5rem;
+}

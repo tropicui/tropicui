@@ -8,15 +8,15 @@ Form component and field styles.
 @layer components {
     .form {
         .form-field {
+            /* modifiers */
+            --field-cols: 1;
+
             /* layout */
             display: grid;
             grid-template-columns: 1fr;
             align-content: start;
             align-items: start;
             gap: --spacing(3);
-
-            /* modifiers */
-            --field-cols: 1;
 
             &.field-row {
                 --field-cols: 2;
@@ -73,7 +73,7 @@ Form component and field styles.
             align-items: center;
             gap: --spacing(1);
 
-            /* text */
+            /* typography */
             color: var(--color-base-foreground);
             font-weight: var(--font-weight-medium);
 

@@ -14,11 +14,19 @@ Divider component styles.
 */
 @layer components {
     .divider {
+        /* modifiers */
+        --divider-border: var(--divider-color-modifier, var(--divider-color, var(--color-base-border)));
+        --divider-width: 1px;
+        --divider-start: 100%;
+        --divider-end: 100%;
+
+        /* layout */
         display: flex;
         flex-direction: row;
         align-items: center;
         white-space: nowrap;
 
+        /* bar */
         &::before,
         &::after {
             content: '';
@@ -36,12 +44,10 @@ Divider component styles.
         &::after {
             width: var(--divider-end);
         }
-        --divider-border: var(--divider-color-modifier, var(--divider-color, var(--color-base-border)));
-        --divider-width: 1px;
-        --divider-start: 100%;
-        --divider-end: 100%;
     }
-    .divider-horizontal {
+
+    /* direction */
+    .divider-vertical {
         &.divider {
             flex-direction: column;
             block-size: 100%;
@@ -59,6 +65,8 @@ Divider component styles.
             }
         }
     }
+
+    /* variants */
     .divider-dashed {
         &::before,
         &::after {
@@ -77,6 +85,8 @@ Divider component styles.
             border-style: solid;
         }
     }
+
+    /* colors */
     .divider-primary {
         --divider-color: var(--color-primary);
     }
@@ -95,6 +105,8 @@ Divider component styles.
     .divider-subtle {
         --divider-color-modifier: color-mix(in oklch, var(--divider-color, var(--color-base-border)) 20%, white);
     }
+
+    /* content positioning */
     .divider-start {
         --divider-start: calc(var(--spacing) * 10);
     }

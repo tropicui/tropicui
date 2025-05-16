@@ -16,21 +16,22 @@ Card component styles.
 */
 @layer components {
     .card {
-        /* colors */
-        background-color: var(--card-bg);
-        border: var(--card-border-width) solid var(--card-border);
-        border-radius: var(--card-radius);
-        box-shadow: var(--shadow-low);
-
         /* modifiers */
-        --card-bg: var(--color-white);
-        --card-header-bg: var(--color-white);
-        --card-footer-bg: var(--color-white);
+        --card-bg: var(--color-base-background);
+        --card-header-bg: var(--color-base-background);
+        --card-footer-bg: var(--color-base-background);
         --card-border: var(--color-base-border);
         --card-border-width: 0px;
         --card-radius: var(--radius-container);
         --card-header-size: --spacing(14);
         --card-footer-size: --spacing(16);
+
+        /* colors */
+        background-color: var(--card-bg);
+        border: var(--card-border-width) solid var(--card-border);
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-low);
+        color: var(--color-base-foreground);
 
         /* children border radius */
         & > *:is(:first-child):not(:last-child) {

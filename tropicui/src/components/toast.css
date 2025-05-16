@@ -1,5 +1,25 @@
+/*
+Toast component styles.
+
+@description Provides a flexible, customizable toast notification component with various positions, sizes, colors, and auto-dismiss options. Supports different placement variations and timed dismissal for temporary notifications.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --toast-bg - Background color of the toast
+@property {string} --toast-fg - Text color of the toast content
+@property {string} --toast-size - Controls the inline (width) size of the toast
+@property {string} --toast-spacing - Controls the margin around the toast
+@property {string} --toast-shadow - Shadow effect applied to the toast
+@property {string} --toast-delay-t - Custom delay time for toast dismissal when using toast-dismiss-t class
+*/
 @layer components {
     .toast {
+        /* modifiers */
+        --toast-bg: var(--color-white);
+        --toast-size: --spacing(84);
+        --toast-spacing: --spacing(4);
+        --toast-shadow: var(--tt-ring-shadow), var(--shadow-high);
+
         /* layout */
         display: flex;
         opacity: 1;
@@ -14,21 +34,15 @@
 
         /* color */
         background-color: var(--toast-bg);
-        border: 1px solid var(--color-neutral-50);
-        border-radius: var(--radius-sm);
-        box-shadow: var(--tt-ring-shadow), var(--shadow-md);
+        border: 1px solid color-mix(in oklab, var(--color-black) 4%, transparent);
+        border-radius: var(--radius-control);
+        box-shadow: var(--toast-shadow);
 
         /* animation */
         transition-property: display, opacity, transform, visibility;
         transition-behavior: allow-discrete;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-
-        /* modifiers */
-        --toast-bg: var(--color-white);
-        --toast-size: --spacing(84);
-        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-200, currentColor);
-        --toast-spacing: --spacing(4);
 
         /* dismiss with delay */
         &[class*="toast-dismiss-"] {
@@ -72,7 +86,7 @@
                 mask-repeat: no-repeat;
                 mask-type: alpha;
                 background-color: currentColor;
-                color: var(--color-neutral-500);
+                color: var(--toast-fg, var(--color-base-dense));
                 block-size: --spacing(5);
                 inline-size: --spacing(5);
             }
@@ -103,12 +117,41 @@
         .toast-icon {
             inline-size: --spacing(5);
             margin: --spacing(2);
+            color: var(--toast-fg, var(--color-base-foreground));
         }
 
         .toast-content {
             flex: 1;
             margin: --spacing(1);
+            color: var(--toast-fg, var(--color-base-foreground));
         }
+    }
+
+    /* colors */
+    .toast-primary {
+        --toast-bg: var(--color-primary);
+        --toast-fg: var(--color-primary-content);
+        --toast-shadow: var(--shadow-high);
+    }
+    .toast-success {
+        --toast-bg: var(--color-success);
+        --toast-fg: var(--color-success-content);
+        --toast-shadow: var(--shadow-high);
+    }
+    .toast-accent {
+        --toast-bg: var(--color-accent);
+        --toast-fg: var(--color-accent-content);
+        --toast-shadow: var(--shadow-high);
+    }
+    .toast-warning {
+        --toast-bg: var(--color-warning);
+        --toast-fg: var(--color-warning-content);
+        --toast-shadow: var(--shadow-high);
+    }
+    .toast-danger {
+        --toast-bg: var(--color-danger);
+        --toast-fg: var(--color-danger-content);
+        --toast-shadow: var(--shadow-high);
     }
 
     /* placement */

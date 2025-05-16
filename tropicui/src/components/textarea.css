@@ -1,48 +1,63 @@
+/*
+Textarea component styles.
+
+@description Provides a flexible, customizable textarea component with various states, sizes, and styles for multi-line text input with consistent styling.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --textarea-bg - Background color of the textarea
+@property {string} --textarea-border - Border color of the textarea
+@property {string} --textarea-outline - Outline color when textarea is focused
+@property {string} --textarea-text - Text color of the textarea
+@property {string} --textarea-color - Accent color that affects border and outline
+*/
 @layer components {
     .textarea {
+        /* modifiers */
+        --textarea-bg: var(--color-base);
+        --textarea-border: var(--textarea-color, var(--color-base-border));
+        --textarea-outline: color-mix(in oklab, var(--textarea-color, var(--color-accent)) 40%, transparent);
+        --textarea-text: var(--color-base-foreground);
+
         /* dimensions */
         block-size: --spacing(24);
         padding-block: --spacing(2);
         padding-inline: --spacing(4);
 
         /* colors */
-        border: var(--textarea-border);
-        border-radius: var(--radius-md);
-        outline: var(--textarea-outline);
+        border: 1px solid var(--textarea-border);
+        border-radius: var(--radius-control);
+        outline: 0px solid var(--textarea-outline);
         background-color: var(--textarea-bg);
-        box-shadow: var(--shadow-xs);
+        box-shadow: var(--shadow-low);
 
-        /* text */
+        /* typography */
         color: var(--textarea-text);
 
         &::placeholder {
             font-style: italic;
         }
 
-        /* modifiers */
-        --textarea-bg: var(--color-neutral-50);
-        --textarea-border: 1px solid var(--color-neutral-300);
-        --textarea-outline: 0px solid var(--color-blue-200);
-        --textarea-text: var(--color-neutral-800);
-
         /* read only */
         &:read-only:not(:disabled, [disabled]) {
-            background-color: var(--color-neutral-200);
+            background-color: var(--color-base-border);
         }
 
         /* disabled */
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
+
             /* colors */
-            background-color: var(--color-neutral-200);
+            background-color: var(--color-base-border);
             box-shadow: none;
             color: color-mix(in oklab, var(--textarea-text) 60%, transparent);
         }
 
         /* focus */
         &:focus-visible {
-            outline-width: 2px;
-            border-color: var(--color-blue-400);
+            border-color: var(--textarea-color, var(--color-accent));
+
+            outline-width: 3px;
             background-color: var(--color-white);
         }
     }
@@ -64,14 +79,31 @@
 
     .textarea-validate:invalid,
     .textarea-invalid {
-        border-color: var(--color-red-400);
-        outline-width: 2px;
-        outline-style: solid;
-        outline-color: var(--color-red-200);
+        --textarea-color: var(--color-danger);
+
+        outline-width: 3px;
 
         & ~ .invalid-msg {
             opacity: 1;
         }
+    }
+
+
+    /* colors */
+    .textarea-primary {
+        --textarea-color: var(--color-primary);
+    }
+    .textarea-accent {
+        --textarea-color: var(--color-accent);
+    }
+    .textarea-success {
+        --textarea-color: var(--color-success);
+    }
+    .textarea-warning {
+        --textarea-color: var(--color-warning);
+    }
+    .textarea-danger {
+        --textarea-color: var(--color-danger);
     }
 
     /* sizes */
@@ -93,5 +125,10 @@
     .textarea-xl {
         font-size: var(--text-xl);
         line-height: var(--text-xl--line-height);
+    }
+
+    .textarea-2xl {
+        font-size: var(--text-2xl);
+        line-height: var(--text-2xl--line-height);
     }
 }

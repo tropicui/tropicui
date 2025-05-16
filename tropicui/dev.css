@@ -2,6 +2,8 @@
 @import "./src/base/reset.css";
 @import "./src/base/typography.css";
 @import "./src/base/heroicons.css";
+@import "./src/themes/dark.css";
+@import "./src/themes/solar.css";
 @import "./src/themes/default.css";
 @import "./src/themes/theme.css";
 @import "./src/layouts/footer.css";
@@ -39,3 +41,8 @@
 @import "./src/utilities/animation.css";
 @import "./src/utilities/spacer.css";
 @import "./src/utilities/stack.css";
+
+
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant solar (&:where([data-theme=solar], [data-theme=solar] *));

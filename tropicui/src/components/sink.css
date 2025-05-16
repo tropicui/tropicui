@@ -1,3 +1,10 @@
+/*
+Sink component styles.
+
+@description Provides a container component with subtle inset styling for grouping related content. Creates a recessed or "sunken" visual effect with consistent spacing and styling.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+*/
 @layer components {
     .sink {
         /* layout */

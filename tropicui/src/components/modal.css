@@ -1,5 +1,23 @@
+/*
+Modal component styles.
+
+@description Provides a flexible, customizable modal dialog component with various sizes and animations. Supports backdrop interactions, static behavior, and dismissible functionality.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --modal-block - Controls the block (vertical) size of the modal
+@property {string} --modal-inline - Controls the inline (horizontal) size of the modal
+@property {string} --modal-header-block - Controls the block size of the modal header
+@property {string} --modal-footer-block - Controls the block size of the modal footer
+*/
 @layer components {
     .modal {
+        /* modifiers */
+        --modal-block: --spacing(60);
+        --modal-inline: --spacing(120);
+        --modal-header-block: --spacing(14);
+        --modal-footer-block: --spacing(16);
+
         /* layout */
         opacity: 0;
 
@@ -9,22 +27,14 @@
 
         /* colors */
         background-color: var(--color-white);
-        border: 1px solid var(--color-neutral-50);
-        border-radius: var(--radius-md);
-        box-shadow: var(--tt-ring-shadow), var(--shadow-xl);
-
-        /* modifiers */
-        --modal-block: --spacing(60);
-        --modal-inline: --spacing(120);
-        --modal-header-block: --spacing(14);
-        --modal-footer-block: --spacing(16);
-        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-200, currentColor);
+        border: 1px solid var(--color-base);
+        border-radius: var(--radius-container);
+        box-shadow: var(--tt-ring-shadow), var(--shadow-high);
 
         /* animation */
         transition-property: display, opacity, overlay, scale, transform, visibility;
         transition-behavior: allow-discrete;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
-        /* transition-duration: 2s; */
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         @starting-style {
             &:open {
@@ -45,7 +55,6 @@
             transition-property: display, overlay, background-color;
             transition-behavior: allow-discrete;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
-            /* transition-duration: 2s; */
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
         &:open::backdrop {

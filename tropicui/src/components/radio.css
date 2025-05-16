@@ -96,7 +96,7 @@
             justify-content: start;
             gap: --spacing(2);
 
-            /* text */
+            /* typography */
             line-height: var(--text-3xl--line-height);
         }
 

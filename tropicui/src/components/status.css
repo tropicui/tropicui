@@ -1,3 +1,14 @@
+/*
+Status component styles.
+
+@description Provides a flexible, customizable status indicator component with various shapes, sizes, and colors. Supports solid, outline, and ring variations to represent different states visually.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --status-size - Controls the overall size of the status indicator
+@property {string} --status-bg - Background color of the status indicator
+@property {string} --status-ring - Color of the ring outline when using the ring variant
+*/
 @layer components {
     .status {
         /* layout */

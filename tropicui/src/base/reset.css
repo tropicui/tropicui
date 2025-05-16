@@ -1,5 +1,6 @@
 html {
     /* font-size: 14px; */
+    color: var(--color-base-foreground);
 }
 @layer base {
     dialog {

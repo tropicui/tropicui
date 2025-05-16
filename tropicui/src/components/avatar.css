@@ -16,6 +16,14 @@ Avatar component styles.
 */
 @layer components {
     .avatar {
+        /* modifiers */
+        --avatar-bg: var(--avatar-color, var(--color-base-airy));
+        --avatar-size: --spacing(10);
+        --avatar-border-radius: var(--radius-control);
+        --avatar-group-gap: 3;
+        --avatar-active: var(--color-accent);
+        --avatar-ring: var(--avatar-color, var(--color-base));
+
         /* layout */
         align-content: center;
         text-align: center;
@@ -31,20 +39,12 @@ Avatar component styles.
         background-color: var(--avatar-bg);
         color: var(--avatar-fg, var(--color-base-foreground));
 
-        /* text */
+        /* typography */
         font-weight: var(--font-weight-medium);
         font-size: calc(var(--avatar-size) * 0.4);
         line-height: 1;
         text-transform: uppercase;
         overflow: hidden;
-
-        /* modifiers */
-        --avatar-bg: var(--avatar-color, var(--color-base-airy));
-        --avatar-size: --spacing(10);
-        --avatar-border-radius: var(--radius-control);
-        --avatar-group-gap: 3;
-        --avatar-active: var(--color-accent);
-        --avatar-ring: var(--avatar-color, var(--color-base));
 
         /* Avatar image */
         img {

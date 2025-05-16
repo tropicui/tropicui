@@ -20,6 +20,17 @@ Checkbox component styles.
 */
 @layer components {
     .checkbox {
+        /* modifiers */
+        --checkbox-size: --spacing(4.5);
+        --checkbox-bg: var(--color-base);
+        --checkbox-shadow: var(--shadow-low);
+
+        --checkbox-focus-outline: color-mix(in oklab, var(--color-accent) 40%, transparent);
+        --checkbox-focus-border: var(--color-accent);
+
+        --checkbox-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+        --checkbox-invalid-border: var(--color-danger);
+
         /* layout */
         appearance: none;
         cursor: pointer;
@@ -29,7 +40,7 @@ Checkbox component styles.
         min-inline-size: var(--checkbox-size);
 
         /* colors */
-        border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--color-black) 15%, transparent));
+        border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--checkbox-checked-color, var(--color-base-dense)) 50%, transparent));
         border-radius: var(--radius-input);
         outline: 0px solid var(--checkbox-focus-outline);
         outline-offset: 0px;
@@ -40,31 +51,6 @@ Checkbox component styles.
         transition-property: background-color, border-color, box-shadow, outline;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-
-        /* modifiers */
-        --checkbox-size: --spacing(4.5);
-        --checkbox-bg: var(--color-base);
-        --checkbox-shadow: var(--shadow-low);
-
-        --checkbox-focus-outline: color-mix(in oklab, var(--color-accent) 40%, transparent);
-        --checkbox-focus-border: var(--color-accent);
-
-        --checkbox-invalid-bg: var(--color-danger-content);
-        --checkbox-invalid-border: var(--color-danger);
-
-        /* hover */
-        @media (hover: hover) {
-            &:hover {
-                background-color: color-mix(in oklab, var(--checkbox-bg), var(--color-black) 4%);
-                --checkbox-checked-border-color: color-mix(in oklab, var(--color-base-dense), var(--color-black) 15%);
-            }
-        }
-
-        /* active */
-        &:active {
-            background-color: color-mix(in oklab, var(--checkbox-bg), var(--color-black) 8%);
-            --checkbox-checked-border-color: color-mix(in oklab, var(--color-base-dense), var(--color-black) 30%);
-        }
 
         /* check mark */
         &::before {
@@ -79,7 +65,7 @@ Checkbox component styles.
             inline-size: 100%;
 
             /* colors */
-            background-color: var(--checkbox-checked, var(--color-white));
+            background-color: var(--checkbox-checked, var(--color-base-background));
 
             /* animation */
             transition-property: background-color, opacity;
@@ -87,16 +73,26 @@ Checkbox component styles.
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
 
-        /* indeterminate */
-        &:indeterminate {
-            /* check mark */
-            &::before {
-                clip-path: polygon(10% 40%, 90% 40%, 90% 60%, 10% 60%);
+        /* hover */
+        @media (hover: hover) {
+            &:hover {
+                background-color: color-mix(in oklab, var(--checkbox-bg), var(--color-base-foreground) 6%);
+                --checkbox-checked-border-color: color-mix(in oklab, var(--color-base-dense), var(--color-black) 15%);
             }
         }
 
+        /* active */
+        &:active {
+            background-color: color-mix(in oklab, var(--checkbox-bg), var(--color-base-foreground) 12%);
+            --checkbox-checked-border-color: color-mix(in oklab, var(--color-base-dense), var(--color-black) 30%);
+        }
+
+        /* indeterminate */
+        &:indeterminate::before {
+            clip-path: polygon(10% 40%, 90% 40%, 90% 60%, 10% 60%);
+        }
+
         /* checked */
-        /* &:checked, &:indeterminate { */
         &:is(:checked, :indeterminate) {
             --checkbox-checked-color: var(--checkbox-color, var(--color-base-dense));
             --checkbox-bg: var(--checkbox-checked-color);
@@ -114,13 +110,13 @@ Checkbox component styles.
             pointer-events: none;
 
             /* colors */
-            background-color: color-mix(in oklab, var(--checkbox-bg) 40%, var(--color-white));
+            background-color: color-mix(in oklab, var(--checkbox-bg) 40%, transparent);
             border-color: color-mix(in oklab, var(--checkbox-border, var(--color-base-dense)) 30%, transparent);
             --checkbox-shadow: none;
 
             /* check mark */
             &::before {
-                background-color: color-mix(in oklab, var(--checkbox-checked, var(--color-base-border)), var(--color-white) 50%);
+                background-color: color-mix(in oklab, var(--checkbox-checked-color, var(--color-base-border)) 70%, transparent);
             }
         }
 
@@ -148,7 +144,7 @@ Checkbox component styles.
             justify-content: start;
             gap: --spacing(2);
 
-            /* text */
+            /* typography */
             line-height: var(--text-3xl--line-height);
         }
     }
@@ -195,18 +191,23 @@ Checkbox component styles.
     /* colors */
     .checkbox-primary {
         --checkbox-color: var(--color-primary);
+        --checkbox-checked: var(--color-primary-content);
     }
     .checkbox-accent {
         --checkbox-color: var(--color-accent);
+        --checkbox-checked: var(--color-accent-content);
     }
     .checkbox-warning {
         --checkbox-color: var(--color-warning);
+        --checkbox-checked: var(--color-warning-content);
     }
     .checkbox-success {
         --checkbox-color: var(--color-success);
+        --checkbox-checked: var(--color-success-content);
     }
     .checkbox-danger {
         --checkbox-color: var(--color-danger);
+        --checkbox-checked: var(--color-danger-content);
     }
 
     /* sizes */

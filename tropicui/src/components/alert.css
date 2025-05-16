@@ -13,6 +13,12 @@ Alert component styles.
 */
 @layer components {
     .alert {
+        /* modifiers */
+        --alert-bg: var(--alert-color, var(--color-base));
+        --alert-fg: var(--color-base-foreground);
+        --alert-soft-bg: color-mix(in oklab, var(--alert-color) 10%, var(--color-white));
+        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base-border)), var(--color-white) 15%);
+
         /* layout */
         display: grid;
         grid-auto-flow: column;
@@ -30,13 +36,8 @@ Alert component styles.
         box-shadow: var(--shadow-low);
         color: var(--alert-fg);
 
-        /* modifiers */
-        --alert-bg: var(--alert-color, var(--color-base));
-        --alert-fg: var(--color-base-foreground);
-        --alert-soft-bg: color-mix(in oklab, var(--alert-color) 10%, var(--color-white));
-        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base-border)), var(--color-white) 15%);
 
-        i {
+        svg, i {
             color: var(--alert-fg);
         }
     }

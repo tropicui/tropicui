@@ -9,7 +9,7 @@
         @media (prefers-reduced-motion: no-preference) {
             interpolate-size: allow-keywords;
         }
-        /* text */
+        /* typography */
         /* font-weight: var(--font-weight-medium); */
         /* level 1 */
         > ul {

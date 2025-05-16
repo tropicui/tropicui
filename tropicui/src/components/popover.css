@@ -1,13 +1,24 @@
+/*
+Popover component styles.
+
+@description Provides a flexible, customizable popover component with various positioning options. Implements custom positioning logic instead of using the HTML popover attribute due to lack of support for anchor positioning.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --popover-content-margin - Controls the spacing between the popover content and its trigger element
+@property {string} --popover-bg - Background color of the popover content
+@property {string} --popover-fg - Foreground color of the popover content
+*/
 @layer components {
     /* not using HTML popover attribute due to lack of support
        for anchor positioning */
     .popover {
-        position: relative;
-        display: inline-block;
-
         /* modifiers */
         --popover-content-margin: --spacing(2);
-        --tt-ring-shadow: 0 0 0 1px var(--color-neutral-200, currentColor);
+
+        /* layout */
+        position: relative;
+        display: inline-block;
     }
     .popover-toggle {
         .popover &:focus + .popover-content {
@@ -33,32 +44,35 @@
             padding: --spacing(4);
 
             /* colors */
-            background-color: var(--color-white);
-            border: 1px solid var(--color-neutral-50);
-            border-radius: var(--radius-md);
-            box-shadow: var(--tt-ring-shadow), var(--shadow-md);
+            background-color: var(--popover-bg, var(--color-white));
+            border: 1px solid color-mix(in oklab, var(--color-black) 4%, transparent);
+            border-radius: var(--radius-container);
+            box-shadow: var(--tt-ring-shadow), var(--shadow-rise);
+            color: var(--popover-fg, var(--color-base-foreground));
 
             /* animation */
             transition-property: opacity, scale, visibility;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
+
+        /* positioning */
         .popover.popover-top & {
-            bottom: 100%;
-            left: 50%;
+            inset-block-end: 100%;
+            inset-inline-start: 50%;
             transform: translateX(-50%);
             transform-origin: bottom left;
             margin-block-end: var(--popover-content-margin);
         }
         .popover.popover-top-start & {
-            bottom: 100%;
-            left: 0;
+            inset-block-end: 100%;
+            inset-inline-start: 0;
             transform-origin: bottom left;
             margin-block-end: var(--popover-content-margin);
         }
         .popover.popover-top-end & {
-            bottom: 100%;
-            right: 0;
+            inset-block-end: 100%;
+            inset-inline-end: 0;
             transform-origin: bottom right;
             margin-block-end: var(--popover-content-margin);
         }
@@ -69,52 +83,74 @@
             margin-block-start: var(--popover-content-margin);
         }
         .popover.popover-bottom-start & {
-            left: 0;
+            inset-inline-start: 0;
             transform-origin: top left;
             margin-block-start: var(--popover-content-margin);
         }
         .popover.popover-bottom-end & {
-            right: 0;
+            inset-inline-end: 0;
             transform-origin: top right;
             margin-block-start: var(--popover-content-margin);
         }
         .popover.popover-left & {
-            top: 50%;
+            inset-block-start: 50%;
             transform: translateY(-50%);
-            right: 100%;
+            inset-inline-end: 100%;
             transform-origin: top right;
             margin-inline-end: var(--popover-content-margin);
         }
         .popover.popover-left-start & {
-            top: 0;
-            right: 100%;
+            inset-block-start: 0;
+            inset-inline-end: 100%;
             transform-origin: top right;
             margin-inline-end: var(--popover-content-margin);
         }
         .popover.popover-left-end & {
-            bottom: 0;
-            right: 100%;
+            inset-block-end: 0;
+            inset-inline-end: 100%;
             transform-origin: bottom right;
             margin-inline-end: var(--popover-content-margin);
         }
         .popover.popover-right & {
-            top: 50%;
+            inset-block-start: 50%;
             transform: translateY(-50%);
-            left: 100%;
+            inset-inline-start: 100%;
             transform-origin: top left;
             margin-inline-start: var(--popover-content-margin);
         }
         .popover.popover-right-start & {
-            top: 0;
-            left: 100%;
+            inset-block-start: 0;
+            inset-inline-start: 100%;
             transform-origin: top left;
             margin-inline-start: var(--popover-content-margin);
         }
         .popover.popover-right-end & {
-            bottom: 0;
-            left: 100%;
+            inset-block-end: 0;
+            inset-inline-start: 100%;
             transform-origin: bottom left;
             margin-inline-start: var(--popover-content-margin);
         }
+    }
+
+    /* colors */
+    .popover-primary {
+        --popover-bg: var(--color-primary);
+        --popover-fg: var(--color-primary-content);
+    }
+    .popover-accent {
+        --popover-bg: var(--color-accent);
+        --popover-fg: var(--color-accent-content);
+    }
+    .popover-success {
+        --popover-bg: var(--color-success);
+        --popover-fg: var(--color-success-content);
+    }
+    .popover-warning {
+        --popover-bg: var(--color-warning);
+        --popover-fg: var(--color-warning-content);
+    }
+    .popover-danger {
+        --popover-bg: var(--color-danger);
+        --popover-fg: var(--color-danger-content);
     }
 }
