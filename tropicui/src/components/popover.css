@@ -44,8 +44,8 @@ Popover component styles.
             padding: --spacing(4);
 
             /* colors */
-            background-color: var(--popover-bg, var(--color-white));
-            border: 1px solid color-mix(in oklab, var(--color-black) 4%, transparent);
+            background-color: var(--popover-bg, var(--color-base));
+            border: 1px solid color-mix(in oklab, var(--color-base-border) 10%, transparent);
             border-radius: var(--radius-container);
             box-shadow: var(--tt-ring-shadow), var(--shadow-rise);
             color: var(--popover-fg, var(--color-base-foreground));

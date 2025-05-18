@@ -21,6 +21,9 @@
     --color-success: var(--color-green-600);
     --color-success-content: var(--color-green-50);
 
+    /* typography */
+    --color-muted: var(--color-base-dense);
+
     /* radius */
     --radius-container: calc(var(--radius) / 1);
     --radius-control: calc(var(--radius) / 1.8);
@@ -36,9 +39,11 @@
     --shadow-high:
         0 8px 12px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --inset-dent:
+        inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     --inset-low:
         inset 0 1px 2px 0 rgba(0, 0, 0, 0.1),
-        inset 0 0px 4px 0px rgba(0, 0, 0, 0.05);
+        inset 0 0px 4px 0 rgba(0, 0, 0, 0.05);
     --tt-ring-shadow: 0 0 0 1px var(--color-base-border, currentColor);
 
     /* transition */

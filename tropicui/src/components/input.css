@@ -18,7 +18,7 @@ Input component styles.
 @layer components {
     .input {
         /* modifiers */
-        --input-bg: color-mix(in oklab, var(--input-color, var(--color-base)) 50%, transparent);
+        --input-bg: color-mix(in oklab, var(--input-color) 15%, transparent);
         /* --input-bg: var(--color-base); */
         --input-border: var(--input-color, var(--color-base-border));
         --input-focus: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
@@ -38,7 +38,7 @@ Input component styles.
         border: 1px solid var(--input-border);
         border-radius: var(--radius-control);
         outline: 0px solid var(--input-focus);
-        background-color: var(--input-bg);
+        background-color: var(--input-bg, var(--color-base));
         box-shadow: var(--shadow-low);
 
         /* input field */
@@ -80,8 +80,10 @@ Input component styles.
                     border-inline-end: 1px solid var(--color-base-border);
                 }
 
-                &::file-selector-button:hover {
-                    background-color: color-mix(in oklab, var(--input-bg), var(--color-black) 6%);
+                @media (hover: hover) {
+                    &::file-selector-button:hover {
+                        background-color: color-mix(in oklab, var(--input-bg), var(--color-black) 6%);
+                    }
                 }
 
                 &::file-selector-button:active {
@@ -108,8 +110,8 @@ Input component styles.
         }
 
         /* validation */
-        &.input-validate:invalid,
-        &.input-validate:has(:invalid),
+        &.input-validate:user-invalid,
+        &.input-validate:has(:user-invalid),
         &.input-invalid,
         &:has(.input-invalid) {
             --input-color: var(--color-danger);

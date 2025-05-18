@@ -21,7 +21,7 @@ Tooltip component styles.
         --tooltip-margin: --spacing(2.7);
         --tooltip-arrow-size: --spacing(2.5);
         --tooltip-arrow-margin: --spacing(1.5);
-        --tooltip-bg: var(--color-white);
+        --tooltip-bg: var(--color-base);
         --tooltip-border: var(--color-base-border);
         --tooltip-shadow: var(--tt-ring-shadow), var(--shadow-rise);
 
@@ -29,11 +29,14 @@ Tooltip component styles.
         position: relative;
         overflow: visible;
 
-        &:hover::before,
-        &:hover::after {
-            /* transition */
-            content-visibility: visible;
-            opacity: 1;
+        @media (hover: hover) {
+            &:hover {
+                &::before, &::after {
+                    /* transition */
+                    content-visibility: visible;
+                    opacity: 1;
+                }
+            }
         }
 
         &:where(:not(.open))::before,

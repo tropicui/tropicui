@@ -54,9 +54,11 @@
         background-size: 1.25em;
 
         /* hover */
-        &:hover {
-            --select-bg: var(--select-hover-bg);
-            border-color: var(--select-outline-hover-border);
+        @media (hover: hover) {
+            &:hover {
+                --select-bg: var(--select-hover-bg);
+                border-color: var(--select-outline-hover-border);
+            }
         }
 
         /* active */
@@ -85,7 +87,7 @@
         }
 
         /* validation */
-        &.select-validate:invalid,
+        &.select-validate:user-invalid,
         &.select-invalid {
             /* colors */
             border: 1px solid var(--select-invalid-border);
@@ -101,9 +103,12 @@
         box-shadow: none;
         background: none;
 
-        &:hover {
-            border-color: var(--select-outline-hover-border);
+        @media (hover: hover) {
+            &:hover {
+                border-color: var(--select-outline-hover-border);
+            }
         }
+
         &:active {
             border-color: var(--select-outline-active-border);
         }
@@ -132,8 +137,10 @@
         --select-bg: var(--select-solid-bg);
 
         /* hover */
-        &:hover {
-            --select-bg: var(--select-solid-hover-bg);
+        @media (hover: hover) {
+            &:hover {
+                --select-bg: var(--select-solid-hover-bg);
+            }
         }
 
         /* active */

@@ -45,7 +45,7 @@ Status component styles.
     }
 
     .status-ring {
-        outline: 2px solid var(--status-ring, var(--color-white));
+        outline: 2px solid var(--status-ring, var(--color-base));
     }
 
     /* colors */

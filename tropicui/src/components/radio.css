@@ -1,8 +1,38 @@
+/*
+Radio component styles.
+
+@description Provides a flexible, customizable radio button component with various states, sizes, and styles for form inputs with consistent styling.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --radio-size - Controls the overall size of the radio button
+@property {string} --radio-bg - Background color of the radio button
+@property {string} --radio-shadow - Shadow of the radio button
+@property {string} --radio-border - Border color of the radio button
+@property {string} --radio-color - Color of the radio button that will affect the background and border
+@property {string} --radio-focus-outline - Outline color when radio button is focused
+@property {string} --radio-focus-border - Border color when radio button is focused
+@property {string} --radio-checked-color - Color of the radio button indicator when checked
+@property {string} --radio-checked-outline - Border color of the radio button for outline variant when checked
+@property {string} --radio-invalid-bg - Background color when radio button is invalid
+@property {string} --radio-invalid-border - Border color when radio button is invalid
+*/
 @layer components {
     .radio {
+        /* modifiers */
+        --radio-size: --spacing(4.5);
+        --radio-bg: var(--color-base);
+        --radio-shadow: var(--shadow-low);
+        --radio-focus-outline: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
+        --radio-focus-border: var(--color-accent);
+        --radio-outline-border: var(--color-base-border);
+        --radio-outline-disabled-border: color-mix(in oklab, var(--color-base-border) 60%, transparent);
+        --radio-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+        --radio-invalid-border: var(--color-danger);
+
         /* layout */
-        position: relative;
         appearance: none;
+        position: relative;
         cursor: pointer;
 
         /* dimensions */
@@ -10,41 +40,37 @@
         min-inline-size: var(--radio-size);
 
         /* colors */
-        border: 1px solid var(--radio-border);
-        border-radius: 50%;
+        border: 1px solid var(--radio-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
+        border-radius: calc(infinity * 1px);
         outline: 0px solid var(--radio-focus-outline);
         outline-offset: 0px;
         background-color: var(--radio-bg);
-        box-shadow: var(--shadow-xs);
-
-        /* modifiers */
-        --radio-size: --spacing(4.5);
-        --radio-bg: var(--color-neutral-50);
-        --radio-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-        --radio-focus-outline: var(--color-blue-200);
-        --radio-focus-border: var(--color-blue-400);
-        --radio-outline-border: var(--color-neutral-300);
-        --radio-outline-disabled-border: var(--color-neutral-200);
-        --radio-invalid-bg: var(--color-red-50);
-        --radio-invalid-border: var(--color-red-400);
+        box-shadow: var(--radio-shadow);
 
         /* animation */
-        transition-property: background-color, border-color;
+        transition-property: background-color, border-color, box-shadow, outline;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
+        /* button */
         &::before {
+            /* layout */
             content: "";
             opacity: 0;
             display: block;
             position: absolute;
+
+            /* dimensions */
             inset-block-start: 50%;
             inset-inline-start: 50%;
             transform: translate(-50%, -50%);
             block-size: calc(var(--radio-size) * 0.5);
             inline-size: calc(var(--radio-size) * 0.5);
             border-radius: 50%;
-            background-color: var(--color-white);
+
+            /* colors */
+            background-color: var(--radio-checked-color, var(--color-base));
+            box-shadow: var(--shadow-low), var(--shadow-low);
 
             /* animation */
             transition-property: opacity;
@@ -52,8 +78,22 @@
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
 
+        @media (hover: hover) {
+            &:hover {
+                background-color: color-mix(in oklab, var(--radio-bg), var(--color-base-foreground) 6%);
+                --radio-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 20%);
+            }
+        }
+
+        &:active {
+            background-color: color-mix(in oklab, var(--radio-bg), var(--color-base-foreground) 12%);
+            --radio-shadow: none;
+            --radio-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 40%);
+        }
+
         &:checked {
-            background-color: var(--color-blue-400);
+            --radio-bg: var(--radio-color, var(--color-base-dense));
+            --radio-checked-outline: var(--radio-checked-color);
 
             &::before {
                 opacity: 1;
@@ -63,28 +103,30 @@
         /* disabled */
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
+            pointer-events: none;
+
             /* colors */
-            border-color: color-mix(in oklab, var(--color-black) 5%, transparent);
-            background-color: var(--color-neutral-100);
-            box-shadow: none;
+            background-color: color-mix(in oklab, var(--radio-bg) 40%, transparent);
+            border-color: color-mix(in oklab, var(--radio-border, var(--color-base-dense)) 30%, transparent);
+            --radio-shadow: none;
 
-            &:checked {
-                border-color: color-mix(in oklab, var(--color-black) 15%, transparent);
-    
-                &::before {
-                    background-color: var(--color-neutral-400);
-                }
-            }
-
-            label:has(&) {
-                color: var(--color-neutral-400);
+            &::before {
+                background-color: color-mix(in oklab, var(--radio-checked-color, var(--color-base)) 50%, var(--color-base));
             }
         }
 
         /* focus */
         &:focus-visible {
             outline-width: 2px;
-            border-color: var(--radio-focus-border);
+            --radio-border: var(--radio-focus-border);
+        }
+
+        /* invalid */
+        &.radio-validate:user-invalid,
+        &.radio-invalid:not(:checked) {
+            /* colors */
+            border-color: var(--radio-invalid-border);
+            background-color: var(--radio-invalid-bg);
         }
 
         /* enclosing label */
@@ -98,14 +140,6 @@
 
             /* typography */
             line-height: var(--text-3xl--line-height);
-        }
-
-        /* invalid */
-        &.radio-validate:invalid,
-        &.radio-invalid:not(:checked) {
-            /* colors */
-            border-color: var(--radio-invalid-border);
-            background-color: var(--radio-invalid-bg);
         }
     }
 
@@ -122,38 +156,53 @@
     }
 
     /* variations */
-    .radio-outline {
+    .radio.radio-outline,
+    .radio.radio-outline-bold {
         /* colors */
-        border-color: var(--radio-outline-border);
-        box-shadow: none;
-        background: none;
-
-        /* disabled */
-        &:is(:disabled, [disabled]) {
-            border-color: var(--radio-outline-disabled-border);
-            background: none;
-        }
+        --radio-bg: none;
+        --radio-shadow: none;
+        --radio-checked-color: var(--radio-color, var(--color-base-dense));
+        --radio-border: 
+            var(--radio-checked-outline,
+            var(--color-base-dense
+        ));
 
         &::before {
-            background-color: var(--color-blue-400);
+            box-shadow: none;
         }
+    }
 
-        &:checked {
-            border-color: var(--color-blue-400);
-            background: none;
-        }
+    .radio-outline-bold {
+        border-width: 2px;
     }
 
     .radio-solid {
         /* colors */
-        border: none;
-        box-shadow: none;
-        background-color: var(--color-neutral-200);
+        --radio-bg: var(--color-base-border);
+        --radio-border: transparent;
+        --radio-shadow: none;
+    }
 
-        /* disabled */
-        &:is(:disabled, [disabled]) {
-            background-color: var(--color-neutral-300);
-        }
+    /* colors */
+    .radio-primary {
+        --radio-color: var(--color-primary);
+        --radio-checked-color: var(--color-primary-content);
+    }
+    .radio-accent {
+        --radio-color: var(--color-accent);
+        --radio-checked-color: var(--color-accent-content);
+    }
+    .radio-warning {
+        --radio-color: var(--color-warning);
+        --radio-checked-color: var(--color-warning-content);
+    }
+    .radio-success {
+        --radio-color: var(--color-success);
+        --radio-checked-color: var(--color-success-content);
+    }
+    .radio-danger {
+        --radio-color: var(--color-danger);
+        --radio-checked-color: var(--color-danger-content);
     }
 
     /* sizes */
@@ -171,5 +220,9 @@
 
     .radio-xl {
         --radio-size: --spacing(7);
+    }
+
+    .radio-2xl {
+        --radio-size: --spacing(8);
     }
 }

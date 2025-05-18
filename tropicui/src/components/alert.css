@@ -16,8 +16,8 @@ Alert component styles.
         /* modifiers */
         --alert-bg: var(--alert-color, var(--color-base));
         --alert-fg: var(--color-base-foreground);
-        --alert-soft-bg: color-mix(in oklab, var(--alert-color) 10%, var(--color-white));
-        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base-border)), var(--color-white) 15%);
+        --alert-soft-bg: color-mix(in oklab, var(--alert-color) 12%, transparent);
+        --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base-border)), transparent 15%);
 
         /* layout */
         display: grid;

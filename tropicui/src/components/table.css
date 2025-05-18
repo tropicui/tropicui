@@ -1,6 +1,13 @@
 @layer components {
     .table {
+        /* modifiers */
+        --table-header-bg: var(--color-base-airy);
+        --table-row-border: 1px solid var(--color-base-border);
+
+        /* typography */
         text-align: left;
+        color: var(--color-base-foreground);
+
         thead {
             tr {
                 th {
@@ -9,38 +16,46 @@
                 }
             }
         }
+
         tbody {
             tr {
-                &:hover {
-                    background-color: var(--table-row-hover-bg);
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: var(--table-row-hover-bg);
+                    }
                 }
+
                 &:nth-of-type(odd):not(:hover) {
                     background-color: var(--table-striped-bg);
                 }
             }
         }
+
         :where(thead tr,tbody tr:not(:last-child)) {
             border-bottom: var(--table-row-border);
         }
+
         :where(th,td) {
             padding-block: --spacing(4);
             padding-inline: --spacing(4);
             vertical-align: middle;
         }
-        /* modifiers */
-        --table-header-bg: var(--color-neutral-200);
-        --table-row-border: 1px solid var(--color-neutral-200);
     }
+
+    /* variants */
     .table-hover {
-        --table-row-hover-bg: var(--color-neutral-100);
+        --table-row-hover-bg: var(--color-base);
     }
+
     .table-striped {
-        --table-striped-bg: var(--color-neutral-100);
+        --table-striped-bg: var(--color-base);
     }
+
     .table-borderless {
         --table-row-border: none;
         --table-border: none;
     }
+
     .table-compact {
         :where(th,td) {
             padding-block: --spacing(2);

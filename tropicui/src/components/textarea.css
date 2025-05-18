@@ -58,7 +58,7 @@ Textarea component styles.
             border-color: var(--textarea-color, var(--color-accent));
 
             outline-width: 3px;
-            background-color: var(--color-white);
+            background-color: transparent;
         }
     }
 
@@ -74,10 +74,10 @@ Textarea component styles.
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: var(--color-neutral-100);
+        background-color: var(--color-base-airy);
     }
 
-    .textarea-validate:invalid,
+    .textarea-validate:user-invalid,
     .textarea-invalid {
         --textarea-color: var(--color-danger);
 

@@ -26,6 +26,8 @@ Divider component styles.
         align-items: center;
         white-space: nowrap;
 
+        color: var(--divider-color, var(--color-base-foreground));
+
         /* bar */
         &::before,
         &::after {
@@ -103,7 +105,7 @@ Divider component styles.
         --divider-color: var(--color-danger);
     }
     .divider-subtle {
-        --divider-color-modifier: color-mix(in oklch, var(--divider-color, var(--color-base-border)) 20%, white);
+        --divider-color-modifier: color-mix(in oklch, var(--divider-color, var(--color-base-border)) 20%, transparent);
     }
 
     /* content positioning */

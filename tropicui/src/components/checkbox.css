@@ -9,12 +9,11 @@ Checkbox component styles.
 @property {string} --checkbox-bg - Background color of the checkbox
 @property {string} --checkbox-shadow - Shadow of the checkbox
 @property {string} --checkbox-border - Border color of the checkbox
-@property {string} --checkbox-color - Color of the checkbox that will affect the background, border, and checkmark
+@property {string} --checkbox-color - Color of the checkbox that will affect the background and border
 @property {string} --checkbox-focus-outline - Outline color when checkbox is focused
 @property {string} --checkbox-focus-border - Border color when checkbox is focused
-@property {string} --checkbox-checked - Color of the checkmark
-@property {string} --checkbox-checked-color - Checkbox accent color when checkbox is checked
-@property {string} --checkbox-checked-border-color - Border color of the checkbox when checked
+@property {string} --checkbox-checked-color - Color of the checkbox that will affect the checkmark
+@property {string} --checkbox-checked-outline - Border color of the checkbox for outline variant when checked
 @property {string} --checkbox-invalid-bg - Background color when checkbox is invalid
 @property {string} --checkbox-invalid-border - Border color when checkbox is invalid
 */
@@ -40,7 +39,7 @@ Checkbox component styles.
         min-inline-size: var(--checkbox-size);
 
         /* colors */
-        border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--checkbox-checked-color, var(--color-base-dense)) 50%, transparent));
+        border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
         border-radius: var(--radius-input);
         outline: 0px solid var(--checkbox-focus-outline);
         outline-offset: 0px;
@@ -65,7 +64,7 @@ Checkbox component styles.
             inline-size: 100%;
 
             /* colors */
-            background-color: var(--checkbox-checked, var(--color-base-background));
+            background-color: var(--checkbox-checked-color, var(--color-base-background));
 
             /* animation */
             transition-property: background-color, opacity;
@@ -77,14 +76,15 @@ Checkbox component styles.
         @media (hover: hover) {
             &:hover {
                 background-color: color-mix(in oklab, var(--checkbox-bg), var(--color-base-foreground) 6%);
-                --checkbox-checked-border-color: color-mix(in oklab, var(--color-base-dense), var(--color-black) 15%);
+                --checkbox-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 20%);
             }
         }
 
         /* active */
         &:active {
             background-color: color-mix(in oklab, var(--checkbox-bg), var(--color-base-foreground) 12%);
-            --checkbox-checked-border-color: color-mix(in oklab, var(--color-base-dense), var(--color-black) 30%);
+            --checkbox-shadow: none;
+            --checkbox-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 40%);
         }
 
         /* indeterminate */
@@ -94,8 +94,8 @@ Checkbox component styles.
 
         /* checked */
         &:is(:checked, :indeterminate) {
-            --checkbox-checked-color: var(--checkbox-color, var(--color-base-dense));
-            --checkbox-bg: var(--checkbox-checked-color);
+            --checkbox-bg: var(--checkbox-color, var(--color-base-dense));
+            --checkbox-checked-outline: var(--checkbox-checked-color);
 
             /* check mark */
             &::before {
@@ -116,7 +116,7 @@ Checkbox component styles.
 
             /* check mark */
             &::before {
-                background-color: color-mix(in oklab, var(--checkbox-checked-color, var(--color-base-border)) 70%, transparent);
+                background-color: color-mix(in oklab, var(--checkbox-checked-color, var(--color-base)) 50%, var(--color-base));
             }
         }
 
@@ -128,7 +128,7 @@ Checkbox component styles.
         }
 
         /* validate */
-        &.checkbox-validate:invalid,
+        &.checkbox-validate:user-invalid,
         &.checkbox-invalid:not(:checked) {
             /* colors */
             --checkbox-bg: var(--checkbox-invalid-bg);
@@ -169,12 +169,11 @@ Checkbox component styles.
         /* colors */
         --checkbox-bg: none;
         --checkbox-shadow: none;
-        --checkbox-checked: var(--checkbox-color, var(--color-base-dense));
+        --checkbox-checked-color: var(--checkbox-color, var(--color-base-dense));
         --checkbox-border: 
-            var(--checkbox-checked-color, 
-            var(--checkbox-checked-border-color, 
+            var(--checkbox-checked-outline,
             var(--color-base-dense
-        )));
+        ));
     }
 
     .checkbox-outline-bold {
@@ -183,7 +182,7 @@ Checkbox component styles.
 
     .checkbox-solid {
         /* colors */
-        --checkbox-bg: color-mix(in oklab, var(--color-base), var(--color-black) 8%);
+        --checkbox-bg: var(--color-base-border);
         --checkbox-border: transparent;
         --checkbox-shadow: none;
     }
@@ -191,23 +190,23 @@ Checkbox component styles.
     /* colors */
     .checkbox-primary {
         --checkbox-color: var(--color-primary);
-        --checkbox-checked: var(--color-primary-content);
+        --checkbox-checked-color: var(--color-primary-content);
     }
     .checkbox-accent {
         --checkbox-color: var(--color-accent);
-        --checkbox-checked: var(--color-accent-content);
+        --checkbox-checked-color: var(--color-accent-content);
     }
     .checkbox-warning {
         --checkbox-color: var(--color-warning);
-        --checkbox-checked: var(--color-warning-content);
+        --checkbox-checked-color: var(--color-warning-content);
     }
     .checkbox-success {
         --checkbox-color: var(--color-success);
-        --checkbox-checked: var(--color-success-content);
+        --checkbox-checked-color: var(--color-success-content);
     }
     .checkbox-danger {
         --checkbox-color: var(--color-danger);
-        --checkbox-checked: var(--color-danger-content);
+        --checkbox-checked-color: var(--color-danger-content);
     }
 
     /* sizes */
@@ -225,5 +224,9 @@ Checkbox component styles.
 
     .checkbox-xl {
         --checkbox-size: --spacing(7);
+    }
+
+    .checkbox-2xl {
+        --checkbox-size: --spacing(8);
     }
 }

@@ -18,8 +18,8 @@ Card component styles.
     .card {
         /* modifiers */
         --card-bg: var(--color-base-background);
-        --card-header-bg: var(--color-base-background);
-        --card-footer-bg: var(--color-base-background);
+        --card-header-bg: var(--color-base);
+        --card-footer-bg: var(--color-base);
         --card-border: var(--color-base-border);
         --card-border-width: 0px;
         --card-radius: var(--radius-container);
@@ -64,7 +64,6 @@ Card component styles.
 
             /* dimensions */
             min-block-size: var(--card-header-size);
-            padding-block: --spacing(4);
             padding-inline: --spacing(6);
 
             /* colors */

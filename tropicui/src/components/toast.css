@@ -15,7 +15,7 @@ Toast component styles.
 @layer components {
     .toast {
         /* modifiers */
-        --toast-bg: var(--color-white);
+        --toast-bg: var(--color-base);
         --toast-size: --spacing(84);
         --toast-spacing: --spacing(4);
         --toast-shadow: var(--tt-ring-shadow), var(--shadow-high);
@@ -50,8 +50,11 @@ Toast component styles.
             animation-duration: 1s;
             animation-fill-mode: forwards;
             animation-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-            &:hover {
-                animation-play-state: paused;
+
+            @media (hover: hover) {
+                &:hover {
+                    animation-play-state: paused;
+                }
             }
         }
         &.toast-dismiss-1 { animation-delay: 1s; }

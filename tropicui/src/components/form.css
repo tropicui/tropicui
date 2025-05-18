@@ -64,7 +64,7 @@ Form component and field styles.
         label {
             &:has(:disabled, [disabled]) {
                 pointer-events: none;
-                color: color-mix(in oklab, var(--color-base-foreground), var(--color-white) 40%);
+                color: color-mix(in oklab, var(--color-base-foreground), transparent 40%);
             }
         }
 
@@ -87,7 +87,7 @@ Form component and field styles.
         .invalid {
             opacity: 0;
 
-            :where(.form-field:has(:invalid, [class*="-invalid"])) & {
+            :where(.form-field:has(:user-invalid, [class*="-invalid"])) & {
                 opacity: 1;
             }
 

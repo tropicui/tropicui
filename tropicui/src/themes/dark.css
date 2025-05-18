@@ -1,7 +1,7 @@
 [data-theme="dark"] {
     color-scheme: dark;
 
-    --color-base-background: var(--color-gray-900);
+    --color-base-background: var(--color-gray-950);
     --color-base: var(--color-gray-900);
     --color-base-airy: var(--color-gray-800);
     --color-base-border: var(--color-gray-700);
@@ -12,8 +12,8 @@
     --color-primary-content: var(--color-slate-600);
     --color-accent: var(--color-sky-600);
     --color-accent-content: var(--color-sky-200);
-    --color-danger: var(--color-red-800);
-    --color-danger-content: var(--color-red-200);
+    --color-danger: var(--color-rose-700);
+    --color-danger-content: var(--color-rose-200);
     --color-warning: var(--color-amber-600);
     --color-warning-content: var(--color-amber-200);
     --color-success: var(--color-emerald-600);
