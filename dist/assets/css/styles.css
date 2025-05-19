@@ -27,7 +27,6 @@
     --color-sky-500: oklch(68.5% 0.169 237.323);
     --color-sky-600: oklch(58.8% 0.158 241.966);
     --color-blue-50: oklch(97% 0.014 254.604);
-    --color-blue-200: oklch(88.2% 0.059 254.128);
     --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
@@ -2073,9 +2072,7 @@ i.hi-lg {
     --checkbox-bg: none;
     --checkbox-shadow: none;
     --checkbox-checked-color: var(--checkbox-color, var(--color-base-dense));
-    --checkbox-border: var(--checkbox-checked-outline,
-            var(--color-base-dense
-        ));
+    --checkbox-border: var(--checkbox-checked-outline, var(--color-base-dense));
   }
   .checkbox-outline-bold {
     border-width: 2px;
@@ -2922,8 +2919,8 @@ i.hi-lg {
       --radio-border: var(--radio-focus-border);
     }
     &.radio-validate:user-invalid, &.radio-invalid:not(:checked) {
-      border-color: var(--radio-invalid-border);
-      background-color: var(--radio-invalid-bg);
+      --radio-border: var(--radio-invalid-border);
+      --radio-bg: var(--radio-invalid-bg);
     }
     label:has(&) {
       cursor: pointer;
@@ -2948,9 +2945,7 @@ i.hi-lg {
     --radio-bg: none;
     --radio-shadow: none;
     --radio-checked-color: var(--radio-color, var(--color-base-dense));
-    --radio-border: var(--radio-checked-outline,
-            var(--color-base-dense
-        ));
+    --radio-border: var(--radio-checked-outline, var(--color-base-dense));
     &::before {
       box-shadow: none;
     }
@@ -3002,18 +2997,21 @@ i.hi-lg {
 @layer components {
   .select {
     --select-size: calc(var(--spacing) * 10);
-    --select-bg: var(--select-color, var(--color-base));
-    --select-hover-bg: var(--color-neutral-100);
-    --select-active-bg: var(--color-neutral-200);
-    --select-border: color-mix(in srgb, #000 15%, transparent);
+    --select-bg: var(--select-color);
     @supports (color: color-mix(in lab, red, red)) {
-      --select-border: color-mix(in oklab, var(--color-black) 15%, transparent);
+      --select-bg: color-mix(in oklab, var(--select-color) 15%, transparent);
     }
-    --select-focus-outline: var(--color-blue-200);
-    --select-focus-border: var(--color-blue-400);
-    --select-disabled-bg: var(--color-neutral-200);
-    --select-invalid-bg: var(--color-red-50);
-    --select-invalid-border: var(--color-red-400);
+    --select-border: var(--select-color, var(--color-base-border));
+    --select-focus-outline: var(--select-color, oklch(70.7% 0.165 254.624));
+    @supports (color: color-mix(in lab, red, red)) {
+      --select-focus-outline: color-mix(in oklab, var(--select-color, var(--color-accent)) 40%, transparent);
+    }
+    --select-focus-border: var(--select-color, var(--color-accent));
+    --select-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --select-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+    }
+    --select-invalid-border: var(--color-danger);
     --select-outline-border: var(--color-neutral-300);
     --select-outline-hover-border: var(--color-neutral-400);
     --select-outline-active-border: var(--color-neutral-500);
@@ -3021,90 +3019,103 @@ i.hi-lg {
     --select-solid-bg: var(--color-neutral-100);
     --select-solid-hover-bg: var(--color-neutral-200);
     --select-solid-active-bg: var(--color-neutral-300);
-    --select-text: var(--color-neutral-800);
-    --placeholder-color: var(--color-neutral-400);
+    --placeholder-color: var(--color-base-dense);
     appearance: none;
     cursor: pointer;
+    position: relative;
     block-size: var(--select-size);
     padding-inline: calc(var(--spacing) * 3) calc(var(--spacing) * 8);
-    border: 1px solid var(--select-border);
+    border: 1px solid var(--select-border, var(--color-base-border));
     border-radius: var(--radius-input);
     outline: 0px solid var(--select-focus-outline);
     outline-offset: 0px;
-    background-color: var(--select-bg);
+    background-color: var(--select-bg, var(--color-base));
     box-shadow: var(--shadow-low);
-    color: var(--select-text);
+    color: var(--color-base-foreground);
     font-size: calc(var(--select-size) * 0.4);
     transition-property: background-color, border-color, box-shadow;
     transition-duration: var(--tt-duration, var(--default-transition-duration));
     transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23989898"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
     background-position: right 0.5rem center;
     background-repeat: no-repeat;
     background-size: 1.25em;
     @media (hover: hover) {
       &:hover {
-        --select-bg: var(--select-hover-bg);
-        border-color: var(--select-outline-hover-border);
+        --select-bg: var(--select-color);
+        @supports (color: color-mix(in lab, red, red)) {
+          --select-bg: color-mix(in oklab, var(--select-color) 20%, transparent);
+        }
+        background-color: var(--select-bg, var(--color-base-airy));
       }
-    }
-    &:active {
-      --select-bg: var(--select-active-bg);
     }
     &:is(:disabled, [disabled]) {
       cursor: not-allowed;
-      opacity: 0.7;
-      background-color: var(--select-disabled-bg);
-      box-shadow: none;
-      border-color: var(--select-outline-disabled);
-      color: var(--select-disabled);
+      pointer-events: none;
+      background-color: var(--select-bg);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--select-bg), transparent 60%);
+      }
+      --select-border: var(--select-color, oklch(70.8% 0 0));
+      @supports (color: color-mix(in lab, red, red)) {
+        --select-border: color-mix(in oklab, var(--select-color, var(--color-base-dense)), transparent 80%);
+      }
+      color: var(--select-color, oklch(43.9% 0 0));
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--select-color, var(--color-base-foreground)), transparent 40%);
+      }
     }
     &:focus-visible {
-      outline-width: 2px;
-      border-color: var(--select-focus-border);
+      outline-width: 3px;
+      --select-border: var(--select-focus-border);
     }
     &.select-validate:user-invalid, &.select-invalid {
-      border: 1px solid var(--select-invalid-border);
-      background-color: var(--select-invalid-bg);
+      --select-border: var(--select-invalid-border);
+      --select-bg: var(--select-invalid-bg);
     }
   }
-  .select-outline, .select-outline-bold {
-    border-color: var(--select-outline-border);
+  .select.select-outline, .select.select-outline-bold {
     box-shadow: none;
-    background: none;
+    --select-bg: transparent;
     @media (hover: hover) {
       &:hover {
         border-color: var(--select-outline-hover-border);
       }
-    }
-    &:active {
-      border-color: var(--select-outline-active-border);
-    }
-    &:is(:disabled, [disabled]) {
-      border-color: var(--select-outline-disabled);
-      background: none;
     }
   }
   .select-outline-bold {
     border-width: 2px;
   }
   .select-clear {
+    --select-bg: transparent;
     border-color: transparent;
     box-shadow: none;
-    background: none;
   }
   .select-solid {
-    border: none;
+    --select-bg: var(--select-color, var(--color-base-airy));
+    border-color: transparent;
     box-shadow: none;
-    --select-bg: var(--select-solid-bg);
-    @media (hover: hover) {
-      &:hover {
-        --select-bg: var(--select-solid-hover-bg);
-      }
-    }
-    &:active {
-      --select-bg: var(--select-solid-active-bg);
-    }
+    color: var(--select-fg, var(--color-base-foreground));
+  }
+  .select-primary {
+    --select-color: var(--color-primary);
+    --select-fg: var(--color-primary-content);
+  }
+  .select-accent {
+    --select-color: var(--color-accent);
+    --select-fg: var(--color-accent-content);
+  }
+  .select-success {
+    --select-color: var(--color-success);
+    --select-fg: var(--color-success-content);
+  }
+  .select-warning {
+    --select-color: var(--color-warning);
+    --select-fg: var(--color-warning-content);
+  }
+  .select-danger {
+    --select-color: var(--color-danger);
+    --select-fg: var(--color-danger-content);
   }
   .select-xs {
     --select-size: calc(var(--spacing) * 8);
@@ -3279,13 +3290,7 @@ i.hi-lg {
     --switch-margin: 0.2em;
     --switch-thumb-start: calc(var(--spacing) * 0.3);
     --switch-thumb-size: calc(var(--switch-height) - calc(var(--spacing) * 1));
-    --switch-thumb-bg: var(--color-base);
     --switch-bg: var(--color-base-border);
-    --switch-checked-bg: var(--color-blue-400);
-    --switch-border: color-mix(in srgb, #000 15%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --switch-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-    }
     --switch-focus-outline: var(--input-color, oklch(70.7% 0.165 254.624));
     @supports (color: color-mix(in lab, red, red)) {
       --switch-focus-outline: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
@@ -3296,22 +3301,16 @@ i.hi-lg {
       --switch-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
     }
     --switch-invalid-border: var(--color-danger);
-    --switch-solid-bg: var(--color-neutral-200);
-    --switch-outline: var(--color-neutral-300);
-    --switch-outline-disabled: var(--color-neutral-200);
-    --switch-outline-disabled-checked: var(--color-neutral-300);
-    --switch-disabled-bg: var(--color-neutral-200);
-    --switch-disabled-border: var(--color-neutral-300);
-    --switch-disabled-checked-bg: var(--color-neutral-300);
-    --switch-disabled-thumb-bg: var(--color-neutral-100);
-    --switch-disabled-thumb-checked-bg: var(--color-neutral-300);
     appearance: none;
     cursor: pointer;
     position: relative;
     block-size: var(--switch-height);
     min-inline-size: var(--switch-width);
     inset-block-start: var(--switch-margin);
-    border: 1px solid var(--switch-border);
+    border: 1px solid var(--switch-border, color-mix(in srgb, oklch(70.8% 0 0) 60%, transparent));
+    @supports (color: color-mix(in lab, red, red)) {
+      border: 1px solid var(--switch-border, color-mix(in oklab, var(--color-base-dense) 60%, transparent));
+    }
     border-radius: var(--switch-height);
     outline: 0px solid var(--switch-focus-outline);
     outline-offset: 0px;
@@ -3329,9 +3328,9 @@ i.hi-lg {
       block-size: var(--switch-thumb-size);
       inline-size: var(--switch-thumb-size);
       border-radius: calc(infinity * 1px);
-      background-color: var(--switch-thumb-bg);
+      background-color: var(--switch-thumb-bg, var(--color-base));
       box-shadow: var(--shadow-low), var(--shadow-low);
-      transition-property: background-color, transform;
+      transition-property: background-color, box-shadow, transform;
       transition-duration: var(--tt-duration, var(--default-transition-duration));
       transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     }
@@ -3341,43 +3340,56 @@ i.hi-lg {
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--switch-bg), var(--color-base-foreground) 6%);
         }
+        --switch-checked-outline: color-mix(in srgb, oklch(70.8% 0 0), oklch(98.5% 0 0) 20%);
+        @supports (color: color-mix(in lab, red, red)) {
+          --switch-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 20%);
+        }
       }
     }
     &:active {
       box-shadow: none;
+      --switch-checked-outline: color-mix(in srgb, oklch(70.8% 0 0), oklch(98.5% 0 0) 40%);
+      @supports (color: color-mix(in lab, red, red)) {
+        --switch-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 40%);
+      }
       &::before {
         box-shadow: none;
       }
     }
     &:checked {
-      background-color: var(--switch-checked-bg);
+      --switch-bg: var(--switch-color, var(--color-base-dense));
+      --switch-thumb-bg: var(--switch-checked-color, var(--color-base));
+      --switch-checked-outline: var(--switch-color, var(--color-base-dense));
       &::before {
         transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - calc(var(--spacing) * 1)), -50%);
       }
     }
     &:is(:disabled, [disabled]) {
       cursor: not-allowed;
-      border-color: var(--switch-disabled-border);
-      background-color: var(--switch-disabled-bg);
-      box-shadow: none;
-      &:checked {
-        background-color: var(--switch-disabled-checked-bg);
-        &::before {
-          background-color: var(--switch-disabled-thumb-bg);
-        }
+      pointer-events: none;
+      background-color: var(--switch-bg);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--switch-bg) 40%, transparent);
       }
+      border-color: var(--switch-border, oklch(70.8% 0 0));
+      @supports (color: color-mix(in lab, red, red)) {
+        border-color: color-mix(in oklab, var(--switch-border, var(--color-base-dense)) 30%, transparent);
+      }
+      box-shadow: none;
       &::before {
-        background-color: var(--switch-disabled-thumb-checked-bg);
-        box-shadow: none;
+        background-color: var(--switch-thumb-bg, oklch(98.5% 0 0));
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--switch-thumb-bg, var(--color-base)) 50%, var(--color-base));
+        }
       }
     }
     &:focus-visible {
       outline-width: 2px;
-      border-color: var(--switch-focus-border);
+      --switch-border: var(--switch-focus-border);
     }
     &.switch-validate:user-invalid, &.switch-invalid:not(:checked) {
-      border: 1px solid var(--switch-invalid-border);
-      background-color: var(--switch-invalid-bg);
+      --switch-border: var(--switch-invalid-border);
+      --switch-bg: var(--switch-invalid-bg);
     }
     label:has(&) {
       cursor: pointer;
@@ -3397,71 +3409,49 @@ i.hi-lg {
     flex-direction: column;
     gap: calc(var(--spacing) * 2);
   }
-  .switch-outline, .switch-outline-bold {
-    border-color: var(--switch-outline);
+  .switch.switch-outline, .switch.switch-outline-bold {
+    --switch-bg: none;
+    --switch-border: var(--switch-checked-outline);
+    --switch-thumb-bg: var(--switch-checked-outline, var(--color-base-border));
     box-shadow: none;
-    background: none;
     &::before {
-      background-color: var(--switch-outline);
       box-shadow: none;
-    }
-    &:is(:disabled, [disabled]) {
-      border-color: var(--switch-outline-disabled);
-      background: none;
-      &::before {
-        background-color: var(--switch-outline-disabled);
-      }
-      &:checked {
-        border-color: var(--switch-outline-disabled-checked);
-        background: none;
-        &::before {
-          background-color: var(--switch-outline-disabled-checked);
-        }
-      }
-    }
-    &:checked {
-      border-color: var(--switch-checked-bg);
-      background-color: var(--color-white);
-      &::before {
-        background-color: var(--switch-checked-bg);
-      }
     }
   }
   .switch-outline-bold {
     border-width: 2px;
-    --switch-thumb-start: calc(var(--spacing) * 0.2);
-    --switch-thumb-size: calc(var(--switch-height) - calc(var(--spacing) * 1.5));
+    --switch-thumb-start: calc(var(--spacing) * 0.5);
+    --switch-thumb-size: calc(var(--switch-height) - calc(var(--spacing) * 2));
     &:checked {
       &::before {
-        transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - calc(var(--spacing) * 1.5)), -50%);
+        transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - calc(var(--spacing) * 2)), -50%);
       }
     }
   }
   .switch-solid {
-    border: none;
+    --switch-bg: var(--color-base-border);
+    --switch-border: transparent;
     box-shadow: none;
-    background-color: var(--switch-solid-bg);
-    &::before {
-      --switch-thumb-start: calc(var(--spacing) * 0.5);
-    }
-    &:checked {
-      background-color: var(--switch-checked-bg);
-    }
   }
   .switch-primary {
     --switch-color: var(--color-primary);
+    --switch-checked-color: var(--color-primary-content);
   }
   .switch-accent {
     --switch-color: var(--color-accent);
+    --switch-checked-color: var(--color-accent-content);
   }
   .switch-warning {
     --switch-color: var(--color-warning);
+    --switch-checked-color: var(--color-warning-content);
   }
   .switch-danger {
     --switch-color: var(--color-danger);
+    --switch-checked-color: var(--color-danger-content);
   }
   .switch-success {
     --switch-color: var(--color-success);
+    --switch-checked-color: var(--color-success-content);
   }
   .switch-xs {
     --switch-height: calc(var(--spacing) * 3);

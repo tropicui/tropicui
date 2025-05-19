@@ -1,5 +1,44 @@
+/*
+Switch component styles.
+
+@description Provides a flexible, customizable toggle switch component with various states, sizes, and styles for form inputs with consistent styling.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --switch-height - Controls the overall height of the switch
+@property {string} --switch-width - Controls the overall width of the switch
+@property {string} --switch-margin - Margin applied to the switch
+@property {string} --switch-thumb-start - Starting position of the switch thumb
+@property {string} --switch-thumb-size - Size of the switch thumb
+@property {string} --switch-bg - Background color of the switch
+@property {string} --switch-thumb-bg - Background color of the switch thumb
+@property {string} --switch-border - Border color of the switch
+@property {string} --switch-focus-outline - Outline color when switch is focused
+@property {string} --switch-focus-border - Border color when switch is focused
+@property {string} --switch-invalid-bg - Background color when switch is invalid
+@property {string} --switch-invalid-border - Border color when switch is invalid
+@property {string} --switch-color - Color of the switch when checked
+@property {string} --switch-checked-color - Color of the switch thumb when checked
+@property {string} --switch-checked-outline - Border color of the switch for outline variant when checked
+*/
 @layer components {
     .switch {
+        /* modifiers */
+        --switch-height: --spacing(4.5);
+        --switch-width: calc(var(--switch-height) * 1.8);
+        --switch-margin: 0.2em;
+
+        --switch-thumb-start: --spacing(0.3);
+        --switch-thumb-size: calc(var(--switch-height) - --spacing(1));
+
+        --switch-bg: var(--color-base-border);
+
+        --switch-focus-outline: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
+        --switch-focus-border: var(--color-accent);
+        
+        --switch-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+        --switch-invalid-border: var(--color-danger);
+
         /* layout */
         appearance: none;
         cursor: pointer;
@@ -11,63 +50,64 @@
         inset-block-start: var(--switch-margin);
 
         /* colors */
-        border: 1px solid var(--switch-border);
+        border: 1px solid var(--switch-border, color-mix(in oklab, var(--color-base-dense) 60%, transparent));
         border-radius: var(--switch-height);
         outline: 0px solid var(--switch-focus-outline);
         outline-offset: 0px;
         background-color: var(--switch-bg);
-        box-shadow: var(--inset-shadow-sm), var(--shadow-xs);
-
-        /* modifiers */
-        --switch-height: --spacing(4.5);
-        --switch-width: calc(var(--switch-height) * 1.8);
-        --switch-margin: 0.2em;
-        --switch-thumb-start: --spacing(0.3);
-        --switch-thumb-size: calc(var(--switch-height) - --spacing(1));
-        --switch-thumb-bg: var(--color-white);
-        --switch-bg: var(--color-neutral-200);
-        --switch-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-        --switch-focus-outline: var(--color-blue-200);
-        --switch-focus-border: var(--color-blue-400);
-        --switch-checked-bg: var(--color-blue-400);
-        --switch-invalid-bg: var(--color-red-100);
-        --switch-invalid-border: var(--color-red-400);
-        --switch-solid-bg: var(--color-neutral-200);
-        --switch-outline: var(--color-neutral-300);
-        --switch-outline-disabled: var(--color-neutral-200);
-        --switch-outline-disabled-checked: var(--color-neutral-300);
-        --switch-disabled-bg: var(--color-neutral-200);
-        --switch-disabled-border: var(--color-neutral-300);
-        --switch-disabled-checked-bg: var(--color-neutral-300);
-        --switch-disabled-thumb-bg: var(--color-neutral-100);
-        --switch-disabled-thumb-checked-bg: var(--color-neutral-300);
+        box-shadow: var(--inset-dent), var(--shadow-low);
 
         /* animation */
-        transition-property: background-color;
+        transition-property: background-color, border-color, box-shadow, outline;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
+        /* thumb */
         &::before {
+            /* layout */
             content: "";
             position: absolute;
+
+            /* dimensions */
             inset-block-start: 50%;
             inset-inline-start: var(--switch-thumb-start);
             transform: translateY(-50%);
             block-size: var(--switch-thumb-size);
             inline-size: var(--switch-thumb-size);
             border-radius: calc(infinity * 1px);
-            background-color: var(--switch-thumb-bg);
-            box-shadow: var(--shadow-sm);
+
+            /* colors */
+            background-color: var(--switch-thumb-bg, var(--color-base));
+            box-shadow: var(--shadow-low), var(--shadow-low);
 
             /* animation */
-            transition-property: transform;
+            transition-property: background-color, box-shadow, transform;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
 
-        &:checked {
-            background-color: var(--switch-checked-bg);
+        @media (hover: hover) {
+            &:hover {
+                background-color: color-mix(in oklab, var(--switch-bg), var(--color-base-foreground) 6%);
+                --switch-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 20%);
+            }
+        }
 
+        &:active {
+            box-shadow: none;
+            --switch-checked-outline: color-mix(in oklab, var(--color-base-dense), var(--color-base) 40%);
+
+            &::before {
+                box-shadow: none;
+            }
+        }
+
+        &:checked {
+            --switch-bg: var(--switch-color, var(--color-base-dense));
+            --switch-thumb-bg: var(--switch-checked-color, var(--color-base));
+            --switch-checked-outline: var(--switch-color, var(--color-base-dense));
+
+            /* slide thumb */
             &::before {
                 transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - --spacing(1)), -50%);
             }
@@ -76,37 +116,30 @@
         /* disabled */
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
+            pointer-events: none;
+
             /* colors */
-            border-color: var(--switch-disabled-border);
-            background-color: var(--switch-disabled-bg);
+            background-color: color-mix(in oklab, var(--switch-bg) 40%, transparent);
+            border-color: color-mix(in oklab, var(--switch-border, var(--color-base-dense)) 30%, transparent);
             box-shadow: none;
 
-            &:checked {
-                background-color: var(--switch-disabled-checked-bg);
-    
-                &::before {
-                    background-color: var(--switch-disabled-thumb-bg);
-                }
-            }
-
             &::before {
-                background-color: var(--switch-disabled-thumb-checked-bg);
-                box-shadow: none;
+                background-color: color-mix(in oklab, var(--switch-thumb-bg, var(--color-base)) 50%, var(--color-base));
             }
         }
 
         /* focus */
         &:focus-visible {
             outline-width: 2px;
-            border-color: var(--switch-focus-border);
+            --switch-border: var(--switch-focus-border);
         }
 
         /* validate */
-        &.switch-validate:invalid,
+        &.switch-validate:user-invalid,
         &.switch-invalid:not(:checked) {
             /* colors */
-            border: 1px solid var(--switch-invalid-border);
-            background-color: var(--switch-invalid-bg);
+            --switch-border: var(--switch-invalid-border);
+            --switch-bg: var(--switch-invalid-bg);
         }
 
         /* enclosing label */
@@ -133,50 +166,17 @@
     }
 
     /* variations */
-    .switch-outline,
-    .switch-outline-bold {
+    .switch.switch-outline,
+    .switch.switch-outline-bold {
         /* colors */
-        border-color: var(--switch-outline);
+        --switch-bg: none;
+        --switch-border: var(--switch-checked-outline);
+        --switch-thumb-bg: var(--switch-checked-outline, var(--color-base-border));
         box-shadow: none;
-        background: none;
 
         &::before {
             /* colors */
-            background-color: var(--switch-outline);
             box-shadow: none;
-        }
-
-        /* disabled */
-        &:is(:disabled, [disabled]) {
-            /* colors */
-            border-color: var(--switch-outline-disabled);
-            background: none;
-
-            &::before {
-                /* colors */
-                background-color: var(--switch-outline-disabled);
-            }
-
-            &:checked {
-                /* colors */
-                border-color: var(--switch-outline-disabled-checked);
-                background: none;
-
-                &::before {
-                    /* colors */
-                    background-color: var(--switch-outline-disabled-checked);
-                }
-            }
-        }
-
-        &:checked {
-            border-color: var(--switch-checked-bg);
-            background-color: var(--color-white);
-
-            &::before {
-                /* colors */
-                background-color: var(--switch-checked-bg);
-            }
         }
     }
 
@@ -184,30 +184,44 @@
         border-width: 2px;
 
         /* modifiers */
-        --switch-thumb-start: --spacing(0.2);
-        --switch-thumb-size: calc(var(--switch-height) - --spacing(1.5));
+        --switch-thumb-start: --spacing(0.5);
+        --switch-thumb-size: calc(var(--switch-height) - --spacing(2));
 
         /* checked */
         &:checked {
             &::before {
-                transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - --spacing(1.5)), -50%);
+                transform: translate(calc(var(--switch-width) - var(--switch-thumb-size) - --spacing(2)), -50%);
             }
         }
     }
 
     .switch-solid {
         /* colors */
-        border: none;
+        --switch-bg: var(--color-base-border);
+        --switch-border: transparent;
         box-shadow: none;
-        background-color: var(--switch-solid-bg);
+    }
 
-        &::before {
-            --switch-thumb-start: --spacing(0.5);
-        }
-
-        &:checked {
-            background-color: var(--switch-checked-bg);
-        }
+    /* colors */
+    .switch-primary {
+        --switch-color: var(--color-primary);
+        --switch-checked-color: var(--color-primary-content);
+    }
+    .switch-accent {
+        --switch-color: var(--color-accent);
+        --switch-checked-color: var(--color-accent-content);
+    }
+    .switch-warning {
+        --switch-color: var(--color-warning);
+        --switch-checked-color: var(--color-warning-content);
+    }
+    .switch-danger {
+        --switch-color: var(--color-danger);
+        --switch-checked-color: var(--color-danger-content);
+    }
+    .switch-success {
+        --switch-color: var(--color-success);
+        --switch-checked-color: var(--color-success-content);
     }
 
     /* sizes */
@@ -226,6 +240,11 @@
 
     .switch-xl {
         --switch-height: --spacing(7);
+        --switch-margin: 0em;
+    }
+
+    .switch-2xl {
+        --switch-height: --spacing(8);
         --switch-margin: 0em;
     }
 }

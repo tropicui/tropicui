@@ -125,8 +125,8 @@ Radio component styles.
         &.radio-validate:user-invalid,
         &.radio-invalid:not(:checked) {
             /* colors */
-            border-color: var(--radio-invalid-border);
-            background-color: var(--radio-invalid-bg);
+            --radio-border: var(--radio-invalid-border);
+            --radio-bg: var(--radio-invalid-bg);
         }
 
         /* enclosing label */
@@ -162,10 +162,7 @@ Radio component styles.
         --radio-bg: none;
         --radio-shadow: none;
         --radio-checked-color: var(--radio-color, var(--color-base-dense));
-        --radio-border: 
-            var(--radio-checked-outline,
-            var(--color-base-dense
-        ));
+        --radio-border: var(--radio-checked-outline, var(--color-base-dense));
 
         &::before {
             box-shadow: none;

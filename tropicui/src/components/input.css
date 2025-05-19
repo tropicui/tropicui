@@ -19,7 +19,6 @@ Input component styles.
     .input {
         /* modifiers */
         --input-bg: color-mix(in oklab, var(--input-color) 15%, transparent);
-        /* --input-bg: var(--color-base); */
         --input-border: var(--input-color, var(--color-base-border));
         --input-focus: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
         --input-text: var(--color-base-foreground);

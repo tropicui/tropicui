@@ -170,10 +170,7 @@ Checkbox component styles.
         --checkbox-bg: none;
         --checkbox-shadow: none;
         --checkbox-checked-color: var(--checkbox-color, var(--color-base-dense));
-        --checkbox-border: 
-            var(--checkbox-checked-outline,
-            var(--color-base-dense
-        ));
+        --checkbox-border: var(--checkbox-checked-outline, var(--color-base-dense));
     }
 
     .checkbox-outline-bold {
