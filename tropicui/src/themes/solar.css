@@ -3,5 +3,6 @@
 
     --color-primary: var(--color-amber-700);
 
+    --border: 1px;
     --radius: 0.5rem;
 }

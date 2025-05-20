@@ -1,5 +1,6 @@
 :root {
     --theme-primary: var(--color-neutral-700);
 
+    --border: 1px;
     --radius: 0.5rem;
 }

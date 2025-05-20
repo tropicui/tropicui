@@ -22,7 +22,7 @@ Avatar component styles.
         --avatar-border-radius: var(--radius-control);
         --avatar-group-gap: 3;
         --avatar-active: var(--color-accent);
-        --avatar-ring: var(--avatar-color, var(--color-base));
+        --avatar-ring: var(--avatar-color, var(--color-base-border));
 
         /* layout */
         align-content: center;
@@ -34,7 +34,7 @@ Avatar component styles.
         inline-size: var(--avatar-size);
 
         /* color */
-        border: 2px solid var(--color-base);
+        border: 2px solid var(--color-base-background);
         border-radius: var(--avatar-border-radius);
         background-color: var(--avatar-bg);
         color: var(--avatar-fg, var(--color-base-foreground));

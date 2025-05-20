@@ -15,8 +15,8 @@
         max-width: var(--tt-sidebar-max-w);
         min-width: var(--tt-sidebar-min-w);
         /* colors */
-        background-color: var(--color-neutral-100);
-        border-right: 1px solid var(--color-neutral-200);
+        background-color: var(--color-base);
+        border-right: 1px solid var(--color-base-border);
         color: var(--color-neutral-600);
         /* animation */
         transition-property: width;
@@ -55,8 +55,8 @@
             min-height: --spacing(16);
             padding-inline: --spacing(4);
             /* colors */
-            border-bottom: 1px solid var(--color-neutral-200);
-            background-color: var(--color-neutral-50);
+            border-bottom: 1px solid var(--color-base-border);
+            background-color: var(--color-base);
             /* site logo / brand */
             .sidebar-logo {
                 width: --spacing(8);
@@ -102,8 +102,9 @@
             /* allow sidebar height to extend to the bottom */
             flex: 1;
             overflow-y: scroll;
-            scrollbar-color: var(--color-neutral-300) var(--color-neutral-100);
+            scrollbar-color: var(--color-base-dense) var(--color-base);
             padding-inline-start: --spacing(4);
+            padding-inline-end: --spacing(2);
             /* additional element logic when sidebar is collapsed */
             @container sidebar (width < 8rem) {
                 /* hide the scrollbar and introduce end padding when sidebar is collapsed */
@@ -132,8 +133,8 @@
             /* dimension */
             padding: --spacing(4);
             /* color */
-            background-color: var(--color-neutral-50);
-            border-top: 1px solid var(--color-neutral-200);
+            background-color: var(--color-base);
+            border-top: 1px solid var(--color-base-border);
             box-shadow: var(--shadow);
         }
     }

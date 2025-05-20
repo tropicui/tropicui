@@ -24,6 +24,9 @@
     /* typography */
     --color-muted: var(--color-base-dense);
 
+    /* spacing */
+    --border-width: var(--border, 1px);
+
     /* radius */
     --radius-container: calc(var(--radius) / 1);
     --radius-control: calc(var(--radius) / 1.8);

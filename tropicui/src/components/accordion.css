@@ -4,6 +4,14 @@ Accordion component styles.
 @description Provides a collapsible content container with animated transitions for showing and hiding content sections.
 
 @layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --accordion-bg - Background color of the accordion
+@property {string} --accordion-border - Border color of the accordion
+@property {string} --accordion-border-width - Width of the accordion border
+@property {string} --accordion-border-radius - Border radius of the accordion
+@property {string} --accordion-focus-outline - Outline color when the accordion is focused
+@property {string} --accordion-focus-border - Border color when the accordion is focused
+@property {string} --accordion-soft-bg - Background color when the accordion is soft
 */
 @layer components {
     .accordion {
@@ -11,31 +19,79 @@ Accordion component styles.
             interpolate-size: allow-keywords;
         }
 
-        /* color */
-        border: 1px solid var(--color-base-border);
-        border-radius: var(--radius-control);
+        /* modifiers */
+        --accordion-bg: var(--accordion-color);
+        --accordion-border: var(--color-base-border);
+        --accordion-border-width: calc(var(--border-width) * 0);
+        --accordion-border-radius: var(--radius-control);
 
-        summary {
+        --accordion-focus-outline: color-mix(in oklab, var(--accordion-color, var(--color-accent)) 40%, transparent);
+        --accordion-focus-border: var(--accordion-color, var(--color-accent));
+
+        --accordion-soft-bg: color-mix(in oklab, var(--accordion-color, var(--color-base-dense)) 10%, transparent);
+
+        /* colors */
+        background-color: var(--accordion-bg, var(--color-base-background));
+        border-width: var(--accordion-border-width);
+        border-style: solid;
+        border-color: var(--accordion-border);
+        border-radius: var(--accordion-border-radius);
+        outline: 0px solid var(--accordion-focus-outline);
+        outline-offset: 0px;
+        box-shadow: var(--accordion-shadow);
+        color: var(--accordion-fg, var(--color-base-foreground));
+
+        /* animation */
+        transition-property: background-color, border-color, box-shadow, color, outline;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        > summary {
             /* layout */
             display: flex;
-            justify-content: space-between;
+            align-items: center;
             cursor: pointer;
+            gap: --spacing(2);
+            overflow: hidden;
+
+            /* dimensions */
             padding-inline: --spacing(4);
             padding-block: --spacing(4);
+
+            /* colors */
+            border-radius: calc(var(--accordion-border-radius) - var(--accordion-border-width));
+            color: currentColor;
+
+            /* animation */
+            transition-property: background-color, border-radius, color;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+            /* disable defaault focus outline styles */
+            &:is(:focus-visible, :focus) {
+                outline: none;
+            }
+
+            /* icons */
+            :where(svg, img, i) {
+                block-size: 1.25em;
+                min-inline-size: 1.25em;
+            }
         }
 
-        summary::marker {
+        > summary::marker {
             content: "";
         }
 
-        summary::after {
+        &.accordion-arrow-right > summary::after,
+        &.accordion-arrow-left > summary::before {
             /* icon */
             content: "";
             mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>');
             mask-repeat: no-repeat;
             mask-type: alpha;
             background-color: currentColor;
-            color: var(--color-base-foreground);
+            block-size: --spacing(5);
             inline-size: --spacing(5);
 
             /* animation */
@@ -44,8 +100,39 @@ Accordion component styles.
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
 
-        &[open] {
-            summary::after {
+        > summary::after {
+            margin-inline-start: auto;
+        }
+
+        &:has(> summary:is(:focus-visible)) {
+            outline-width: calc(var(--border-width) * 3);
+
+            /* colors */
+            --accordion-border: var(--accordion-focus-border);
+        }
+
+        /* open activation */
+        &[class*="accordion-open\:bg"]:not([open], :open) {
+            --accordion-bg: var(--color-base-background);
+        }
+        &[class*="accordion-open\:fg"]:not([open], :open) {
+            --accordion-fg: var(--color-base-foreground);
+        }
+        &[class*="accordion-open\:outline"]:not([open], :open) {
+            --accordion-border: transparent;
+        }
+        &[class*="accordion-open\:shadow"]:not([open], :open) {
+            --accordion-shadow: none;
+        }
+
+        &:is([open], :open) {
+            > summary {
+                border-end-start-radius: 0;
+                border-end-end-radius: 0;
+            }
+
+            > summary::after,
+            > summary::before {
                 rotate: 180deg;
             }
 
@@ -65,7 +152,7 @@ Accordion component styles.
             padding-inline: --spacing(4);
 
             /* colors */
-            color: var(--color-base-foreground);
+            color: currentColor;
 
             /* animation */
             transition-property: block-size, content-visibility, opacity, padding-block;
@@ -74,5 +161,88 @@ Accordion component styles.
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
         }
+    }
+
+    /* colors */
+    .accordion-primary {
+        --accordion-color: var(--color-primary);
+        --accordion-fg: var(--color-primary-content);
+    }
+    .accordion-accent {
+        --accordion-color: var(--color-accent);
+        --accordion-fg: var(--color-accent-content);
+    }
+    .accordion-warning {
+        --accordion-color: var(--color-warning);
+        --accordion-fg: var(--color-warning-content);
+    }
+    .accordion-danger {
+        --accordion-color: var(--color-danger);
+        --accordion-fg: var(--color-danger-content);
+    }
+    .accordion-success {
+        --accordion-color: var(--color-success);
+        --accordion-fg: var(--color-success-content);
+    }
+
+    /* variants */
+    .accordion-gutter {
+        margin-block-end: --spacing(4);
+    }
+
+    .accordion-header {
+        background-color: var(--color-base-background);
+        color: var(--color-base-foreground);
+        --accordion-border: var(--accordion-bg, var(--color-base-background));
+        --accordion-border-width: calc(var(--border-width) * 1);
+
+        > summary {
+            background-color: var(--accordion-bg, var(--color-base-background));
+            color: var(--accordion-fg, var(--color-base-foreground));
+        }
+
+        &:is([open], :open) {
+            > summary {
+                margin-block-end: --spacing(4);
+            }
+        }
+    }
+
+    .accordion-outline,
+    .accordion-outline-bold {
+        --accordion-bg: none;
+        --accordion-fg: var(--accordion-color);
+        --accordion-border: var(--accordion-color);
+        --accordion-border-width: calc(var(--border-width) * 1);
+    }
+
+    .accordion-outline-bold {
+        --accordion-border-width: calc(var(--border-width) * 2);
+    }
+
+    .accordion-soft {
+        --accordion-bg: var(--accordion-soft-bg);
+        --accordion-fg: var(--accordion-color);
+    }
+
+    .accordion-group {
+        :is(:first-child):not(:only-child) {
+            border-end-start-radius: 0;
+            border-end-end-radius: 0;
+        }
+        :is(:last-child):not(:only-child) {
+            border-start-start-radius: 0;
+            border-start-end-radius: 0;
+        }
+        :not(:first-child,:last-child,:only-child) {
+            border-radius: 0;
+        }
+        :not(:first-child,:only-child) {
+            margin-block-start: calc(var(--accordion-border-width) * -1);
+        }
+    }
+
+    .accordion-shadow {
+        --accordion-shadow: var(--shadow-rise);
     }
 }

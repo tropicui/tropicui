@@ -19,5 +19,6 @@
     --color-success: var(--color-emerald-600);
     --color-success-content: var(--color-emerald-200);
 
+    --border: 1px;
     --radius: 0.5rem;
 }

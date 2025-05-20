@@ -196,6 +196,12 @@ Button component styles.
     .btn-dashed-bold {
         --btn-shadow: none;
 
+        @media (hover: hover) {
+            &:hover:not(:active, .btn-active) {
+                --btn-bg: var(--btn-soft-bg);
+                --btn-fg: var(--btn-color, var(--color-base-foreground));
+            }
+        }
         &:not(:hover, :active, .btn-active) {
             --btn-bg: none;
             --btn-fg: var(--btn-color, var(--color-base-foreground));
@@ -204,7 +210,7 @@ Button component styles.
         @media (hover: none) {
             &:not(:active, .btn-active) {
                 --btn-bg: none;
-                --btn-fg: var(--btn-color, var(--color-base-foreground));
+            --btn-fg: var(--btn-color, var(--color-base-foreground));
                 --btn-border: var(--btn-color, var(--color-base-border));
             }
         }
