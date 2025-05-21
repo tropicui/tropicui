@@ -12,14 +12,22 @@ Modal component styles.
     .modal {
         /* modifiers */
         --modal-block: --spacing(60);
-        --modal-inline: --spacing(120);
+        --modal-inline: calc(var(--modal-block) * 2);
 
         /* layout */
+        display: none;
+        flex-direction: column;
         opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        margin: auto;
 
         /* dimensions */
         min-block-size: var(--modal-block);
         inline-size: var(--modal-inline);
+        /* reset browser default style */
+        max-block-size: calc(100% - 1em);
+        max-inline-size: calc(100% - 1em);
 
         /* colors */
         box-shadow: var(--shadow-high);
@@ -31,17 +39,36 @@ Modal component styles.
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
         @starting-style {
-            &:open {
+            &:not(.modal-left, .modal-right, .modal-top, .modal-bottom) {
+                display: none;
                 opacity: 0;
+                visibility: hidden;
                 scale: 80%;
             }
+            &:is(.modal-left) {
+                transform: translateX(-100%);
+            }
+            &:is(.modal-right) {
+                transform: translateX(100%);
+            }
+            &:is(.modal-top) {
+                transform: translateY(-100%);
+            }
+            &:is(.modal-bottom) {
+                transform: translateY(100%);
+            }
         }
-        &:open {
+
+        &:is([open], :open) {
+            display: flex;
             opacity: 1;
+            visibility: visible;
+
             button:focus-visible {
                 background-color: inherit;
             }
         }
+
         &::backdrop {
             background-color: transparent;
 
@@ -51,18 +78,16 @@ Modal component styles.
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
-        &:open::backdrop {
-            background-color: color-mix(in oklab, var(--color-black) 25%, transparent);
+
+        &:is([open], :open)::backdrop {
+            pointer-events: none;
+            background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
         }
 
         @starting-style {
-            &:open::backdrop {
+            &:is([open], :open)::backdrop {
                 background-color: transparent;
             }
-        }
-
-        .card-body {
-            min-block-size: calc(var(--modal-block) - var(--card-header-size) - var(--card-footer-size));
         }
 
         /* action outside of modal */
@@ -82,28 +107,59 @@ Modal component styles.
         }
     }
 
-    /* center content */
-    .modal-center {
-        align-content: center;
-        justify-items: center;
-    }
-
     /* sizes */
     .modal-sm {
         --modal-block: --spacing(48);
-        --modal-inline: --spacing(96);
     }
     .modal-lg {
         --modal-block: --spacing(84);
-        --modal-inline: --spacing(168);
     }
     .modal-xl {
         --modal-block: --spacing(120);
-        --modal-inline: --spacing(240);
+    }
+    .modal-2xl {
+        --modal-block: --spacing(160);
     }
     .modal-focus {
         block-size: 100%;
         inline-size: 100%;
-        margin-block: --spacing(4);
+    }
+
+    /* positioning */
+    .modal-left {
+        inset-inline-start: --spacing(2);
+        inset-inline-end: auto;
+        block-size: 100%;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-right {
+        inset-inline-start: auto;
+        inset-inline-end: --spacing(2);
+        block-size: 100%;
+
+        &:not([open], :open) {
+            transform: translateX(100%);
+        }
+    }
+    .modal-top {
+        inset-block-start: --spacing(2);
+        inset-block-end: auto;
+        inline-size: 100%;
+
+        &:not([open], :open) {
+            transform: translateY(-100%);
+        }
+    }
+    .modal-bottom {
+        inset-block-start: auto;
+        inset-block-end: --spacing(2);
+        inline-size: 100%;
+
+        &:not([open], :open) {
+            transform: translateY(100%);
+        }
     }
 }

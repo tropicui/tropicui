@@ -1,0 +1,91 @@
+/*
+Float component styles.
+
+@description Provides a flexible floating element component with various positioning options. Supports different placement variations for fixed-position elements that can be dismissed with a close button.
+
+@layer components - Applies styles at the component layer of the CSS cascade.
+
+@property {string} --float-spacing - Controls the margin around the float element
+*/
+@layer components {
+    .float {
+        /* modifiers */
+        --float-spacing: --spacing(8);
+
+        /* layout */
+        display: block;
+        opacity: 1;
+        visibility: visible;
+
+        /* dimensions */
+        margin: var(--float-spacing);
+
+        /* animation */
+        transition-property: display, opacity, transform, visibility;
+        transition-behavior: allow-discrete;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        /* x close button */
+        input.float-close[type="radio"] {
+            appearance: none;
+            &::after {
+                content: "";
+                mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>');
+                mask-repeat: no-repeat;
+                mask-type: alpha;
+                background-color: currentColor;
+                block-size: --spacing(5);
+                inline-size: --spacing(5);
+            }
+        }
+
+        &:has(input[type="radio"]:checked) {
+            display: none;
+            opacity: 0;
+            visibility: none;
+        }
+    }
+
+    .float-shadow > * {
+        box-shadow: var(--shadow-high);
+    }
+
+    /* placement */
+    .float-group {
+        position: fixed;
+        z-index: 51;
+    }
+    .float-top {
+        inset-block-start: 0;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        justify-items: center;
+    }
+    .float-top-start {
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        justify-items: start;
+    }
+    .float-top-end {
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        justify-items: end;
+    }
+    .float-bottom {
+        inset-block-end: 0;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        justify-items: center;
+    }
+    .float-bottom-start {
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        justify-items: start;
+    }
+    .float-bottom-end {
+        inset-block-end: 0;
+        inset-inline-end: 0;
+        justify-items: end;
+    }
+}

@@ -89,6 +89,7 @@ Card component styles.
         }
 
         .card-body {
+            overflow: auto;
             padding-block-start: --spacing(4);
             padding-block-end: --spacing(8);
             padding-inline: --spacing(6);
@@ -121,6 +122,12 @@ Card component styles.
                 inset-block-end: 0;
                 z-index: 10;
             }
+        }
+
+        /* center content */
+        .card-center {
+            align-content: center;
+            justify-items: center;
         }
 
         :where(.alert) {

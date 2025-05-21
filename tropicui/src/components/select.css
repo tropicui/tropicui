@@ -3,8 +3,11 @@
         /* modifiers */
         --select-size: --spacing(10);
 
-        --select-bg: color-mix(in oklab, var(--select-color) 15%, transparent);
-        --select-border: var(--select-color, var(--color-base-border));
+        --select-bg: var(--select-color, var(--color-base));
+        --select-fg: var(--color-base-foreground);
+        --select-soft-bg: color-mix(in oklab, var(--select-color, var(--color-base-dense)) 12%, transparent);
+        --select-border-width: 1px;
+        --select-border: color-mix(in oklab, var(--select-color, var(--color-base-border)), var(--color-black) 12%);
 
         --select-focus-outline: color-mix(in oklab, var(--select-color, var(--color-accent)) 40%, transparent);
         --select-focus-border: var(--select-color, var(--color-accent));
@@ -12,45 +15,41 @@
         --select-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
         --select-invalid-border: var(--color-danger);
 
-        --select-outline-border: var(--color-neutral-300);
-        --select-outline-hover-border: var(--color-neutral-400);
-        --select-outline-active-border: var(--color-neutral-500);
-        --select-outline-disabled: var(--color-neutral-200);
-
-        --select-solid-bg: var(--color-neutral-100);
-        --select-solid-hover-bg: var(--color-neutral-200);
-        --select-solid-active-bg: var(--color-neutral-300);
-
-        --placeholder-color: var(--color-base-dense);
+        --select-placeholder: color-mix(in oklab, var(--select-fg), transparent 20%);
 
         /* layout */
         appearance: none;
         cursor: pointer;
-        position: relative;
 
         /* dimensions */
         block-size: var(--select-size);
-        padding-inline: --spacing(3) --spacing(8);
+        min-inline-size: var(--select-size);
+        padding-inline: --spacing(4) --spacing(8);
 
         /* colors */
-        border: 1px solid var(--select-border, var(--color-base-border));
-        border-radius: var(--radius-input);
+        background-color: var(--select-bg);
+        border-width: var(--select-border-width);
+        border-style: var(--select-border-style, solid);
+        border-color: var(--select-border);
+        border-radius: var(--select-radius, var(--radius-control));
         outline: 0px solid var(--select-focus-outline);
         outline-offset: 0px;
-        background-color: var(--select-bg, var(--color-base));
-        box-shadow: var(--shadow-low);
-        color: var(--color-base-foreground);
+        box-shadow: var(--select-shadow, var(--shadow-low));
+        color: var(--select-fg);
 
         /* typography */
+        overflow: hidden;
+        text-wrap: nowrap;
         font-size: calc(var(--select-size) * 0.4);
+        line-height: 1.25;
 
         /* animation */
-        transition-property: background-color, border-color, box-shadow;
+        transition-property: background-color, border-color, box-shadow, color, outline;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
         /* dropdown arrow */
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23989898"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23777777"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
         background-position: right 0.5rem center;
         background-repeat: no-repeat;
         background-size: 1.25em;
@@ -58,26 +57,9 @@
         /* hover */
         @media (hover: hover) {
             &:hover {
-                --select-bg: color-mix(in oklab, var(--select-color) 20%, transparent);
-                background-color: var(--select-bg, var(--color-base-airy));
+                --select-bg: color-mix(in oklab, var(--select-color, var(--color-base)), var(--color-black) 6%);
+                --select-border: color-mix(in oklab, var(--select-color, var(--color-base-border)), var(--color-black) 24%);
             }
-        }
-
-        /* active */
-        &:active {
-            /* --select-bg: color-mix(in oklab, var(--select-color) 25%, transparent);
-            background-color: var(--select-bg, var(--color-base)); */
-        }
-
-        /* disabled */
-        &:is(:disabled, [disabled]) {
-            /* layout */
-            cursor: not-allowed;
-            pointer-events: none;
-
-            background-color: color-mix(in oklab, var(--select-bg), transparent 60%);
-            --select-border: color-mix(in oklab, var(--select-color, var(--color-base-dense)), transparent 80%);
-            color: color-mix(in oklab, var(--select-color, var(--color-base-foreground)), transparent 40%);
         }
 
         /* focus */
@@ -94,43 +76,60 @@
             --select-border: var(--select-invalid-border);
             --select-bg: var(--select-invalid-bg);
         }
-    }
 
-    /* variations */
-    .select.select-outline,
-    .select.select-outline-bold {
-        /* colors */
-        box-shadow: none;
-        --select-bg: transparent;
+        /* disabled */
+        &:is(:disabled, [disabled]) {
+            /* layout */
+            cursor: not-allowed;
+            pointer-events: none;
 
-        @media (hover: hover) {
-            &:hover {
-                border-color: var(--select-outline-hover-border);
-            }
+            background-color: color-mix(in oklab, var(--select-bg), transparent 60%);
+            --select-border: color-mix(in oklab, var(--select-color, var(--color-base-dense)), transparent 80%);
+            color: color-mix(in oklab, var(--select-fg, var(--color-base-foreground)), transparent 40%);
         }
 
-        &:active {
-            /* border-color: var(--select-outline-active-border); */
+        /* placeholder */
+        &:has(option[value=""]:checked) {
+            color: var(--select-placeholder);
         }
     }
 
-    .select-outline-bold {
-        border-width: 2px;
+    /* variants */
+    .select-pill {
+        --select-radius: calc(infinity * 1px);
     }
 
     .select-clear {
         /* colors */
         --select-bg: transparent;
-        border-color: transparent;
-        box-shadow: none;
+        --select-border: transparent;
+        --select-shadow: none;
     }
 
-    .select-solid {
+    .select.select-outline,
+    .select.select-outline-bold {
         /* colors */
-        --select-bg: var(--select-color, var(--color-base-airy));
-        border-color: transparent;
-        box-shadow: none;
-        color: var(--select-fg, var(--color-base-foreground));
+        --select-bg: transparent;
+        --select-fg: var(--select-color, var(--color-base-foreground));
+        --select-shadow: none;
+
+        /* hover */
+        @media (hover: hover) {
+            &:hover {
+                --select-bg: var(--select-soft-bg);
+            }
+        }
+    }
+
+    .select-outline-bold {
+        --select-border-width: 2px;
+    }
+
+    .select.select-soft {
+        /* colors */
+        --select-bg: var(--select-soft-bg);
+        --select-fg: var(--select-color, var(--color-base-foreground));
+        --select-shadow: none;
     }
 
     /* colors */

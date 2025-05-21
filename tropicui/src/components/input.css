@@ -40,6 +40,11 @@ Input component styles.
         background-color: var(--input-bg, var(--color-base));
         box-shadow: var(--shadow-low);
 
+        /* animation */
+        transition-property: background-color, border-color, box-shadow, color, outline;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
         /* input field */
         &:is(input), input {
             /* layout */
