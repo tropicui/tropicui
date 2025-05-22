@@ -1,0 +1,68 @@
+@layer utilities {
+
+    .join {
+        /* layout */
+        display: flex;
+        flex-wrap: nowrap;
+        gap: --spacing(0);
+    }
+
+    .join-fit {
+        block-size: fit-content;
+        inline-size: fit-content;
+    }
+
+    .join-row {
+        flex-direction: row;
+
+        & > :is(:first-child):not(:only-child) {
+            &, > * {
+                border-start-end-radius: 0;
+                border-end-end-radius: 0;
+            }
+        }
+        & > :is(:last-child):not(:only-child) {
+            &, > * {
+                border-start-start-radius: 0;
+                border-end-start-radius: 0;
+            }
+        }
+        & > :not(:first-child,:last-child,:only-child) {
+            &, > * {
+                border-radius: 0;
+            }
+        }
+        & > :not(:first-child,:only-child) {
+            &, > * {
+                margin-inline-start: calc(var(--join-border-width) * -1);
+            }
+        }
+    }
+
+    .join-col {
+        flex-direction: column;
+
+        & > :is(:first-child):not(:only-child) {
+            &, > * {
+                border-end-start-radius: 0;
+                border-end-end-radius: 0;
+            }
+        }
+        & > :is(:last-child):not(:only-child) {
+            &, > * {
+                border-start-start-radius: 0;
+                border-start-end-radius: 0;
+            }
+        }
+        & > :not(:first-child,:last-child,:only-child) {
+            &, > * {
+                border-radius: 0;
+            }
+        }
+        & > :not(:first-child,:only-child) {
+            &, > * {
+                margin-block-start: calc(var(--join-border-width) * -1);
+            }
+        }
+    }
+}

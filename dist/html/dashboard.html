@@ -7,7 +7,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="h-screen">
+    <div class="layout h-screen">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <span class="avatar avatar-sm avatar-ring">
@@ -142,7 +142,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                                 </svg>
                                 <span class="grow">Customers</span>
-                                <span class="tag tag-solid tag-danger tag-xs p-0">1</span>
+                                <span class="tag tag-solid tag-danger tag-xs font-medium">1</span>
                             </a>
                         </li>
                         <li>
@@ -438,6 +438,26 @@
                 </div>
                 <div class="mb-4"></div>
                 <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Empty</h4>
+                    </div>
+                    <div class="card-body card-center h-40">
+                        <div class="">No Data 0</div>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter">
+                    <div class="card-header">
+                        <h4>Drawer</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="grid grid-cols-4 gap-16">
+                            <div>
+                                <label for="drawer-1" class="btn">Drawer Right</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-border card-gutter hidden">
                     <div class="card-header">
                         <h4>Drawer</h4>
                     </div>
@@ -1071,80 +1091,81 @@
                     <div class="card-body">
                         <div class="grid grid-cols-3 gap-16">
                             <div>
-                                <div class="btn-group btn-group-row">
-                                    <button class="btn">Button A</button>
+                                <div class="join join-row">
+                                    <button class="btn">Join Row</button>
+                                    <button class="btn">Button b</button>
+                                    <button class="btn">Button C</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="join join-col">
+                                    <button class="btn">Join Col</button>
                                     <button class="btn">Button b</button>
                                     <button class="btn">Button C</button>
                                     <button class="btn">Button D</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-col">
-                                    <button class="btn">Button A</button>
+                                <div class="join join-col">
+                                    <button class="btn">Join Col</button>
+                                    <button class="btn">Button b</button>
+                                    <button class="btn">Button C</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="join join-fit join-row">
+                                    <button class="btn">Join Fit Row</button>
                                     <button class="btn">Button b</button>
                                     <button class="btn">Button C</button>
                                     <button class="btn">Button D</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-row">
+                                <div class="join join-row">
                                     <button class="btn">Button A</button>
                                     <button class="btn">Button b</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="join join-fit join-col">
+                                    <button class="btn">Join Col</button>
+                                    <button class="btn">Join Fit</button>
                                     <button class="btn">Button C</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-col">
-                                    <button class="btn">Button A</button>
-                                    <button class="btn">Button b</button>
-                                    <button class="btn">Button C</button>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="btn-group btn-group-row">
-                                    <button class="btn">Button A</button>
-                                    <button class="btn">Button b</button>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="btn-group btn-group-col">
-                                    <button class="btn">Button A</button>
-                                    <button class="btn">Button b</button>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="btn-group btn-group-row">
+                                <div class="join join-row">
                                     <button class="btn">Button A</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-col">
+                                <div class="join join-col">
                                     <button class="btn">Button A</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-row">
+                                <div class="join join-row">
                                     <button class="btn btn-outline-bold">Button A</button>
                                     <button class="btn btn-outline-bold">Button b</button>
                                     <button class="btn btn-outline-bold">Button C</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-col">
+                                <div class="join join-col">
                                     <button class="btn btn-outline-bold">Button A</button>
                                     <button class="btn btn-outline-bold">Button b</button>
                                     <button class="btn btn-outline-bold">Button C</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-row">
+                                <div class="join join-row">
                                     <button class="btn btn-primary btn-soft">Button A</button>
                                     <button class="btn btn-primary btn-soft">Button b</button>
                                     <button class="btn btn-primary btn-soft">Button C</button>
                                 </div>
                             </div>
                             <div>
-                                <div class="btn-group btn-group-col">
+                                <div class="join join-col">
                                     <button class="btn btn-primary btn-soft">Button A</button>
                                     <button class="btn btn-primary btn-soft">Button b</button>
                                     <button class="btn btn-primary btn-soft">Button C</button>
@@ -2150,6 +2171,12 @@
                                         Spin Occilate
                                     </span>
                                 </div>
+                                <div>
+                                    <span class="tag tag-pill">
+                                        <span class="status status-round"></span>
+                                        Round pill
+                                    </span>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -2290,6 +2317,176 @@
                                 </div>
                                 <div>
                                     <span class="tag tag-dashed-bold tag-soft tag-success">Success</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-xs">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <span>Icon xs</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <span>Icon sm</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <span>Icon</span>
+                                    </span>
+                                    <span>Icon</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <span>Icon lg</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <span>Icon xl</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-2xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" />
+                                        </svg>
+                                        <span>Icon 2xl</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-xs">
+                                        <span>Icon xs</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-sm">
+                                        <span>Icon sm</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill">
+                                        <span>Icon</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                    </span>
+                                    <span>Icon</span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-lg">
+                                        <span>Icon lg</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-xl">
+                                        <span>Icon xl</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag tag-pill tag-2xl">
+                                        <span>Icon 2xl</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="tag">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        <span>Icon</span>
+                                    </span>
+                                    <span>Icon</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="tag tag-accent tag-soft tag-outline">
+                                        @username
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="join join-row">
+                                        <span class="tag tag-primary">
+                                            <span>PHP</span>
+                                        </span>
+                                        <span class="tag tag-primary tag-soft">
+                                            <span>8.4.2</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="join join-row">
+                                        <span class="tag tag-xl tag-accent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+                                            </svg>
+                                        </span>
+                                        <span class="tag tag-xl tag-accent tag-soft tag-outline">
+                                            <span>Thumbprint</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="join join-row">
+                                        <span class="tag tag-sm tag-success tag-soft">
+                                            Secured
+                                        </span>
+                                        <span class="tag tag-sm tag-success tag-solid">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="join join-row">
+                                        <span class="tag tag-warning tag-outline-bold font-medium">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="tag tag-warning tag-outline-bold font-medium">
+                                            Critical
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="join join-col">
+                                        <span class="tag tag-warning tag-outline-bold font-medium">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                            </svg>
+                                        </span>
+                                        <span class="tag tag-warning tag-outline-bold font-medium">
+                                            Critical
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </form>
@@ -5670,7 +5867,7 @@
                             </div>
                             <div>
                                 <button class="btn" onclick="showDialog('#modal-3');">Show modal 3</button>
-                                <dialog id="modal-3" class="modal card">
+                                <dialog id="modal-3" class="modal card card-scroll">
                                     <div class="card-header">
                                         <h5>Static modal</h5>
                                         <form method="dialog">
@@ -5712,7 +5909,7 @@
                             </div>
                             <div>
                                 <button class="btn" onclick="showDialog('#modal-4');">Show modal4 </button>
-                                <dialog id="modal-4" class="modal card">
+                                <dialog id="modal-4" class="modal card card-scroll">
                                     <div class="card-header card-sticky">
                                         <h5>Static modal</h5>
                                         <form method="dialog">
@@ -5851,7 +6048,7 @@
 
                             <div>
                                 <button class="btn" onclick="showDialog('#modal-left');">Show modal left</button>
-                                <dialog id="modal-left" class="modal modal-left card">
+                                <dialog id="modal-left" class="modal modal-left card card-scroll">
                                     <div class="card-header">
                                             <div class="spacer"></div>
                                         <div class="card-actions">
@@ -6780,7 +6977,7 @@
                         </details>
 
                         <h4 class="card-title">Accordion group</h4>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-outline">
                                 <summary>Bootstrap</summary>
                                 <p>The ultimate template library for your projects to save time repeating.</p>
@@ -6791,6 +6988,24 @@
                                 <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                             </details>
                             <details class="accordion accordion-outline">
+                                <summary>GitHub</summary>
+                                <span>Organise and collaborate on your projects.</span>
+                                <span>Organise and collaborate on your projects.</span>
+                            </details>
+                        </div>
+
+                        <h4 class="card-title">Accordion group bold</h4>
+                        <div class="join join-col">
+                            <details class="accordion accordion-outline-bold">
+                                <summary>Bootstrap</summary>
+                                <p>The ultimate template library for your projects to save time repeating.</p>
+                                <p>The ultimate template library for your projects to save time repeating.</p>
+                            </details>
+                            <details class="accordion accordion-outline-bold">
+                                <summary>ChatGPT</summary>
+                                <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
+                            </details>
+                            <details class="accordion accordion-outline-bold">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
                                 <span>Organise and collaborate on your projects.</span>
@@ -6944,7 +7159,7 @@
                             <summary>ChatGPT</summary>
                             <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                         </details>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-arrow-left accordion-outline accordion-accent accordion-open:outline">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
@@ -7000,7 +7215,7 @@
                             <summary>ChatGPT</summary>
                             <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                         </details>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-arrow-left accordion-outline accordion-primary">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
@@ -7056,7 +7271,7 @@
                             <summary>ChatGPT</summary>
                             <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                         </details>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-arrow-left accordion-outline accordion-accent">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
@@ -7112,7 +7327,7 @@
                             <summary>ChatGPT</summary>
                             <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                         </details>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-arrow-left accordion-outline accordion-warning">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
@@ -7168,7 +7383,7 @@
                             <summary>ChatGPT</summary>
                             <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                         </details>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-arrow-left accordion-outline accordion-danger">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
@@ -7224,7 +7439,7 @@
                             <summary>ChatGPT</summary>
                             <div>Ask and you shall receive. Type as you would think. Act as you would see.</div>
                         </details>
-                        <div class="accordion-group">
+                        <div class="join join-col">
                             <details class="accordion accordion-arrow-left accordion-outline accordion-success">
                                 <summary>GitHub</summary>
                                 <span>Organise and collaborate on your projects.</span>
@@ -7249,7 +7464,7 @@
                             </summary>
                             <p>Generate text, images, videos, assets, and all things digital. Easily integrate with your creative workflow and professional work. PRO plan comes with life-time chat history and expedited GPU requests.</p>
                         </details>
-                        <details class="accordion accordion-gutter accordion-arrow-right accordion-header accordion-soft accordion-success">
+                        <details class="scroll-auto accordion accordion-gutter accordion-arrow-right accordion-header accordion-soft accordion-success">
                             <summary>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />

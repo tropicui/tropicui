@@ -1,13 +1,13 @@
 /*
-Float component styles.
+Float utility styles.
 
-@description Provides a flexible floating element component with various positioning options. Supports different placement variations for fixed-position elements that can be dismissed with a close button.
+@description Provides a flexible floating element utility with various positioning options. Supports different placement variations for fixed-position elements that can be dismissed with a close button.
 
-@layer components - Applies styles at the component layer of the CSS cascade.
+@layer utilities - Applies styles at the utilities layer of the CSS cascade.
 
 @property {string} --float-spacing - Controls the margin around the float element
 */
-@layer components {
+@layer utilities {
     .float {
         /* modifiers */
         --float-spacing: --spacing(8);

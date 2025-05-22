@@ -30,6 +30,8 @@ Accordion component styles.
 
         --accordion-soft-bg: color-mix(in oklab, var(--accordion-color, var(--color-base-dense)) 10%, transparent);
 
+        --join-border-width: var(--accordion-border-width);
+
         /* colors */
         background-color: var(--accordion-bg, var(--color-base-background));
         border-width: var(--accordion-border-width);
@@ -223,23 +225,6 @@ Accordion component styles.
     .accordion-soft {
         --accordion-bg: var(--accordion-soft-bg);
         --accordion-fg: var(--accordion-color);
-    }
-
-    .accordion-group {
-        :is(:first-child):not(:only-child) {
-            border-end-start-radius: 0;
-            border-end-end-radius: 0;
-        }
-        :is(:last-child):not(:only-child) {
-            border-start-start-radius: 0;
-            border-start-end-radius: 0;
-        }
-        :not(:first-child,:last-child,:only-child) {
-            border-radius: 0;
-        }
-        :not(:first-child,:only-child) {
-            margin-block-start: calc(var(--accordion-border-width) * -1);
-        }
     }
 
     .accordion-shadow {

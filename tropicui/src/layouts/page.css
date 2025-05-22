@@ -9,6 +9,6 @@
         min-height: 100vh;
 
         /* color */
-        background-color: var(--color-accent);
+        background-color: var(--color-base-background);
     }
 }

@@ -21,27 +21,29 @@ Tag component styles.
         --tag-fg: var(--color-base-foreground);
         --tag-soft-bg: color-mix(in oklab, var(--tag-color) 12%, transparent);
         --tag-border: color-mix(in oklab, var(--tag-color, var(--color-base-border)), var(--color-black) 12%);
+        --tag-border-width: var(--border-width);
         --tag-radius: var(--radius-control);
+        --join-border-width: var(--tag-border-width);
 
         /* layout */
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: --spacing(2);
+        gap: calc(var(--tag-size) * 0.25);
         
         /* dimension */
         block-size: var(--tag-size);
         min-inline-size: var(--tag-size);
-        padding-inline: --spacing(2);
+        padding-inline: calc(var(--tag-size) * 0.25);
 
         /* color */
-        border: 1px solid var(--tag-border);
+        border: var(--tag-border-width) solid var(--tag-border);
         border-radius: var(--tag-radius);
         background-color: var(--tag-bg);
         color: var(--tag-fg);
 
         /* typography */
-        font-size: calc(var(--tag-size) * 0.6);
+        font-size: calc(var(--tag-size) * 0.575);
         line-height: 1;
     }
 
@@ -99,17 +101,17 @@ Tag component styles.
 
     .tag-outline-bold,
     .tag-dashed-bold {
-        border-width: 2px;
+        --tag-border-width: calc(var(--border-width) * 2);
     }
 
     .tag-pill {
         --tag-radius: calc(infinity * 1px);
-        padding-inline: --spacing(3);
+        padding-inline: calc(var(--tag-size) * 0.35);
     }
 
     /* sizes */
     .tag-xs {
-        --tag-size: --spacing(4);
+        --tag-size: --spacing(4.5);
     }
     .tag-sm {
         --tag-size: --spacing(5);
@@ -127,8 +129,17 @@ Tag component styles.
     /* icon */
     svg, img, i {
         .tag & {
-            block-size: 1.25em;
-            min-inline-size: 1.25em;
+            block-size: 1.3em;
+            min-inline-size: 1.3em;
+        }
+
+        .tag.tag-pill & {
+            &:first-child {
+                margin-inline-start: calc(var(--tag-size) * -0.15);
+            }
+            &:last-child {
+                margin-inline-end: calc(var(--tag-size) * -0.15);
+            }
         }
     }
 }

@@ -27,6 +27,8 @@ Button component styles.
         --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-border)), var(--color-black) 12%);
         --btn-size: --spacing(10);
 
+        --join-border-width: var(--btn-border-width);
+
         /* layout */
         cursor: pointer;
         display: inline-flex;
@@ -69,6 +71,7 @@ Button component styles.
         @media (hover: hover) {
             &:hover {
                 --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 6%);
+
             }
         }
 
@@ -249,58 +252,29 @@ Button component styles.
         inline-size: 100%;
     }
 
-    /* groupings */
-    .btn-group {
-        /* layout */
-        display: flex;
-        flex-wrap: nowrap;
-        block-size: fit-content;
-        inline-size: fit-content;
-    }
-
-    .btn-group-row {
-        flex-direction: row;
-
-        :is(:first-child):not(:only-child) {
-            border-start-end-radius: 0;
-            border-end-end-radius: 0;
-        }
-        :is(:last-child):not(:only-child) {
-            border-start-start-radius: 0;
-            border-end-start-radius: 0;
-        }
-        :not(:first-child,:last-child,:only-child) {
-            border-radius: 0;
-        }
-        :not(:first-child,:only-child) {
-            margin-inline-start: calc(var(--btn-border-width) * -1);
-        }
-    }
-
-    .btn-group-col {
-        flex-direction: column;
-
-        :is(:first-child):not(:only-child) {
-            border-end-start-radius: 0;
-            border-end-end-radius: 0;
-        }
-        :is(:last-child):not(:only-child) {
-            border-start-start-radius: 0;
-            border-start-end-radius: 0;
-        }
-        :not(:first-child,:last-child,:only-child) {
-            border-radius: 0;
-        }
-        :not(:first-child,:only-child) {
-            margin-block-start: calc(var(--btn-border-width) * -1);
-        }
-    }
-
     /* icons */
     svg, img, i {
         .btn & {
             block-size: 1.25em;
             min-inline-size: 1.25em;
+        }
+    }
+
+    /* join */
+    @media (hover: hover) {
+        .join-row > .btn:has(+ .btn:is(.btn-outline, .btn-outline-bold, .btn-dashed, .btn-dashed-bold)) {
+            &:hover {
+                & + .btn {
+                    border-inline-start-color: transparent;
+                }
+            }
+        }
+        .join-col > .btn:has(+ .btn:is(.btn-outline, .btn-outline-bold, .btn-dashed, .btn-dashed-bold)) {
+            &:hover {
+                & + .btn {
+                    border-block-start-color: transparent;
+                }
+            }
         }
     }
 }
