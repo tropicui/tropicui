@@ -19,7 +19,6 @@
     --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-50: oklch(98.2% 0.018 155.826);
-    --color-green-200: oklch(92.5% 0.084 155.995);
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-emerald-200: oklch(90.5% 0.093 164.15);
@@ -355,9 +354,6 @@
   }
   .h-64 {
     height: calc(var(--spacing) * 64);
-  }
-  .h-screen {
-    height: 100vh;
   }
   .min-h-48 {
     min-height: calc(var(--spacing) * 48);
@@ -1955,13 +1951,14 @@ i.hi-lg {
     --card-border: var(--color-base-border);
     --card-border-width: 0px;
     --card-radius: var(--radius-container);
+    --card-shadow: var(--shadow-low);
     --card-header-size: calc(var(--spacing) * 14);
     --card-footer-size: calc(var(--spacing) * 16);
     --join-border-width: var(--card-border-width);
     background-color: var(--card-bg);
     border: var(--card-border-width) solid var(--card-border);
     border-radius: var(--card-radius);
-    box-shadow: var(--shadow-low);
+    box-shadow: var(--card-shadow);
     color: var(--color-base-foreground);
     & > *:is(:first-child):not(:last-child) {
       border-start-start-radius: calc(var(--card-radius) - var(--card-border-width));
@@ -1986,6 +1983,10 @@ i.hi-lg {
       .card-body {
         overflow: auto;
       }
+    }
+    &.card-flat {
+      --card-radius: 0;
+      --card-shadow: none;
     }
     .card-header {
       display: flex;
@@ -2317,31 +2318,94 @@ i.hi-lg {
 }
 @layer components {
   .drawer {
+    --drawer-w: calc(var(--spacing) * 90);
+    --drawer-h: calc(var(--drawer-w) / 2);
     position: fixed;
+    z-index: 63;
+    visibility: hidden;
     inset-block-start: 0;
     inset-inline-end: 0;
-    z-index: 66;
     block-size: 100%;
-    min-inline-size: calc(var(--spacing) * 90);
-    background-color: var(--color-green-200);
-    transition-property: transform;
-    transition-duration: var(--tt-duration, var(--default-transition-duration));
-    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    inline-size: 100%;
+    background-color: transparent;
     .drawer-toggle input[type="checkbox"] {
       appearance: none;
       display: none;
       visibility: hidden;
     }
     &:has(.drawer-toggle input[type="checkbox"]:checked) {
-      transform: translateX(0%);
+      visibility: visible;
+      background-color: color-mix(in srgb, #000, transparent 50%);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-black), transparent 50%);
+      }
+      .drawer-content {
+        transform: none;
+      }
+      .drawer-toggle {
+        cursor: pointer;
+        display: block;
+        block-size: 100%;
+        inline-size: 100%;
+      }
     }
-    .drawer-content {
+    transition-property: background-color, visibility;
+    transition-duration: var(--tt-duration, var(--default-transition-duration));
+    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+  }
+  .drawer-content {
+    position: absolute;
+    scrollbar-color: var(--color-base-dense) var(--color-base-background);
+    scrollbar-gutter: stable;
+    background-color: var(--color-base-background);
+    border-color: var(--color-base-border);
+    border-style: solid;
+    transition-property: transform;
+    transition-duration: var(--tt-duration, var(--default-transition-duration));
+    transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    .drawer-left & {
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      transform: translateX(-100%);
       block-size: 100%;
+      inline-size: var(--drawer-w);
+    }
+    .drawer-right & {
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      transform: translateX(100%);
+      block-size: 100%;
+      inline-size: var(--drawer-w);
+    }
+    .drawer-top & {
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      transform: translateY(-100%);
+      block-size: var(--drawer-h);
+      inline-size: 100%;
+    }
+    .drawer-bottom & {
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      transform: translateY(100%);
+      block-size: var(--drawer-h);
       inline-size: 100%;
     }
   }
-  .drawer-right {
-    transform: translateX(100%);
+  .drawer-sm {
+    --drawer-w: calc(var(--spacing) * 60);
+  }
+  .drawer-lg {
+    --drawer-w: calc(var(--spacing) * 150);
+  }
+  .drawer-xl {
+    --drawer-w: calc(var(--spacing) * 210);
+  }
+  .drawer-2xl {
+    --drawer-w: calc(var(--spacing) * 280);
+  }
+  .drawer-3xl {
+    --drawer-w: calc(var(--spacing) * 360);
   }
 }
 @layer components {
