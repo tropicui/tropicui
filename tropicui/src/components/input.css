@@ -57,7 +57,7 @@ Input component styles.
             /* typography */
             color: var(--input-text);
             font-size: calc(var(--input-size) * 0.4);
-            line-height: 1;
+            line-height: 1.25;
 
             &::placeholder {
                 font-style: italic;
@@ -238,15 +238,15 @@ Input component styles.
 
     /* sizes */
     .input-xs {
-        --input-size: --spacing(7);
-    }
-
-    .input-sm {
         --input-size: --spacing(8);
     }
 
+    .input-sm {
+        --input-size: --spacing(9);
+    }
+
     .input-lg {
-        --input-size: --spacing(10);
+        --input-size: --spacing(11);
     }
 
     .input-xl {
@@ -254,6 +254,6 @@ Input component styles.
     }
 
     .input-2xl {
-        --input-size: --spacing(14);
+        --input-size: --spacing(13);
     }
 }

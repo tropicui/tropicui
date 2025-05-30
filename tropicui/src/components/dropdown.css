@@ -1,34 +1,49 @@
 @layer components {
     .dropdown {
+        /* modifiers */
+        --dropdown-bg: var(--color-base);
+        --dropdown-border: var(--color-base-border);
+
         /* layout */
         position: relative;
-        display: inline-block;
-        /* this will only activate when the focus is from mouse, not keyboard */
-        :where(a,button):is(:focus):not(:focus-visible) ~ ul {
+
+        > :where(.dropdown-toggle):is(:focus):not(:focus-visible) + .dropdown-content {
             height: auto;
             visibility: visible;
         }
-        ul {
-            /* layout */
-            display: block;
-            position: absolute;
-            top: 100%;
-            bottom: auto;
-            left: 0;
-            right: auto;
-            z-index: 10;
-            /* dimensions */
+
+        > .dropdown-toggle + .dropdown-content {
             height: 0;
             visibility: hidden;
-            margin-block: --spacing(1);
-            max-width: --spacing(48);
-            min-width: --spacing(48);
-            /* colors */
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--color-neutral-200);
-            border-radius: var(--radius-lg);
-            background-color: var(--color-white);
+            margin-block: --spacing(1.5);
+
+            @media (hover: hover) {
+                &:hover {
+                    height: auto;
+                    visibility: visible;
+                }
+            }
+        }
+
+        > .dropdown-content {
+            /* layout */
+            position: absolute;
+            inset-block-start: 100%;
+            inset-block-end: auto;
+            inset-inline-start: 0;
+            inset-inline-end: auto;
+            z-index: 71;
+            display: grid;
             overflow: hidden;
+
+            /* dimensions */
+
+            /* colors */
+            background-color: var(--dropdown-bg);
+            border: 1px solid var(--dropdown-border);
+            border-radius: var(--radius-control);
+            box-shadow: var(--shadow-high);
+
             /* animation */
             @media (prefers-reduced-motion: no-preference) {
                 interpolate-size: allow-keywords;
@@ -36,19 +51,23 @@
             transition-property: height,visibility;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-            a {
-                display: flex;
-                justify-content: flex-start;
-                border-radius: 0;
+        }
+
+        /* directions */
+        &.dropdown-right {
+            text-align: right;
+
+            .dropdown-content {
+                inset-inline-start: auto;
+                inset-inline-end: 0;
             }
         }
-        &.dropdown-left ul {
-            left: auto;
-            right: 0;
-        }
-        &.dropdown-up .btn ~ ul {
-            top: auto;
-            bottom: 100%;
+
+        &.dropdown-top {
+            .dropdown-content {
+                inset-block-start: auto;
+                inset-block-end: 100%;
+            }
         }
     }
 }

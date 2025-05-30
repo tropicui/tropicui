@@ -1,86 +1,73 @@
 @layer components {
-    .menu :where(ul li) {
-        display: flex;
-        flex-direction: column;
-        min-height: --spacing(10);
-    }
-    .menu {
-        /* to use new height:calc-size(fit-content,size) once fully supported */
+    ul.menu {
         @media (prefers-reduced-motion: no-preference) {
             interpolate-size: allow-keywords;
         }
-        /* typography */
-        /* font-weight: var(--font-weight-medium); */
-        /* level 1 */
-        > ul {
-            > li {
-                &:has(ul) {
-                    > a:focus svg:last-of-type {
-                        rotate: 180deg;
-                    }
-                    > a:focus ~ ul {
-                        height: auto;
+
+        /* layout */
+        display: flex;
+        flex-direction: column;
+        padding: --spacing(1);
+        overflow: hidden;
+
+        /* animation */
+        transition-property: height, visibility;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        li {
+            display: grid;
+
+            > :where(.btn):is(:focus):not(:focus-visible) {
+                svg:last-of-type {
+                    rotate: 180deg;
+                }
+
+                & + ul.menu {
+                    visibility: visible;
+                    height: auto;
+                }
+
+                & + ul.sink {
+                    margin-block: --spacing(1);
+                }
+            }
+
+            svg:last-of-type {
+                /* animation */
+                transition-property: rotate;
+                transition-duration: var(--tt-duration, var(--default-transition-duration));
+                transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+            }
+
+            .btn:has(+ ul.menu > li > :where(.btn):is(:focus):not(:focus-visible)) {
+                @media (hover: hover) {
+                    &:hover + ul.menu {
                         visibility: visible;
-                    }
-                    > ul:has(:hover,:focus,:active,:checked) {
                         height: auto;
-                        visibility: visible;
-                    }
-                    /* level 2 */
-                    ul {
-                        /* dimensions */
-                        height: 0;
-                        visibility: hidden;
-                        overflow: hidden;
-                        padding-top: --spacing(1);
-                        /* animation */
-                        transition-property: height,visibility;
-                        transition-duration: var(--tt-duration, var(--default-transition-duration));
-                        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-                        > li {
-                            > .btn {
-                                padding-inline-start: --spacing(9);
-                            }
-                            &:has(ul) {
-                                .btn {
-                                    input[type='checkbox'] {
-                                        /* hide the toggle checkbox */
-                                        display: none;
-                                        /* rotate the toggle icon */
-                                        &:checked ~ svg {
-                                            rotate: 90deg;
-                                        }
-                                    }
-                                    svg {
-                                        /* animation */
-                                        transition-property: rotate;
-                                        transition-duration: var(--tt-duration, var(--default-transition-duration));
-                                        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-                                    }
-                                }
-                                .btn:has(input:checked) ~ ul {
-                                    height: auto;
-                                    visibility: visible;
-                                }
-                                /* level 3 */
-                                ul li {
-                                    border-left: 1px solid var(--color-neutral-300);
-                                    margin-inline-start: --spacing(11);
-                                    padding-inline-start: --spacing(3);
-                                    > .btn {
-                                        padding-inline-start: --spacing(2);
-                                    }
-                                }
-                            }
-                        }
-                        &.open {
-                            height: auto;
-                            visibility: visible;
-                        }
                     }
                 }
-                &:not(:has(a)) {
-                    justify-content: center;
+
+                svg:last-of-type {
+                    rotate: 180deg;
+                }
+            }
+
+            ul.menu {
+                /* layout */
+                visibility: hidden;
+                height: 0;
+                padding: --spacing(0);
+
+                @media (hover: hover) {
+                    &:hover {
+                        visibility: visible;
+                        height: auto;
+                    }
+                }
+
+                li .btn {
+                    opacity: 0.7;
                 }
             }
         }

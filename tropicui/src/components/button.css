@@ -80,7 +80,8 @@ Button component styles.
         }
 
         &:is(:active, .btn-active),
-        &:has(input:checked):not(:hover) {
+        &.tab:has(input:checked):not(:hover),
+        .menu &:is(:focus):not(:focus-visible) {
             --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 12%);
             --btn-shadow: none;
         }
@@ -231,19 +232,19 @@ Button component styles.
 
     /* sizes */
     .btn-xs {
-        --btn-size: --spacing(6);
+        --btn-size: --spacing(8);
     }
     .btn-sm {
-        --btn-size: --spacing(8);
+        --btn-size: --spacing(9);
     }
     .btn-lg {
         --btn-size: --spacing(11);
     }
     .btn-xl {
-        --btn-size: --spacing(13);
+        --btn-size: --spacing(12);
     }
     .btn-2xl {
-        --btn-size: --spacing(15);
+        --btn-size: --spacing(13);
     }
     .btn-wide {
         min-inline-size: --spacing(64);

@@ -1,0 +1,110 @@
+@layer components {
+    aside.sidebar {
+        /* modifiers */
+        --sidebar-w: --spacing(72);
+        --sidebar-header-size: --spacing(16);
+        --sidebar-footer-size: --spacing(16);
+
+        /* layout */
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        flex: auto 0 0;
+
+        /* dimensions */
+        block-size: 100vh;
+        inline-size: var(--sidebar-w);
+
+        /* colors */
+        background-color: var(--color-base-background);
+        border-inline-end: 1px solid var(--color-base-border);
+
+        /* animation */
+        transition-property: inline-size;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        .sidebar-header {
+            /* layout */
+            position: sticky;
+            inset-block-start: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: --spacing(4);
+            overflow: hidden;
+
+            /* dimensions */
+            min-block-size: var(--sidebar-header-size);
+            padding-inline: --spacing(4);
+
+            /* colors */
+            background-color: var(--color-base-background);
+            border-block-end: 1px solid var(--color-base-border);
+
+        }
+
+        .sidebar-toggle {
+            input[type='checkbox'] {
+                appearance: none;
+                display: none;
+
+                &:checked ~ svg {
+                    rotate: 180deg;
+                }
+            }
+            svg {
+                /* animation */
+                transition-property: rotate;
+                transition-duration: var(--tt-duration, var(--default-transition-duration));
+                transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+            }
+        }
+
+        & ~ .page {
+            padding-inline-start: --spacing(72);
+        }
+
+        &:has(.sidebar-toggle input:checked) {
+            --sidebar-w: --spacing(16);
+
+            @media (hover: hover) {
+                &:hover {
+                    --sidebar-w: --spacing(72);
+                }
+            }
+
+            & ~ .page {
+                padding-inline-start: --spacing(16);
+            }
+        }
+
+        .sidebar-content {
+            /* layout */
+            overflow-y: scroll;
+            scrollbar-color: var(--color-base-dense) var(--color-base-background);
+        }
+
+        .sidebar-footer {
+            /* layout */
+            position: sticky;
+            inset-block-end: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: --spacing(4);
+            overflow: hidden;
+
+            /* dimensions */
+            min-block-size: var(--sidebar-footer-size);
+            padding-inline: --spacing(4);
+
+            /* colors */
+            background-color: var(--color-base-background);
+            border-block-start: 1px solid var(--color-base-border);
+        }
+    }
+}
