@@ -1,7 +1,6 @@
 @layer components {
     aside.sidebar {
         /* modifiers */
-        --sidebar-w: --spacing(72);
         --sidebar-header-size: --spacing(16);
         --sidebar-footer-size: --spacing(16);
 
@@ -23,7 +22,7 @@
         border-inline-end: 1px solid var(--color-base-border);
 
         /* animation */
-        transition-property: inline-size;
+        transition-property: transform;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
@@ -45,40 +44,29 @@
             background-color: var(--color-base-background);
             border-block-end: 1px solid var(--color-base-border);
 
+            /* site title */
+            .sidebar-title {
+                overflow: hidden;
+                font-weight: var(--font-weight-medium);
+            }
+        }
+
+        & ~ .page {
+            margin-inline-start: var(--sidebar-w);
         }
 
         .sidebar-toggle {
             input[type='checkbox'] {
                 appearance: none;
                 display: none;
-
-                &:checked ~ svg {
-                    rotate: 180deg;
-                }
             }
-            svg {
-                /* animation */
-                transition-property: rotate;
-                transition-duration: var(--tt-duration, var(--default-transition-duration));
-                transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-            }
-        }
-
-        & ~ .page {
-            padding-inline-start: --spacing(72);
         }
 
         &:has(.sidebar-toggle input:checked) {
-            --sidebar-w: --spacing(16);
-
-            @media (hover: hover) {
-                &:hover {
-                    --sidebar-w: --spacing(72);
-                }
-            }
+            transform: translateX(-100%);
 
             & ~ .page {
-                padding-inline-start: --spacing(16);
+                margin-inline-start: --spacing(0);
             }
         }
 
@@ -86,6 +74,8 @@
             /* layout */
             overflow-y: scroll;
             scrollbar-color: var(--color-base-dense) var(--color-base-background);
+
+            padding-inline: --spacing(4);
         }
 
         .sidebar-footer {

@@ -3,9 +3,12 @@
         /* layout */
         display: flex;
         align-items: center;
+        gap: --spacing(4);
+        padding-inline: --spacing(4);
+
         /* dimensions */
         min-height: --spacing(16);
-        padding-inline: --spacing(4);
+
         /* color */
         color: var(--color-base-foreground);
         background-color: var(--color-base);

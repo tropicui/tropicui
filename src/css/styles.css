@@ -1,2 +1,4 @@
 @import "tailwindcss";
-@import "tropicui/dev";
+@import "tropicui";
+/* @import "tropicui/dev"; */
+@import "./home.css";

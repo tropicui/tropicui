@@ -32,6 +32,7 @@ Avatar component styles.
         /* dimension */
         block-size: var(--avatar-size);
         inline-size: var(--avatar-size);
+        min-inline-size: var(--avatar-size);
 
         /* color */
         border: 2px solid var(--color-base-background);

@@ -2,8 +2,3 @@ html {
     /* font-size: 14px; */
     color: var(--color-base-foreground);
 }
-
-@theme {
-    --tt-sidebar-max-w: --spacing(64);
-    --tt-sidebar-min-w: --spacing(16);
-}

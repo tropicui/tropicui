@@ -12,7 +12,7 @@
         background-color: var(--color-base-background);
 
         /* animation */
-        transition-property: padding;
+        transition-property: margin;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     }

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+    --font-inter: "Inter";
+
+    font-family: var(--font-inter, var(--font-sans));
+}
+
+.bg-pattern-dots {
+    background-image: radial-gradient(color-mix(in oklab, var(--color-neutral-400), transparent 40%) .5px, transparent .5px);
+    background-size: calc(20 * .5px) calc(20 * .5px);
+}

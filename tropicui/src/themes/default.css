@@ -1,3 +1,5 @@
+@custom-variant theme-light (&:where([data-theme=light], [data-theme=light] *));
+
 :root {
     --theme-primary: var(--color-neutral-700);
 

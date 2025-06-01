@@ -51,6 +51,10 @@
             transition-property: height,visibility;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+            > .menu {
+                padding: --spacing(1);
+            }
         }
 
         /* directions */

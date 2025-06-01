@@ -1,7 +1,11 @@
 @layer components {
     .layout {
+        /* modifiers */
+        --sidebar-w: --spacing(72);
+
         /* layout */
-        
+        display: flex;
+
         /* animation */
         transition-property: padding;
         transition-duration: var(--tt-duration, var(--default-transition-duration));

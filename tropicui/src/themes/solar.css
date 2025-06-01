@@ -1,3 +1,5 @@
+@custom-variant theme-solar (&:where([data-theme=solar], [data-theme=solar] *));
+
 [data-theme="solar"] {
     color-scheme: light;
 

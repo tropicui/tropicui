@@ -39,7 +39,7 @@ Button component styles.
         /* dimensions */
         block-size: var(--btn-size);
         min-inline-size: var(--btn-size);
-        padding-inline: calc(var(--btn-size) / 2.5);
+        padding-inline: calc(var(--btn-size) / 4);
 
         /* typography */
         overflow: hidden;
@@ -121,7 +121,7 @@ Button component styles.
     }
 
     /* variants */
-    .btn-icon {
+    .btn-icon:has(svg:only-child, img:only-child, i:only-child) {
         padding-inline: 0;
     }
 
