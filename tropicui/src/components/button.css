@@ -80,7 +80,7 @@ Button component styles.
         }
 
         &:is(:active, .btn-active),
-        &.tab:has(input:checked):not(:hover),
+        &:is(.btn-toggle, .tab):has(input:checked):not(:hover),
         .menu &:is(:focus):not(:focus-visible) {
             --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 12%);
             --btn-shadow: none;
@@ -123,6 +123,20 @@ Button component styles.
     /* variants */
     .btn-icon:has(svg:only-child, img:only-child, i:only-child) {
         padding-inline: 0;
+    }
+
+    .btn-toggle {
+        input {
+            appearance: none;
+            display: none;
+            visibility: hidden;
+        }
+
+        &:has(input:not(:checked)) > :is(.btn-toggled-icon),
+        &:has(input:checked) > :not(.btn-toggled-icon) {
+            display: none;
+            visibility: hidden;
+        }
     }
 
     .btn-pill {

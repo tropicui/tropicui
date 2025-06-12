@@ -1,0 +1,75 @@
+import { NavLink } from "react-router";
+
+function Sidebar() {
+    const items = [
+        {
+            title: "Getting Started",
+            children: [
+                {
+                    title: "Introduction",
+                    to: "/introduction",
+                },
+                {
+                    title: "Installation",
+                    to: "/installation",
+                },
+                {
+                    title: "Theming",
+                    to: "/theming",
+                },
+            ],
+        },
+        {
+            title: "Components",
+            children: [
+                {
+                    title: "Accordion",
+                    to: "/components/accordion",
+                },
+                {
+                    title: "Button",
+                    to: "/button",
+                },
+            ],
+        },
+    ];
+
+    return (
+        <div className="relative col-start-1 row-start-1">
+            <div className="absolute inset-0">
+                <div className="sticky top-14 h-full max-h-[calc(100dvh-(var(--spacing)*14))] w-96 py-4 px-8 bg-base-airy border-r border-base-border overflow-y-auto">
+                    {items.map((child) => 
+                        (
+                            <nav className="">
+                                <ul className="">
+                                    <li>
+                                        <div className="divider divider-start-0 my-4">
+                                            <span className="text-sm font-medium text-base-dense">
+                                                {child.title.toUpperCase()}
+                                            </span>
+                                        </div>
+                                    </li>
+                                    {
+                                        child.children.map((child) => (
+                                            <li className="mx-2">
+                                                <NavLink
+                                                    to={child.to}
+                                                    className={({ isActive }) => `btn btn-block ${isActive ? '' : 'btn-clear'}`}
+                                                >
+                                                    {child.title}
+                                                    <span className="grow"></span>
+                                                </NavLink>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </nav>
+                        )
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Sidebar

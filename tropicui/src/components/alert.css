@@ -36,8 +36,10 @@ Alert component styles.
         box-shadow: var(--shadow-low);
         color: var(--alert-fg);
 
-
-        svg, i {
+        /* icons */
+        :where(svg, img, i) {
+            block-size: 1.25em;
+            min-inline-size: 1.25em;
             color: var(--alert-fg);
         }
     }

@@ -45,16 +45,6 @@
         padding-inline: --spacing(6);
     }
 
-    code, kbd, samp, var, pre {
-        background-color: var(--color-base);
-        border: 1px solid color-mix(in oklab, var(--color-base), var(--color-black) 10%);
-        border-radius: var(--radius-md);
-        padding-block: --spacing(0.5);
-        padding-inline: --spacing(1);
-        block-size: fit-content;
-        inline-size: fit-content;
-    }
-
     mark {
         background-color: var(--color-accent);
         color: var(--color-accent-content);

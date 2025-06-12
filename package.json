@@ -10,7 +10,7 @@
   },
   "author": "kenfai",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.4",
+    "@tailwindcss/cli": "^4.1.8",
     "tailwindcss": "^4.1.4"
   }
 }
