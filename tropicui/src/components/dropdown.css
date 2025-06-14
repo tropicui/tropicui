@@ -17,11 +17,9 @@
             visibility: hidden;
             margin-block: --spacing(1.5);
 
-            @media (hover: hover) {
-                &:hover {
-                    height: auto;
-                    visibility: visible;
-                }
+            &:has(.menu .btn:is(:focus):not(:focus-visible)) {
+                height: auto;
+                visibility: visible;
             }
         }
 

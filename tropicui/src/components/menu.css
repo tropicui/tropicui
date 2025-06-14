@@ -41,11 +41,9 @@
             }
 
             .btn:has(+ ul.menu > li > :where(.btn):is(:focus):not(:focus-visible)) {
-                @media (hover: hover) {
-                    &:hover + ul.menu {
-                        visibility: visible;
-                        height: auto;
-                    }
+                & + ul.menu {
+                    visibility: visible;
+                    height: auto;
                 }
 
                 svg:last-child {
@@ -57,13 +55,6 @@
                 /* layout */
                 visibility: hidden;
                 height: 0;
-
-                @media (hover: hover) {
-                    &:hover {
-                        visibility: visible;
-                        height: auto;
-                    }
-                }
 
                 li .btn {
                     opacity: 0.7;

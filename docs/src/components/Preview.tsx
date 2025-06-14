@@ -97,12 +97,12 @@ function Preview(props) {
                 style={{ marginInlineEnd: margin }}
                 data-theme={isDarkTheme ? 'dark' : 'default'}
             >
-                <div className="card-body flex justify-center items-center min-h-[420px] max-h-[420px] w-full overflow-x-hidden overflow-y-auto">
-                    <div className="w-full">
+                <div className="card-body flex justify-center items-center-safe min-h-[420px] max-h-[420px] w-full overflow-x-hidden overflow-y-auto">
+                    <div className="w-full h-fit">
                         {children}
                     </div>
                 </div>
-                <div className="absolute z-10 end-0 inset-y-0 grid items-center bg-base-airy border border-base-border hover:border-base-dense active:bg-base-border active:border-base-dense rounded-none rounded-e-md w-5 h-full cursor-ew-resize"
+                <div className="absolute end-0 inset-y-0 grid items-center bg-base-airy border border-base-border hover:border-base-dense active:bg-base-border active:border-base-dense rounded-none rounded-e-md w-5 h-full cursor-ew-resize"
                     onMouseDown={handleMouseDown}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

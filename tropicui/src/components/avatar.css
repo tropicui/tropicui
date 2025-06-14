@@ -54,6 +54,13 @@ Avatar component styles.
             object-fit: cover;
             object-position: center;
         }
+
+        /* icon */
+        :where(svg, i) {
+            block-size: 1.25em;
+            min-inline-size: 1.25em;
+            margin-inline: auto;
+        }
     }
 
     /* variants */
