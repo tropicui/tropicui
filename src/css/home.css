@@ -10,6 +10,10 @@ html {
     background-image: radial-gradient(color-mix(in oklab, currentColor, transparent 25%) .5px, transparent .5px);
     background-size: calc(20 * .5px) calc(20 * .5px);
 }
+.bg-fade-pattern-dots {
+    background-image: linear-gradient(var(--tw-gradient-stops)), radial-gradient(color-mix(in oklab, currentColor, transparent 25%) .5px, transparent .5px);
+    background-size: calc(20 * .5px) calc(20 * .5px);
+}
 .bg-rrrepeat {
     background-image: url('../img/rrrepeat.svg');
     background-repeat: no-repeat;

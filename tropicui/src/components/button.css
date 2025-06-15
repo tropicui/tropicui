@@ -155,6 +155,8 @@ Button component styles.
         --btn-border: transparent;
         --btn-shadow: none;
 
+        padding-inline: 0;
+
         @media (hover: hover) {
             &:hover {
                 --btn-bg: none;
