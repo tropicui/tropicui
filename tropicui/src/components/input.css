@@ -61,6 +61,7 @@ Input component styles.
 
             &::placeholder {
                 font-style: italic;
+                font-weight: var(--font-weight-light);
             }
 
             &:read-only:not(:disabled, [disabled]) {

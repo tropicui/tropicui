@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
         <link rel="stylesheet" href="./assets/css/styles.css">
+        <script src="./assets/js/script.js"></script>
         <title>TropicUI - Beautiful Tailwind CSS UI Library</title>
     </head>
     <body>
         <div class="bg-pattern-dots">
             <div class="bg-rrrepeat">
-                <div class="mx-auto lg:max-w-7xl">
-                    <div class="flex p-4">
+                <div class="px-4 mx-auto lg:max-w-7xl">
+                    <div class="flex py-4">
                         <div class="flex items-center gap-2">
                             <span class="avatar avatar-ring avatar-sm text-lg">🌴</span>
                             <div class="flex">
@@ -64,7 +65,7 @@
                         </nav>
                     </div>
 
-                    <div class="flex flex-col items-center-safe justify-center h-[600px] p-4 mb-16">
+                    <div class="flex flex-col items-center-safe justify-center-safe min-h-[560px] mb-16">
                         <div class="flex items-center justify-center m-6 gap-16">
                             <div class="join join-row">
                                 <span class="tag tag-pill">
@@ -86,7 +87,7 @@
                         </div>
                         <div class="text-7xl font-semibold text-center">Modern, Customisable</div>
                         <div class="m-2"></div>
-                        <div class="text-8xl font-semibold text-center bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent">UI Components</div>
+                        <div class="text-7xl font-semibold text-center bg-clip-text bg-gradient-to-r from-green-500 via-sky-500 to-indigo-500 text-transparent">UI Components</div>
                         <div class="m-2"></div>
                         <div class="text-6xl font-light leading-tight text-center">for your Tailwind CSS project</div>
                         <div class="m-4"></div>
@@ -106,7 +107,7 @@
                         </div>
                     </div>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-16 mb-32">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-12 mb-32">
                         <div class="card card-border bg-transparent backdrop-blur-xs hover:backdrop-blur-sm hover:shadow-xl transition-all duration-600">
                             <div class="card-body">
                                 <div class="flex items-center gap-4 mb-4">
@@ -175,7 +176,7 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col items-center-safe justify-center gap-4 max-w- mb-12">
+                    <div class="flex flex-col items-center-safe justify-center-safe gap-4 mb-12">
                         <div class="tag tag-pill tag-outline tag-soft tag-accent">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
@@ -193,8 +194,8 @@
                         <div class="mb-2"></div>
                     </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr gap-4 min-h-[900px] -mb-8">
-                        <div class="sink grid-rows-[1fr_auto] h-full">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr gap-4 min-h-[1600px] md:min-h-[1200px] lg:min-h-[900px] -mb-16">
+                        <div class="sink order-1 grid-rows-[1fr_auto] h-full">
                             <div class="flex items-center justify-center">
                                 <button class="btn btn-primary">Button</button>
                             </div>
@@ -214,7 +215,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] row-span-2 h-full">
+                        <div class="sink order-2 grid-rows-[1fr_auto] row-span-2 h-full">
                             <div>
                                 <div class="dropdown">
                                     <button class="dropdown-toggle btn btn-sm">
@@ -351,7 +352,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] row-span-2 col-span-2 h-full">
+                        <div class="sink order-4 md:order-8 lg:order-3 grid-rows-[1fr_auto] row-span-2 col-span-2 h-full">
                             <div class="flex items-center justify-center p-4">
                                 <div class="w-full">
                                     <details name="acd01" class="accordion accordion-gutter accordion-shadow accordion-arrow-right">
@@ -395,7 +396,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] h-full">
+                        <div class="sink order-3 md:order-4 grid-rows-[1fr_auto] h-full">
                             <div class="flex items-center justify-center">
                                 <div class="avatar-group">
                                     <div class="avatar avatar-circle avatar-active">
@@ -420,7 +421,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] h-full">
+                        <div class="sink order-5 md:order-3 lg:order-5 grid-rows-[1fr_auto] h-full">
                             <div class="flex items-center justify-center">
                                 <label>
                                     <input type="checkbox" class="switch switch-lg switch-accent" checked>
@@ -437,7 +438,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] h-full">
+                        <div class="sink order-6 md:order-5 lg:order-6 grid-rows-[1fr_auto] h-full">
                             <div class="flex items-center justify-center">
                                 <span class="tag">
                                     <span class="status status-warning animate-spin-occilate"></span>
@@ -455,7 +456,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] h-full">
+                        <div class="sink order-7 md:order-6 lg:order-7 grid-rows-[1fr_auto] h-full">
                             <div class="flex items-end justify-center">
                                 <div class="popover popover-success popover-top">
                                     <button class="btn btn-sm popover-toggle">Popover Top</button>
@@ -475,7 +476,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sink grid-rows-[1fr_auto] h-full">
+                        <div class="sink order-8 grid-rows-[1fr_auto] h-full">
                             <div class="flex items-center justify-center">
                                 <div class="spinner spinner-lg spinner-danger"></div>
                             </div>
@@ -490,32 +491,133 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
-                        <div class="bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
-                        <div class="bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
-                        <div class="bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
+                        <div class="order-9 bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
+                        <div class="order-10 bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
+                        <div class="order-11 hidden md:block bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
+                        <div class="order-12 hidden lg:block bg-transparent bg-gradient-to-b from-base-airy to-transparent to-50% rounded-md inset-shadow-xs h-full"></div>
                     </div>
 
-                    <div class="flex flex-col items-center-safe justify-center gap-4 mb-12">
-                        <div class="text-xl font-light text-center">and many more..</div>
+                    <div class="relative flex flex-col items-center-safe justify-center gap-4 mb-36">
+                        <div class="absolute top-0 text-3xl font-semibold text-center opacity-80">and many more..</div>
+                        <div class="absolute top-2 scale-[0.96] text-3xl font-semibold text-center opacity-30 blur-[1px]">and many more..</div>
+                        <div class="absolute top-5 scale-[0.92] text-3xl font-semibold text-center opacity-20 blur-[2px]">and many more..</div>
+                        <div class="absolute top-7 scale-[0.82] text-3xl font-semibold text-center opacity-10 blur-[3px]">and many more..</div>
+                        <div class="absolute top-9 scale-[0.82] text-3xl font-semibold text-center opacity-6 blur-[4px]">and many more..</div>
                     </div>
 
-                    <div class="flex flex-col items-center-safe justify-center gap-4 max-w- mb-12">
+                    <div class="flex flex-col items-center-safe justify-center gap-4 mb-16">
                         <div class="tag tag-pill tag-outline tag-soft tag-accent">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
                             </svg>
                             <span>Semantic Code</span>
                         </div>
-                        <div class="text-6xl font-semibold text-center">Write Less Code</div>
+                        <div class="text-6xl font-semibold text-center">Write Less <span class="text-base-dense">&lt;</span><span class="text-accent">Code</span><span class="text-base-dense">/&gt;</span>,</div>
                         <div class="text-6xl font-semibold text-center">Get More Done.</div>
                         <div class="mb-1"></div>
                         <div class="text-xl text-center max-w-4xl">
-                            <span class="font-light opacity-80">No more cramming long lines of Tailwind classes for a usable component.<br>With TropicUI</span>
+                            <span class="font-light opacity-80">With TropicUI</span>
                             <span class="font-medium">semantic classes</span>
                             <span class="font-light opacity-80">approach, you can quickly compose professional looking UI block in fraction of the time, while maximising your productivity.</span>
                         </div>
-                        <div class="mb-2"></div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-[1fr_auto] gap-6 mb-64">
+                        <div class="card bg-primary grid grid-rows-[auto_1fr] p-1 max-h-[420px]">
+                            <div class="flex items-center gap-2 px-2 min-h-8">
+                                <span class="status status-round status-danger opacity-80"></span>
+                                <span class="status status-round status-warning opacity-80"></span>
+                                <span class="status status-round status-success opacity-80"></span>
+                            </div>
+                            <div class="grid border border-base-foreground rounded-md overflow-auto scheme-dark">
+                                <pre><code class="language-html" style="overflow-x: visible;">&lt;div class=&quot;card w-96&quot;&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h3 class=&quot;font-semibold mb-2&quot;&gt;Welcome back.&lt;/h3&gt;
+        &lt;div class=&quot;form&quot;&gt;
+            &lt;div class=&quot;form-field&quot;&gt;
+                &lt;span class=&quot;text-base-dense&quot;&gt;Sign in to access your account&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-field&quot;&gt;
+                &lt;div class=&quot;input input-invalid&quot;&gt;
+                    &lt;input type=&quot;email&quot; placeholder=&quot;Email&quot;&gt;
+                    &lt;div class=&quot;invalid text-danger&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
+                            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z&quot; /&gt;
+                        &lt;/svg&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;text-sm text-danger invalid&quot;&gt;Email is required!&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-field&quot;&gt;
+                &lt;div class=&quot;input&quot;&gt;
+                    &lt;input type=&quot;password&quot; value=&quot;secret&quot; placeholder=&quot;Password&quot;&gt;
+                    &lt;label class=&quot;btn btn-clear btn-toggle&quot;&gt;
+                        &lt;input type=&quot;checkbox&quot; id=&quot;show-password&quot;&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z&quot; /&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z&quot; /&gt;&lt;/svg&gt;
+                        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot; class=&quot;btn-toggled-icon&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88&quot; /&gt;&lt;/svg&gt;
+                    &lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-field&quot;&gt;
+                &lt;label&gt;
+                    &lt;input type=&quot;checkbox&quot; class=&quot;checkbox checkbox-accent&quot; checked&gt;
+                    &lt;span&gt;Remember me&lt;/span&gt;
+                &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-field&quot;&gt;
+                &lt;button class=&quot;btn btn-primary&quot;&gt;Login&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                        <div class="sink flex items-center-safe justify-center-safe px-8 py-6 h-full border-2 border-accent">
+                            <div class="card w-96">
+                                <div class="card-body">
+                                    <h3 class="font-semibold mb-2">Welcome back.</h3>
+                                    <div class="form">
+                                        <div class="form-field">
+                                            <span class="text-base-dense">Sign in to access your account</span>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="input input-invalid">
+                                                <input type="email" placeholder="Email">
+                                                <div class="invalid text-danger">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="text-sm text-danger invalid">Email is required!</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="input">
+                                                <input type="password" value="secret" placeholder="Password">
+                                                <label class="btn btn-clear btn-toggle">
+                                                    <input type="checkbox" id="show-password">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-toggled-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>
+                                                <input type="checkbox" class="checkbox checkbox-accent" checked>
+                                                <span>Remember me</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-field">
+                                            <button class="btn btn-primary">Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+
                     </div>
 
                     <div class="h-10 p-4">
@@ -524,5 +626,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            const showPassword = document.getElementById('show-password');
+            const passwordField = document.querySelector('input[type="password"]');
+
+            showPassword.addEventListener('click', () => {
+                passwordField.type = showPassword.checked ? 'text' : 'password';
+            });
+        </script>
     </body>
 </html>

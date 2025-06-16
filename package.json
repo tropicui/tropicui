@@ -4,13 +4,19 @@
   "description": "placeholder for theme",
   "private": true,
   "scripts": {
-    "build": "node build.js",
+    "build": "npx parcel build",
     "dev": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./dist/assets/css/styles.css --watch",
     "prod": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./dist/assets/css/styles.css --minify"
   },
+  "source": "./src/js/build.js",
+  "main": "./dist/assets/js/script.js",
   "author": "kenfai",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.8",
+    "highlight.js": "^11.11.1",
     "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
   }
 }
