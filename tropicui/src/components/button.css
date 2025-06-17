@@ -23,7 +23,7 @@ Button component styles.
         --btn-bg: var(--btn-color, var(--color-base));
         --btn-fg: var(--color-base-foreground);
         --btn-soft-bg: color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 12%, transparent);
-        --btn-border-width: 1px;
+        --btn-border-width: var(--border-width);
         --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-border)), var(--color-black) 12%);
         --btn-size: --spacing(10);
 
@@ -155,6 +155,7 @@ Button component styles.
         --btn-border: transparent;
         --btn-shadow: none;
 
+        block-size: fit-content;
         padding-inline: 0;
 
         @media (hover: hover) {

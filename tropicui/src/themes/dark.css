@@ -3,15 +3,15 @@
 [data-theme="dark"] {
     color-scheme: dark;
 
-    --color-base-background: var(--color-gray-950);
-    --color-base: var(--color-gray-900);
-    --color-base-airy: var(--color-gray-800);
-    --color-base-border: var(--color-gray-700);
-    --color-base-dense: var(--color-gray-500);
-    --color-base-foreground: var(--color-gray-300);
+    --color-base-background: var(--color-slate-950);
+    --color-base: var(--color-slate-900);
+    --color-base-airy: var(--color-slate-800);
+    --color-base-border: var(--color-slate-700);
+    --color-base-dense: var(--color-slate-500);
+    --color-base-foreground: var(--color-slate-300);
 
-    --color-primary: var(--color-slate-300);
-    --color-primary-content: var(--color-slate-600);
+    --color-primary: var(--color-neutral-100);
+    --color-primary-content: var(--color-neutral-600);
     --color-accent: var(--color-sky-600);
     --color-accent-content: var(--color-sky-200);
     --color-danger: var(--color-rose-700);

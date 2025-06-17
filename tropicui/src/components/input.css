@@ -7,6 +7,7 @@ Input component styles.
 
 @property {string} --input-bg - Background color of the input
 @property {string} --input-border - Border color of the input
+@property {string} --input-border-width - Width of the input border
 @property {string} --input-focus - Outline color when input is focused
 @property {string} --input-text - Text color of the input
 @property {string} --input-label - Color of labels and other non-input elements within input groups
@@ -20,22 +21,22 @@ Input component styles.
         /* modifiers */
         --input-bg: color-mix(in oklab, var(--input-color) 15%, transparent);
         --input-border: var(--input-color, var(--color-base-border));
+        --input-border-width: var(--border-width);
         --input-focus: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
         --input-text: var(--color-base-foreground);
         --input-label: var(--color-base-dense);
         --input-size: --spacing(10);
         --input-gap: calc(var(--input-size) * 0.4);
-        --btn-radius: none;
-
-        /* layout */
-        overflow: hidden;
+        --input-radius: var(--radius-control);
 
         /* dimensions */
         block-size: var(--input-size);
 
         /* colors */
-        border: 1px solid var(--input-border);
-        border-radius: var(--radius-control);
+        border-width: var(--input-border-width);
+        border-style: solid;
+        border-color: var(--input-border);
+        border-radius: var(--input-radius);
         outline: 0px solid var(--input-focus);
         background-color: var(--input-bg, var(--color-base));
         box-shadow: var(--shadow-low);
@@ -134,6 +135,10 @@ Input component styles.
                 flex: 1;
                 outline-width: 0;
                 block-size: 100%;
+
+                & ~ .btn {
+                    border-inline-start: 1px solid var(--color-base-border);
+                }
             }
 
             /* label */
@@ -143,7 +148,6 @@ Input component styles.
                 /* typography */
                 color: var(--input-label);
                 font-size: calc(var(--input-size) * 0.4);
-                line-height: calc(var(--input-size) * 1);
 
                 &:last-child {
                     padding-inline: --spacing(0) var(--input-gap);
@@ -154,13 +158,21 @@ Input component styles.
             > .btn {
                 block-size: 100%;
                 min-inline-size: var(--input-size);
+                border: none;
+                border-radius: 0;
 
                 &:has(~ input) {
                     border-inline-end: 1px solid var(--color-base-border);
                 }
-                &:not(:has(~ input)) {
-                    border-inline-start: 1px solid var(--color-base-border);
-                }
+            }
+
+            > :is(:first-child) {
+                border-start-start-radius: calc(var(--input-radius) - var(--input-border-width));
+                border-end-start-radius: calc(var(--input-radius) - var(--input-border-width));
+            }
+            > :is(:last-child) {
+                border-start-end-radius: calc(var(--input-radius) - var(--input-border-width));
+                border-end-end-radius: calc(var(--input-radius) - var(--input-border-width));
             }
         }
         

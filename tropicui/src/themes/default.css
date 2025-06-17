@@ -1,6 +1,8 @@
 @custom-variant theme-light (&:where([data-theme=light], [data-theme=light] *));
 
 :root {
+    color-scheme: light;
+
     --theme-primary: var(--color-neutral-700);
 
     --border: 1px;
