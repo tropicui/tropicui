@@ -1,9 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import CodeBlock from "./CodeBlock";
 
-function Preview(props) {
+interface PreviewProps {
+    children: React.ReactNode;
+    code: string;
+}
+
+function Preview(props: PreviewProps) {
     const { children, code } = props;
     const [isDarkTheme, setDarkTheme] = useState(false);
+    const [dir, setDir] = useState('ltr');
     const [isCopied, setCopied] = useState(false);
     const [margin, setMargin] = useState(0);
     const [isMouseDown, setMouseDown] = useState(false);
@@ -11,7 +17,7 @@ function Preview(props) {
     const elementRef = useRef(null);
     const widthMin = 250; // px
 
-    const copyAndReset = (event) => {
+    const copyAndReset = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCopied(event.target.checked);
 
         navigator.clipboard.writeText(code);
@@ -22,29 +28,33 @@ function Preview(props) {
         }, 2000);
     }
 
-
-    const handleMouseDown = (event) => {
+    const handleMouseDown = (event: React.MouseEvent) => {
         setMouseDown(true);
         setOriginPos(event.clientX);
         event.preventDefault();
     }
 
     useEffect(() => {
-        const handleMouseUp = (event) => {
+        const handleMouseUp = () => {
             setMouseDown(false);
             setOriginPos(-1);
         }
 
-        const handleMouseMove = (event) => {
-            if (isMouseDown) {
+        const handleMouseMove = (event: MouseEvent) => {
+            if (isMouseDown && elementRef.current) {
                 const currentPos = event.clientX;
-                const marginTotal = originPos - currentPos + margin;
-                const width = elementRef.current.getBoundingClientRect().width
+
+                const marginTotal = (dir === 'rtl')
+                    ? currentPos - originPos + margin
+                    : originPos - currentPos + margin;
+
+                const width = (elementRef.current as HTMLDivElement).getBoundingClientRect().width;
+                
                 const marginMin = width - widthMin;
+
                 setMargin(Math.min(marginMin, Math.max(marginTotal, 0)));
             }
         }
-
 
         window.addEventListener('mouseup', handleMouseUp);
         window.addEventListener('mousemove', handleMouseMove);
@@ -78,6 +88,15 @@ function Preview(props) {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                     </svg>
                 </label>
+                <label className="btn btn-sm btn-icon btn-toggle">
+                    <input
+                        type="checkbox"
+                        checked={dir === 'ltr' ? false : true}
+                        onChange={(event) => { setDir(event.target.checked ? 'rtl' : 'ltr') }}
+                    />
+                    <span className="scale-x-90">LTR</span>
+                    <span className="scale-x-90 btn-toggled-icon">RTL</span>
+                </label>
                 <label className={`btn btn-sm btn-icon btn-toggle tooltip tooltip-primary tooltip-top ${isCopied ? 'text-success' : ''}`} data-tooltip={isCopied ? 'Copied!' : 'Copy Code'}>
                     <input
                         type="checkbox"
@@ -93,16 +112,17 @@ function Preview(props) {
                 </label>
             </div>
             <div
-                className="card relative h-fit pe-5"
+                className="card relative h-fit pe-5 transition-colors"
                 style={{ marginInlineEnd: margin }}
                 data-theme={isDarkTheme ? 'dark' : 'default'}
+                dir={dir}
             >
                 <div className="card-body flex justify-center items-center-safe min-h-[420px] max-h-[420px] w-full overflow-x-hidden overflow-y-auto">
                     <div className="w-full h-fit">
                         {children}
                     </div>
                 </div>
-                <div className="absolute end-0 inset-y-0 grid items-center bg-base-airy border border-base-border hover:border-base-dense active:bg-base-border active:border-base-dense rounded-none rounded-e-md w-5 h-full cursor-ew-resize"
+                <div className="absolute end-0 inset-y-0 grid items-center bg-base-airy border border-base-border hover:border-base-dense active:bg-base-border active:border-base-dense rounded-none rounded-e-md w-5 h-full cursor-ew-resize transition-colors"
                     onMouseDown={handleMouseDown}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

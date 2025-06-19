@@ -27,6 +27,14 @@ function Sidebar() {
                     to: "/components/accordion",
                 },
                 {
+                    title: "Alert",
+                    to: "/components/alert",
+                },
+                {
+                    title: "Avatar",
+                    to: "/components/avatar",
+                },
+                {
                     title: "Button",
                     to: "/button",
                 },
@@ -35,7 +43,7 @@ function Sidebar() {
     ];
 
     return (
-        <div className="relative col-start-1 row-start-1">
+        <aside className="relative col-start-1 row-start-1">
             <div className="absolute inset-0">
                 <div className="sticky top-14 h-full max-h-[calc(100dvh-(var(--spacing)*14))] w-96 py-4 px-8 bg-base-airy border-r border-base-border overflow-y-auto">
                     {items.map((child) => 
@@ -68,7 +76,7 @@ function Sidebar() {
                     )}
                 </div>
             </div>
-        </div>
+        </aside>
     );
 }
 

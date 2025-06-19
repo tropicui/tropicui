@@ -4,11 +4,15 @@ import "highlight.js/styles/monokai-sublime.min.css";
 
 hljs.registerLanguage("html", html);
 
-function CodeBlock(props) {
+interface CodeBlockProps {
+    children: React.ReactNode;
+}
+
+function CodeBlock(props: CodeBlockProps) {
     const { children } = props;
 
     const highlightedCode = hljs.highlight(
-        children,
+        children?.toString() || '',
         { language: 'html' }
     ).value
 

@@ -1,5 +1,6 @@
 import {
   createBrowserRouter,
+  redirect,
   RouterProvider,
 } from "react-router";
 
@@ -7,7 +8,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import * as page from './pages/index'
+import * as page from './pages'
 
 const router = createBrowserRouter([
   {
@@ -27,8 +28,25 @@ const router = createBrowserRouter([
         Component: page.Installation,
       },
       {
-        path: "/components/accordion",
-        Component: page.Accordion,
+        path: "/components",
+        children: [
+          {
+            index: true,
+            loader: () => redirect("/components/accordion"),
+          },
+          {
+            path: "/components/accordion",
+            Component: page.Accordion,
+          },
+          {
+            path: "/components/alert",
+            Component: page.Alert,
+          },
+          {
+            path: "/components/avatar",
+            Component: page.Avatar,
+          },
+        ]
       },
     ]
   },

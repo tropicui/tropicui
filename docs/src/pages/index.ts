@@ -1,12 +1,5 @@
-import Introduction from './introduction'
-import Installation from './installation'
-import Accordion from './accordion'
-
-export {
-    // Getting Started
-    Introduction,
-    Installation,
-
-    // Components
-    Accordion,
-}
+export { default as Introduction } from './introduction'
+export { default as Installation } from './installation'
+export { default as Accordion } from './accordion'
+export { default as Alert } from './alert'
+export { default as Avatar } from './avatar'

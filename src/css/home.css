@@ -1,7 +1,7 @@
 html {
     --font-inter: "Inter";
 
-    font-family: var(--font-inter, var(--font-sans-serif));
+    font-family: var(--font-inter, var(--font-sans));
 }
 
 .bg-pattern-dots {

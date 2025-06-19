@@ -1,464 +1,436 @@
 import Breadcrumb from "../components/Breadcrumb";
+import BreadcrumbItem from "../components/BreadcrumbItem";
 import TableOfContent from "../components/TableOfContent";
 import Preview from "../components/Preview";
+import PageFooterNav from "../components/PageFooterNav";
+import PrevPageNav from "../components/PrevPageNav";
+import NextPageNav from "../components/NextPageNav";
 
 function Accordion() {
     return (
-        <div className="grid grid-cols-[1fr_auto] gap-4 min-h-dvh">
-            <div className="col-start-1 row-start-1 pt-8">
-                <div className="mb-4">
-                    <Breadcrumb>COMPONENT</Breadcrumb>
-                </div>
+        <>
+            <div className="pt-8">
+                <Breadcrumb>
+                    <BreadcrumbItem>COMPONENT</BreadcrumbItem>
+                </Breadcrumb>
 
-                <div className="mb-6">
-                    <h2>Accordion</h2>
-                </div>
+                <h2>Accordion</h2>
 
-                <div className="mb-8">
-                    <h6>The <strong>Accordion</strong> component reveals and hides content with a sliding animation.</h6>
-                </div>
+                <h6>The <strong>Accordion</strong> component reveals and hides content with a sliding animation.</h6>
 
-                <div className="mb-6">
-                    <h3 id="usage">Usage</h3>
-                </div>
+                <h3 id="usage">Usage</h3>
 
-                <div className="mb-4">
-                    <h4 id="basic">Basic</h4>
-                </div>
+                <h4 id="basic">Basic</h4>
 
                 <Preview code={`<details class="accordion">
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details className="accordion">
                         <summary>What is a UI library?</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="multiples">Multiples</h4>
-                </div>
-                <div className="mb-4">
-                    <p>The <span className="tag"><pre>name</pre></span> attribute can be used to group accordions.</p>
-                </div>
+                <h4 id="multiples">Multiples</h4>
+
+                <p>The <span className="tag"><pre>name</pre></span> attribute can be used to group accordions.</p>
+
                 <div className="alert alert-outline mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>
-                    <p>A <a href="" className="btn btn-link btn-accent">divider</a> component can be added in between the accordions.</p>
+                    <span>A <a href="" className="btn btn-link btn-accent">divider</a> component can be added in between the accordions.</span>
                 </div>
 
                 <Preview code={`<details name="acd01" class="accordion">
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <div class="divider"></div>
 <details name="acd01" class="accordion">
     <summary>Where can I download the TropicUI library?</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <div class="divider"></div>
 <details name="acd01" class="accordion">
     <summary>How to use a UI library?</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-    <p><span class="tag"><code>$ npm run dev</code></span></p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
                     <details name="acd01" className="accordion">
                         <summary>What is a UI library?</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <div className="divider"></div>
                     <details name="acd01" className="accordion">
                         <summary>Where can I download the TropicUI library?</summary>
-                        <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                     </details>
                     <div className="divider"></div>
                     <details name="acd01" className="accordion">
                         <summary>How to use a UI library?</summary>
-                        <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                        <p><span className="tag"><code>$ npm run dev</code></span></p>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
                     </details>
                 </Preview>
 
-                <div className="mb-6">
-                    <h3 id="styles">Styles</h3>
-                </div>
+                <h3 id="styles">Styles</h3>
 
-                <div className="mb-4">
-                    <h4 id="shadow">Shadow</h4>
-                </div>
-                <div className="mb-4">
-                    <p>The <span className="tag"><pre>accordion-shadow</pre></span> class can be added to any accordion variant for a raised effect.</p>
-                </div>
+                <h4 id="shadow">Shadow</h4>
+
+                <p>The <span className="tag"><pre>accordion-shadow</pre></span> class can be added to any accordion variant for a raised effect.</p>
+
                 <div className="alert alert-outline mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>
-                    <p>The <span className="tag"><pre>accordion-gutter</pre></span> class is added to the accordions for spacing in between.</p>
+                    <span>The <span className="tag"><pre>accordion-gutter</pre></span> class is added to the accordions for spacing in between.</span>
                 </div>
 
                 <Preview code={`<details name="acd02" class="accordion accordion-gutter accordion-shadow">
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd02" class="accordion accordion-gutter accordion-shadow">
     <summary>Where can I download the TropicUI library?</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <details name="acd02" class="accordion accordion-shadow">
     <summary>How to use a UI library?</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-    <p><span class="tag"><code>$ npm run dev</code></span></p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
                     <details name="acd02" className="accordion accordion-gutter accordion-shadow">
                         <summary>What is a UI library?</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd02" className="accordion accordion-gutter accordion-shadow">
                         <summary>Where can I download the TropicUI library?</summary>
-                        <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                     </details>
                     <details name="acd02" className="accordion accordion-shadow">
                         <summary>How to use a UI library?</summary>
-                        <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                        <p><span className="tag"><code>$ npm run dev</code></span></p>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="colours">Colours</h4>
-                </div>
+                <h4 id="colours">Colours</h4>
 
                 <Preview code={`<details class="accordion accordion-gutter accordion-primary">
     <summary>Primary Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-accent">
     <summary>Accent Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-success">
     <summary>Success Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-warning">
     <summary>Warning Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-danger">
     <summary>Danger Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details className="accordion accordion-gutter accordion-primary">
                         <summary>Primary Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-accent">
                         <summary>Accent Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-success">
                         <summary>Success Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-warning">
                         <summary>Warning Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-danger">
                         <summary>Danger Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="soft">Soft</h4>
-                </div>
+                <h4 id="soft">Soft</h4>
 
                 <Preview code={`<details class="accordion accordion-gutter accordion-soft">
     <summary>Soft Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-soft accordion-primary">
     <summary>Soft Primary Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-soft accordion-accent">
     <summary>Soft Accent Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-soft accordion-success">
     <summary>Soft Success Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-soft accordion-warning">
     <summary>Soft Warning Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-soft accordion-danger">
     <summary>Soft Danger Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details className="accordion accordion-gutter accordion-soft">
                         <summary>Soft Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-soft accordion-primary">
                         <summary>Soft Primary Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-soft accordion-accent">
                         <summary>Soft Accent Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-soft accordion-success">
                         <summary>Soft Success Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-soft accordion-warning">
                         <summary>Soft Warning Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-soft accordion-danger">
                         <summary>Soft Danger Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="outline">Outline</h4>
-                </div>
+                <h4 id="outline">Outline</h4>
 
                 <Preview code={`<details class="accordion accordion-gutter accordion-outline">
     <summary>Outline Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline accordion-primary">
     <summary>Outline Primary Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline accordion-accent">
     <summary>Outline Accent Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline accordion-success">
     <summary>Outline Success Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline accordion-warning">
     <summary>Outline Warning Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline accordion-danger">
     <summary>Outline Danger Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details className="accordion accordion-gutter accordion-outline">
                         <summary>Outline Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline accordion-primary">
                         <summary>Outline Primary Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline accordion-accent">
                         <summary>Outline Accent Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline accordion-success">
                         <summary>Outline Success Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline accordion-warning">
                         <summary>Outline Warning Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline accordion-danger">
                         <summary>Outline Danger Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="outline-bold">Outline Bold</h4>
-                </div>
+                <h4 id="outline-bold">Outline Bold</h4>
 
                 <Preview code={`<details class="accordion accordion-gutter accordion-outline-bold">
     <summary>Outline Bold Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline-bold accordion-primary">
     <summary>Outline Bold Primary Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline-bold accordion-accent">
     <summary>Outline Bold Accent Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline-bold accordion-success">
     <summary>Outline Bold Success Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline-bold accordion-warning">
     <summary>Outline Bold Warning Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details class="accordion accordion-gutter accordion-outline-bold accordion-danger">
     <summary>Outline Bold Danger Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details className="accordion accordion-gutter accordion-outline-bold">
                         <summary>Outline Bold Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline-bold accordion-primary">
                         <summary>Outline Bold Primary Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline-bold accordion-accent">
                         <summary>Outline Bold Accent Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline-bold accordion-success">
                         <summary>Outline Bold Success Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline-bold accordion-warning">
                         <summary>Outline Bold Warning Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details className="accordion accordion-gutter accordion-outline-bold accordion-danger">
                         <summary>Outline Bold Danger Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="header">Header</h4>
-                </div>
+                <h4 id="header">Header</h4>
 
                 <Preview code={`<details name="acd03" class="accordion accordion-gutter accordion-header accordion-primary">
     <summary>Primary Header Accordion</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd03" class="accordion accordion-gutter accordion-header accordion-soft accordion-primary">
     <summary>Soft Primary Header Accordion</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <details name="acd03" class="accordion accordion-gutter accordion-header accordion-soft accordion-outline accordion-primary">
     <summary>Outline Soft Primary Header Accordion</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-    <p><span class="tag"><code>$ npm run dev</code></span></p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
                     <details name="acd03" className="accordion accordion-gutter accordion-header accordion-primary">
                         <summary>Primary Header Accordion</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd03" className="accordion accordion-gutter accordion-header accordion-soft accordion-primary">
                         <summary>Soft Primary Header Accordion</summary>
-                        <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                     </details>
                     <details name="acd03" className="accordion accordion-gutter accordion-header accordion-soft accordion-outline accordion-primary">
                         <summary>Outline Soft Primary Header Accordion</summary>
-                        <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                        <p><span className="tag"><code>$ npm run dev</code></span></p>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
                     </details>
                 </Preview>
 
-                <div className="mb-6">
-                    <h3 id="variants">Variants</h3>
-                </div>
+                <h3 id="variants">Variants</h3>
 
-                <div className="mb-4">
-                    <h4 id="open">Open By Default</h4>
-                </div>
+                <h4 id="open">Open By Default</h4>
 
                 <Preview code={`<details name="acd04" class="accordion accordion-gutter accordion-outline" open>
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd04" class="accordion accordion-gutter accordion-outline">
     <summary>Where can I download the TropicUI library?</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <details name="acd04" class="accordion accordion-outline">
     <summary>How to use a UI library?</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-    <p><span class="tag"><code>$ npm run dev</code></span></p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
                     <details name="acd04" className="accordion accordion-gutter accordion-outline" open>
                         <summary>What is a UI library?</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd04" className="accordion accordion-gutter accordion-outline">
                         <summary>Where can I download the TropicUI library?</summary>
-                        <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                     </details>
                     <details name="acd04" className="accordion accordion-gutter accordion-outline">
                         <summary>How to use a UI library?</summary>
-                        <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                        <p><span className="tag"><code>$ npm run dev</code></span></p>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="open-style">Open Style</h4>
-                </div>
+                <h4 id="open-style">Open Style</h4>
 
                 <Preview code={`<details name="acd05" class="accordion accordion-gutter accordion-open:shadow accordion-shadow">
     <summary>Open Shadow</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd05" class="accordion accordion-gutter accordion-open:bg accordion-open:fg accordion-primary">
     <summary>Open Primary</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd05" class="accordion accordion-gutter accordion-open:bg accordion-open:fg accordion-header accordion-primary">
     <summary>Open Primary Header</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd05" class="accordion accordion-gutter accordion-soft accordion-open:bg accordion-open:fg accordion-primary">
     <summary>Open Soft Primary</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd05" class="accordion accordion-gutter accordion-soft accordion-open:bg accordion-open:fg accordion-header accordion-primary">
     <summary>Open Soft Primary Header</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <details name="acd05" class="accordion accordion-gutter accordion-outline accordion-open:outline">
     <summary>Open Outline</summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details name="acd05" className="accordion accordion-gutter accordion-open:shadow accordion-shadow">
                         <summary>Open Shadow</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd05" className="accordion accordion-gutter accordion-open:bg accordion-open:fg accordion-primary">
                         <summary>Open Primary</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd05" className="accordion accordion-gutter accordion-open:bg accordion-open:fg accordion-header accordion-primary">
                         <summary>Open Primary Header</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd05" className="accordion accordion-gutter accordion-soft accordion-open:bg accordion-open:fg accordion-primary">
                         <summary>Open Soft Primary</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd05" className="accordion accordion-gutter accordion-soft accordion-open:bg accordion-open:fg accordion-header accordion-primary">
                         <summary>Open Soft Primary Header</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <details name="acd05" className="accordion accordion-gutter accordion-outline accordion-open:outline">
                         <summary>Open Outline</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="nested">Nested</h4>
-                </div>
+                <h4 id="nested">Nested</h4>
 
                 <Preview code={`<details class="accordion accordion-gutter accordion-outline" open>
     <summary>What is a UI library?</summary>
@@ -468,8 +440,8 @@ function Accordion() {
         <p class="mb-2">You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
         <details class="accordion accordion-outline">
             <summary>How to use a UI library?</summary>
-            <p>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-            <p><span class="tag"><code>$ npm run dev</code></span></p>
+            <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+            <div><span class="tag"><code>$ npm run dev</code></span></div>
         </details>
     </details>
 </details>`}>
@@ -481,16 +453,14 @@ function Accordion() {
                             <p className="mb-2">You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
                             <details className="accordion accordion-outline">
                                 <summary>How to use a UI library?</summary>
-                                <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                                <p><span className="tag"><code>$ npm run dev</code></span></p>
+                                <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                                <div><span className="tag"><code>$ npm run dev</code></span></div>
                             </details>
                         </details>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="icon">Icon</h4>
-                </div>
+                <h4 id="icon">Icon</h4>
 
                 <Preview code={`<details class="accordion accordion-outline">
     <summary>
@@ -499,7 +469,7 @@ function Accordion() {
         </svg>
         <span>What is a UI library?</span>
     </summary>
-    <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>`}>
                     <details className="accordion accordion-outline">
                         <summary>
@@ -508,197 +478,264 @@ function Accordion() {
                             </svg>
                             <span>What is a UI library?</span>
                         </summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="arrow">Dropdown Arrow</h4>
-                </div>
-                <div className="mb-4">
-                    <h6>Left Arrow</h6>
-                </div>
+                <h4 id="arrow">Dropdown Arrow</h4>
+
+                <h6>Left Arrow</h6>
 
                 <Preview code={`<details name="acd06" class="accordion accordion-arrow-left">
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection ...</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <div class="divider"></div>
 <details name="acd06" class="accordion accordion-arrow-left">
     <summary>Where can I download the TropicUI library?</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <div class="divider"></div>
 <details name="acd06" class="accordion accordion-arrow-left">
     <summary>How to use a UI library?</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the ...</p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
                     <details name="acd06" className="accordion accordion-arrow-left">
                         <summary>What is a UI library?</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <div className="divider"></div>
                     <details name="acd06" className="accordion accordion-arrow-left">
                         <summary>Where can I download the TropicUI library?</summary>
-                        <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                     </details>
                     <div className="divider"></div>
                     <details name="acd06" className="accordion accordion-arrow-left">
                         <summary>How to use a UI library?</summary>
-                        <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                        <p><span className="tag"><code>$ npm run dev</code></span></p>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h6>Right Arrow</h6>
-                </div>
+                <h6>Right Arrow</h6>
 
                 <Preview code={`<details name="acd07" class="accordion accordion-arrow-right">
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection ...</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <div class="divider"></div>
 <details name="acd07" class="accordion accordion-arrow-right">
     <summary>Where can I download the TropicUI library?</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <div class="divider"></div>
 <details name="acd07" class="accordion accordion-arrow-right">
     <summary>How to use a UI library?</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the ...</p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
                     <details name="acd07" className="accordion accordion-arrow-right">
                         <summary>What is a UI library?</summary>
-                        <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                     </details>
                     <div className="divider"></div>
                     <details name="acd07" className="accordion accordion-arrow-right">
                         <summary>Where can I download the TropicUI library?</summary>
-                        <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                     </details>
                     <div className="divider"></div>
                     <details name="acd07" className="accordion accordion-arrow-right">
                         <summary>How to use a UI library?</summary>
-                        <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                        <p><span className="tag"><code>$ npm run dev</code></span></p>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
                     </details>
                 </Preview>
 
-                <div className="mb-4">
-                    <h4 id="join">Join</h4>
-                </div>
+                <h6>Leading Arrow</h6>
 
-                <Preview code={`<details name="acd08" class="accordion accordion-outline">
+                <Preview code={`<details name="acd08" class="accordion accordion-arrow-start">
     <summary>What is a UI library?</summary>
-    <p>A UI library is a collection ...</p>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
 </details>
 <div class="divider"></div>
-<details name="acd08" class="accordion accordion-outline">
+<details name="acd08" class="accordion accordion-arrow-start">
     <summary>Where can I download the TropicUI library?</summary>
-    <p>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
 </details>
 <div class="divider"></div>
-<details name="acd08" class="accordion accordion-outline">
+<details name="acd08" class="accordion accordion-arrow-start">
     <summary>How to use a UI library?</summary>
-    <p>Simply <span class="tag"><code>@import</code></span> the ...</p>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
 </details>`}>
+                    <details name="acd08" className="accordion accordion-arrow-start">
+                        <summary>What is a UI library?</summary>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
+                    </details>
+                    <div className="divider"></div>
+                    <details name="acd08" className="accordion accordion-arrow-start">
+                        <summary>Where can I download the TropicUI library?</summary>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
+                    </details>
+                    <div className="divider"></div>
+                    <details name="acd08" className="accordion accordion-arrow-start">
+                        <summary>How to use a UI library?</summary>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
+                    </details>
+                </Preview>
+
+                <h6>Trailing Arrow</h6>
+
+                <Preview code={`<details name="acd09" class="accordion accordion-arrow-end">
+    <summary>What is a UI library?</summary>
+    <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
+</details>
+<div class="divider"></div>
+<details name="acd09" class="accordion accordion-arrow-end">
+    <summary>Where can I download the TropicUI library?</summary>
+    <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
+</details>
+<div class="divider"></div>
+<details name="acd09" class="accordion accordion-arrow-end">
+    <summary>How to use a UI library?</summary>
+    <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+    <div><span class="tag"><code>$ npm run dev</code></span></div>
+</details>`}>
+                    <details name="acd09" className="accordion accordion-arrow-end">
+                        <summary>What is a UI library?</summary>
+                        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
+                    </details>
+                    <div className="divider"></div>
+                    <details name="acd09" className="accordion accordion-arrow-end">
+                        <summary>Where can I download the TropicUI library?</summary>
+                        <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
+                    </details>
+                    <div className="divider"></div>
+                    <details name="acd09" className="accordion accordion-arrow-end">
+                        <summary>How to use a UI library?</summary>
+                        <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                        <div><span className="tag"><code>$ npm run dev</code></span></div>
+                    </details>
+                </Preview>
+
+                <h4 id="join">Join</h4>
+
+                <Preview code={`<div class="join join-col">
+    <details name="acd10" class="accordion accordion-outline">
+        <summary>What is a UI library?</summary>
+        <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
+    </details>
+    <details name="acd10" class="accordion accordion-outline">
+        <summary>Where can I download the TropicUI library?</summary>
+        <div>You may visit <a href="tropicui.com" class="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
+    </details>
+    <details name="acd10" class="accordion accordion-outline">
+        <summary>How to use a UI library?</summary>
+        <div>Simply <span class="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+        <div><span class="tag"><code>$ npm run dev</code></span></div>
+    </details>
+</div>`}>
                     <div className="join join-col">
-                        <details name="acd08" className="accordion accordion-outline">
+                        <details name="acd10" className="accordion accordion-outline">
                             <summary>What is a UI library?</summary>
-                            <p>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</p>
+                            <div>A UI library is a collection of pre-built components that developers use to build the frontend user interface of a web application more efficiently.</div>
                         </details>
-                        <details name="acd08" className="accordion accordion-outline">
+                        <details name="acd10" className="accordion accordion-outline">
                             <summary>Where can I download the TropicUI library?</summary>
-                            <p>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</p>
+                            <div>You may visit <a href="tropicui.com" className="btn btn-link btn-accent">tropicui.com</a> and follow the installation instructions outlined in the documentation.</div>
                         </details>
-                        <details name="acd08" className="accordion accordion-outline">
+                        <details name="acd10" className="accordion accordion-outline">
                             <summary>How to use a UI library?</summary>
-                            <p>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</p>
-                            <p><span className="tag"><code>$ npm run dev</code></span></p>
+                            <div>Simply <span className="tag"><code>@import</code></span> the UI library to your main css file after <code>tailwindcss</code> and execute the following command in your working terminal:</div>
+                            <div><span className="tag"><code>$ npm run dev</code></span></div>
                         </details>
                     </div>
                 </Preview>
+
+                <PageFooterNav>
+                    <PrevPageNav href="/theming">Theming</PrevPageNav>
+                    <NextPageNav href="/components/alert">Alert</NextPageNav>
+                </PageFooterNav>
             </div>
-            <div className="col-start-2 row-start-1">
-                <TableOfContent items={[
-                    {
-                        title: "Usage",
-                        href: "#usage",
-                        nested: [
-                            {
-                                title: "Basic",
-                                href: "#basic",
-                            },
-                            {
-                                title: "Multiples",
-                                href: "#multiples",
-                            },
-                        ]
-                    },
-                    {
-                        title: "Styles",
-                        href: "#styles",
-                        nested: [
-                            {
-                                title: "Shadow",
-                                href: "#shadow",
-                            },
-                            {
-                                title: "Colours",
-                                href: "#colours",
-                            },
-                            {
-                                title: "Soft",
-                                href: "#soft",
-                            },
-                            {
-                                title: "Outline",
-                                href: "#outline",
-                            },
-                            {
-                                title: "Outline Bold",
-                                href: "#outline-bold",
-                            },
-                            {
-                                title: "Header",
-                                href: "#header",
-                            },
-                        ]
-                    },
-                    {
-                        title: "Variants",
-                        href: "#variants",
-                        nested: [
-                            {
-                                title: "Open By Default",
-                                href: "#open",
-                            },
-                            {
-                                title: "Open Style",
-                                href: "#open-style",
-                            },
-                            {
-                                title: "Nested",
-                                href: "#nested",
-                            },
-                            {
-                                title: "Icon",
-                                href: "#icon",
-                            },
-                            {
-                                title: "Dropdown Arrow",
-                                href: "#arrow",
-                            },
-                            {
-                                title: "Join",
-                                href: "#join",
-                            },
-                        ]
-                    },
-                ]}/>
-            </div>
-        </div>
+            <TableOfContent items={[
+                {
+                    title: "Usage",
+                    href: "#usage",
+                    nested: [
+                        {
+                            title: "Basic",
+                            href: "#basic",
+                        },
+                        {
+                            title: "Multiples",
+                            href: "#multiples",
+                        },
+                    ]
+                },
+                {
+                    title: "Styles",
+                    href: "#styles",
+                    nested: [
+                        {
+                            title: "Shadow",
+                            href: "#shadow",
+                        },
+                        {
+                            title: "Colours",
+                            href: "#colours",
+                        },
+                        {
+                            title: "Soft",
+                            href: "#soft",
+                        },
+                        {
+                            title: "Outline",
+                            href: "#outline",
+                        },
+                        {
+                            title: "Outline Bold",
+                            href: "#outline-bold",
+                        },
+                        {
+                            title: "Header",
+                            href: "#header",
+                        },
+                    ]
+                },
+                {
+                    title: "Variants",
+                    href: "#variants",
+                    nested: [
+                        {
+                            title: "Open By Default",
+                            href: "#open",
+                        },
+                        {
+                            title: "Open Style",
+                            href: "#open-style",
+                        },
+                        {
+                            title: "Nested",
+                            href: "#nested",
+                        },
+                        {
+                            title: "Icon",
+                            href: "#icon",
+                        },
+                        {
+                            title: "Dropdown Arrow",
+                            href: "#arrow",
+                        },
+                        {
+                            title: "Join",
+                            href: "#join",
+                        },
+                    ]
+                },
+            ]}/>
+        </>
     );
 };
 

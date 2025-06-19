@@ -57,6 +57,7 @@ Button component styles.
         outline-offset: 1px;
         background-color: var(--btn-bg);
         box-shadow:
+            var(--btn-ring),
             var(--btn-shadow, var(--shadow-low))
             ,inset 0 1px 0 0 color-mix(in oklab, var(--color-white) 25%, transparent)
             ;
@@ -121,7 +122,7 @@ Button component styles.
     }
 
     /* variants */
-    .btn-icon:has(svg:only-child, img:only-child, i:only-child) {
+    .btn-icon {
         padding-inline: 0;
     }
 
@@ -245,6 +246,10 @@ Button component styles.
     .btn-dashed,
     .btn-dashed-bold {
         --btn-border-style: dashed;
+    }
+
+    .btn-ring {
+        --btn-ring: inset 0 0 0 1px color-mix(in oklab, var(--color-base-background) 80%, transparent);
     }
 
     /* sizes */

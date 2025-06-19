@@ -7,12 +7,12 @@
         /* layout */
         position: relative;
 
-        > :where(.dropdown-toggle):is(:focus):not(:focus-visible) + .dropdown-content {
+        > :where(.dropdown-toggle):is(:focus):not(:focus-visible) ~ .dropdown-content {
             height: auto;
             visibility: visible;
         }
 
-        > .dropdown-toggle + .dropdown-content {
+        > .dropdown-toggle ~ .dropdown-content {
             height: 0;
             visibility: hidden;
             margin-block: --spacing(1.5);
