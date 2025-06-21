@@ -22,7 +22,7 @@
     --color-success-content: var(--color-green-50);
 
     /* typography */
-    --color-muted: var(--color-base-dense);
+    --color-muted: color-mix(in oklab, currentColor, transparent 50%);
 
     /* spacing */
     --border-width: var(--border, 1px);

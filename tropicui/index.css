@@ -30,9 +30,9 @@
 @import "./src/components/textarea.css";
 @import "./src/components/toast.css";
 @import "./src/components/tooltip.css";
+@import "./src/themes/default.css";
 @import "./src/themes/dark.css";
 @import "./src/themes/solar.css";
-@import "./src/themes/default.css";
 @import "./src/themes/theme.css";
 @import "./src/utilities/animation.css";
 @import "./src/utilities/float.css";

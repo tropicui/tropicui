@@ -112,7 +112,7 @@ function Preview(props: PreviewProps) {
                 </label>
             </div>
             <div
-                className="card relative h-fit pe-5 transition-colors"
+                className="card relative bg-pattern-diagonal-lines h-fit pe-5 transition-colors"
                 style={{ marginInlineEnd: margin }}
                 data-theme={isDarkTheme ? 'dark' : 'default'}
                 dir={dir}

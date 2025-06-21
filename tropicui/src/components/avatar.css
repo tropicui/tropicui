@@ -21,8 +21,12 @@ Avatar component styles.
         --avatar-size: --spacing(10);
         --avatar-border-radius: var(--radius-control);
         --avatar-group-gap: 3;
-        --avatar-active: var(--color-accent);
         --avatar-ring: var(--avatar-color, var(--color-base-border));
+        --avatar-ring-width: calc(var(--border-width) * 0);
+        --avatar-soft-bg: light-dark(
+            color-mix(in oklab, var(--avatar-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--avatar-color) 40%, var(--color-base-background))
+        );
 
         /* layout */
         align-content: center;
@@ -35,9 +39,10 @@ Avatar component styles.
         min-inline-size: var(--avatar-size);
 
         /* color */
-        border: 2px solid var(--color-base-background);
+        border: calc(var(--border-width) * 2) solid var(--color-base-background);
         border-radius: var(--avatar-border-radius);
         background-color: var(--avatar-bg);
+        outline: var(--avatar-ring-width) solid var(--avatar-ring);
         color: var(--avatar-fg, var(--color-base-foreground));
 
         /* typography */
@@ -46,6 +51,11 @@ Avatar component styles.
         line-height: 1;
         text-transform: uppercase;
         overflow: hidden;
+
+        /* animation */
+        transition-property: background-color, border-color, box-shadow, color;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
         /* Avatar image */
         img {
@@ -83,17 +93,38 @@ Avatar component styles.
 
     .avatar-xl {
         --avatar-size: --spacing(16);
-        border-width: 3px;
+        border-width: calc(var(--border-width) * 3);
     }
 
     /* with border */
-    .avatar-active {
-        outline: 2px solid var(--avatar-active);
+    .avatar-ring {
+        --avatar-ring-width: calc(var(--border-width) * 1);
     }
 
-    .avatar-ring {
-        outline: 1px solid var(--avatar-ring);
+    .avatar-ring-bold {
+        --avatar-ring-width: calc(var(--border-width) * 2);
     }
+
+    .avatar-ring-primary {
+        --avatar-ring: var(--color-primary);
+    }
+
+    .avatar-ring-accent {
+        --avatar-ring: var(--color-accent);
+    }
+
+    .avatar-ring-success {
+        --avatar-ring: var(--color-success);
+    }
+
+    .avatar-ring-warning {
+        --avatar-ring: var(--color-warning);
+    }
+
+    .avatar-ring-danger {
+        --avatar-ring: var(--color-danger);
+    }
+
 
     /* colors */
     .avatar-primary {
@@ -111,14 +142,19 @@ Avatar component styles.
         --avatar-fg: var(--color-success-content);
     }
 
+    .avatar-warning {
+        --avatar-color: var(--color-warning);
+        --avatar-fg: var(--color-warning-content);
+    }
+
     .avatar-danger {
         --avatar-color: var(--color-danger);
         --avatar-fg: var(--color-danger-content);
     }
 
-    .avatar-warning {
-        --avatar-color: var(--color-warning);
-        --avatar-fg: var(--color-warning-content);
+    .avatar-soft {
+        --avatar-bg: var(--avatar-soft-bg, var(--color-base));
+        --avatar-fg: var(--avatar-color, var(--color-base-foreground));
     }
 
     /* avatar group */

@@ -2,13 +2,13 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import './App.css'
-import { Outlet } from 'react-router'
+import { Outlet, ScrollRestoration } from 'react-router'
 
 function App() {
 
   return (
     <>
-      <div className="mx-auto max-w-[1600px]">
+      <div className="bg-base-background mx-auto max-w-[1600px]">
         <Header />
         <div className="grid grid-flow-col grid-cols-[var(--container-sm)_minmax(0,1fr)] gap-8 pt-[var(--header-h)] min-h-dvh">
           <Sidebar />
@@ -20,6 +20,7 @@ function App() {
           </div>
         </div>
       </div>
+      <ScrollRestoration />
     </>
   )
 }

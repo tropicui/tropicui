@@ -1,7 +1,7 @@
 function Header() {
     return (
         <div className="fixed inset-x-0 start-0 z-10 border-b border-base-border">
-            <div className="bg-white">
+            <div className="bg-base-background">
                 <div className="flex h-[var(--header-h)] px-4">
                     <div className="flex items-center gap-2">
                         <span className="text-lg">🌴</span>

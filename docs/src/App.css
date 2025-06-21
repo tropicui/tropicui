@@ -12,3 +12,8 @@ h1, h2, h3, h4, h5, h6 {
     background-position: 0 0, 25px 25px;
     background-size: calc(2 * 25px) calc(2 * 25px);
 }
+
+.bg-pattern-diagonal-lines {
+    background-image: repeating-linear-gradient(45deg, var(--color-base-airy) 0, var(--color-base-airy) 1px, transparent 0, transparent 50%);
+    background-size: 12px 12px;
+}

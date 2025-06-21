@@ -46,6 +46,14 @@ const router = createBrowserRouter([
             path: "/components/avatar",
             Component: page.Avatar,
           },
+          {
+            path: "/components/badge",
+            Component: page.Badge,
+          },
+          {
+            path: "/components/button",
+            Component: page.Button,
+          },
         ]
       },
     ]

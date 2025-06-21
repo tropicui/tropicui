@@ -146,7 +146,7 @@ Card component styles.
             place-items: center;
         }
 
-        :where(.alert) {
+        > :where(.alert) {
             border-radius: 0;
             box-shadow: none;
         }

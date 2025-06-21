@@ -28,7 +28,10 @@ Accordion component styles.
         --accordion-focus-outline: color-mix(in oklab, var(--accordion-color, var(--color-accent)) 40%, transparent);
         --accordion-focus-border: var(--accordion-color, var(--color-accent));
 
-        --accordion-soft-bg: color-mix(in oklab, var(--accordion-color, var(--color-base-dense)) 10%, transparent);
+        --accordion-soft-bg: light-dark(
+            color-mix(in oklab, var(--accordion-color, var(--color-base-dense)) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--accordion-color, var(--color-base-dense)) 40%, var(--color-base-background))
+        );
 
         --join-border-width: var(--accordion-border-width);
 
@@ -216,7 +219,7 @@ Accordion component styles.
 
     .accordion-outline,
     .accordion-outline-bold {
-        --accordion-bg: none;
+        --accordion-bg: var(--color-base-background);
         --accordion-fg: var(--accordion-color);
         --accordion-border: var(--accordion-color);
         --accordion-border-width: calc(var(--border-width) * 1);

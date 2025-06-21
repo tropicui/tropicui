@@ -9,7 +9,7 @@ const NextPageNav = (props: NextPageNavProps) => {
     const { href, children } = props;
 
     return (
-        <Link to={ href } className="card group flex items-center justify-self-end bg-base border border-base-border inset-ring-2 inset-ring-base-background hover:border-base-curb hover:bg-base-airy w-72 transition-all">
+        <Link to={ href } className="card group flex items-center justify-self-end bg-base border border-base-border inset-ring-2 inset-ring-base-background hover:border-base-curb active:bg-base-airy w-72 transition-all">
             <div className="card-body flex items-center justify-end gap-2 p-2">
                 <div className="flex flex-col items-end">
                     <div className="text-xs text-base-dense font-medium">NEXT</div>

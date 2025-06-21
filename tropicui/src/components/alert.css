@@ -16,8 +16,13 @@ Alert component styles.
         /* modifiers */
         --alert-bg: var(--alert-color, var(--color-base));
         --alert-fg: var(--color-base-foreground);
-        --alert-soft-bg: color-mix(in oklab, var(--alert-color) 12%, transparent);
+        --alert-soft-bg: light-dark(
+            color-mix(in oklab, var(--alert-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--alert-color) 40%, var(--color-base-background))
+        );
         --alert-border: color-mix(in oklab, var(--alert-color, var(--color-base-border)), transparent 15%);
+        --alert-border-width: calc(var(--border-width) * 1);
+        --alert-size: --spacing(16);
 
         /* layout */
         display: grid;
@@ -27,10 +32,12 @@ Alert component styles.
         gap: --spacing(2);
 
         /* dimensions */
+        min-block-size: var(--alert-size);
+        margin-block-end: --spacing(4);
         padding: --spacing(4);
 
         /* colors */
-        border: 1px solid var(--alert-border);
+        border: var(--alert-border-width) solid var(--alert-border);
         border-radius: var(--radius-control);
         background-color: var(--alert-bg);
         box-shadow: var(--shadow-low);
@@ -41,6 +48,35 @@ Alert component styles.
             block-size: 1.25em;
             min-inline-size: 1.25em;
             color: var(--alert-fg);
+        }
+
+        /* animation */
+        transition-property: background-color, border-color, box-shadow, color, display, opacity;
+        transition-behavior: allow-discrete;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
+        /* x close button */
+        input.alert-close[type="radio"] {
+            appearance: none;
+            justify-self: end;
+
+            &::after {
+                content: "";
+                mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>');
+                mask-repeat: no-repeat;
+                mask-type: alpha;
+                background-color: currentColor;
+                color: var(--alert-fg, var(--color-base-dense));
+                block-size: --spacing(5);
+                inline-size: --spacing(5);
+            }
+        }
+
+        &:has(input[type="radio"]:checked) {
+            display: none;
+            opacity: 0;
+            visibility: none;
         }
     }
 
@@ -85,7 +121,7 @@ Alert component styles.
 
         &:not(.alert-soft) {
             box-shadow: none;
-            --alert-bg: transparent;
+            --alert-bg: var(--color-base-background);
         }
     }
 
@@ -102,6 +138,6 @@ Alert component styles.
     .alert-outline-bold,
     .alert-dashed-bold,
     .alert-dotted-bold {
-        border-width: 2px;
+        border-width: calc(var(--border-width) * 2);
     }
 }
