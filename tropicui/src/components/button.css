@@ -22,11 +22,21 @@ Button component styles.
         /* modifiers */
         --btn-bg: var(--btn-color, var(--color-base));
         --btn-fg: var(--color-base-foreground);
-        --btn-soft-bg: color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 12%, transparent);
+        --btn-soft-bg: light-dark(
+            color-mix(in oklab, var(--btn-color, var(--color-base-airy)) 12%, var(--color-base-background)),
+            color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 20%, var(--color-base-background))
+        );
         --btn-border-width: var(--border-width);
-        --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-border)), var(--color-black) 12%);
+        --btn-border: light-dark(
+            color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-foreground) 30%),
+            color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-foreground) 30%)
+        );
+        /* --btn-radius: var(--radius-md); */
         --btn-size: --spacing(10);
-
+        /* Highlight */
+        --btn-ring: inset 0 1px 0 0 color-mix(in oklab, light-dark(var(--color-base-background), var(--btn-color, var(--color-base))) 30%, transparent);
+        /* Ring */
+        /* --btn-ring: inset 0 0 0 1px color-mix(in oklab, var(--color-base-background) 50%, transparent); */
         --join-border-width: var(--btn-border-width);
 
         /* layout */
@@ -57,9 +67,8 @@ Button component styles.
         outline-offset: 1px;
         background-color: var(--btn-bg);
         box-shadow:
-            var(--btn-ring),
-            var(--btn-shadow, var(--shadow-low))
-            ,inset 0 1px 0 0 color-mix(in oklab, var(--color-white) 25%, transparent)
+            var(--btn-ring)
+            ,var(--btn-shadow, var(--shadow-low))
             ;
         color: var(--btn-fg);
 
@@ -71,8 +80,10 @@ Button component styles.
         /* states */
         @media (hover: hover) {
             &:hover {
-                --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 6%);
-
+                --btn-bg: light-dark(
+                    color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-background) 15%),
+                    color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-background) 15%)
+                );
             }
         }
 
@@ -83,15 +94,22 @@ Button component styles.
         &:is(:active, .btn-active),
         &:is(.tab):has(input:checked):not(:hover),
         .menu &:is(:focus):not(:focus-visible) {
-            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-black) 12%);
-            --btn-shadow: none;
+            --btn-bg: light-dark(
+                color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-foreground) 20%),
+                color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-background) 25%)
+            );
+            --btn-border: light-dark(
+                color-mix(in oklab, var(--btn-color, var(--color-base-border)), var(--color-base-foreground) 40%),
+                color-mix(in oklab, var(--btn-color, var(--color-base-border)), var(--color-base-background) 15%)
+            );
+            box-shadow: none;
         }
 
         &:where(:disabled, [disabled], .btn-disabled) {
             pointer-events: none;
-            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), transparent 60%);
-            border-color: color-mix(in oklab, var(--btn-border), transparent 80%);
-            color: color-mix(in oklab, var(--btn-color, var(--color-base-foreground)), transparent 40%);
+            --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-background) 60%);
+            border-color: color-mix(in oklab, var(--btn-border), var(--color-base-background) 80%);
+            color: color-mix(in oklab, var(--btn-fg, var(--color-base-foreground)), var(--color-base-background) 50%);
         }
     }
 
@@ -177,45 +195,55 @@ Button component styles.
         --btn-border: transparent;
         --btn-shadow: none;
 
-        &:not(:hover, :active, .btn-active) {
-            --btn-bg: none;
-            --btn-fg: var(--btn-color, var(--color-base-foreground));
-        }
-        @media (hover: none) {
-            &:not(:active, .btn-active) {
-                --btn-bg: none;
-                --btn-fg: var(--btn-color, var(--color-base-foreground));
-            }
-        }
         @media (hover: hover) {
             &:hover:not(:active) {
                 --btn-bg: var(--btn-soft-bg);
                 --btn-fg: var(--btn-color, var(--color-base-foreground));
             }
         }
+
+        &:not(:hover, :active, .btn-active) {
+            --btn-bg: none;
+            --btn-fg: var(--btn-color, var(--color-base-foreground));
+        }
+
+        @media (hover: none) {
+            &:not(:active, .btn-active) {
+                --btn-bg: none;
+                --btn-fg: var(--btn-color, var(--color-base-foreground));
+            }
+        }
     }
 
     .btn-soft {
-        --btn-border: transparent;
+        --btn-bg: var(--btn-soft-bg);
+        --btn-ring: inset 0 0 0 1px color-mix(in oklab, var(--color-base-background) 90%, transparent);
 
-        &:not(:hover, :active, .btn-active) {
-            --btn-bg: var(--btn-soft-bg);
-            --btn-fg: var(--btn-color, var(--color-base-foreground));
-            --btn-shadow: none;
-        }
-        @media (hover: none) {
-            &:not(:active, .btn-active) {
+        @media (hover: hover) {
+            &:hover:not(:active, .btn-active) {
                 --btn-bg: var(--btn-soft-bg);
                 --btn-fg: var(--btn-color, var(--color-base-foreground));
-                --btn-shadow: none;
+                --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 60%, var(--color-base-background));
+            }
+        }
+
+        &:not(:hover, :active, .btn-active) {
+            --btn-fg: var(--btn-color, var(--color-base-foreground));
+            --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 30%, var(--color-base-background));
+        }
+
+        @media (hover: none) {
+            &:not(:active, .btn-active) {
+                --btn-fg: var(--btn-color, var(--color-base-foreground));
+                --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 30%, var(--color-base-background));
             }
         }
     }
 
     .btn-outline,
     .btn-outline-bold,
-    .btn-dashed,
-    .btn-dashed-bold {
+    .btn-dash,
+    .btn-dash-bold {
         --btn-shadow: none;
 
         @media (hover: hover) {
@@ -225,26 +253,26 @@ Button component styles.
             }
         }
         &:not(:hover, :active, .btn-active) {
-            --btn-bg: none;
+            --btn-bg: var(--color-base-background);
             --btn-fg: var(--btn-color, var(--color-base-foreground));
             --btn-border: var(--btn-color, var(--color-base-border));
         }
         @media (hover: none) {
             &:not(:active, .btn-active) {
-                --btn-bg: none;
-            --btn-fg: var(--btn-color, var(--color-base-foreground));
+                --btn-bg: var(--color-base-background);
+                --btn-fg: var(--btn-color, var(--color-base-foreground));
                 --btn-border: var(--btn-color, var(--color-base-border));
             }
         }
     }
 
     .btn-outline-bold,
-    .btn-dashed-bold {
+    .btn-dash-bold {
         --btn-border-width: 2px;
     }
 
-    .btn-dashed,
-    .btn-dashed-bold {
+    .btn-dash,
+    .btn-dash-bold {
         --btn-border-style: dashed;
     }
 

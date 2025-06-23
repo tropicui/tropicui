@@ -8,14 +8,18 @@ function Breadcrumb(props: BreadcrumbProps) {
     const { children } = props;
     
     return (
-        <div className="flex gap-2 mb-4">
-            {React.Children.map(children, (child, index) => [
-                index !== 0 && <span key={`separator-${index}`} className="text-base-dense">/</span>,
-                <span key={`item-${index}`}>
-                    {child}
-                </span>
-            ])}
-        </div>
+        <>
+            <div className="breadcrumb">
+                <ul>
+                {React.Children.map(children, (child, index) => [
+                    <li key={`item-${index}`}>
+                        {child}
+                    </li>
+                ])}
+                </ul>
+            </div>
+            <div className="mb-4"></div>
+        </>
     );
 }
 

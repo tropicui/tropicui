@@ -10,252 +10,410 @@ function Button() {
     return (
         <>
             <div className="pt-8">
-                <div className="grid grid-flow-col gap-4 mb-12">
-                    <div>
-                        <button className="btn btn-primary hidden">Button</button>
-                        <button className="
-                            flex items-center justify-center
-                            bg-neutral-100 active:bg-neutral-200
-                            border border-neutral-200 rounded-md hover:border-neutral-300
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                <Breadcrumb>
+                    <BreadcrumbItem>COMPONENT</BreadcrumbItem>
+                </Breadcrumb>
+
+                <h2>Button</h2>
+
+                <h6>Display a clickable button to trigger an action.</h6>
+
+                <h3 id="usage">Usage</h3>
+
+                <h4 id="basic">Basic</h4>
+
+                <Preview code={`<button class="btn">Button</button>`}>
+                    <div className="grid gap-8 mx-auto w-fit">
+                        <button className="btn">Button</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-primary
-                            border border-primary rounded-md
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-primary-content active:inset-ring-2
-                            text-primary-content
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="with-icon">With Icon</h4>
+
+                <Preview code={`<button class="btn">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+    </svg>
+    <span>Send</span>
+</button>`}>
+                    <div className="mx-auto w-fit">
+                        <button className="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                            </svg>
+                            <span>Send</span>
+                        </button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-neutral-100 active:bg-neutral-200
-                            border border-neutral-200 rounded-md hover:border-neutral-300
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="disabled">Disabled</h4>
+
+                <Preview code={`<button class="btn" disabled>Attribute</button>
+
+<button className="btn btn-disabled">Class</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn" disabled>Attribute</button>
+                        <button className="btn btn-disabled">Class</button>
                     </div>
-                    <div data-theme="dark" className="bg-base-background p-4">
-                        <button className="
-                            flex items-center justify-center
-                            bg-neutral-800 active:bg-neutral-900
-                            border border-neutral-700 rounded-md hover:border-neutral-600
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-black
-                            text-primary
-                            h-10
-                            px-3">Button</button>
-                        <button className="
-                            flex items-center justify-center
-                            bg-slate-800 active:bg-slate-900
-                            border border-slate-700 rounded-md hover:border-slate-600
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-black
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="active">Active</h4>
+
+                <Preview code={`<button class="btn btn-active">Button</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-active">Button</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-neutral-700 active:bg-neutral-500
-                            border border-neutral-600 rounded-md hover:border-neutral-400
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-neutral-100
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h3 id="styles">Styles</h3>
+
+                <h4 id="sizes">Sizes</h4>
+
+                <Preview code={`<button class="btn btn-xs">Extra Small</button>
+<button class="btn btn-sm">Small</button>
+<button class="btn">Button</button>
+<button class="btn btn-lg">Large</button>
+<button class="btn btn-xl">Extra Large</button>
+<button class="btn btn-2xl">Huge</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-xs">Extra Small</button>
+                        <button className="btn btn-sm">Small</button>
+                        <button className="btn">Button</button>
+                        <button className="btn btn-lg">Large</button>
+                        <button className="btn btn-xl">Extra Large</button>
+                        <button className="btn btn-2xl">Huge</button>
                     </div>
-                </div>
-                <div className="grid grid-flow-col gap-4 bg-base-background mb-16">
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-base),var(--color-black)_2%)] active:bg-[color-mix(in_oklab,var(--color-base),var(--color-black)_5%)]
-                            border border-[color-mix(in_oklab,var(--color-base),var(--color-black)_8%)] rounded-md hover:border-[color-mix(in_oklab,var(--color-base),var(--color-black)_14%)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="wide">Wide</h4>
+
+                <Preview code={`<button class="btn btn-wide">Button</button>`}>
+                    <div className="grid items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-wide">Button</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-base-foreground)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-base-foreground)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-base-foreground)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-base-foreground)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="colours">Colours</h4>
+
+                <Preview code={`<button class="btn btn-primary">Primary</button>
+<button class="btn btn-accent">Accent</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-danger">Danger</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn">Button</button>
+                        <button className="btn btn-primary">Primary</button>
+                        <button className="btn btn-accent">Accent</button>
+                        <button className="btn btn-success">Success</button>
+                        <button className="btn btn-warning">Warning</button>
+                        <button className="btn btn-danger">Danger</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-primary)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-primary)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-primary)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-primary)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="soft">Soft</h4>
+
+                <Preview code={`<button class="btn btn-soft">Button</button>
+<button class="btn btn-soft btn-primary">Primary</button>
+<button class="btn btn-soft btn-accent">Accent</button>
+<button class="btn btn-soft btn-success">Success</button>
+<button class="btn btn-soft btn-warning">Warning</button>
+<button class="btn btn-soft btn-danger">Danger</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-soft">Button</button>
+                        <button className="btn btn-soft btn-primary">Primary</button>
+                        <button className="btn btn-soft btn-accent">Accent</button>
+                        <button className="btn btn-soft btn-success">Success</button>
+                        <button className="btn btn-soft btn-warning">Warning</button>
+                        <button className="btn btn-soft btn-danger">Danger</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-accent)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-accent)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-accent)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-accent)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-success)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-success)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-success)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-success)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="outline">Outline</h4>
+
+                <Preview code={`<button class="btn btn-outline">Button</button>
+<button class="btn btn-outline btn-primary">Primary</button>
+<button class="btn btn-outline btn-accent">Accent</button>
+<button class="btn btn-outline btn-success">Success</button>
+<button class="btn btn-outline btn-warning">Warning</button>
+<button class="btn btn-outline btn-danger">Danger</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-outline">Button</button>
+                        <button className="btn btn-outline btn-primary">Primary</button>
+                        <button className="btn btn-outline btn-accent">Accent</button>
+                        <button className="btn btn-outline btn-success">Success</button>
+                        <button className="btn btn-outline btn-warning">Warning</button>
+                        <button className="btn btn-outline btn-danger">Danger</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-warning)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-warning)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-warning)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-warning)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="outline-bold">Outline Bold</h4>
+
+                <Preview code={`<button class="btn btn-outline-bold">Button</button>
+<button class="btn btn-outline-bold btn-primary">Primary</button>
+<button class="btn btn-outline-bold btn-accent">Accent</button>
+<button class="btn btn-outline-bold btn-success">Success</button>
+<button class="btn btn-outline-bold btn-warning">Warning</button>
+<button class="btn btn-outline-bold btn-danger">Danger</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-outline-bold">Button</button>
+                        <button className="btn btn-outline-bold btn-primary">Primary</button>
+                        <button className="btn btn-outline-bold btn-accent">Accent</button>
+                        <button className="btn btn-outline-bold btn-success">Success</button>
+                        <button className="btn btn-outline-bold btn-warning">Warning</button>
+                        <button className="btn btn-outline-bold btn-danger">Danger</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-danger)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-danger)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-danger)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-danger)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="dash">Dash</h4>
+
+                <Preview code={`<button class="btn btn-dash">Button</button>
+<button class="btn btn-dash btn-primary">Primary</button>
+<button class="btn btn-dash btn-accent">Accent</button>
+<button class="btn btn-dash btn-success">Success</button>
+<button class="btn btn-dash btn-warning">Warning</button>
+<button class="btn btn-dash btn-danger">Danger</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-dash">Button</button>
+                        <button className="btn btn-dash btn-primary">Primary</button>
+                        <button className="btn btn-dash btn-accent">Accent</button>
+                        <button className="btn btn-dash btn-success">Success</button>
+                        <button className="btn btn-dash btn-warning">Warning</button>
+                        <button className="btn btn-dash btn-danger">Danger</button>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div className="grid grid-flow-col gap-4 bg-neutral-900 mb-16" data-theme="dark">
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-base),var(--color-black)_2%)] active:bg-[color-mix(in_oklab,var(--color-base),var(--color-black)_5%)]
-                            border border-[color-mix(in_oklab,var(--color-base),var(--color-black)_8%)] rounded-md hover:border-[color-mix(in_oklab,var(--color-base),var(--color-black)_14%)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="dash-bold">Dash Bold</h4>
+
+                <Preview code={`<button class="btn btn-dash-bold">Button</button>
+<button class="btn btn-dash-bold btn-primary">Primary</button>
+<button class="btn btn-dash-bold btn-accent">Accent</button>
+<button class="btn btn-dash-bold btn-success">Success</button>
+<button class="btn btn-dash-bold btn-warning">Warning</button>
+<button class="btn btn-dash-bold btn-danger">Danger</button>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <button className="btn btn-dash-bold">Button</button>
+                        <button className="btn btn-dash-bold btn-primary">Primary</button>
+                        <button className="btn btn-dash-bold btn-accent">Accent</button>
+                        <button className="btn btn-dash-bold btn-success">Success</button>
+                        <button className="btn btn-dash-bold btn-warning">Warning</button>
+                        <button className="btn btn-dash-bold btn-danger">Danger</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-base-foreground)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-base-foreground)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-base-foreground)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-base-foreground)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h3 id="Variants">Variants</h3>
+
+                <h4 id="block">Block</h4>
+
+                <Preview code={`<button class="btn btn-block">Button</button>`}>
+                    <button className="btn btn-block">Button</button>
+                </Preview>
+
+                <h4 id="icon">Icon</h4>
+
+                <Preview code={`<button className="btn btn-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0-3-3m3 3 3-3m-8.25 6a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+    </svg>
+</button>`}>
+                    <div className="mx-auto w-fit">
+                        <button className="btn btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0-3-3m3 3 3-3m-8.25 6a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                            </svg>
+                        </button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-primary)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-primary)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-primary)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-primary)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="pill">Pill</h4>
+
+                <Preview code={`<button class="btn btn-pill">Button</button>`}>
+                    <div className="mx-auto w-fit">
+                        <button className="btn btn-pill">Button</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-accent)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-accent)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-accent)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-accent)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="round">Round</h4>
+
+                <Preview code={`<button className="btn btn-round">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+</button>`}>
+                    <div className="mx-auto w-fit">
+                        <button className="btn btn-round">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                        </button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-success)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-success)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-success)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-success)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="clear">Clear</h4>
+
+                <Preview code={`<button class="btn btn-clear">Button</button>`}>
+                    <div className="mx-auto w-fit">
+                        <button className="btn btn-clear">Button</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-warning)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-warning)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-warning)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-warning)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="link">Link</h4>
+
+                <Preview code={`<button class="btn btn-link">Link</button>`}>
+                    <div className="mx-auto w-fit">
+                        <button className="btn btn-link">Link</button>
                     </div>
-                    <div>
-                        <button className="
-                            flex items-center justify-center
-                            bg-[color-mix(in_oklab,var(--color-danger)_8%,transparent)] active:bg-[color-mix(in_oklab,var(--color-danger)_16%,transparent)]
-                            border border-[color-mix(in_oklab,var(--color-danger)_16%,transparent)] rounded-md hover:border-[color-mix(in_oklab,var(--color-danger)_32%,transparent)]
-                            focus-visible:outline-2 outline-accent outline-offset-0
-                            inset-ring inset-ring-white
-                            text-primary
-                            h-10
-                            px-3">Button</button>
+                </Preview>
+
+                <h4 id="toggle">Toggle</h4>
+
+                <Preview code={`<label class="btn btn-icon btn-toggle">
+    <input type="checkbox">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-toggled-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+    </svg>
+</label>`}>
+                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
+                        <label className="btn btn-icon btn-toggle">
+                            <input type="checkbox" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="btn-toggled-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                        </label>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div className="grid grid-flow-col gap-4 bg-base-background mb-12" data-theme="dark">
-                    <div>
-                        
+                </Preview>
+
+                <h4 id="join">Join</h4>
+
+                <Preview code={`<button class="btn btn-link">Link</button>`}>
+                    <div className="mx-auto mb-8 w-fit">
+                        <div className="join join-row">
+                            <button className="btn">Button</button>
+                            <button className="btn">Button</button>
+                            <button className="btn">Button</button>
+                        </div>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                    <div className="mx-auto w-fit">
+                        <div className="join join-col">
+                            <button className="btn">Button</button>
+                            <button className="btn">Button</button>
+                            <button className="btn">Button</button>
+                        </div>
+                    </div>
+                </Preview>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/accordion">Accordion</PrevPageNav>
-                    <NextPageNav href="/components/avatar">Avatar</NextPageNav>
+                    <PrevPageNav href="/components/breadcrumb">Breadcrumb</PrevPageNav>
+                    <NextPageNav href="/components/card">Card</NextPageNav>
                 </PageFooterNav>
             </div>
+            <TableOfContent items={[
+                {
+                    title: "Usage",
+                    href: "#usage",
+                    nested: [
+                        {
+                            title: "Basic",
+                            href: "#basic",
+                        },
+                        {
+                            title: "With Icon",
+                            href: "#with-icon",
+                        },
+                        {
+                            title: "Disabled",
+                            href: "#disabled",
+                        },
+                        {
+                            title: "Active",
+                            href: "#active",
+                        },
+                    ]
+                },
+                {
+                    title: "Styles",
+                    href: "#styles",
+                    nested: [
+                        {
+                            title: "Sizes",
+                            href: "#sizes",
+                        },
+                        {
+                            title: "Wide",
+                            href: "#wide",
+                        },
+                        {
+                            title: "Colours",
+                            href: "#colours",
+                        },
+                        {
+                            title: "Soft",
+                            href: "#soft",
+                        },
+                        {
+                            title: "Outline",
+                            href: "#outline",
+                        },
+                        {
+                            title: "Outline Bold",
+                            href: "#outline-bold",
+                        },
+                        {
+                            title: "Dash",
+                            href: "#dash",
+                        },
+                        {
+                            title: "Dash Bold",
+                            href: "#dash-bold",
+                        },
+                    ]
+                },
+                {
+                    title: "Variants",
+                    href: "#variants",
+                    nested: [
+                        {
+                            title: "Block",
+                            href: "#block",
+                        },
+                        {
+                            title: "Icon",
+                            href: "#icon",
+                        },
+                        {
+                            title: "Pill",
+                            href: "#pill",
+                        },
+                        {
+                            title: "Round",
+                            href: "#round",
+                        },
+                        {
+                            title: "Clear",
+                            href: "#clear",
+                        },
+                        {
+                            title: "Link",
+                            href: "#link",
+                        },
+                        {
+                            title: "Toggle",
+                            href: "#toggle",
+                        },
+                        {
+                            title: "Join",
+                            href: "#join",
+                        },
+                    ]
+                },
+            ]}/>
         </>
     )
 }

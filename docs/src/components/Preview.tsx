@@ -43,16 +43,17 @@ function Preview(props: PreviewProps) {
         const handleMouseMove = (event: MouseEvent) => {
             if (isMouseDown && elementRef.current) {
                 const currentPos = event.clientX;
+                const element = elementRef.current as HTMLDivElement;
+                const containerWidth = element.getBoundingClientRect().width;
 
                 const marginTotal = (dir === 'rtl')
                     ? currentPos - originPos + margin
                     : originPos - currentPos + margin;
-
-                const width = (elementRef.current as HTMLDivElement).getBoundingClientRect().width;
                 
-                const marginMin = width - widthMin;
+                const marginMin = containerWidth - widthMin;
+                const marginClamped = Math.min(marginMin, Math.max(marginTotal, 0));
 
-                setMargin(Math.min(marginMin, Math.max(marginTotal, 0)));
+                setMargin(marginClamped);
             }
         }
 
@@ -114,7 +115,7 @@ function Preview(props: PreviewProps) {
             <div
                 className="card relative bg-pattern-diagonal-lines h-fit pe-5 transition-colors"
                 style={{ marginInlineEnd: margin }}
-                data-theme={isDarkTheme ? 'dark' : 'default'}
+                data-theme={isDarkTheme ? 'dark' : 'light'}
                 dir={dir}
             >
                 <div className="card-body flex justify-center items-center-safe min-h-[420px] max-h-[420px] w-full overflow-x-hidden overflow-y-auto">

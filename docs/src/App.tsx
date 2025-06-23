@@ -10,10 +10,10 @@ function App() {
     <>
       <div className="bg-base-background mx-auto max-w-[1600px]">
         <Header />
-        <div className="grid grid-flow-col grid-cols-[var(--container-sm)_minmax(0,1fr)] gap-8 pt-[var(--header-h)] min-h-dvh">
+        <div className="grid grid-flow-col grid-cols-[var(--container-3xs)_minmax(0,1fr)] gap-8 pt-[var(--header-h)] min-h-dvh">
           <Sidebar />
           <div className="mx-auto w-full max-w-7xl">
-            <div className="grid grid-cols-[1fr_auto] gap-4 pe-4 min-h-dvh">
+            <div className="grid grid-cols-[1fr_auto] gap-4 min-h-dvh">
               <Outlet />
             </div>
             <Footer />

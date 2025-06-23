@@ -51,6 +51,10 @@ const router = createBrowserRouter([
             Component: page.Badge,
           },
           {
+            path: "/components/breadcrumb",
+            Component: page.BreadcrumbPage,
+          },
+          {
             path: "/components/button",
             Component: page.Button,
           },

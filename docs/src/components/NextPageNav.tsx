@@ -10,8 +10,8 @@ const NextPageNav = (props: NextPageNavProps) => {
 
     return (
         <Link to={ href } className="card group flex items-center justify-self-end bg-base border border-base-border inset-ring-2 inset-ring-base-background hover:border-base-curb active:bg-base-airy w-72 transition-all">
-            <div className="card-body flex items-center justify-end gap-2 p-2">
-                <div className="flex flex-col items-end">
+            <div className="card-body flex items-center justify-between gap-2 px-4 py-2">
+                <div className="flex flex-col items-start">
                     <div className="text-xs text-base-dense font-medium">NEXT</div>
                     <div className="text-xl font-medium">{ children }</div>
                 </div>

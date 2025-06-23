@@ -39,6 +39,10 @@ function Sidebar() {
                     to: "/components/badge",
                 },
                 {
+                    title: "Breadcrumb",
+                    to: "/components/breadcrumb",
+                },
+                {
                     title: "Button",
                     to: "/components/button",
                 },
@@ -49,7 +53,7 @@ function Sidebar() {
     return (
         <aside className="relative col-start-1 row-start-1">
             <div className="absolute inset-0">
-                <div className="sticky top-14 bg-base border-r border-base-border h-full max-h-[calc(100dvh-(var(--spacing)*14))] w-96 py-4 px-8 overflow-y-auto">
+                <div className="sticky top-14 bg-base border-r border-base-border h-full max-h-[calc(100dvh-(var(--spacing)*14))] py-4 px-8 overflow-y-auto">
                     {items.map((child) => 
                         (
                             <nav className="">

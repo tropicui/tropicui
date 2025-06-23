@@ -3,7 +3,27 @@
 :root {
     color-scheme: light;
 
-    --theme-primary: var(--color-neutral-700);
+    /* base */
+    --color-base-background: var(--color-white);
+    --color-base: var(--color-neutral-50);
+    --color-base-airy: var(--color-neutral-100);
+    --color-base-border: var(--color-neutral-200);
+    --color-base-curb: var(--color-neutral-300);
+    --color-base-dense: var(--color-neutral-400);
+    /* --color-base-even: var(--color-neutral-500); */
+    --color-base-foreground: var(--color-neutral-600);
+
+    /* colors */
+    --color-primary: var(--color-neutral-700);
+    --color-primary-content: var(--color-neutral-100);
+    --color-accent: var(--color-blue-400);
+    --color-accent-content: var(--color-blue-50);
+    --color-danger: var(--color-red-600);
+    --color-danger-content: var(--color-red-50);
+    --color-warning: var(--color-amber-400);
+    --color-warning-content: var(--color-amber-950);
+    --color-success: var(--color-green-600);
+    --color-success-content: var(--color-green-50);
 
     --border: 1px;
     --radius: 0.5rem;

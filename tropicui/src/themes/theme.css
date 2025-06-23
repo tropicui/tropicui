@@ -28,9 +28,9 @@
     --border-width: var(--border, 1px);
 
     /* radius */
-    --radius-container: calc(var(--radius) / 1);
-    --radius-control: calc(var(--radius) / 1.8);
-    --radius-input: calc(var(--radius) / 2.4);
+    --radius-container: calc(var(--radius, var(--radius-sm)) / 1);
+    --radius-control: calc(var(--radius, var(--radius-sm)) / 1.5);
+    --radius-input: calc(var(--radius, var(--radius-sm)) / 2.4);
 
     /* shadow */
     --shadow-low:

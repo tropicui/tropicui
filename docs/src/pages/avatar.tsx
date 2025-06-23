@@ -17,7 +17,7 @@ function Avatar() {
 
                 <h2>Avatar</h2>
 
-                <h6>The <strong>Avatar</strong> component displays user profile images, initials, or placeholder icons in a consistent format.</h6>
+                <h6>Displays user profile images, initials, or placeholder icons in a consistent format.</h6>
 
                 <h3 id="usage">Usage</h3>
 
@@ -457,28 +457,28 @@ function Avatar() {
 
                 <h4 id="status-badge">Status Badge</h4>
 
-                <p>Enclose the <code className="tag"><pre>avatar</pre></code> component within <code className="tag"><pre>relative w-fit</pre></code> element to add a <Link to="/components/badge" className="btn btn-link btn-accent">badge</Link> + <Link to="/components/status" className="btn btn-link btn-accent">status</Link> indicator component.</p>
+                <p>Enclose the <code className="tag"><pre>avatar</pre></code> component within <code className="tag"><pre>badge</pre></code> element to add a <Link to="/components/badge" className="btn btn-link btn-accent">badge</Link> + <Link to="/components/status" className="btn btn-link btn-accent">status</Link> indicator component.</p>
 
-                <Preview code={`<div class="relative w-fit">
+                <Preview code={`<div class="badge">
     <div class="avatar">
         <span>JD</span>
     </div>
     <span class="badge badge-bottom-right badge-tight status status-round status-ring status-success"></span>
 </div>
-<div class="relative w-fit">
+<div class="badge">
     <div class="avatar avatar-circle">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
     <span class="badge badge-bottom-right badge-tight status status-round status-ring status-success"></span>
 </div>`}>
                     <div className="grid items-center gap-8 mx-auto w-fit">
-                        <div className="relative w-fit">
+                        <div className="badge">
                             <div className="avatar">
                                 <span>JD</span>
                             </div>
                             <span className="badge badge-bottom-right badge-tight status status-round status-ring status-success"></span>
                         </div>
-                        <div className="relative w-fit">
+                        <div className="badge">
                             <div className="avatar avatar-circle">
                                 <img src="/img/user1.jpg" alt="User1" />
                             </div>
