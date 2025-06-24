@@ -46,6 +46,10 @@ function Sidebar() {
                     title: "Button",
                     to: "/components/button",
                 },
+                {
+                    title: "Card",
+                    to: "/components/card",
+                },
             ],
         },
     ];

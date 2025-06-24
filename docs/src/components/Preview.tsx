@@ -118,7 +118,7 @@ function Preview(props: PreviewProps) {
                 data-theme={isDarkTheme ? 'dark' : 'light'}
                 dir={dir}
             >
-                <div className="card-body flex justify-center items-center-safe min-h-[420px] max-h-[420px] w-full overflow-x-hidden overflow-y-auto">
+                <div className="card-body flex justify-center items-center-safe min-h-[420px] max-h-[420px] w-full py-0 overflow-x-hidden overflow-y-auto">
                     <div className="w-full h-fit">
                         {children}
                     </div>

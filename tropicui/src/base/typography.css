@@ -67,6 +67,5 @@
     small {
         font-size: var(--text-sm);
         line-height: var(--text-sm--line-height);
-        color: color-mix(in oklab, var(--color-base-foreground) 50%, var(--color-white));
     }
 }

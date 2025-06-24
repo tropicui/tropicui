@@ -36,6 +36,11 @@ Card component styles.
         box-shadow: var(--card-shadow);
         color: var(--color-base-foreground);
 
+        /* animation */
+        transition-property: background-color, border-color, box-shadow, color;
+        transition-duration: var(--tt-duration, var(--default-transition-duration));
+        transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+
         /* children border radius */
         & > *:is(:first-child):not(:last-child) {
             border-start-start-radius: calc(var(--card-radius) - var(--card-border-width));
@@ -73,19 +78,32 @@ Card component styles.
             --card-shadow: none;
         }
 
+        .card-title {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: --spacing(2);
+        }
+
         .card-header {
             /* layout */
+            position: relative;
             display: flex;
             align-items: center;
             gap: --spacing(4);
 
             /* dimensions */
             min-block-size: var(--card-header-size);
-            padding-inline: --spacing(4);
+            padding: --spacing(4);
 
             /* colors */
             border-block-end: 1px solid var(--card-border);
             background-color: var(--card-header-bg);
+
+            /* animation */
+            transition-property: background-color, border-color, box-shadow, color;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
             &.card-sticky {
                 position: sticky;
@@ -93,16 +111,22 @@ Card component styles.
                 z-index: 10;
             }
 
-            .card-title {
-                display: flex;
-                align-items: baseline;
-                gap: --spacing(2);
+            h1, h2, h3, h4, h5, h6 {
+                margin-block: 0;
             }
         }
 
         /* card image */
-        .card-figure {
+        figure {
+            position: relative;
             overflow: hidden;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .card-body {
@@ -112,26 +136,25 @@ Card component styles.
             padding-inline: --spacing(6);
         }
 
-        .card-actions {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: --spacing(4);
-        }
-
         .card-footer {
             /* layout */
+            position: relative;
             display: flex;
             align-items: center;
             gap: --spacing(4);
 
             /* dimensions */
             min-block-size: var(--card-footer-size);
-            padding: --spacing(4);
+            padding-inline: --spacing(4);
 
             /* colors */
             border-block-start: 1px solid var(--card-border);
             background-color: var(--card-footer-bg);
+
+            /* animation */
+            transition-property: background-color, border-color, box-shadow, color;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
             &.card-sticky {
                 position: sticky;
@@ -149,6 +172,35 @@ Card component styles.
         > :where(.alert) {
             border-radius: 0;
             box-shadow: none;
+        }
+    }
+
+    .card-actions {
+        .card & {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: --spacing(4);
+        }
+
+        .card :is(.card-header, .card-footer) & {
+            position: absolute;
+            inset-inline: 0;
+            inset-block-start: 0;
+                z-index: 1;
+
+            inline-size: 100%;
+            block-size: 100%;
+
+            padding-inline: --spacing(4);
+        }
+    }
+
+    /* icons */
+    svg, img, i {
+        .card :is(.card-header, .card-footer) & {
+            block-size: 1.25em;
+            min-inline-size: 1.25em;
         }
     }
 }
