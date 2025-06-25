@@ -454,7 +454,7 @@ function Checkbox() {
 
                 <PageFooterNav>
                     <PrevPageNav href="/components/card">Card</PrevPageNav>
-                    <NextPageNav href="/components/dropdown">Dropdown</NextPageNav>
+                    <NextPageNav href="/components/divider">Divider</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

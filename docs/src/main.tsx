@@ -66,6 +66,10 @@ const router = createBrowserRouter([
             path: "/components/checkbox",
             Component: page.Checkbox,
           },
+          {
+            path: "/components/divider",
+            Component: page.Divider,
+          },
         ]
       },
     ]

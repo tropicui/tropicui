@@ -54,6 +54,10 @@ function Sidebar() {
                     title: "Checkbox",
                     to: "/components/checkbox",
                 },
+                {
+                    title: "Divider",
+                    to: "/components/divider",
+                },
             ],
         },
     ];

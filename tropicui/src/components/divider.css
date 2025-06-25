@@ -7,25 +7,29 @@ Divider component styles.
 
 @property {string} --divider-border - Color of the divider line
 @property {string} --divider-color - Base color that influences the divider appearance
-@property {string} --divider-color-modifier - Modifier that can adjust the divider color
 @property {string} --divider-width - Thickness of the divider line
 @property {string} --divider-start - Width/height of the divider before content
 @property {string} --divider-end - Width/height of the divider after content
+@property {string} --divider-grid - Grid template columns for the divider
+
 */
 @layer components {
     .divider {
         /* modifiers */
-        --divider-border: var(--divider-color-modifier, var(--divider-color, var(--color-base-border)));
-        --divider-width: 1px;
-        --divider-start: 100%;
-        --divider-end: 100%;
+        --divider-border: var(--divider-color, var(--color-base-border));
+        --divider-width: var(--border-width);
+        --divider-start: 1fr;
+        --divider-end: 1fr;
+        --divider-grid: var(--divider-start) auto var(--divider-end);
 
         /* layout */
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: var(--divider-grid);
         align-items: center;
-        white-space: nowrap;
+        gap: --spacing(4);
 
+        /* typography */
+        white-space: nowrap;
         color: var(--divider-color, var(--color-base-foreground));
 
         /* bar */
@@ -33,38 +37,26 @@ Divider component styles.
         &::after {
             content: '';
             border-block-end-width: var(--divider-width);
+            border-inline-start-width: var(--divider-width);
             border-color: var(--divider-border);
-            block-size: --spacing(0.25);
-            inline-size: 100%;
         }
-        &:not(:empty) {
-            gap: --spacing(4);
-        }
-        &::before {
-            width: var(--divider-start);
-        }
-        &::after {
-            width: var(--divider-end);
+
+        &:where(:empty) {
+            --divider-grid: var(--divider-start) var(--divider-end);
+            gap: --spacing(0);
         }
     }
 
     /* direction */
     .divider-vertical {
         &.divider {
-            flex-direction: column;
-            block-size: 100%;
-            &::before,
-            &::after {
-                border-inline-start-width: var(--divider-width);
-                block-size: 100%;
-                inline-size: --spacing(0.25);
-            }
-            &::before {
-                block-size: var(--divider-start);
-            }
-            &::after {
-                block-size: var(--divider-end);
-            }
+            grid-template-columns: none;
+            grid-template-rows: var(--divider-grid);
+            align-items: normal;
+            align-self: stretch;
+            justify-items: center;
+
+            block-size: auto;
         }
     }
 
@@ -75,16 +67,11 @@ Divider component styles.
             border-style: dashed;
         }
     }
+
     .divider-dotted {
         &::before,
         &::after {
             border-style: dotted;
-        }
-    }
-    .divider-solid {
-        &::before,
-        &::after {
-            border-style: solid;
         }
     }
 
@@ -104,25 +91,82 @@ Divider component styles.
     .divider-danger {
         --divider-color: var(--color-danger);
     }
+
     .divider-subtle {
-        --divider-color-modifier: color-mix(in oklch, var(--divider-color, var(--color-base-border)) 20%, transparent);
+        --divider-border: light-dark(
+            color-mix(in oklab, var(--divider-color, var(--color-base-border)) 20%, var(--color-base-background)),
+            color-mix(in oklab, var(--divider-color, var(--color-base-border)) 40%, var(--color-base-background))
+        );
+        color: color-mix(in oklab, var(--divider-color, var(--color-base-foreground)) 60%, var(--color-base-background));
     }
 
-    /* content positioning */
+    /* thickness */
+    .divider-thin {
+        --divider-width: calc(var(--border-width) / 2);
+    }
+    .divider-bold {
+        --divider-width: calc(var(--border-width) * 2);
+    }
+    .divider-thick {
+        --divider-width: calc(var(--border-width) * 3);
+    }
+    .divider-thicker {
+        --divider-width: calc(var(--border-width) * 4);
+    }
+
+    /* content alignment */
     .divider-start {
-        --divider-start: calc(var(--spacing) * 10);
-    }
-    .divider-end {
-        --divider-end: calc(var(--spacing) * 10);
-    }
-    .divider-start-0 {
+        --divider-grid: auto var(--divider-end);
+
         &::before {
             content: none;
         }
     }
-    .divider-end-0 {
+    .divider-end {
+        --divider-grid: var(--divider-start) auto;
+
         &::after {
             content: none;
+        }
+    }
+
+    .divider-start-xs {
+        --divider-start: 5%;
+    }
+    .divider-start-sm {
+        --divider-start: 10%;
+    }
+    .divider-start-md {
+        --divider-start: 20%;
+    }
+    .divider-start-lg {
+        --divider-start: 30%;
+    }
+    .divider-start-xl {
+        --divider-start: 40%
+    }
+
+    .divider-end-xs {
+        --divider-end: 5%;
+    }
+    .divider-end-sm {
+        --divider-end: 10%;
+    }
+    .divider-end-md {
+        --divider-end: 20%;
+    }
+    .divider-end-lg {
+        --divider-end: 30%;
+    }
+    .divider-end-xl {
+        --divider-end: 40%
+    }
+
+    /* icons */
+    svg, img, i {
+        .divider & {
+            block-size: 1.25em;
+            min-inline-size: 1.25em;
         }
     }
 }
