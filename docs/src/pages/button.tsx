@@ -1,10 +1,10 @@
 import Breadcrumb from "../components/Breadcrumb";
 import BreadcrumbItem from "../components/BreadcrumbItem";
-import TableOfContent from "../components/TableOfContent";
 import Preview from "../components/Preview";
 import PageFooterNav from "../components/PageFooterNav";
 import PrevPageNav from "../components/PrevPageNav";
 import NextPageNav from "../components/NextPageNav";
+import TableOfContent from "../components/TableOfContent";
 
 function Button() {
     return (
@@ -54,6 +54,7 @@ function Button() {
                     <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
                         <button className="btn" disabled>Attribute</button>
                         <button className="btn btn-disabled">Class</button>
+                        <a href="/components" className="btn btn-disabled">Components</a>
                     </div>
                 </Preview>
 

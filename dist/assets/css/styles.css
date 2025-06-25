@@ -3230,15 +3230,16 @@ html {
       --checkbox-focus-outline: color-mix(in oklab, var(--color-accent) 40%, transparent);
     }
     --checkbox-focus-border: var(--color-accent);
-    --checkbox-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, transparent);
+    --checkbox-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, #fff);
     @supports (color: color-mix(in lab, red, red)) {
-      --checkbox-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+      --checkbox-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, var(--color-base-background));
     }
     --checkbox-invalid-border: var(--color-danger);
     appearance: none;
     cursor: pointer;
     block-size: var(--checkbox-size);
     min-inline-size: var(--checkbox-size);
+    max-inline-size: var(--checkbox-size);
     border: 1px solid var(--checkbox-border, color-mix(in srgb, oklch(70.8% 0 0) 50%, transparent));
     @supports (color: color-mix(in lab, red, red)) {
       border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
@@ -3298,10 +3299,9 @@ html {
     }
     &:is(:disabled, [disabled]) {
       cursor: not-allowed;
-      pointer-events: none;
       background-color: var(--checkbox-bg);
       @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--checkbox-bg) 40%, transparent);
+        background-color: color-mix(in oklab, var(--checkbox-bg) 40%, var(--color-base-background));
       }
       border-color: var(--checkbox-border, oklch(70.8% 0 0));
       @supports (color: color-mix(in lab, red, red)) {
@@ -3340,7 +3340,7 @@ html {
   .checkbox-list {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing) * 2);
+    gap: calc(var(--spacing) * 4);
   }
   .checkbox.checkbox-outline, .checkbox.checkbox-outline-bold {
     --checkbox-bg: none;
@@ -3378,18 +3378,36 @@ html {
   }
   .checkbox-xs {
     --checkbox-size: calc(var(--spacing) * 3.5);
+    label:has(&) {
+      font-size: var(--text-xs);
+    }
   }
   .checkbox-sm {
     --checkbox-size: calc(var(--spacing) * 4);
+    label:has(&) {
+      font-size: var(--text-sm);
+    }
   }
   .checkbox-lg {
     --checkbox-size: calc(var(--spacing) * 6);
+    label:has(&) {
+      font-size: var(--text-lg);
+      line-height: var(--text-2xl--line-height);
+    }
   }
   .checkbox-xl {
     --checkbox-size: calc(var(--spacing) * 7);
+    label:has(&) {
+      font-size: var(--text-xl);
+      line-height: var(--text-xl--line-height);
+    }
   }
   .checkbox-2xl {
     --checkbox-size: calc(var(--spacing) * 8);
+    label:has(&) {
+      font-size: var(--text-2xl);
+      line-height: var(--text-2xl--line-height);
+    }
   }
 }
 @layer components {
@@ -3683,10 +3701,10 @@ html {
     }
     label {
       &:has(:disabled, [disabled]) {
-        pointer-events: none;
-        color: color-mix(in srgb, oklch(43.9% 0 0), transparent 40%);
+        cursor: not-allowed;
+        color: currentColor;
         @supports (color: color-mix(in lab, red, red)) {
-          color: color-mix(in oklab, var(--color-base-foreground), transparent 40%);
+          color: color-mix(in oklab, currentColor, transparent 40%);
         }
       }
     }
@@ -3694,7 +3712,6 @@ html {
       display: flex;
       align-items: center;
       gap: calc(var(--spacing) * 1);
-      color: var(--color-base-foreground);
       font-weight: var(--font-weight-medium);
       svg, img, i {
         block-size: 1.25em;

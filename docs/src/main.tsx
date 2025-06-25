@@ -62,6 +62,10 @@ const router = createBrowserRouter([
             path: "/components/card",
             Component: page.Card,
           },
+          {
+            path: "/components/checkbox",
+            Component: page.Checkbox,
+          },
         ]
       },
     ]

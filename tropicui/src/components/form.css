@@ -63,8 +63,8 @@ Form component and field styles.
 
         label {
             &:has(:disabled, [disabled]) {
-                pointer-events: none;
-                color: color-mix(in oklab, var(--color-base-foreground), transparent 40%);
+                cursor: not-allowed;
+                color: color-mix(in oklab, currentColor, transparent 40%);
             }
         }
 
@@ -74,7 +74,6 @@ Form component and field styles.
             gap: --spacing(1);
 
             /* typography */
-            color: var(--color-base-foreground);
             font-weight: var(--font-weight-medium);
 
             svg, img, i {

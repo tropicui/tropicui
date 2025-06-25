@@ -50,6 +50,10 @@ function Sidebar() {
                     title: "Card",
                     to: "/components/card",
                 },
+                {
+                    title: "Checkbox",
+                    to: "/components/checkbox",
+                },
             ],
         },
     ];

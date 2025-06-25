@@ -27,7 +27,7 @@ Checkbox component styles.
         --checkbox-focus-outline: color-mix(in oklab, var(--color-accent) 40%, transparent);
         --checkbox-focus-border: var(--color-accent);
 
-        --checkbox-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+        --checkbox-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, var(--color-base-background));
         --checkbox-invalid-border: var(--color-danger);
 
         /* layout */
@@ -37,6 +37,7 @@ Checkbox component styles.
         /* dimensions */
         block-size: var(--checkbox-size);
         min-inline-size: var(--checkbox-size);
+        max-inline-size: var(--checkbox-size);
 
         /* colors */
         border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
@@ -107,10 +108,9 @@ Checkbox component styles.
         &:is(:disabled, [disabled]) {
             /* layout */
             cursor: not-allowed;
-            pointer-events: none;
 
             /* colors */
-            background-color: color-mix(in oklab, var(--checkbox-bg) 40%, transparent);
+            background-color: color-mix(in oklab, var(--checkbox-bg) 40%, var(--color-base-background));
             border-color: color-mix(in oklab, var(--checkbox-border, var(--color-base-dense)) 30%, transparent);
             --checkbox-shadow: none;
 
@@ -160,7 +160,7 @@ Checkbox component styles.
         /* layout */
         display: flex;
         flex-direction: column;
-        gap: --spacing(2);
+        gap: --spacing(4);
     }
 
     /* variations */
@@ -209,21 +209,44 @@ Checkbox component styles.
     /* sizes */
     .checkbox-xs {
         --checkbox-size: --spacing(3.5);
+
+        label:has(&) {
+            font-size: var(--text-xs);
+        }
     }
 
     .checkbox-sm {
         --checkbox-size: --spacing(4);
+
+        label:has(&) {
+            font-size: var(--text-sm);
+        }
     }
 
     .checkbox-lg {
         --checkbox-size: --spacing(6);
+
+        label:has(&) {
+            font-size: var(--text-lg);
+            line-height: var(--text-2xl--line-height);
+        }
     }
 
     .checkbox-xl {
         --checkbox-size: --spacing(7);
+
+        label:has(&) {
+            font-size: var(--text-xl);
+            line-height: var(--text-xl--line-height);
+        }
     }
 
     .checkbox-2xl {
         --checkbox-size: --spacing(8);
+
+        label:has(&) {
+            font-size: var(--text-2xl);
+            line-height: var(--text-2xl--line-height);
+        }
     }
 }
