@@ -58,6 +58,10 @@ function Sidebar() {
                     title: "Divider",
                     to: "/components/divider",
                 },
+                {
+                    title: "Drawer",
+                    to: "/components/drawer",
+                },
             ],
         },
     ];
@@ -68,7 +72,7 @@ function Sidebar() {
                 <div className="sticky top-14 bg-base border-r border-base-border h-full max-h-[calc(100dvh-(var(--spacing)*14))] py-4 px-8 overflow-y-auto">
                     {items.map((child) => 
                         (
-                            <nav className="">
+                            <nav className="" key={child.title}>
                                 <ul className="">
                                     <li>
                                         <div className="divider divider-start-0 my-4">
@@ -79,7 +83,7 @@ function Sidebar() {
                                     </li>
                                     {
                                         child.children.map((child) => (
-                                            <li className="mx-2">
+                                            <li className="mx-2" key={child.title}>
                                                 <NavLink
                                                     to={child.to}
                                                     className={({ isActive }) => `btn btn-block ${isActive ? '' : 'btn-clear'}`}

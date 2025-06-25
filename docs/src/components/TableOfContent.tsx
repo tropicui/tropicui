@@ -34,7 +34,7 @@ function TableOfContent(props: TableOfContentProps) {
                 <div className="">
                 {items.map((child) => 
                     (
-                        <ul className="">
+                        <ul className="" key={child.title}>
                             <li className="">
                                 <NavLink
                                     to={child.href}
@@ -46,7 +46,7 @@ function TableOfContent(props: TableOfContentProps) {
                                     <ul className="">
                                         {child.nested.map((child) =>
                                             (
-                                                <li className="">
+                                                <li className="" key={child.href}>
                                                     <NavLink
                                                         to={child.href}
                                                         className={() => `block border-s hover:border-accent py-1 ps-8 ${location.hash === child.href ? 'border-accent font-medium' : 'border-base-border not-hover:text-base-dense'}`}
