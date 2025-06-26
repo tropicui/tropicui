@@ -64,6 +64,7 @@
     }
 
     p {
+        line-height: var(--leading-loose);
         margin-block-end: --spacing(4);
     }
 

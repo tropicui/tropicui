@@ -1,7 +1,7 @@
 @layer components {
     .drawer {
         /* modifiers */
-        --drawer-w: --spacing(90);
+        --drawer-w: var(--container-md);
         --drawer-h: calc(var(--drawer-w) / 2);
 
         /* layout */
@@ -63,7 +63,7 @@
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
         /* positioning */
-        .drawer-left & {
+        .drawer-start & {
             inset-block-start: 0;
             inset-inline-start: 0;
             transform: translateX(-100%);
@@ -71,9 +71,25 @@
             block-size: 100%;
             inline-size: var(--drawer-w);
         }
-        .drawer-right & {
+        .drawer-end & {
             inset-block-start: 0;
             inset-inline-end: 0;
+            transform: translateX(100%);
+
+            block-size: 100%;
+            inline-size: var(--drawer-w);
+        }
+        .drawer-left & {
+            inset-block-start: 0;
+            left: 0;
+            transform: translateX(-100%);
+
+            block-size: 100%;
+            inline-size: var(--drawer-w);
+        }
+        .drawer-right & {
+            inset-block-start: 0;
+            right: 0;
             transform: translateX(100%);
 
             block-size: 100%;
@@ -98,23 +114,51 @@
     }
 
     /* size */
+    .drawer-3xs {
+        --drawer-w: var(--container-3xs);
+    }
+
+    .drawer-2xs {
+        --drawer-w: var(--container-2xs);
+    }
+
+    .drawer-xs {
+        --drawer-w: var(--container-xs);
+    }
+
     .drawer-sm {
-        --drawer-w: --spacing(60);
+        --drawer-w: var(--container-sm);
     }
 
     .drawer-lg {
-        --drawer-w: --spacing(150);
+        --drawer-w: var(--container-lg);
     }
 
     .drawer-xl {
-        --drawer-w: --spacing(210);
+        --drawer-w: var(--container-xl);
     }
 
     .drawer-2xl {
-        --drawer-w: --spacing(280);
+        --drawer-w: var(--container-2xl);
     }
 
     .drawer-3xl {
-        --drawer-w: --spacing(360);
+        --drawer-w: var(--container-3xl);
+    }
+
+    .drawer-4xl {
+        --drawer-w: var(--container-4xl);
+    }
+
+    .drawer-5xl {
+        --drawer-w: var(--container-5xl);
+    }
+
+    .drawer-6xl {
+        --drawer-w: var(--container-6xl);
+    }
+
+    .drawer-7xl {
+        --drawer-w: var(--container-7xl);
     }
 }

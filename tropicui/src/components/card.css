@@ -78,13 +78,6 @@ Card component styles.
             --card-shadow: none;
         }
 
-        .card-title {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: --spacing(2);
-        }
-
         .card-header {
             /* layout */
             position: relative;
@@ -94,7 +87,7 @@ Card component styles.
 
             /* dimensions */
             min-block-size: var(--card-header-size);
-            padding: --spacing(4);
+            padding-inline: --spacing(4);
 
             /* colors */
             border-block-end: 1px solid var(--card-border);
@@ -163,6 +156,13 @@ Card component styles.
             }
         }
 
+        .card-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: --spacing(4);
+        }
+
         /* center content */
         .card-center {
             display: grid;
@@ -175,24 +175,19 @@ Card component styles.
         }
     }
 
-    .card-actions {
+    .card-title {
         .card & {
             display: flex;
-            align-items: center;
             flex-wrap: wrap;
-            gap: --spacing(4);
+            align-items: baseline;
+            flex-grow: 1;
+            gap: --spacing(2);
+
+            padding-block-end: --spacing(4);
         }
 
         .card :is(.card-header, .card-footer) & {
-            position: absolute;
-            inset-inline: 0;
-            inset-block-start: 0;
-                z-index: 1;
-
-            inline-size: 100%;
-            block-size: 100%;
-
-            padding-inline: --spacing(4);
+            padding-block-start: --spacing(4);
         }
     }
 

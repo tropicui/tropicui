@@ -35,6 +35,9 @@ Accordion component styles.
 
         --join-border-width: var(--accordion-border-width);
 
+        /* dimension */
+        inline-size: 100%;
+
         /* colors */
         background-color: var(--accordion-bg, var(--color-base-background));
         border-width: var(--accordion-border-width);
@@ -66,11 +69,6 @@ Accordion component styles.
             /* colors */
             border-radius: calc(var(--accordion-border-radius) - var(--accordion-border-width));
             color: currentColor;
-
-            /* animation */
-            transition-property: background-color, border-radius, color;
-            transition-duration: var(--tt-duration, var(--default-transition-duration));
-            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
             /* disable defaault focus outline styles */
             &:is(:focus-visible, :focus) {

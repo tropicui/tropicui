@@ -22,11 +22,7 @@ function Checkbox() {
 
                 <h4 id="basic">Basic</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox">`}>
-                    <div className="mx-auto w-fit">
-                        <input type="checkbox" className="checkbox" />
-                    </div>
-                </Preview>
+                <Preview code={`<input type="checkbox" class="checkbox">`}/>
 
                 <h4 id="label">Label</h4>
 
@@ -37,350 +33,134 @@ function Checkbox() {
                     <span>Label text content will be correctly aligned with the checkbox when wrapped.</span>
                 </div>
 
-                <Preview code={`<label>
-    <input type="checkbox" class="checkbox">
-    <span>Accept terms and conditions</span>
-</label>`}>
-                    <div className="mx-auto w-fit">
-                        <label>
-                            <input type="checkbox" className="checkbox" />
-                            <span>Accept terms and conditions</span>
-                        </label>
-                    </div>
-                </Preview>
+                <Preview code={`<form class="form">
+    <label>
+        <input type="checkbox" class="checkbox">
+        <span>Accept terms and conditions</span>
+    </label>
+</form>`}/>
 
                 <h4 id="checked">Checked</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox" checked>`}>
-                    <div className="mx-auto w-fit">
-                        <input type="checkbox" className="checkbox" checked />
-                    </div>
-                </Preview>
+                <Preview code={`<input type="checkbox" class="checkbox" checked>`}/>
 
                 <h4 id="indeterminate">Indeterminate</h4>
 
                 <Preview code={`<input type="checkbox" class="checkbox" id="indeterminate-checkbox">
 <script>
     document.getElementById('indeterminate-checkbox').indeterminate = true;
-</script>`}>
-                    <div className="mx-auto w-fit">
-                        <input 
-                            type="checkbox" 
-                            className="checkbox" 
-                            ref={(el) => {
-                                if (el) el.indeterminate = true;
-                            }}
-                        />
-                    </div>
-                </Preview>
+</script>`}/>
 
                 <h4 id="disabled">Disabled</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox" disabled />
-<input type="checkbox" class="checkbox" disabled checked />`}>
-                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
-                        <input type="checkbox" className="checkbox" disabled />
-                        <input type="checkbox" className="checkbox" disabled checked />
-                    </div>
-                </Preview>
+                <Preview code={`<div class="flex gap-8">
+    <input type="checkbox" class="checkbox" disabled>
+    <input type="checkbox" class="checkbox" disabled checked>
+</div>`}/>
 
                 <h4 id="validation">Validation</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox checkbox-validate" required>`}>
-                    <div className="mx-auto w-fit">
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-validate" required
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Uncheck to see invalid state</span>
-                        </label>
-                    </div>
-                </Preview>
+                <Preview code={`<form class="form">
+    <label>
+        <input type="checkbox" class="checkbox checkbox-validate" checked required>
+        <span>Uncheck to see invalid state</span>
+    </label>
+</form>`}/>
 
                 <h4 id="invalid">Invalid</h4>
 
                 <p>Use the <code className="tag">checkbox-invalid</code> class to indicate an invalid state regardless of the <code className="tag">required</code> attribute.</p>
 
-                <Preview code={`<input type="checkbox" class="checkbox checkbox-invalid">`}>
-                    <div className="mx-auto w-fit">
-                        <input type="checkbox" className="checkbox checkbox-invalid" />
-                    </div>
-                </Preview>
+                <Preview code={`<input type="checkbox" class="checkbox checkbox-invalid">`}/>
 
                 <h3 id="styles">Styles</h3>
 
                 <h4 id="sizes">Sizes</h4>
 
-                <Preview code={`<label>
-    <input type="checkbox" class="checkbox checkbox-xs">
-    <span>Extra Small</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-sm">
-    <span>Small</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox">
-    <span>Default</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-lg">
-    <span>Large</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-xl">
-    <span>Extra Large</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-2xl">
-    <span>Huge</span>
-</label>`}>
-                    <div className="grid items-center gap-8 mx-auto w-fit">
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-xs"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Extra Small</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-sm"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Small</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Default</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-lg"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Large</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-xl"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Extra Large</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-2xl"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span className="">Huge</span>
-                        </label>
-                    </div>
-                </Preview>
+                <Preview code={`<div class="grid gap-8">
+    <label>
+        <input type="checkbox" class="checkbox checkbox-xs" checked>
+        <span>Extra Small</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-sm" checked>
+        <span>Small</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox" checked>
+        <span>Default</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-lg" checked>
+        <span>Large</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-xl" checked>
+        <span>Extra Large</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-2xl" checked>
+        <span>Huge</span>
+    </label>
+</div>`}/>
 
                 <h4 id="colours">Colours</h4>
 
-                <Preview code={`
-<label>
-    <input type="checkbox" class="checkbox checkbox-primary">
-    <span>Primary</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-accent">
-    <span>Accent</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-success">
-    <span>Success</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-warning">
-    <span>Warning</span>
-</label>
-<label>
-    <input type="checkbox" class="checkbox checkbox-danger">
-    <span>Danger</span>
-</label>`}>
-                    <div className="grid items-center gap-8 mx-auto w-fit">
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-primary"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Primary</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-accent"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Accent</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-success"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Success</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-warning"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span>Warning</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" className="checkbox checkbox-danger"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                            <span className="">Danger</span>
-                        </label>
-                    </div>
-                </Preview>
+                <Preview code={`<div class="flex flex-wrap gap-8">
+    <label>
+        <input type="checkbox" class="checkbox checkbox-primary" checked>
+        <span>Primary</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-accent" checked>
+        <span>Accent</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-success" checked>
+        <span>Success</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-warning" checked>
+        <span>Warning</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox checkbox-danger" checked>
+        <span>Danger</span>
+    </label>
+</div>`}/>
 
                 <h4 id="outline">Outline</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox checkbox-outline">
-<input type="checkbox" class="checkbox checkbox-outline checkbox-primary">
-<input type="checkbox" class="checkbox checkbox-outline checkbox-accent">
-<input type="checkbox" class="checkbox checkbox-outline checkbox-success">
-<input type="checkbox" class="checkbox checkbox-outline checkbox-warning">
-<input type="checkbox" class="checkbox checkbox-outline checkbox-danger">`}>
-                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
-                        <input type="checkbox" className="checkbox checkbox-outline"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline checkbox-primary"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline checkbox-accent"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline checkbox-success"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline checkbox-warning"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline checkbox-danger"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                    </div>
-                </Preview>
+                <Preview code={`<div class="flex flex-wrap gap-8">
+    <input type="checkbox" class="checkbox checkbox-outline" checked>
+    <input type="checkbox" class="checkbox checkbox-outline checkbox-primary" checked>
+    <input type="checkbox" class="checkbox checkbox-outline checkbox-accent" checked>
+    <input type="checkbox" class="checkbox checkbox-outline checkbox-success" checked>
+    <input type="checkbox" class="checkbox checkbox-outline checkbox-warning" checked>
+    <input type="checkbox" class="checkbox checkbox-outline checkbox-danger" checked>
+</div>`}/>
 
                 <h4 id="outline-bold">Outline Bold</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox checkbox-outline-bold">
-<input type="checkbox" class="checkbox checkbox-outline-bold checkbox-primary">
-<input type="checkbox" class="checkbox checkbox-outline-bold checkbox-accent">
-<input type="checkbox" class="checkbox checkbox-outline-bold checkbox-success">
-<input type="checkbox" class="checkbox checkbox-outline-bold checkbox-warning">
-<input type="checkbox" class="checkbox checkbox-outline-bold checkbox-danger">`}>
-                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
-                        <input type="checkbox" className="checkbox checkbox-outline-bold"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline-bold checkbox-primary"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline-bold checkbox-accent"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline-bold checkbox-success"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline-bold checkbox-warning"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-outline-bold checkbox-danger"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                    </div>
-                </Preview>
+                <Preview code={`<div class="flex flex-wrap gap-8">
+    <input type="checkbox" class="checkbox checkbox-outline-bold" checked>
+    <input type="checkbox" class="checkbox checkbox-outline-bold checkbox-primary" checked>
+    <input type="checkbox" class="checkbox checkbox-outline-bold checkbox-accent" checked>
+    <input type="checkbox" class="checkbox checkbox-outline-bold checkbox-success" checked>
+    <input type="checkbox" class="checkbox checkbox-outline-bold checkbox-warning" checked>
+    <input type="checkbox" class="checkbox checkbox-outline-bold checkbox-danger" checked>
+</div>`}/>
 
                 <h4 id="solid">Solid</h4>
 
-                <Preview code={`<input type="checkbox" class="checkbox checkbox-solid">
-<input type="checkbox" class="checkbox checkbox-solid checkbox-primary">
-<input type="checkbox" class="checkbox checkbox-solid checkbox-accent">
-<input type="checkbox" class="checkbox checkbox-solid checkbox-success">
-<input type="checkbox" class="checkbox checkbox-solid checkbox-warning">
-<input type="checkbox" class="checkbox checkbox-solid checkbox-danger">`}>
-                    <div className="flex flex-wrap items-center gap-8 mx-auto w-fit">
-                        <input type="checkbox" className="checkbox checkbox-solid"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-solid checkbox-primary"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-solid checkbox-accent"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-solid checkbox-success"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-solid checkbox-warning"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                        <input type="checkbox" className="checkbox checkbox-solid checkbox-danger"
-                                ref={(el) => {
-                                    if (el) el.checked = true;
-                                }}
-                            />
-                    </div>
-                </Preview>
+                <Preview code={`<div class="flex flex-wrap gap-8">
+    <input type="checkbox" class="checkbox checkbox-solid" checked>
+    <input type="checkbox" class="checkbox checkbox-solid checkbox-primary" checked>
+    <input type="checkbox" class="checkbox checkbox-solid checkbox-accent" checked>
+    <input type="checkbox" class="checkbox checkbox-solid checkbox-success" checked>
+    <input type="checkbox" class="checkbox checkbox-solid checkbox-warning" checked>
+    <input type="checkbox" class="checkbox checkbox-solid checkbox-danger" checked>
+</div>`}/>
 
                 <h3 id="layouts">Layouts</h3>
 
@@ -399,24 +179,7 @@ function Checkbox() {
         <input type="checkbox" class="checkbox">
         <span>Option 3</span>
     </label>
-</div>`}>
-                    <div className="mx-auto w-fit">
-                        <div className="checkbox-inline">
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                                <span>Option 1</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                                <span>Option 2</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                                <span>Option 3</span>
-                            </label>
-                        </div>
-                    </div>
-                </Preview>
+</div>`}/>
 
                 <h4 id="list">List</h4>
 
@@ -433,24 +196,7 @@ function Checkbox() {
         <input type="checkbox" class="checkbox">
         <span>Third option</span>
     </label>
-</div>`}>
-                    <div className="mx-auto w-fit">
-                        <div className="checkbox-list">
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                                <span>First option</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                                <span>Second option</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                                <span>Third option</span>
-                            </label>
-                        </div>
-                    </div>
-                </Preview>
+</div>`}/>
 
                 <PageFooterNav>
                     <PrevPageNav href="/components/card">Card</PrevPageNav>

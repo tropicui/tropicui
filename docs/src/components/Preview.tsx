@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import CodeBlock from "./CodeBlock";
 
 interface PreviewProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     code: string;
 }
 
@@ -39,9 +39,30 @@ function Preview(props: PreviewProps) {
         <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <style>
+                .stage {
+                    display: grid;
+                    align-items: center;
+
+                    &:has(> [class]) {
+                        justify-items: center;
+                    }
+
+                    & > :not([class]) {
+                        padding-block: 24px;
+                    }
+
+                    height: 100%;
+                    padding: 0 24px;
+
+                    overflow-x: auto;
+                    scrollbar-gutter: stable;
+
+                }
+            </style>
         </head>
-        <body class="bg-base-background bg-pattern-diagonal-lines transition-colors">
-            <div class="grid items-center h-[400px] p-8">
+        <body class="bg-base-background bg-pattern-diagonal-lines transition-colors h-screen">
+            <div class="@container stage">
                 ${code}
             </div>
         </body>
@@ -59,9 +80,11 @@ function Preview(props: PreviewProps) {
                 const element = elementRef.current as HTMLDivElement;
                 const containerWidth = element.getBoundingClientRect().width;
 
-                const marginTotal = (dir === 'rtl')
-                    ? currentPos - originPos + margin
-                    : originPos - currentPos + margin;
+                // const marginTotal = (dir === 'rtl')
+                //     ? currentPos - originPos + margin
+                //     : originPos - currentPos + margin;
+
+                const marginTotal = originPos - currentPos + margin;
                 
                 const marginMin = containerWidth - widthMin;
                 const marginClamped = Math.min(marginMin, Math.max(marginTotal, 0));
@@ -159,8 +182,7 @@ function Preview(props: PreviewProps) {
                     ref={iframeRef}
                     sandbox="allow-scripts allow-same-origin"
                     onLoad={handleLoad}
-                    className="card-body h-[420px] w-full p-0 pe-5"
-                    style={{scrollbarGutter: 'stable both-edges'}}
+                    className="card-body h-[420px] w-full p-0 pe-5 overflow-x-scroll"
                     srcDoc={iframeSrc}
                 >
                 </iframe>

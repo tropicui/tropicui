@@ -15,6 +15,7 @@ Breadcrumb component styles.
         ol, ul {
             /* layout */
             display: flex;
+            flex-wrap: wrap;
             gap: var(--breadcrumb-gap);
 
             li {

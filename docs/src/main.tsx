@@ -70,6 +70,10 @@ const router = createBrowserRouter([
             path: "/components/divider",
             Component: page.Divider,
           },
+          {
+            path: "/components/drawer",
+            Component: page.Drawer,
+          },
         ]
       },
     ]
