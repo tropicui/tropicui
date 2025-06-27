@@ -7,24 +7,60 @@ Form component and field styles.
 */
 @layer components {
     .form {
-        .form-field {
+        --field-gap: --spacing(8);
+
+        .form-field,
+        .form-field-inline {
             /* modifiers */
-            --field-cols: 1;
+            /* --field-cols: 1; */
 
             /* layout */
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
             align-content: start;
-            align-items: start;
-            gap: --spacing(3);
+            align-items: baseline;
+            gap: --spacing(2);
 
-            &.field-row {
-                --field-cols: 2;
-                grid-template-columns: minmax(--spacing(16), --spacing(32)) 1fr;
+            &:has(+ &) {
+                margin-block-end: var(--field-gap);
             }
         }
-        .form-field:has(+ .form-field) {
-            margin-block-end: --spacing(4);
+
+        .form-field-inline {
+            /* --field-cols: 3; */
+            grid-template-columns: minmax(calc(var(--container-3xs) / 2), 35%) minmax(var(--container-3xs), 1fr);
+        }
+
+        &.form-compact {
+            --field-gap: --spacing(4);
+        }
+
+        .form-helper {
+            /* layout */
+            display: block;
+
+            /* dimensions */
+            margin-block: --spacing(1);
+
+            /* color */
+            color: color-mix(in oklab, currentColor, var(--color-base-background) 50%);
+
+            /* show invalid class when input invalid */
+            &.invalid {
+                opacity: 0;
+
+                /* color */
+                color: var(--color-danger);
+
+                :where(.form-field:has(:user-invalid, [class*="-invalid"])) & {
+                    opacity: 1;
+                }
+
+                /* animation */
+                transition-property: opacity;
+                transition-duration: var(--tt-duration, var(--default-transition-duration));
+                transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+            }
         }
 
         .fieldset {
@@ -61,13 +97,6 @@ Form component and field styles.
             }
         }
 
-        label {
-            &:has(:disabled, [disabled]) {
-                cursor: not-allowed;
-                color: color-mix(in oklab, currentColor, transparent 40%);
-            }
-        }
-
         .label {
             display: flex;
             align-items: center;
@@ -81,19 +110,12 @@ Form component and field styles.
                 min-inline-size: 1.25em;
             }
         }
+    }
 
-        /* show invalid class when input invalid */
-        .invalid {
-            opacity: 0;
-
-            :where(.form-field:has(:user-invalid, [class*="-invalid"])) & {
-                opacity: 1;
-            }
-
-            /* animation */
-            transition-property: opacity;
-            transition-duration: var(--tt-duration, var(--default-transition-duration));
-            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
+    label {
+        &:has(:disabled, [disabled]) {
+            cursor: not-allowed;
+            color: color-mix(in oklab, currentColor, transparent 40%);
         }
     }
 }

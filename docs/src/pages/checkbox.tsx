@@ -54,8 +54,14 @@ function Checkbox() {
                 <h4 id="disabled">Disabled</h4>
 
                 <Preview code={`<div class="flex gap-8">
-    <input type="checkbox" class="checkbox" disabled>
-    <input type="checkbox" class="checkbox" disabled checked>
+    <label>
+        <input type="checkbox" class="checkbox" disabled>
+        <span>Disabled unchecked</span>
+    </label>
+    <label>
+        <input type="checkbox" class="checkbox" disabled checked>
+        <span>Disabled checked</span>
+    </label>
 </div>`}/>
 
                 <h4 id="validation">Validation</h4>

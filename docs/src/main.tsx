@@ -78,6 +78,10 @@ const router = createBrowserRouter([
             path: "/components/dropdown",
             Component: page.Dropdown,
           },
+          {
+            path: "/components/form",
+            Component: page.Form,
+          },
         ]
       },
     ]
