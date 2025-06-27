@@ -3585,7 +3585,7 @@ html {
   .input {
     --input-bg: var(--input-color);
     @supports (color: color-mix(in lab, red, red)) {
-      --input-bg: color-mix(in oklab, var(--input-color) 15%, transparent);
+      --input-bg: color-mix(in oklab, var(--input-color) 15%, var(--color-base-background));
     }
     --input-border: var(--input-color, var(--color-base-border));
     --input-border-width: var(--border-width);
@@ -3609,9 +3609,10 @@ html {
     transition-property: background-color, border-color, box-shadow, color, outline;
     transition-duration: var(--tt-duration, var(--default-transition-duration));
     transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-    &:is(input), input {
+    &:is(input), > input {
       overflow: hidden;
       inline-size: 100%;
+      min-inline-size: var(--input-size);
       padding-inline: var(--input-gap);
       color: var(--input-text);
       font-size: calc(var(--input-size) * 0.4);
@@ -3619,6 +3620,8 @@ html {
       &::placeholder {
         font-style: italic;
         font-weight: var(--font-weight-light);
+        color: var(--input-text);
+        opacity: .6;
       }
       &:read-only:not(:disabled, [disabled]) {
         background-color: var(--color-base-border);
@@ -3626,15 +3629,14 @@ html {
       &:is([type="file"]) {
         padding-inline-start: 0px;
         &:not(:disabled, [disabled]) {
-          background-color: var(--input-bg);
+          background-color: var(--input-bg, var(--color-base));
         }
         &::file-selector-button {
           block-size: 100%;
           min-inline-size: var(--input-size);
           padding-inline: var(--input-gap);
           margin-inline-end: var(--input-gap);
-          background-color: var(--input-bg);
-          border-inline-end: 1px solid var(--color-base-border);
+          border-inline-end: var(--input-border-width) solid var(--input-color, var(--color-base-border));
         }
         @media (hover: hover) {
           &::file-selector-button:hover {
@@ -3656,13 +3658,19 @@ html {
       cursor: not-allowed;
       background-color: var(--color-base-border);
       box-shadow: none;
+      input {
+        cursor: not-allowed;
+      }
     }
     &:not(.input-nofocus):focus-visible, &:not(.input-nofocus):has(:focus-visible) {
       outline-width: 3px;
-      border-color: var(--input-color, var(--color-accent));
-      background-color: var(--input-bg);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--input-bg), transparent 80%);
+      &:not(.input-solid) {
+        --input-text: var(--color-base-foreground);
+        border-color: var(--input-color, var(--color-accent));
+        background-color: var(--input-bg, oklch(98.5% 0 0));
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--input-bg, var(--color-base)), var(--color-base-background) 80%);
+        }
       }
     }
     &.input-validate:user-invalid, &.input-validate:has(:user-invalid), &.input-invalid, &:has(.input-invalid) {
@@ -3678,24 +3686,27 @@ html {
         outline-width: 0;
         block-size: 100%;
         & ~ .btn {
-          border-inline-start: 1px solid var(--color-base-border);
+          border-inline-start: var(--input-border-width) solid var(--input-border);
         }
       }
-      > :where(:not(input, .btn)) {
+      > :where(:not(input, .btn, .dropdown, .input-prefix, .input-suffix)) {
         padding-inline: var(--input-gap) calc(var(--spacing) * 0);
         color: var(--input-label);
         font-size: calc(var(--input-size) * 0.4);
+        -webkit-user-select: none;
+        user-select: none;
         &:last-child {
           padding-inline: calc(var(--spacing) * 0) var(--input-gap);
         }
       }
-      > .btn {
+      > .btn, > .dropdown, > .dropdown > .btn {
         block-size: 100%;
         min-inline-size: var(--input-size);
         border: none;
         border-radius: 0;
+        box-shadow: none;
         &:has(~ input) {
-          border-inline-end: 1px solid var(--color-base-border);
+          border-inline-end: var(--input-border-width) solid var(--input-border);
         }
       }
       > :is(:first-child) {
@@ -3707,7 +3718,7 @@ html {
         border-end-end-radius: calc(var(--input-radius) - var(--input-border-width));
       }
     }
-    :where(svg, img) {
+    :where(svg, img, i) {
       block-size: 1.25em;
       .btn & {
         width: auto;
@@ -3716,19 +3727,23 @@ html {
     }
     &:has(.input-prefix, .input-suffix) {
       .input-prefix, .input-suffix {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         block-size: 100%;
         min-inline-size: var(--input-size);
-        align-content: center;
-        justify-items: center;
-        text-align: center;
         padding-inline: calc(var(--spacing) * 2);
-        background-color: var(--color-base-airy);
+        background-color: var(--input-bg, var(--color-base-airy));
+        color: var(--input-color, currentColor);
+        .input-solid & {
+          color: var(--input-text, currentColor);
+        }
       }
       .input-prefix {
-        border-inline-end: 1px solid var(--color-base-border);
+        border-inline-end: var(--input-border-width) solid var(--input-border);
       }
       .input-suffix {
-        border-inline-start: 1px solid var(--color-base-border);
+        border-inline-start: var(--input-border-width) solid var(--input-border);
       }
     }
   }
@@ -3738,9 +3753,9 @@ html {
     background: none;
   }
   .input-solid {
+    --input-bg: var(--input-color, var(--color-base));
     border: none;
     box-shadow: none;
-    background-color: var(--color-base-airy);
   }
   .input.input-outline, .input.input-outline-bold {
     background: none;
@@ -3751,18 +3766,33 @@ html {
   }
   .input-primary {
     --input-color: var(--color-primary);
+    &.input-solid {
+      --input-text: var(--color-primary-content);
+    }
   }
   .input-accent {
     --input-color: var(--color-accent);
+    &.input-solid {
+      --input-text: var(--color-accent-content);
+    }
   }
   .input-success {
     --input-color: var(--color-success);
+    &.input-solid {
+      --input-text: var(--color-success-content);
+    }
   }
   .input-warning {
     --input-color: var(--color-warning);
+    &.input-solid {
+      --input-text: var(--color-warning-content);
+    }
   }
   .input-danger {
     --input-color: var(--color-danger);
+    &.input-solid {
+      --input-text: var(--color-danger-content);
+    }
   }
   .input-xs {
     --input-size: calc(var(--spacing) * 8);

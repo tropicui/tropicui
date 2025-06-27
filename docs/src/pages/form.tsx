@@ -119,7 +119,7 @@ function Form() {
 
                 <Preview code={`<form class="form">
     <div class="form-field">
-        <label class="label">Your name</label>
+        <label class="label">Your name <span class="text-danger">*</span></label>
         <input type="text" class="input input-validate" value="Erase me" placeholder="Full name" required>
         <span class="form-helper invalid">Name cannot be empty.</span>
     </div>

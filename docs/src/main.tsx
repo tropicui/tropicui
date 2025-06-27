@@ -82,6 +82,10 @@ const router = createBrowserRouter([
             path: "/components/form",
             Component: page.Form,
           },
+          {
+            path: "/components/input",
+            Component: page.Input,
+          },
         ]
       },
     ]

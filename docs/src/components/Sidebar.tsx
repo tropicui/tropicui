@@ -70,6 +70,10 @@ function Sidebar() {
                     title: "Form",
                     to: "/components/form",
                 },
+                {
+                    title: "Input",
+                    to: "/components/input",
+                },
             ],
         },
     ];
