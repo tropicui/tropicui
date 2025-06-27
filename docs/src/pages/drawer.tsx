@@ -39,7 +39,7 @@ function Drawer() {
     <label class="btn" for="drawer-basic">Open Drawer</label>
 </div>`}/>
 
-                <h3 id="positions">Positions</h3>
+                <h3 id="alignment">Alignment</h3>
 
                 <h4 id="leading">Leading</h4>
 
@@ -425,8 +425,8 @@ function Drawer() {
                     ]
                 },
                 {
-                    title: "Positions",
-                    href: "#positions",
+                    title: "Alignment",
+                    href: "#alignment",
                     nested: [
                         {
                             title: "Leading",

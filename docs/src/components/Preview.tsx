@@ -57,7 +57,6 @@ function Preview(props: PreviewProps) {
 
                     overflow-x: auto;
                     scrollbar-gutter: stable;
-
                 }
             </style>
         </head>

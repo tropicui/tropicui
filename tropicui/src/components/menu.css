@@ -10,6 +10,9 @@
         padding: --spacing(0);
         /* overflow: hidden; */
 
+        /* dimensions */
+        min-width: var(--menu-size, auto);
+
         /* animation */
         transition-property: height, visibility;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
@@ -58,8 +61,64 @@
 
                 li .btn {
                     opacity: 0.7;
+
+                    padding-inline-start: --spacing(9);
                 }
             }
         }
+    }
+
+    /* Menu button alignment */
+    ul.menu-start {
+        li .btn {
+            justify-content: start;
+        }
+    }
+
+    ul.menu-end {
+        li .btn {
+            justify-content: end;
+        }
+    }
+
+    /* Sizes */
+    ul.menu-3xs {
+        --menu-size: calc(var(--container-3xs) / 2);
+    }
+    ul.menu-2xs {
+        --menu-size: calc(var(--container-2xs) / 2);
+    }
+    ul.menu-xs {
+        --menu-size: calc(var(--container-xs) / 2);
+    }
+    ul.menu-sm {
+        --menu-size: calc(var(--container-sm) / 2);
+    }
+    ul.menu-md {
+        --menu-size: calc(var(--container-md) / 2);
+    }
+    ul.menu-lg {
+        --menu-size: calc(var(--container-lg) / 2);
+    }
+    ul.menu-xl {
+        --menu-size: calc(var(--container-xl) / 2);
+    }
+    ul.menu-2xl {
+        --menu-size: calc(var(--container-2xl) / 2);
+    }
+    ul.menu-3xl {
+        --menu-size: calc(var(--container-3xl) / 2);
+    }
+    ul.menu-4xl {
+        --menu-size: calc(var(--container-4xl) / 2);
+    }
+    ul.menu-5xl {
+        --menu-size: calc(var(--container-5xl) / 2);
+    }
+    ul.menu-6xl {
+        --menu-size: calc(var(--container-6xl) / 2);
+    }
+    ul.menu-7xl {
+        --menu-size: calc(var(--container-7xl) / 2);
     }
 }

@@ -74,6 +74,10 @@ const router = createBrowserRouter([
             path: "/components/drawer",
             Component: page.Drawer,
           },
+          {
+            path: "/components/dropdown",
+            Component: page.Dropdown,
+          },
         ]
       },
     ]

@@ -62,6 +62,10 @@ function Sidebar() {
                     title: "Drawer",
                     to: "/components/drawer",
                 },
+                {
+                    title: "Dropdown",
+                    to: "/components/dropdown",
+                },
             ],
         },
     ];
