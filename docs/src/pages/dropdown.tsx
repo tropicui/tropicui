@@ -28,7 +28,25 @@ function Dropdown() {
         <span>Dropdown</span>
     </button>
     <div class="dropdown-content">
-        <ul class="menu">
+        <ul class="menu menu-md">
+            <li><button class="btn btn-clear">Profile</button></li>
+            <li><button class="btn btn-clear">Settings</button></li>
+            <li><button class="btn btn-clear">Help</button></li>
+            <li><button class="btn btn-clear">Logout</button></li>
+        </ul>
+    </div>
+</div>`}/>
+
+                <h4 id="open">Open</h4>
+
+                <p>Use the <code className="tag">dropdown-open</code> class on <code className="tag">dropdown-content</code> to keep the dropdown open.</p>
+
+                <Preview code={`<div class="dropdown">
+    <button class="btn dropdown-toggle">
+        <span>Dropdown Open</span>
+    </button>
+    <div class="dropdown-content dropdown-open">
+        <ul class="menu menu-md">
             <li><button class="btn btn-clear">Profile</button></li>
             <li><button class="btn btn-clear">Settings</button></li>
             <li><button class="btn btn-clear">Help</button></li>
@@ -202,6 +220,7 @@ function Dropdown() {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>
                     <span>Profile</span>
+                    <div class="grow"></div>
                 </button>
             </li>
             <li>
@@ -211,6 +230,7 @@ function Dropdown() {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                     <span>Settings</span>
+                    <div class="grow"></div>
                 </button>
             </li>
             <li>
@@ -219,6 +239,7 @@ function Dropdown() {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
                     </svg>
                     <span>Logout</span>
+                    <div class="grow"></div>
                 </button>
             </li>
         </ul>
@@ -236,7 +257,7 @@ function Dropdown() {
             </svg>
         </button>
         <div class="dropdown-content">
-            <ul class="menu menu-md menu-start">
+            <ul class="menu menu-md">
                 <li>
                     <button class="btn btn-clear">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -259,16 +280,18 @@ function Dropdown() {
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
-                    <ul class="menu menu-md menu-start">
+                    <ul class="menu">
                         <li>
                             <button class="btn btn-clear">Rename</button>
+                        </li>
+                        <li>
                             <button class="btn btn-clear">Move</button>
                         </li>
                     </ul>
                 </li>
             </ul>
             <div class="divider"></div>
-            <ul class="menu menu-start">
+            <ul class="menu">
                 <li>
                     <button class="btn btn-clear btn-danger">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -292,25 +315,35 @@ function Dropdown() {
         <span>Filter</span>
     </button>
     <div class="dropdown-content">
-        <div class="menu">
-            <button class="btn btn-clear">All Items</button>
-            <button class="btn btn-clear">
-                <span class="status status-accent"></span>
-                <span>Active</span>
-            </button>
-            <button class="btn btn-clear">
-                <span class="status status-danger"></span>
-                <span>Inactive</span>
-            </button>
-            <button class="btn btn-clear">
-                <span class="status status-warning"></span>
-                <span>Pending</span>
-            </button>
-            <button class="btn btn-clear">
-                <span class="status status-success"></span>
-                <span>Completed</span>
-            </button>
-        </div>
+        <ul class="menu menu-inline">
+            <li>
+                <button class="btn btn-clear">All Items</button>
+            </li>
+            <li>
+                <button class="btn btn-clear">
+                    <span class="status status-accent"></span>
+                    <span>Active</span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-clear">
+                    <span class="status status-danger"></span>
+                    <span>Inactive</span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-clear">
+                    <span class="status status-warning"></span>
+                    <span>Pending</span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-clear">
+                    <span class="status status-success"></span>
+                    <span>Completed</span>
+                </button>
+            </li>
+        </ul>
     </div>
 </div>`}/>
 
@@ -335,6 +368,27 @@ function Dropdown() {
     </div>
 </div>`}/>
 
+                <h4 id="form">Form</h4>
+
+                <Preview code={`<div class="dropdown">
+    <button class="btn dropdown-toggle">
+        <span>Trade</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+    </button>
+    <div class="dropdown-content p-1">
+        <form class="form">
+            <div class="sink w-80">
+                <div class="form-helper">Available: 200.000 USDT</div>
+                <input type="text" class="input" placeholder="Price">
+                <input type="text" class="input" placeholder="Amount">
+                <button class="btn btn-danger">Sell BTC</button>
+            </div>
+        </form>
+    </div>
+</div>`}/>
+
                 <PageFooterNav>
                     <PrevPageNav href="/components/drawer">Drawer</PrevPageNav>
                     <NextPageNav href="/components/form">Form</NextPageNav>
@@ -348,6 +402,10 @@ function Dropdown() {
                         {
                             title: "Basic",
                             href: "#basic",
+                        },
+                        {
+                            title: "Open",
+                            href: "#open",
                         },
                     ]
                 },
@@ -396,6 +454,10 @@ function Dropdown() {
                         {
                             title: "Card",
                             href: "#card",
+                        },
+                        {
+                            title: "Form",
+                            href: "#form",
                         },
                     ]
                 },

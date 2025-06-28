@@ -98,6 +98,7 @@ Accordion component styles.
             mask-repeat: no-repeat;
             mask-type: alpha;
             background-color: currentColor;
+            flex: none;
             block-size: --spacing(5);
             inline-size: --spacing(5);
 

@@ -194,6 +194,7 @@ Card component styles.
     /* icons */
     svg, img, i {
         .card :is(.card-header, .card-footer) & {
+            flex: none;
             block-size: 1.25em;
             min-inline-size: 1.25em;
         }

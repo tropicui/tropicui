@@ -17,7 +17,8 @@
             visibility: hidden;
             margin-block: --spacing(1.5);
 
-            &:has(.menu .btn:is(:focus):not(:focus-visible)) {
+            &.dropdown-open,
+            &:has(:focus,:focus-visible) {
                 height: auto;
                 visibility: visible;
             }
@@ -50,10 +51,6 @@
             transition-property: height,visibility;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-
-            > .menu {
-                padding: --spacing(1);
-            }
         }
 
         /* directions */

@@ -86,6 +86,10 @@ const router = createBrowserRouter([
             path: "/components/input",
             Component: page.Input,
           },
+          {
+            path: "/components/menu",
+            Component: page.Menu,
+          },
         ]
       },
     ]

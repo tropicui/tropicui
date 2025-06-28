@@ -45,6 +45,7 @@ Alert component styles.
 
         /* icons */
         :where(svg, img, i) {
+            flex: none;
             block-size: 1.25em;
             min-inline-size: 1.25em;
             color: var(--alert-fg);

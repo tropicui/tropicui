@@ -23,7 +23,7 @@ Button component styles.
         --btn-bg: var(--btn-color, var(--color-base));
         --btn-fg: var(--color-base-foreground);
         --btn-soft-bg: light-dark(
-            color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 12%, var(--color-base-background)),
+            color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 20%, var(--color-base-background)),
             color-mix(in oklab, var(--btn-color, var(--color-base-dense)) 20%, var(--color-base-background))
         );
         --btn-border-width: var(--border-width);
@@ -83,9 +83,10 @@ Button component styles.
             outline-width: 2px;
         }
 
-        &:is(:active, .btn-active),
-        &:is(.tab):has(input:checked):not(:hover),
-        .menu &:is(:focus):not(:focus-visible) {
+        &:is(:active, .btn-active)
+        ,&:is(.tab):has(input:checked):not(:hover)
+        /* ,ul.menu &:is(:focus):not(:focus-visible):has(~ ul.menu) */
+        {
             --btn-bg: light-dark(
                 color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-foreground) 20%),
                 color-mix(in oklab, var(--btn-color, var(--color-base)), var(--color-base-background) 25%)
@@ -291,6 +292,7 @@ Button component styles.
     /* icons */
     svg, img, i {
         .btn & {
+            flex: none;
             block-size: 1.25em;
             min-inline-size: 1.25em;
         }

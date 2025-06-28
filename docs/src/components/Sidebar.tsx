@@ -74,6 +74,10 @@ function Sidebar() {
                     title: "Input",
                     to: "/components/input",
                 },
+                {
+                    title: "Menu",
+                    to: "/components/menu",
+                },
             ],
         },
     ];
@@ -85,14 +89,12 @@ function Sidebar() {
                     {items.map((child) => 
                         (
                             <nav className="" key={child.title}>
-                                <ul className="">
-                                    <li>
-                                        <div className="divider divider-start-0 my-4">
-                                            <span className="text-sm font-medium text-base-dense">
-                                                {child.title.toUpperCase()}
-                                            </span>
-                                        </div>
-                                    </li>
+                                <div className="divider divider-start-0 my-4">
+                                    <span className="text-sm font-medium text-base-dense">
+                                        {child.title.toUpperCase()}
+                                    </span>
+                                </div>
+                                <ul className="menu">
                                     {
                                         child.children.map((child) => (
                                             <li className="mx-2" key={child.title}>

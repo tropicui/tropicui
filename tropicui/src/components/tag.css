@@ -129,6 +129,7 @@ Tag component styles.
     /* icon */
     svg, img, i {
         .tag & {
+            flex: none;
             block-size: 1.3em;
             min-inline-size: 1.3em;
         }

@@ -49,11 +49,11 @@ function Preview(props: PreviewProps) {
                     }
 
                     & > :not([class]) {
-                        padding-block: 24px;
+                        // padding-block: 24px;
                     }
 
                     height: 100%;
-                    padding: 0 24px;
+                    padding-inline: 24px;
 
                     overflow-x: auto;
                     scrollbar-gutter: stable;

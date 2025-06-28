@@ -165,6 +165,7 @@ Divider component styles.
     /* icons */
     svg, img, i {
         .divider & {
+            flex: none;
             block-size: 1.25em;
             min-inline-size: 1.25em;
         }

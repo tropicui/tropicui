@@ -67,6 +67,7 @@ Avatar component styles.
 
         /* icon */
         :where(svg, i) {
+            flex: none;
             block-size: 1.25em;
             min-inline-size: 1.25em;
             margin-inline: auto;

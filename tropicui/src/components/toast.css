@@ -83,6 +83,7 @@ Toast component styles.
         /* x close button */
         input.toast-close[type="radio"] {
             appearance: none;
+
             &::after {
                 content: "";
                 mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>');
@@ -90,6 +91,7 @@ Toast component styles.
                 mask-type: alpha;
                 background-color: currentColor;
                 color: var(--toast-fg, var(--color-base-dense));
+                flex: none;
                 block-size: --spacing(5);
                 inline-size: --spacing(5);
             }

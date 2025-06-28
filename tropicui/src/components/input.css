@@ -194,6 +194,7 @@ Input component styles.
         }
 
         :where(svg, img, i) {
+            flex: none;
             block-size: 1.25em;
 
             .btn & {
