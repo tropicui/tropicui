@@ -10,24 +10,12 @@ function Preview(props: PreviewProps) {
     const { children, code } = props;
     const [isDarkTheme, setDarkTheme] = useState(false);
     const [dir, setDir] = useState('ltr');
-    const [isCopied, setCopied] = useState(false);
     const [margin, setMargin] = useState(0);
     const [isMouseDown, setMouseDown] = useState(false);
     const [originPos, setOriginPos] = useState(-1);
     const elementRef = useRef<HTMLDivElement>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const widthMin = 250; // px
-
-    const copyAndReset = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCopied(event.target.checked);
-
-        navigator.clipboard.writeText(code);
-
-        // Reset the copied state after 2 seconds
-        setTimeout(() => {
-            setCopied(false);
-        }, 2000);
-    }
 
     const handleMouseDown = (event: React.MouseEvent) => {
         setMouseDown(true);
@@ -149,7 +137,7 @@ function Preview(props: PreviewProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                     </svg>
                 </label>
-                <label className="btn btn-sm btn-icon btn-toggle">
+                <label className="btn btn-sm btn-icon btn-toggle tooltip tooltip-primary tooltip-top" data-tooltip="Toggle Text Direction">
                     <input
                         type="checkbox"
                         checked={dir === 'ltr' ? false : true}
@@ -157,19 +145,6 @@ function Preview(props: PreviewProps) {
                     />
                     <span className="scale-x-90">LTR</span>
                     <span className="scale-x-90 btn-toggled-icon">RTL</span>
-                </label>
-                <label className={`btn btn-sm btn-icon btn-toggle tooltip tooltip-primary tooltip-top ${isCopied ? 'text-success' : ''}`} data-tooltip={isCopied ? 'Copied!' : 'Copy Code'}>
-                    <input
-                        type="checkbox"
-                        checked={isCopied}
-                        onChange={copyAndReset}
-                    />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="btn-toggled-icon">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                    </svg>
                 </label>
             </div>
             <div
