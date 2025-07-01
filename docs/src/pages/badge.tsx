@@ -24,7 +24,7 @@ function Badge() {
 
                 <p>Badge must be positioned using one of the four positioning classes.</p>
 
-                <Preview code={`<div class="grid grid-cols-2 items-center gap-8">
+                <Preview code={`<div class="grid justify-items-center gap-8">
     <div class="badge">
         <div class="badge-top-left status status-success"></div>
         <button class="btn">Top Left</button>

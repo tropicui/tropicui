@@ -23,6 +23,8 @@ function Drawer() {
 
                 <h4 id="basic">Basic</h4>
 
+                <p>Drawer can be closed by clicking outside of the drawer.</p>
+
                 <Preview code={`<div class="drawer drawer-left">
     <label class="drawer-toggle">
         <input type="checkbox" id="drawer-basic">
@@ -35,9 +37,26 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-basic">Open Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-basic">Open Drawer</label>`}/>
+
+                <h4 id="close">Close</h4>
+
+                <p>A <code className="tag">&lt;label&gt;</code> targeting the checkbox <code className="tag">id</code> can be used to close the drawer.</p>
+
+                <Preview code={`<div class="drawer drawer-left">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-close">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h3>Drawer Content</h3>
+            <p>This is the drawer content.</p>
+            <label class="btn" for="drawer-close">Close Drawer</label>
+        </div>
+    </div>
+</div>
+
+<label class="btn" for="drawer-close">Open Drawer</label>`}/>
 
                 <h3 id="alignment">Alignment</h3>
 
@@ -55,9 +74,7 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-start">Open Leading Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-start">Open Leading Drawer</label>`}/>
 
                 <h4 id="trailing">Trailing</h4>
 
@@ -73,9 +90,7 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-end">Open Trailing Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-end">Open Trailing Drawer</label>`}/>
 
                 <h4 id="left">Left</h4>
 
@@ -91,9 +106,7 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-left">Open Left Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-left">Open Left Drawer</label>`}/>
 
                 <h4 id="right">Right</h4>
 
@@ -109,9 +122,7 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-right">Open Right Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-right">Open Right Drawer</label>`}/>
 
                 <h4 id="top">Top</h4>
 
@@ -127,9 +138,7 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-top">Open Top Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-top">Open Top Drawer</label>`}/>
 
                 <h4 id="bottom">Bottom</h4>
 
@@ -145,9 +154,7 @@ function Drawer() {
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-bottom">Open Bottom Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-bottom">Open Bottom Drawer</label>`}/>
 
                 <h3 id="sizes">Sizes</h3>
 
@@ -159,14 +166,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>3XS Drawer</h3>
-            <p>A 3XS drawer size.</p>
+            <h4>3XS Left Drawer</h4>
+            <p>A 3XS left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-3xs">Open 3XS Drawer</label>
+<div class="drawer drawer-top drawer-3xs">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-3xs-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>3XS Top Drawer</h4>
+            <p>A 3XS top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-3xs">Open 3XS Left Drawer</label>
+    <label class="btn" for="drawer-3xs-top">Open 3XS Top Drawer</label>
 </div>`}/>
 
                 <h4 id="2xs">2XS Small</h4>
@@ -177,14 +197,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>2XS Drawer</h3>
-            <p>A 2XS drawer size.</p>
+            <h4>2XS Left Drawer</h4>
+            <p>A 2XS left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-2xs">Open 2XS Drawer</label>
+<div class="drawer drawer-top drawer-2xs">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-2xs-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>2XS Top Drawer</h4>
+            <p>A 2XS top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-2xs">Open 2XS Left Drawer</label>
+    <label class="btn" for="drawer-2xs-top">Open 2XS Top Drawer</label>
 </div>`}/>
 
                 <h4 id="x-small">Extra Small</h4>
@@ -195,14 +228,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>Extra Small Drawer</h3>
-            <p>A extra smaller drawer size.</p>
+            <h4>Extra Small Left Drawer</h4>
+            <p>An extra small left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-xs">Open Extra Small Drawer</label>
+<div class="drawer drawer-top drawer-xs">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-xs-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>Extra Small Top Drawer</h4>
+            <p>An extra small top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-xs">Open Extra Small Left Drawer</label>
+    <label class="btn" for="drawer-xs-top">Open Extra Small Top Drawer</label>
 </div>`}/>
 
                 <h4 id="small">Small</h4>
@@ -213,14 +259,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>Small Drawer</h3>
-            <p>A smaller drawer size.</p>
+            <h4>Small Left Drawer</h4>
+            <p>A small left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-sm">Open Small Drawer</label>
+<div class="drawer drawer-top drawer-sm">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-sm-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>Small Top Drawer</h4>
+            <p>A small top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-sm">Open Small Left Drawer</label>
+    <label class="btn" for="drawer-sm-top">Open Small Top Drawer</label>
 </div>`}/>
 
                 <h4 id="large">Large</h4>
@@ -231,14 +290,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>Large Drawer</h3>
-            <p>A larger drawer size.</p>
+            <h4>Large Left Drawer</h4>
+            <p>A large left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-lg">Open Large Drawer</label>
+<div class="drawer drawer-top drawer-lg">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-lg-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>Large Top Drawer</h4>
+            <p>A large top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-lg">Open Large Left Drawer</label>
+    <label class="btn" for="drawer-lg-top">Open Large Top Drawer</label>
 </div>`}/>
 
                 <h4 id="extra-large">Extra Large</h4>
@@ -249,15 +321,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>Extra Large Drawer</h3>
-            <p>An extra large drawer size.</p>
-            <label class="btn" for="drawer-xl">Close</label>
+            <h4>Extra Large Left Drawer</h4>
+            <p>An extra large left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-xl">Open Extra Large Drawer</label>
+<div class="drawer drawer-top drawer-xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>Extra Large Top Drawer</h4>
+            <p>An extra large top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-xl">Open Extra Large Left Drawer</label>
+    <label class="btn" for="drawer-xl-top">Open Extra Large Top Drawer</label>
 </div>`}/>
 
                 <h4 id="2xl">2XL</h4>
@@ -268,15 +352,27 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>2XL Drawer</h3>
-            <p>A 2XL drawer size.</p>
-            <label class="btn" for="drawer-2xl">Close</label>
+            <h4>2XL Left Drawer</h4>
+            <p>A 2XL left drawer size.</p>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-2xl">Open 2XL Drawer</label>
+<div class="drawer drawer-top drawer-2xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-2xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>2XL Top Drawer</h4>
+            <p>A 2XL top drawer size.</p>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-2xl">Open 2XL Left Drawer</label>
+    <label class="btn" for="drawer-2xl-top">Open 2XL Top Drawer</label>
 </div>`}/>
 
                 <h4 id="3xl">3XL</h4>
@@ -287,15 +383,29 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>3XL Drawer</h3>
-            <p>A 3XL drawer size.</p>
-            <label class="btn" for="drawer-3xl">Close</label>
+            <h4>3XL Left Drawer</h4>
+            <p>A 3XL left drawer size.</p>
+            <label class="btn" for="drawer-3xl">Close Drawer</label>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-3xl">Open 3XL Drawer</label>
+<div class="drawer drawer-top drawer-3xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-3xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>3XL Top Drawer</h4>
+            <p>A 3XL top drawer size.</p>
+            <label class="btn" for="drawer-3xl-top">Close Drawer</label>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-3xl">Open 3XL Left Drawer</label>
+    <label class="btn" for="drawer-3xl-top">Open 3XL Top Drawer</label>
 </div>`}/>
 
                 <h4 id="4xl">4XL</h4>
@@ -306,15 +416,29 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>4XL Drawer</h3>
-            <p>A 4XL drawer size.</p>
-            <label class="btn" for="drawer-4xl">Close</label>
+            <h4>4XL Left Drawer</h4>
+            <p>A 4XL left drawer size.</p>
+            <label class="btn" for="drawer-4xl">Close Drawer</label>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-4xl">Open 4XL Drawer</label>
+<div class="drawer drawer-top drawer-4xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-4xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>4XL Top Drawer</h4>
+            <p>A 4XL top drawer size.</p>
+            <label class="btn" for="drawer-4xl-top">Close Drawer</label>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-4xl">Open 4XL Left Drawer</label>
+    <label class="btn" for="drawer-4xl-top">Open 4XL Top Drawer</label>
 </div>`}/>
 
                 <h4 id="5xl">5XL</h4>
@@ -325,15 +449,29 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>5XL Drawer</h3>
-            <p>A 5XL drawer size.</p>
-            <label class="btn" for="drawer-5xl">Close</label>
+            <h4>5XL Left Drawer</h4>
+            <p>A 5XL left drawer size.</p>
+            <label class="btn" for="drawer-5xl">Close Drawer</label>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-5xl">Open 5XL Drawer</label>
+<div class="drawer drawer-top drawer-5xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-5xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>5XL Top Drawer</h4>
+            <p>A 5XL top drawer size.</p>
+            <label class="btn" for="drawer-5xl-top">Close Drawer</label>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-5xl">Open 5XL Left Drawer</label>
+    <label class="btn" for="drawer-5xl-top">Open 5XL Top Drawer</label>
 </div>`}/>
 
                 <h4 id="6xl">6XL</h4>
@@ -344,15 +482,29 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>6XL Drawer</h3>
-            <p>A 6XL drawer size.</p>
-            <label class="btn" for="drawer-6xl">Close</label>
+            <h4>6XL Left Drawer</h4>
+            <p>A 6XL left drawer size.</p>
+            <label class="btn" for="drawer-6xl">Close Drawer</label>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-6xl">Open 6XL Drawer</label>
+<div class="drawer drawer-top drawer-6xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-6xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>6XL Top Drawer</h4>
+            <p>A 6XL top drawer size.</p>
+            <label class="btn" for="drawer-6xl-top">Close Drawer</label>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-6xl">Open 6XL Left Drawer</label>
+    <label class="btn" for="drawer-6xl-top">Open 6XL Top Drawer</label>
 </div>`}/>
 
                 <h4 id="7xl">7XL</h4>
@@ -363,15 +515,29 @@ function Drawer() {
     </label>
     <div class="drawer-content">
         <div class="p-4">
-            <h3>7XL Drawer</h3>
-            <p>A 7XL drawer size.</p>
-            <label class="btn" for="drawer-7xl">Close</label>
+            <h4>7XL Left Drawer</h4>
+            <p>A 7XL left drawer size.</p>
+            <label class="btn" for="drawer-7xl">Close Drawer</label>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-7xl">Open 7XL Drawer</label>
+<div class="drawer drawer-top drawer-7xl">
+    <label class="drawer-toggle">
+        <input type="checkbox" id="drawer-7xl-top">
+    </label>
+    <div class="drawer-content">
+        <div class="p-4">
+            <h4>7XL Top Drawer</h4>
+            <p>A 7XL top drawer size.</p>
+            <label class="btn" for="drawer-7xl-top">Close Drawer</label>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap gap-8">
+    <label class="btn" for="drawer-7xl">Open 7XL Left Drawer</label>
+    <label class="btn" for="drawer-7xl-top">Open 7XL Top Drawer</label>
 </div>`}/>
 
                 <h3 id="example">Example</h3>
@@ -394,19 +560,19 @@ function Drawer() {
                     </svg>
                 </label>
             </div>
-            <nav class="grid gap-2">
-                <a class="btn btn-clear">Home</a>
-                <a class="btn btn-clear">About</a>
-                <a class="btn btn-clear">Services</a>
-                <a class="btn btn-clear">Contact</a>
+            <nav>
+                <ul class="menu">
+                    <li><a class="btn btn-clear">Home</a></li>
+                    <li><a class="btn btn-clear">About</a></li>
+                    <li><a class="btn btn-clear">Services</a></li>
+                    <li><a class="btn btn-clear">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </div>
 </div>
 
-<div class="mx-auto">
-    <label class="btn" for="drawer-nav">Open Navigation Drawer</label>
-</div>`}/>
+<label class="btn" for="drawer-nav">Open Navigation Drawer</label>`}/>
 
                 <PageFooterNav>
                     <PrevPageNav href="/components/card">Card</PrevPageNav>
@@ -421,6 +587,10 @@ function Drawer() {
                         {
                             title: "Basic",
                             href: "#basic",
+                        },
+                        {
+                            title: "Close",
+                            href: "#close",
                         },
                     ]
                 },

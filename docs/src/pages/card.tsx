@@ -39,115 +39,124 @@ function Card() {
     </div>
 </div>`}/>
 
-                <h4 id="actions">Action Buttons</h4>
+                <h4 id="gutter">Gutter</h4>
 
-                <Preview code={`<div class="grid gap-8">
-    <div class="card">
+                <Preview code={`
+    <div class="card card-gutter">
         <div class="card-body">
-            <p>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</p>
-            <div class="card-actions">
-                <button class="btn btn-primary">Proceed</button>
-                <button class="btn btn-soft">Cancel</button>
-            </div>
+            <span>First card with spacing below it.</span>
         </div>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <p>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</p>
-            <div class="card-actions">
-                <div class="grow"></div>
-                <button class="btn btn-primary">Proceed</button>
-                <button class="btn btn-soft">Cancel</button>
-            </div>
+            <span>Second card below.</span>
+        </div>
+    </div>`}/>
+
+                <h4 id="actions">Action Buttons</h4>
+
+                <Preview code={`<div class="card card-gutter">
+    <div class="card-body">
+        <p>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</p>
+        <div class="card-actions">
+            <button class="btn btn-primary">Proceed</button>
+            <button class="btn btn-soft">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <p>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</p>
+        <div class="card-actions">
+            <div class="grow"></div>
+            <button class="btn btn-primary">Proceed</button>
+            <button class="btn btn-soft">Cancel</button>
         </div>
     </div>
 </div>`}/>
 
                 <h4 id="header">Header</h4>
 
-                <Preview code={`<div class="grid gap-8">
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                <h5>Main Title</h5>
-            </div>
-            <div class="card-actions">
-                <button class="btn btn-icon btn-clear">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+                <Preview code={`<div class="card card-gutter">
+    <div class="card-header">
+        <div class="card-title">
+            <h5>Main Title</h5>
         </div>
-        <div class="card-body">
-            <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
+        <div class="card-actions">
+            <button class="btn btn-icon btn-clear">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
     </div>
+    <div class="card-body">
+        <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
+    </div>
+</div>
 
-    <div class="card">
-        <div class="card-header">
-            <div class="card-actions">
-                <button class="btn btn-icon btn-clear">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="card-title">
-                <div class="grow"></div>
-                <h5>Main Title</h5>
-            </div>
+<div class="card">
+    <div class="card-header">
+        <div class="card-actions">
+            <button class="btn btn-icon btn-clear">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
-        <div class="card-body">
-            <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
+        <div class="card-title">
+            <div class="grow"></div>
+            <h5>Main Title</h5>
         </div>
+    </div>
+    <div class="card-body">
+        <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
     </div>
 </div>`}/>
 
                 <h4 id="subtitle">Subtitle</h4>
 
-                <Preview code={`<div class="grid gap-8">
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">
+                <Preview code={`<div class="card card-gutter">
+    <div class="card-header">
+        <div class="card-title">
+            <h5>Main Title</h5>
+            <small class="text-muted">Secondary information text</small>
+        </div>
+        <div class="card-actions">
+            <div class="grow"></div>
+            <button class="btn btn-icon btn-clear">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <div>
                 <h5>Main Title</h5>
                 <small class="text-muted">Secondary information text</small>
             </div>
-            <div class="card-actions">
-                <div class="grow"></div>
-                <button class="btn btn-icon btn-clear">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
         </div>
-        <div class="card-body">
-            <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
+        <div class="card-actions">
+            <div class="grow"></div>
+            <button class="btn btn-icon btn-clear">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
     </div>
-
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                <div>
-                    <h5>Main Title</h5>
-                    <small class="text-muted">Secondary information text</small>
-                </div>
-            </div>
-            <div class="card-actions">
-                <div class="grow"></div>
-                <button class="btn btn-icon btn-clear">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div class="card-body">
-            <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
-        </div>
+    <div class="card-body">
+        <span>A card UI is best use for enclosing content and actions on a single topic within a contained surface.</span>
     </div>
 </div>`}/>
 
@@ -194,6 +203,32 @@ function Card() {
 
                 <h3 id="styles">Styles</h3>
 
+                <h4 id="sizes">Sizes</h4>
+
+                <Preview code={`<div class="card card-gutter w-sm">
+    <div class="card-body">
+        <span>Small size card.</span>
+    </div>
+</div>
+
+<div class="card card-gutter w-lg">
+    <div class="card-body">
+        <span>Large size card.</span>
+    </div>
+</div>
+
+<div class="card card-gutter w-xl">
+    <div class="card-body">
+        <span>Extra large size card.</span>
+    </div>
+</div>
+
+<div class="card card-gutter w-full">
+    <div class="card-body">
+        <span>Full width size card.</span>
+    </div>
+</div>`}/>
+
                 <h4 id="border">Border</h4>
 
                 <Preview code={`<div class="card card-border">
@@ -207,21 +242,6 @@ function Card() {
                 <Preview code={`<div class="card card-flat">
     <div class="card-body">
         <span>This card has no shadow or border radius.</span>
-    </div>
-</div>`}/>
-
-                <h4 id="gutter">Gutter</h4>
-
-                <Preview code={`<div>
-    <div class="card card-gutter">
-        <div class="card-body">
-            <span>First card with spacing at the bottom.</span>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <span>Second card below.</span>
-        </div>
     </div>
 </div>`}/>
 
@@ -240,8 +260,8 @@ function Card() {
 
                 <h4 id="center">Centered Content</h4>
 
-                <Preview code={`<div class="card">
-    <div class="card-body card-center">
+                <Preview code={`<div class="card card-center h-96">
+    <div class="card-body">
         <div class="card-title">
             <h4 class="text-center">No Data Found.</h4>
         </div>
@@ -280,40 +300,30 @@ function Card() {
 
                 <h4 id="sticky-header">Sticky Header</h4>
 
-                <Preview code={`<div>
-    <h3 class="text-muted">Other Content</h3>
-    <h5 class="text-muted">Opening act for the great play by Jean Pierre.</h5>
-    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <div class="card">
-        <div class="card-header card-sticky">
-            <div class="card-title">
-                <h5>Sticky Header</h5>
-            </div>
+                <Preview code={`<div class="card">
+    <div class="card-header card-sticky">
+        <div class="card-title">
+            <h5>Sticky Header</h5>
         </div>
-        <div class="card-body">
-            <p>Header stays at top when scrolling...</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat.</p>
-        </div>
+    </div>
+    <div class="card-body">
+        <p>Header stays at top when scrolling...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat.</p>
     </div>
 </div>`}/>
 
                 <h4 id="sticky-footer">Sticky Footer</h4>
 
-                <Preview code={`<div>
-    <div class="card card-gutter">
-        <div class="card-body">
-            <p>Footer stays at bottom when scrolling...</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat.</p>
-        </div>
-        <div class="card-footer card-sticky">
-            <div class="card-actions">
-                <span>Sticky Footer</span>
-            </div>
+                <Preview code={`<div class="card">
+    <div class="card-body">
+        <p>Footer stays at bottom when scrolling...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet mollis ex. Ut tincidunt et augue nec interdum. Fusce eget vehicula ipsum. Suspendisse sed rhoncus justo. Pellentesque justo neque, auctor et consectetur eget, pretium lobortis ex. Maecenas finibus mi non placerat rhoncus. Etiam accumsan eget elit in suscipit. Aliquam nibh felis, aliquet vel venenatis nec, dapibus eleifend tortor. Curabitur iaculis ante sit amet sapien posuere dapibus. Integer venenatis ornare ultricies. Aliquam erat volutpat.</p>
+    </div>
+    <div class="card-footer card-sticky">
+        <div class="card-actions">
+            <span>Sticky Footer</span>
         </div>
     </div>
-    <h3 class="text-muted">Other Content</h3>
-    <h5 class="text-muted">Opening act for the great play by Jean Pierre.</h5>
-    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>`}/>
 
                 <h4 id="join">Join</h4>
@@ -366,6 +376,10 @@ function Card() {
                                 href: "#title",
                             },
                             {
+                                title: "Gutter",
+                                href: "#gutter",
+                            },
+                            {
                                 title: "Action Buttons",
                                 href: "#actions",
                             },
@@ -392,16 +406,16 @@ function Card() {
                         href: "#styles",
                         nested: [
                             {
+                                title: "Sizes",
+                                href: "#sizes",
+                            },
+                            {
                                 title: "Border",
                                 href: "#border",
                             },
                             {
                                 title: "Flat",
                                 href: "#flat",
-                            },
-                            {
-                                title: "Gutter",
-                                href: "#gutter",
                             },
                         ]
                     },

@@ -162,7 +162,7 @@ function Form() {
 
                 <h4 id="fieldset-basic">Basic</h4>
 
-                <Preview code={`<form class="form w-108">
+                <Preview code={`<form class="form w-md">
     <fieldset class="fieldset">
         <legend>Member Registration</legend>
         <div class="form-field">
@@ -183,7 +183,7 @@ function Form() {
 
                 <h4 id="fieldset-outline">Outline</h4>
 
-                <Preview code={`<form class="form w-108">
+                <Preview code={`<form class="form w-md">
     <fieldset class="fieldset fieldset-outline">
         <legend>Member Registration</legend>
         <div class="form-field">
@@ -204,7 +204,7 @@ function Form() {
 
                 <h4 id="fieldset-solid">Solid</h4>
 
-                <Preview code={`<form class="form w-108">
+                <Preview code={`<form class="form w-md">
     <fieldset class="fieldset fieldset-solid">
         <legend>Member Registration</legend>
         <div class="form-field">

@@ -33,8 +33,6 @@
             }
 
             .drawer-toggle {
-                cursor: pointer;
-
                 display: block;
                 block-size: 100%;
                 inline-size: 100%;

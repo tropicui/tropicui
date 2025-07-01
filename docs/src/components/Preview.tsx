@@ -7,7 +7,7 @@ interface PreviewProps {
 }
 
 function Preview(props: PreviewProps) {
-    const { children, code } = props;
+    const { code } = props;
     const [isDarkTheme, setDarkTheme] = useState(false);
     const [dir, setDir] = useState('ltr');
     const [margin, setMargin] = useState(0);
@@ -28,28 +28,16 @@ function Preview(props: PreviewProps) {
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <style>
-                .stage {
-                    display: grid;
-                    align-items: center;
-
-                    &:has(> [class]) {
-                        justify-items: center;
-                    }
-
-                    & > :not([class]) {
-                        // padding-block: 24px;
-                    }
-
-                    height: 100%;
-                    padding-inline: 24px;
-
-                    overflow-x: auto;
+                html {
+                    overflow: auto;
+                }
+                .scrollbar-stable {
                     scrollbar-gutter: stable;
                 }
             </style>
         </head>
-        <body class="bg-base-background bg-pattern-diagonal-lines transition-colors h-screen">
-            <div class="@container stage">
+        <body class="bg-base-background bg-pattern-diagonal-lines transition-colors h-screen overflow-auto scrollbar-stable">
+            <div class="@container grid content-center-safe justify-items-center-safe h-full p-6">
                 ${code}
             </div>
         </body>
@@ -154,18 +142,13 @@ function Preview(props: PreviewProps) {
                 <div className={`${isMouseDown ? '' : 'hidden'} absolute inset-x-0 h-full w-full bg-transparent`}></div>
                 <iframe
                     ref={iframeRef}
-                    sandbox="allow-scripts allow-same-origin"
+                    sandbox="allow-scripts allow-same-origin allow-forms"
                     onLoad={handleLoad}
-                    className="card-body h-[420px] w-full p-0 pe-5 overflow-x-scroll"
+                    className="card-body h-[420px] w-full p-0 pe-5"
                     srcDoc={iframeSrc}
                 >
                 </iframe>
 
-                <div className="hidden card-body flex justify-center items-center-safe min-h-[420px] max-h-[420px] w-full py-0 overflow-x-hidden overflow-y-auto">
-                    <div className="w-full h-fit">
-                        {children}
-                    </div>
-                </div>
                 <div className="absolute end-0 inset-y-0 grid items-center bg-base-airy border border-base-border hover:border-base-dense active:bg-base-border active:border-base-dense rounded-none rounded-e-md w-5 h-full cursor-ew-resize transition-colors"
                     onMouseDown={handleMouseDown}
                 >

@@ -30,8 +30,7 @@ Avatar component styles.
 
         /* layout */
         align-content: center;
-        text-align: center;
-        position: relative;
+        justify-items: center;
         
         /* dimension */
         block-size: var(--avatar-size);
@@ -49,6 +48,7 @@ Avatar component styles.
         font-weight: var(--font-weight-medium);
         font-size: calc(var(--avatar-size) * 0.4);
         line-height: 1;
+        text-align: center;
         text-transform: uppercase;
         overflow: hidden;
 

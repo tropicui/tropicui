@@ -26,6 +26,7 @@ Divider component styles.
         display: grid;
         grid-template-columns: var(--divider-grid);
         align-items: center;
+        justify-self: stretch;
         gap: --spacing(4);
 
         /* typography */
@@ -44,19 +45,6 @@ Divider component styles.
         &:where(:empty) {
             --divider-grid: var(--divider-start) var(--divider-end);
             gap: --spacing(0);
-        }
-    }
-
-    /* direction */
-    .divider-vertical {
-        &.divider {
-            grid-template-columns: none;
-            grid-template-rows: var(--divider-grid);
-            align-items: normal;
-            align-self: stretch;
-            justify-items: center;
-
-            block-size: auto;
         }
     }
 
@@ -184,4 +172,15 @@ Divider component styles.
 
 @utility divider-* {
     --divider-width: --value(integer)px;
+}
+
+/* direction */
+@utility divider-vertical {
+    &.divider {
+        grid-template-columns: none;
+        grid-template-rows: var(--divider-grid);
+        align-items: normal;
+        align-self: stretch;
+        justify-items: center;
+    }
 }

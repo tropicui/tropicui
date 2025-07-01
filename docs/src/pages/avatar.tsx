@@ -29,9 +29,7 @@ function Avatar() {
 
                 <h4 id="initials">Initials</h4>
 
-                <Preview code={`<div class="avatar">
-    <span>JD</span>
-</div>`}/>
+                <Preview code={`<div class="avatar">JD</div>`}/>
 
                 <h4 id="icon">Icon</h4>
 
@@ -65,23 +63,14 @@ function Avatar() {
 
                 <h4 id="colours">Colours</h4>
 
-                <Preview code={`<div class="grid grid-cols-5 items-center gap-8">
-    <div class="avatar avatar-primary">
-        <span>PR</span>
-    </div>
-    <div class="avatar avatar-accent">
-        <span>AC</span>
-    </div>
-    <div class="avatar avatar-success">
-        <span>SU</span>
-    </div>
-    <div class="avatar avatar-warning">
-        <span>WA</span>
-    </div>
-    <div class="avatar avatar-danger">
-        <span>DA</span>
-    </div>
-
+                <Preview code={`<div class="flex flex-wrap gap-8 mb-8">
+    <div class="avatar avatar-primary">PR</div>
+    <div class="avatar avatar-accent">AC</div>
+    <div class="avatar avatar-success">SU</div>
+    <div class="avatar avatar-warning">WA</div>
+    <div class="avatar avatar-danger">DA</div>
+</div>
+<div class="flex flex-wrap gap-8">
     <div class="avatar avatar-primary">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
@@ -111,23 +100,14 @@ function Avatar() {
 
                 <h4 id="soft">Soft</h4>
 
-                <Preview code={`<div class="grid grid-cols-5 items-center gap-8">
-    <div class="avatar avatar-soft avatar-primary">
-        <span>PR</span>
-    </div>
-    <div class="avatar avatar-soft avatar-accent">
-        <span>AC</span>
-    </div>
-    <div class="avatar avatar-soft avatar-success">
-        <span>SU</span>
-    </div>
-    <div class="avatar avatar-soft avatar-warning">
-        <span>WA</span>
-    </div>
-    <div class="avatar avatar-soft avatar-danger">
-        <span>DA</span>
-    </div>
-
+                <Preview code={`<div class="flex flex-wrap gap-8 mb-8">
+    <div class="avatar avatar-soft avatar-primary">PR</div>
+    <div class="avatar avatar-soft avatar-accent">AC</div>
+    <div class="avatar avatar-soft avatar-success">SU</div>
+    <div class="avatar avatar-soft avatar-warning">WA</div>
+    <div class="avatar avatar-soft avatar-danger">DA</div>
+</div>
+<div class="flex flex-wrap gap-8">
     <div class="avatar avatar-soft avatar-primary">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
@@ -159,36 +139,29 @@ function Avatar() {
 
                 <h4 id="circle">Circle</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8">
     <div class="avatar avatar-circle">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
-    <div class="avatar avatar-circle">
-        <span>JD</span>
-    </div>
+    <div class="avatar avatar-circle">JD</div>
     <div class="avatar avatar-circle">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
         </svg>
     </div>
-    <div class="avatar avatar-circle avatar-primary">
-        <span>PR</span>
-    </div>
+    <div class="avatar avatar-circle avatar-primary">PR</div>
 </div>`}/>
 
                 <h4 id="ring">Ring</h4>
 
-                <Preview code={`<div class="grid grid-cols-3 items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8 mb-8">
     <div class="avatar avatar-ring">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
-    <div class="avatar avatar-ring">
-        <span>JD</span>
-    </div>
-    <div class="avatar avatar-ring avatar-primary">
-        <span>PR</span>
-    </div>
-
+    <div class="avatar avatar-ring">JD</div>
+    <div class="avatar avatar-ring avatar-primary">PR</div>
+</div>
+<div class="flex flex-wrap gap-8">
     <div class="avatar avatar-circle avatar-ring">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
@@ -208,23 +181,14 @@ function Avatar() {
 
                 <p>The <code className="tag"><pre>avatar-ring-[colour]</pre></code> attribute can be used to set the ring colour regardless of the avatar base colour.</p>
 
-                <Preview code={`<div class="grid grid-cols-3 @lg:grid-cols-5 items-center gap-8">
-    <div class="avatar avatar-ring avatar-ring-primary">
-        <span>PR</span>
-    </div>
-    <div class="avatar avatar-ring avatar-ring-accent">
-        <span>AC</span>
-    </div>
-    <div class="avatar avatar-ring avatar-ring-success">
-        <span>SU</span>
-    </div>
-    <div class="avatar avatar-ring avatar-ring-warning">
-        <span>WA</span>
-    </div>
-    <div class="avatar avatar-ring avatar-ring-danger">
-        <span>DA</span>
-    </div>
-
+                <Preview code={`<div class="flex flex-wrap gap-8 mb-8">
+    <div class="avatar avatar-ring avatar-ring-primary">PR</div>
+    <div class="avatar avatar-ring avatar-ring-accent">AC</div>
+    <div class="avatar avatar-ring avatar-ring-success">SU</div>
+    <div class="avatar avatar-ring avatar-ring-warning">WA</div>
+    <div class="avatar avatar-ring avatar-ring-danger">DA</div>
+</div>
+<div class="flex flex-wrap gap-8">
     <div class="avatar avatar-circle avatar-ring avatar-ring-primary">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
@@ -245,9 +209,7 @@ function Avatar() {
                 <h4 id="ring-bold">Ring Bold</h4>
 
                 <Preview code={`<div class="grid gap-8">
-    <div class="avatar avatar-ring-bold avatar-ring-accent">
-        <span>JD</span>
-    </div>
+    <div class="avatar avatar-ring-bold avatar-ring-accent">JD</div>
     <div class="avatar avatar-circle avatar-ring-bold avatar-ring-accent">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
@@ -259,16 +221,14 @@ function Avatar() {
 
                 <Preview code={`<div class="grid gap-8">
     <div class="badge">
-        <div class="avatar">
-            <span>JD</span>
-        </div>
-        <span class="badge badge-bottom-right badge-tight status status-round status-ring status-success"></span>
+        <div class="avatar">JD</div>
+        <span class="badge-bottom-right badge-tight status status-round status-ring status-success"></span>
     </div>
     <div class="badge">
         <div class="avatar avatar-circle">
             <img src="/img/user1.jpg" alt="User1" />
         </div>
-        <span class="badge badge-bottom-right badge-tight status status-round status-ring status-success"></span>
+        <span class="badge-bottom-right badge-tight status status-round status-ring status-success"></span>
     </div>
 </div>`}/>
 
@@ -278,17 +238,13 @@ function Avatar() {
     <div class="avatar avatar-circle">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
-    <div class="avatar avatar-circle">
-        <span>JD</span>
-    </div>
+    <div class="avatar avatar-circle">JD</div>
     <div class="avatar avatar-circle">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
         </svg>
     </div>
-    <div class="avatar avatar-circle avatar-primary">
-        <span>+9</span>
-    </div>
+    <div class="avatar avatar-circle avatar-primary">+9</div>
 </div>`}/>
 
                 <h4 id="group-compact">Group Compact</h4>
@@ -297,17 +253,13 @@ function Avatar() {
     <div class="avatar avatar-circle">
         <img src="/img/user1.jpg" alt="User1" />
     </div>
-    <div class="avatar avatar-circle">
-        <span>JD</span>
-    </div>
+    <div class="avatar avatar-circle">JD</div>
     <div class="avatar avatar-circle">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
         </svg>
     </div>
-    <div class="avatar avatar-circle avatar-primary">
-        <span>+9</span>
-    </div>
+    <div class="avatar avatar-circle avatar-primary">+9</div>
 </div>`}/>
 
                 <PageFooterNav>

@@ -14,6 +14,7 @@ function CodeBlock(props: CodeBlockProps) {
     const { children } = props;
     const [isViewCode, setViewCode] = useState(false);
     const [isCopied, setCopied] = useState(false);
+    const [isScrolling, setScrolling] = useState(false);
 
     const code = children?.toString() || '';
 
@@ -36,11 +37,13 @@ function CodeBlock(props: CodeBlockProps) {
     return (
         <div className="grid bg-primary p-1">
             <div
-                className={`hljs relative border border-base-foreground rounded-md overflow-x-auto scheme-dark ${isViewCode ? '' : 'h-42'}`}
+                className={`hljs relative border border-base-foreground rounded-md overflow-x-auto scheme-dark ${isViewCode ? '' : 'max-h-36'}`}
                 style={{scrollbarGutter: 'stable'}}
+                onScroll={() => { setScrolling(true) }}
+                onScrollEnd={() => { setScrolling(false) }}
             >
                 <div className="sticky inset-x-0 top-0 flex justify-end gap-1 p-1">
-                    <label className={`btn btn-sm btn-toggle btn-primary ${isCopied ? 'text-success' : ''}`}>
+                    <label className={`btn btn-sm btn-toggle btn-primary ${isCopied ? 'text-success' : ''}  ${isScrolling ? 'opacity-30' : ''}`}>
                         <input
                             type="checkbox"
                             checked={isCopied}
@@ -56,7 +59,7 @@ function CodeBlock(props: CodeBlockProps) {
                         <span className="btn-toggled-icon">Copied!</span>
                     </label>
                     <label
-                        className={`btn btn-sm btn-toggle btn-primary`}
+                        className={`btn btn-sm btn-toggle btn-primary  ${isScrolling ? 'opacity-30' : ''}`}
                     >
                         <input
                             type="checkbox"
@@ -74,10 +77,10 @@ function CodeBlock(props: CodeBlockProps) {
                         <span className="btn-toggled-icon">Hide Code</span>
                     </label>
                 </div>
-                <pre className={`px-6 ${isViewCode ? 'pb-6' : 'pb-24'}`}>
-                    <code dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
+                <pre className={`px-6 ${isViewCode ? 'pb-12' : 'pb-0'}`}>
+                    <code dangerouslySetInnerHTML={{ __html: highlightedCode }} className=""></code>
                 </pre>
-                <div className={`sticky inset-x-0 bottom-0 bg-linear-to-t from-[#2a2c2d] from-30% to-transparent w-full ${isViewCode ? 'h-0' : 'h-24'}`}></div>
+                <div className={`sticky pointer-events-none inset-x-0 bottom-0 bg-linear-to-t from-[#2a2c2d] from-10% via-[#2a2c2d]/30 via-80% to-transparent w-full ${isViewCode ? 'h-0' : 'h-12'}`}></div>
             </div>
         </div>
     );

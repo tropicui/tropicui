@@ -30,7 +30,6 @@
             inset-block-start: 100%;
             inset-inline-start: 50%;
             z-index: 71;
-            display: grid;
             overflow: hidden;
 
             transform: translateX(-50%);

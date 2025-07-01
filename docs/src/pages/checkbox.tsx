@@ -33,12 +33,10 @@ function Checkbox() {
                     <span>Label text content will be correctly aligned with the checkbox when wrapped.</span>
                 </div>
 
-                <Preview code={`<form class="form">
-    <label>
-        <input type="checkbox" class="checkbox">
-        <span>Accept terms and conditions</span>
-    </label>
-</form>`}/>
+                <Preview code={`<label>
+    <input type="checkbox" class="checkbox">
+    <span>Accept terms and conditions</span>
+</label>`}/>
 
                 <h4 id="checked">Checked</h4>
 
@@ -66,12 +64,10 @@ function Checkbox() {
 
                 <h4 id="validation">Validation</h4>
 
-                <Preview code={`<form class="form">
-    <label>
-        <input type="checkbox" class="checkbox checkbox-validate" checked required>
-        <span>Uncheck to see invalid state</span>
-    </label>
-</form>`}/>
+                <Preview code={`<label>
+    <input type="checkbox" class="checkbox checkbox-validate" checked required>
+    <span>Uncheck to see invalid state</span>
+</label>`}/>
 
                 <h4 id="invalid">Invalid</h4>
 
@@ -106,7 +102,7 @@ function Checkbox() {
     </label>
     <label>
         <input type="checkbox" class="checkbox checkbox-2xl" checked>
-        <span>Huge</span>
+        <span>2XL</span>
     </label>
 </div>`}/>
 

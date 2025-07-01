@@ -6086,7 +6086,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card card-border card-gutter hidden">
+                <div class="card card-border card-gutter ">
                     <div class="card-body">
                         <button class="btn">Show toast</button>
                         <div class="toast-group toast-top-start">
@@ -6419,7 +6419,8 @@
                             </div>
                             <div>
                                 <button class="btn" onclick="showDialog('#modal-4');">Show modal4 </button>
-                                <dialog id="modal-4" class="modal card card-scroll">
+                                <div class="modal-scroll-backdrop">
+                                <dialog id="modal-4" class="modal card">
                                     <div class="card-header card-sticky">
                                         <h5>Static modal</h5>
                                         <form method="dialog">
@@ -6458,6 +6459,7 @@
                                         <button>close</button>
                                     </form>
                                 </dialog>
+                                </div>
                             </div>
                             <div>
                                 <button class="btn" onclick="showDialog('#modal-5');">Show modal 5</button>

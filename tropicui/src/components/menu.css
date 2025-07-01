@@ -27,7 +27,6 @@
         li {
             display: grid;
             align-content: start;
-            flex: none;
 
             .menu-toggle::after {
                 /* icon */

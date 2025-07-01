@@ -144,7 +144,7 @@ function Input() {
     <input type="text" class="input" placeholder="Default">
     <input type="text" class="input input-lg" placeholder="Large">
     <input type="text" class="input input-xl" placeholder="Extra Large">
-    <input type="text" class="input input-2xl" placeholder="Huge">
+    <input type="text" class="input input-2xl" placeholder="2XL">
 </div>`}/>
 
                 <h4 id="colours">Colours</h4>

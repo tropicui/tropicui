@@ -90,6 +90,10 @@ const router = createBrowserRouter([
             path: "/components/menu",
             Component: page.Menu,
           },
+          {
+            path: "/components/modal",
+            Component: page.Modal,
+          },
         ]
       },
     ]

@@ -78,6 +78,10 @@ function Sidebar() {
                     title: "Menu",
                     to: "/components/menu",
                 },
+                {
+                    title: "Modal",
+                    to: "/components/modal",
+                },
             ],
         },
     ];

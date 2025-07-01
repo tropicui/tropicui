@@ -35,8 +35,8 @@ Accordion component styles.
 
         --join-border-width: var(--accordion-border-width);
 
-        /* dimension */
-        inline-size: 100%;
+        /* layout */
+        justify-self: stretch;
 
         /* colors */
         background-color: var(--accordion-bg, var(--color-base-background));

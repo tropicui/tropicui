@@ -37,7 +37,7 @@ Card component styles.
         color: var(--color-base-foreground);
 
         /* animation */
-        transition-property: background-color, border-color, box-shadow, color;
+        transition-property: background-color, border-color, box-shadow;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
@@ -64,12 +64,13 @@ Card component styles.
             margin-block-end: --spacing(8);
         }
 
-        &.card-scroll {
+        &:where(.card-scroll) {
             display: flex;
             flex-direction: column;
 
             .card-body {
                 overflow: auto;
+                scroll-behavior: contain;
             }
         }
 
@@ -92,11 +93,6 @@ Card component styles.
             /* colors */
             border-block-end: 1px solid var(--card-border);
             background-color: var(--card-header-bg);
-
-            /* animation */
-            transition-property: background-color, border-color, box-shadow, color;
-            transition-duration: var(--tt-duration, var(--default-transition-duration));
-            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
             &.card-sticky {
                 position: sticky;
@@ -144,11 +140,6 @@ Card component styles.
             border-block-start: 1px solid var(--card-border);
             background-color: var(--card-footer-bg);
 
-            /* animation */
-            transition-property: background-color, border-color, box-shadow, color;
-            transition-duration: var(--tt-duration, var(--default-transition-duration));
-            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-
             &.card-sticky {
                 position: sticky;
                 inset-block-end: 0;
@@ -164,9 +155,10 @@ Card component styles.
         }
 
         /* center content */
-        .card-center {
-            display: grid;
-            place-items: center;
+        &.card-center .card-body {
+            height: 100%;
+            align-content: center;
+            justify-items: center;
         }
 
         > :where(.alert) {

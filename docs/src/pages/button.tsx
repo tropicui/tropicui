@@ -54,7 +54,7 @@ function Button() {
     <button class="btn">Button</button>
     <button class="btn btn-lg">Large</button>
     <button class="btn btn-xl">Extra Large</button>
-    <button class="btn btn-2xl">Huge</button>
+    <button class="btn btn-2xl">2XL</button>
 </div>`}/>
 
                 <h4 id="wide">Wide</h4>
@@ -63,7 +63,7 @@ function Button() {
 
                 <h4 id="colours">Colours</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8"><button class="btn btn-primary">Primary</button>
+                <Preview code={`<div class="flex flex-wrap gap-8"><button class="btn btn-primary">Primary</button>
     <button class="btn btn-accent">Accent</button>
     <button class="btn btn-success">Success</button>
     <button class="btn btn-warning">Warning</button>
@@ -72,7 +72,7 @@ function Button() {
 
                 <h4 id="soft">Soft</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8">
     <button class="btn btn-soft">Button</button>
     <button class="btn btn-soft btn-primary">Primary</button>
     <button class="btn btn-soft btn-accent">Accent</button>
@@ -83,7 +83,7 @@ function Button() {
 
                 <h4 id="outline">Outline</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8">
     <button class="btn btn-outline">Button</button>
     <button class="btn btn-outline btn-primary">Primary</button>
     <button class="btn btn-outline btn-accent">Accent</button>
@@ -94,7 +94,7 @@ function Button() {
 
                 <h4 id="outline-bold">Outline Bold</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8">
     <button class="btn btn-outline-bold">Button</button>
     <button class="btn btn-outline-bold btn-primary">Primary</button>
     <button class="btn btn-outline-bold btn-accent">Accent</button>
@@ -105,7 +105,7 @@ function Button() {
 
                 <h4 id="dash">Dash</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8">
     <button class="btn btn-dash">Button</button>
     <button class="btn btn-dash btn-primary">Primary</button>
     <button class="btn btn-dash btn-accent">Accent</button>
@@ -116,7 +116,7 @@ function Button() {
 
                 <h4 id="dash-bold">Dash Bold</h4>
 
-                <Preview code={`<div class="flex flex-wrap items-center gap-8">
+                <Preview code={`<div class="flex flex-wrap gap-8">
     <button class="btn btn-dash-bold">Button</button>
     <button class="btn btn-dash-bold btn-primary">Primary</button>
     <button class="btn btn-dash-bold btn-accent">Accent</button>

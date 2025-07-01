@@ -5,14 +5,14 @@ Modal component styles.
 
 @layer components - Applies styles at the component layer of the CSS cascade.
 
-@property {string} --modal-block - Controls the block (vertical) size of the modal
+@property {string} --modal-size - Controls the block (vertical) size of the modal
 @property {string} --modal-inline - Controls the inline (horizontal) size of the modal
 */
 @layer components {
     .modal {
         /* modifiers */
-        --modal-block: --spacing(60);
-        --modal-inline: calc(var(--modal-block) * 2);
+        --modal-size: calc(var(--container-md) / 1.8);
+        --modal-inline: calc(var(--modal-size) * 2);
 
         /* layout */
         display: none;
@@ -23,7 +23,7 @@ Modal component styles.
         margin: auto;
 
         /* dimensions */
-        min-block-size: var(--modal-block);
+        min-block-size: var(--modal-size);
         inline-size: var(--modal-inline);
         /* reset browser default style */
         max-block-size: calc(100% - 1em);
@@ -36,27 +36,17 @@ Modal component styles.
         transition-property: display, opacity, overlay, scale, transform, visibility;
         transition-behavior: allow-discrete;
         transition-duration: var(--tt-duration, var(--default-transition-duration));
+        /* transition-duration: 2s; */
         transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
 
-        @starting-style {
-            &:not(.modal-left, .modal-right, .modal-top, .modal-bottom) {
-                display: none;
-                opacity: 0;
-                visibility: hidden;
-                scale: 80%;
-            }
-            &:is(.modal-left) {
-                transform: translateX(-100%);
-            }
-            &:is(.modal-right) {
-                transform: translateX(100%);
-            }
-            &:is(.modal-top) {
-                transform: translateY(-100%);
-            }
-            &:is(.modal-bottom) {
-                transform: translateY(100%);
-            }
+        &::backdrop {
+            background-color: transparent;
+
+            /* animation */
+            transition-property: background-color;
+            transition-duration: var(--tt-duration, var(--default-transition-duration));
+        /* transition-duration: 1s; */
+            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
 
         &:is([open], :open) {
@@ -67,26 +57,47 @@ Modal component styles.
             button:focus-visible {
                 background-color: inherit;
             }
-        }
 
-        &::backdrop {
-            background-color: transparent;
+            &::backdrop {
+                pointer-events: none;
+                background-color: color-mix(in oklab, var(--color-black) 40%, transparent );
+            }
 
-            /* animation */
-            transition-property: display, overlay, background-color;
-            transition-behavior: allow-discrete;
-            transition-duration: var(--tt-duration, var(--default-transition-duration));
-            transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
-        }
+            @starting-style {
+                opacity: 0;
+                visibility: hidden;
+                scale: 80%;
 
-        &:is([open], :open)::backdrop {
-            pointer-events: none;
-            background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
-        }
+                &::backdrop {
+                    background-color: transparent;
+                }
 
-        @starting-style {
-            &:is([open], :open)::backdrop {
-                background-color: transparent;
+                &:is(
+                    .modal-start,
+                    .modal-top-start,
+                    .modal-bottom-start,
+                    .modal-left,
+                    .modal-top-left,
+                    .modal-bottom-left
+                ) {
+                    transform: translateX(-100%);
+                }
+                &:is(
+                    .modal-end,
+                    .modal-top-end,
+                    .modal-bottom-end,
+                    .modal-right,
+                    .modal-top-right,
+                    .modal-bottom-right
+                ) {
+                    transform: translateX(100%);
+                }
+                &:is(.modal-top) {
+                    transform: translateY(-100%);
+                }
+                &:is(.modal-bottom) {
+                    transform: translateY(100%);
+                }
             }
         }
 
@@ -105,20 +116,51 @@ Modal component styles.
         &:has(.modal-static:active) {
             scale: 105%;
         }
+
+        /* Stacking */
+        &:has(.modal:is([open], :open)) {
+            scale: 90%;
+
+            &:not(.modal-focus) {
+                transform: translateX(calc(--spacing(12) * -1));
+            }
+
+            &:is(
+                .modal-start,
+                .modal-top-start,
+                .modal-bottom-start,
+                .modal-left,
+                .modal-top-left,
+                .modal-bottom-left
+            ) {
+                transform: translateX(calc(--spacing(12) * 1));
+            }
+
+            &.modal-focus {
+                scale: 95%;
+                inset-block-end: auto;
+
+                .modal.modal-focus:is([open], :open) {
+                    max-block-size: calc(100% - 2em);
+                    inset-block-start: auto;
+                    inset-block-end: --spacing(2);
+                }
+            }
+        }
     }
 
     /* sizes */
     .modal-sm {
-        --modal-block: --spacing(48);
+        --modal-size: calc(var(--container-sm) / 1.8);
     }
     .modal-lg {
-        --modal-block: --spacing(84);
+        --modal-size: calc(var(--container-lg) / 1.8);
     }
     .modal-xl {
-        --modal-block: --spacing(120);
+        --modal-size: calc(var(--container-2xl) / 1.8);
     }
     .modal-2xl {
-        --modal-block: --spacing(160);
+        --modal-size: calc(var(--container-4xl) / 1.8);
     }
     .modal-focus {
         block-size: 100%;
@@ -126,28 +168,9 @@ Modal component styles.
     }
 
     /* positioning */
-    .modal-left {
-        inset-inline-start: --spacing(2);
-        inset-inline-end: auto;
-        block-size: 100%;
-
-        &:not([open], :open) {
-            transform: translateX(-100%);
-        }
-    }
-    .modal-right {
-        inset-inline-start: auto;
-        inset-inline-end: --spacing(2);
-        block-size: 100%;
-
-        &:not([open], :open) {
-            transform: translateX(100%);
-        }
-    }
     .modal-top {
         inset-block-start: --spacing(2);
         inset-block-end: auto;
-        inline-size: 100%;
 
         &:not([open], :open) {
             transform: translateY(-100%);
@@ -156,10 +179,121 @@ Modal component styles.
     .modal-bottom {
         inset-block-start: auto;
         inset-block-end: --spacing(2);
-        inline-size: 100%;
 
         &:not([open], :open) {
             transform: translateY(100%);
+        }
+    }
+    .modal-start {
+        inset-inline-start: --spacing(2);
+        inset-inline-end: auto;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-end {
+        inset-inline-start: auto;
+        inset-inline-end: --spacing(2);
+
+        &:not([open], :open) {
+            transform: translateX(100%);
+        }
+    }
+    .modal-top-start {
+        inset-block-start: --spacing(2);
+        inset-block-end: auto;
+        inset-inline-start: --spacing(2);
+        inset-inline-end: auto;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-top-end {
+        inset-block-start: --spacing(2);
+        inset-block-end: auto;
+        inset-inline-start: auto;
+        inset-inline-end: --spacing(2);
+
+        &:not([open], :open) {
+            transform: translateX(100%);
+        }
+    }
+    .modal-bottom-start {
+        inset-block-start: auto;
+        inset-block-end: --spacing(2);
+        inset-inline-start: --spacing(2);
+        inset-inline-end: auto;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-bottom-end {
+        inset-block-start: auto;
+        inset-block-end: --spacing(2);
+        inset-inline-start: auto;
+        inset-inline-end: --spacing(2);
+
+        &:not([open], :open) {
+            transform: translateX(100%);
+        }
+    }
+    .modal-left {
+        left: --spacing(2);
+        right: auto;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-right {
+        left: auto;
+        right: --spacing(2);
+
+        &:not([open], :open) {
+            transform: translateX(100%);
+        }
+    }
+    .modal-top-left {
+        inset-block-start: --spacing(2);
+        inset-block-end: auto;
+        left: --spacing(2);
+        right: auto;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-top-right {
+        inset-block-start: --spacing(2);
+        inset-block-end: auto;
+        left: auto;
+        right: --spacing(2);
+
+        &:not([open], :open) {
+            transform: translateX(100%);
+        }
+    }
+    .modal-bottom-left {
+        inset-block-start: auto;
+        inset-block-end: --spacing(2);
+        left: --spacing(2);
+        right: auto;
+
+        &:not([open], :open) {
+            transform: translateX(-100%);
+        }
+    }
+    .modal-bottom-right {
+        inset-block-start: auto;
+        inset-block-end: --spacing(2);
+        left: auto;
+        right: --spacing(2);
+
+        &:not([open], :open) {
+            transform: translateX(100%);
         }
     }
 }

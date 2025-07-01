@@ -28,11 +28,11 @@ Alert component styles.
         /* position: relative; */
         display: flex;
         align-items: center;
+        justify-self: stretch;
         gap: --spacing(2);
 
         /* dimensions */
         min-block-size: var(--alert-size);
-        inline-size: 100%;
         margin-block-end: --spacing(4);
         padding-inline: --spacing(4);
 
