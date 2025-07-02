@@ -43,7 +43,7 @@ function CodeBlock(props: CodeBlockProps) {
                 onScrollEnd={() => { setScrolling(false) }}
             >
                 <div className="sticky inset-x-0 top-0 flex justify-end gap-1 p-1">
-                    <label className={`btn btn-sm btn-toggle btn-primary ${isCopied ? 'text-success' : ''}  ${isScrolling ? 'opacity-30' : ''}`}>
+                    <label className={`btn btn-sm btn-toggle btn-primary ${isCopied ? 'text-success' : ''}  ${isScrolling && ! isViewCode ? 'opacity-30' : ''} transition-opacity`}>
                         <input
                             type="checkbox"
                             checked={isCopied}
@@ -59,7 +59,7 @@ function CodeBlock(props: CodeBlockProps) {
                         <span className="btn-toggled-icon">Copied!</span>
                     </label>
                     <label
-                        className={`btn btn-sm btn-toggle btn-primary  ${isScrolling ? 'opacity-30' : ''}`}
+                        className={`btn btn-sm btn-toggle btn-primary  ${isScrolling && ! isViewCode ? 'opacity-30' : ''} transition-opacity`}
                     >
                         <input
                             type="checkbox"

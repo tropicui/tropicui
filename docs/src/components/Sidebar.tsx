@@ -94,6 +94,10 @@ function Sidebar() {
                     title: "Select",
                     to: "/components/select",
                 },
+                {
+                    title: "Sink",
+                    to: "/components/sink",
+                },
             ],
         },
     ];

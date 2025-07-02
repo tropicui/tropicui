@@ -106,6 +106,10 @@ const router = createBrowserRouter([
             path: "/components/select",
             Component: page.Select,
           },
+          {
+            path: "/components/sink",
+            Component: page.Sink,
+          },
         ]
       },
     ]

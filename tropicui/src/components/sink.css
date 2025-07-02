@@ -20,8 +20,4 @@ Sink component styles.
         border-radius: var(--radius-container);
         box-shadow: var(--inset-low);
     }
-
-    .sink-fit {
-        inline-size: fit-content;
-    }
 }
