@@ -23,6 +23,7 @@ Checkbox component styles.
         --checkbox-size: --spacing(4.5);
         --checkbox-bg: var(--color-base);
         --checkbox-shadow: var(--shadow-low);
+        --checkbox-border-width: var(--border-width);
 
         --checkbox-focus-outline: color-mix(in oklab, var(--color-accent) 40%, transparent);
         --checkbox-focus-border: var(--color-accent);
@@ -40,7 +41,7 @@ Checkbox component styles.
         max-inline-size: var(--checkbox-size);
 
         /* colors */
-        border: 1px solid var(--checkbox-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
+        border: var(--checkbox-border-width) solid var(--checkbox-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
         border-radius: var(--radius-input);
         outline: 0px solid var(--checkbox-focus-outline);
         outline-offset: 0px;
@@ -174,7 +175,7 @@ Checkbox component styles.
     }
 
     .checkbox-outline-bold {
-        border-width: 2px;
+        border-width: calc(var(--checkbox-border-width) * 2);
     }
 
     .checkbox-solid {

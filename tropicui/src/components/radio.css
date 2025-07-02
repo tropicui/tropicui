@@ -23,11 +23,12 @@ Radio component styles.
         --radio-size: --spacing(4.5);
         --radio-bg: var(--color-base);
         --radio-shadow: var(--shadow-low);
+        --radio-border-width: var(--border-width);
         --radio-focus-outline: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
         --radio-focus-border: var(--color-accent);
         --radio-outline-border: var(--color-base-border);
-        --radio-outline-disabled-border: color-mix(in oklab, var(--color-base-border) 60%, transparent);
-        --radio-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+        --radio-outline-disabled-border: color-mix(in oklab, var(--color-base-border) 60%, var(--color-base-background));
+        --radio-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, var(--color-base-background));
         --radio-invalid-border: var(--color-danger);
 
         /* layout */
@@ -38,9 +39,10 @@ Radio component styles.
         /* dimensions */
         block-size: var(--radio-size);
         min-inline-size: var(--radio-size);
+        max-inline-size: var(--radio-size);
 
         /* colors */
-        border: 1px solid var(--radio-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
+        border: var(--radio-border-width) solid var(--radio-border, color-mix(in oklab, var(--color-base-dense) 50%, transparent));
         border-radius: calc(infinity * 1px);
         outline: 0px solid var(--radio-focus-outline);
         outline-offset: 0px;
@@ -62,7 +64,7 @@ Radio component styles.
 
             /* dimensions */
             inset-block-start: 50%;
-            inset-inline-start: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             block-size: calc(var(--radio-size) * 0.5);
             inline-size: calc(var(--radio-size) * 0.5);
@@ -73,7 +75,7 @@ Radio component styles.
             box-shadow: var(--shadow-low), var(--shadow-low);
 
             /* animation */
-            transition-property: opacity;
+            transition-property: background-color, opacity;
             transition-duration: var(--tt-duration, var(--default-transition-duration));
             transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
         }
@@ -103,10 +105,9 @@ Radio component styles.
         /* disabled */
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
-            pointer-events: none;
 
             /* colors */
-            background-color: color-mix(in oklab, var(--radio-bg) 40%, transparent);
+            background-color: color-mix(in oklab, var(--radio-bg) 40%, var(--color-base-background));
             border-color: color-mix(in oklab, var(--radio-border, var(--color-base-dense)) 30%, transparent);
             --radio-shadow: none;
 
@@ -125,8 +126,8 @@ Radio component styles.
         &.radio-validate:user-invalid,
         &.radio-invalid:not(:checked) {
             /* colors */
-            --radio-border: var(--radio-invalid-border);
             --radio-bg: var(--radio-invalid-bg);
+            --radio-border: var(--radio-invalid-border);
         }
 
         /* enclosing label */
@@ -170,7 +171,7 @@ Radio component styles.
     }
 
     .radio-outline-bold {
-        border-width: 2px;
+        border-width: calc(var(--radio-border-width) * 2);
     }
 
     .radio-solid {
@@ -205,21 +206,44 @@ Radio component styles.
     /* sizes */
     .radio-xs {
         --radio-size: --spacing(3.5);
+
+        label:has(&) {
+            font-size: var(--text-xs);
+        }
     }
 
     .radio-sm {
         --radio-size: --spacing(4);
+
+        label:has(&) {
+            font-size: var(--text-sm);
+        }
     }
 
     .radio-lg {
         --radio-size: --spacing(6);
+
+        label:has(&) {
+            font-size: var(--text-lg);
+            line-height: var(--text-2xl--line-height);
+        }
     }
 
     .radio-xl {
         --radio-size: --spacing(7);
+
+        label:has(&) {
+            font-size: var(--text-xl);
+            line-height: var(--text-xl--line-height);
+        }
     }
 
     .radio-2xl {
         --radio-size: --spacing(8);
+
+        label:has(&) {
+            font-size: var(--text-2xl);
+            line-height: var(--text-2xl--line-height);
+        }
     }
 }

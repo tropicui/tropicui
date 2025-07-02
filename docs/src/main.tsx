@@ -98,6 +98,10 @@ const router = createBrowserRouter([
             path: "/components/popover",
             Component: page.Popover,
           },
+          {
+            path: "/components/radio",
+            Component: page.Radio,
+          },
         ]
       },
     ]

@@ -86,6 +86,10 @@ function Sidebar() {
                     title: "Popover",
                     to: "/components/popover",
                 },
+                {
+                    title: "Radio",
+                    to: "/components/radio",
+                },
             ],
         },
     ];

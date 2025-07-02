@@ -349,7 +349,7 @@ function Popover() {
 
                 <PageFooterNav>
                     <PrevPageNav href="/components/modal">Modal</PrevPageNav>
-                    <NextPageNav href="/components/progress">Progress</NextPageNav>
+                    <NextPageNav href="/components/radio">Radio</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[
