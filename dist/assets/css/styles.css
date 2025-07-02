@@ -446,6 +446,9 @@
   .m-0\.5 {
     margin: calc(var(--spacing) * 0.5);
   }
+  .m-1 {
+    margin: calc(var(--spacing) * 1);
+  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -469,6 +472,9 @@
   }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
+  }
+  .mt-64 {
+    margin-top: calc(var(--spacing) * 64);
   }
   .-mb-16 {
     margin-bottom: calc(var(--spacing) * -16);
@@ -578,6 +584,9 @@
   }
   .h-64 {
     height: calc(var(--spacing) * 64);
+  }
+  .h-80 {
+    height: calc(var(--spacing) * 80);
   }
   .h-84 {
     height: calc(var(--spacing) * 84);
@@ -844,6 +853,9 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
@@ -855,6 +867,13 @@
   }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .justify-self-end {
     justify-self: flex-end;
@@ -1478,6 +1497,9 @@
   }
   .opacity-60 {
     opacity: 60%;
+  }
+  .opacity-70 {
+    opacity: 70%;
   }
   .opacity-80 {
     opacity: 80%;
@@ -4226,6 +4248,17 @@ html {
 @layer components {
   .popover {
     --popover-content-margin: calc(var(--spacing) * 2);
+    --popover-bg: var(--popover-color, var(--color-base));
+    --popover-soft-bg: light-dark(
+            var(--popover-color),
+            var(--popover-color)
+        );
+    @supports (color: color-mix(in lab, red, red)) {
+      --popover-soft-bg: light-dark(
+            color-mix(in oklab, var(--popover-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--popover-color) 40%, var(--color-base-background))
+        );
+    }
     position: relative;
     display: inline-block;
   }
@@ -4247,21 +4280,21 @@ html {
       z-index: 21;
       min-width: calc(var(--spacing) * 64);
       padding: calc(var(--spacing) * 4);
-      background-color: var(--popover-bg, var(--color-base));
-      border: 1px solid color-mix(in srgb, oklch(92.2% 0 0) 10%, transparent);
+      background-color: var(--popover-bg);
+      border: 1px solid light-dark( var(--popover-color, oklch(70.8% 0 0)), var(--popover-color, oklch(70.8% 0 0)) );
       @supports (color: color-mix(in lab, red, red)) {
-        border: 1px solid color-mix(in oklab, var(--color-base-border) 10%, transparent);
+        border: 1px solid light-dark( color-mix(in oklab, var(--popover-color, var(--color-base-dense)) 30%, var(--color-base-background)), color-mix(in oklab, var(--popover-color, var(--color-base-dense)) 60%, var(--color-base-background)) );
       }
       border-radius: var(--radius-container);
-      box-shadow: var(--tt-ring-shadow), var(--shadow-rise);
+      box-shadow: var(--shadow-rise);
       color: var(--popover-fg, var(--color-base-foreground));
       transition-property: opacity, scale, visibility;
       transition-duration: var(--tt-duration, var(--default-transition-duration));
       transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     }
-    .popover.popover-top & {
+    .popover:not( .popover-top-start, .popover-top-end, .popover-top-left, .popover-top-right, .popover-bottom, .popover-bottom-start, .popover-bottom-end, .popover-bottom-left, .popover-bottom-right, .popover-start, .popover-start-start, .popover-start-end, .popover-end, .popover-end-start, .popover-end-end, .popover-left, .popover-left-start, .popover-left-end, .popover-right, .popover-right-start, .popover-right-end ) & {
       inset-block-end: 100%;
-      inset-inline-start: 50%;
+      left: 50%;
       transform: translateX(-50%);
       transform-origin: bottom left;
       margin-block-end: var(--popover-content-margin);
@@ -4269,89 +4302,203 @@ html {
     .popover.popover-top-start & {
       inset-block-end: 100%;
       inset-inline-start: 0;
-      transform-origin: bottom left;
+      &:dir(ltr) {
+        transform-origin: bottom left;
+      }
+      &:dir(rtl) {
+        transform-origin: bottom right;
+      }
       margin-block-end: var(--popover-content-margin);
     }
     .popover.popover-top-end & {
       inset-block-end: 100%;
       inset-inline-end: 0;
+      &:dir(ltr) {
+        transform-origin: bottom right;
+      }
+      &:dir(rtl) {
+        transform-origin: bottom left;
+      }
+      margin-block-end: var(--popover-content-margin);
+    }
+    .popover.popover-top-left & {
+      inset-block-end: 100%;
+      left: 0;
+      transform-origin: bottom left;
+      margin-block-end: var(--popover-content-margin);
+    }
+    .popover.popover-top-right & {
+      inset-block-end: 100%;
+      right: 0;
       transform-origin: bottom right;
       margin-block-end: var(--popover-content-margin);
     }
     .popover.popover-bottom & {
-      inset-inline-start: 50%;
+      left: 50%;
       transform: translateX(-50%);
       transform-origin: top left;
       margin-block-start: var(--popover-content-margin);
     }
     .popover.popover-bottom-start & {
       inset-inline-start: 0;
-      transform-origin: top left;
+      &:dir(ltr) {
+        transform-origin: top left;
+      }
+      &:dir(rtl) {
+        transform-origin: top right;
+      }
       margin-block-start: var(--popover-content-margin);
     }
     .popover.popover-bottom-end & {
       inset-inline-end: 0;
+      &:dir(ltr) {
+        transform-origin: top right;
+      }
+      &:dir(rtl) {
+        transform-origin: top left;
+      }
+      margin-block-start: var(--popover-content-margin);
+    }
+    .popover.popover-bottom-left & {
+      left: 0;
+      transform-origin: top left;
+      margin-block-start: var(--popover-content-margin);
+    }
+    .popover.popover-bottom-right & {
+      right: 0;
       transform-origin: top right;
       margin-block-start: var(--popover-content-margin);
     }
+    .popover.popover-start & {
+      inset-block-start: 50%;
+      inset-inline-end: 100%;
+      transform: translateY(-50%);
+      &:dir(ltr) {
+        transform-origin: top right;
+      }
+      &:dir(rtl) {
+        transform-origin: top left;
+      }
+      margin-inline-end: var(--popover-content-margin);
+    }
+    .popover.popover-start-start & {
+      inset-block-start: 0;
+      inset-inline-end: 100%;
+      &:dir(ltr) {
+        transform-origin: top right;
+      }
+      &:dir(rtl) {
+        transform-origin: top left;
+      }
+      margin-inline-end: var(--popover-content-margin);
+    }
+    .popover.popover-start-end & {
+      inset-block-end: 0;
+      inset-inline-end: 100%;
+      &:dir(ltr) {
+        transform-origin: bottom right;
+      }
+      &:dir(rtl) {
+        transform-origin: bottom left;
+      }
+      margin-inline-end: var(--popover-content-margin);
+    }
+    .popover.popover-end & {
+      inset-block-start: 50%;
+      inset-inline-start: 100%;
+      transform: translateY(-50%);
+      &:dir(ltr) {
+        transform-origin: top left;
+      }
+      &:dir(rtl) {
+        transform-origin: top right;
+      }
+      margin-inline-start: var(--popover-content-margin);
+    }
+    .popover.popover-end-start & {
+      inset-block-start: 0;
+      inset-inline-start: 100%;
+      &:dir(ltr) {
+        transform-origin: top left;
+      }
+      &:dir(rtl) {
+        transform-origin: top right;
+      }
+      margin-inline-start: var(--popover-content-margin);
+    }
+    .popover.popover-end-end & {
+      inset-block-end: 0;
+      inset-inline-start: 100%;
+      &:dir(ltr) {
+        transform-origin: bottom left;
+      }
+      &:dir(rtl) {
+        transform-origin: bottom right;
+      }
+      margin-inline-start: var(--popover-content-margin);
+    }
     .popover.popover-left & {
       inset-block-start: 50%;
+      right: 100%;
       transform: translateY(-50%);
-      inset-inline-end: 100%;
       transform-origin: top right;
-      margin-inline-end: var(--popover-content-margin);
+      margin-right: var(--popover-content-margin);
     }
     .popover.popover-left-start & {
       inset-block-start: 0;
-      inset-inline-end: 100%;
+      right: 100%;
       transform-origin: top right;
-      margin-inline-end: var(--popover-content-margin);
+      margin-right: var(--popover-content-margin);
     }
     .popover.popover-left-end & {
       inset-block-end: 0;
-      inset-inline-end: 100%;
+      right: 100%;
       transform-origin: bottom right;
-      margin-inline-end: var(--popover-content-margin);
+      margin-right: var(--popover-content-margin);
     }
     .popover.popover-right & {
       inset-block-start: 50%;
+      left: 100%;
       transform: translateY(-50%);
-      inset-inline-start: 100%;
       transform-origin: top left;
-      margin-inline-start: var(--popover-content-margin);
+      margin-left: var(--popover-content-margin);
     }
     .popover.popover-right-start & {
       inset-block-start: 0;
-      inset-inline-start: 100%;
+      left: 100%;
       transform-origin: top left;
-      margin-inline-start: var(--popover-content-margin);
+      margin-left: var(--popover-content-margin);
     }
     .popover.popover-right-end & {
       inset-block-end: 0;
-      inset-inline-start: 100%;
+      left: 100%;
       transform-origin: bottom left;
-      margin-inline-start: var(--popover-content-margin);
+      margin-left: var(--popover-content-margin);
     }
   }
   .popover-primary {
-    --popover-bg: var(--color-primary);
+    --popover-color: var(--color-primary);
     --popover-fg: var(--color-primary-content);
   }
   .popover-accent {
-    --popover-bg: var(--color-accent);
+    --popover-color: var(--color-accent);
     --popover-fg: var(--color-accent-content);
   }
   .popover-success {
-    --popover-bg: var(--color-success);
+    --popover-color: var(--color-success);
     --popover-fg: var(--color-success-content);
   }
   .popover-warning {
-    --popover-bg: var(--color-warning);
+    --popover-color: var(--color-warning);
     --popover-fg: var(--color-warning-content);
   }
   .popover-danger {
-    --popover-bg: var(--color-danger);
+    --popover-color: var(--color-danger);
     --popover-fg: var(--color-danger-content);
+  }
+  .popover-soft {
+    --popover-bg: var(--popover-soft-bg, var(--color-base));
+    --popover-fg: var(--popover-color, var(--color-base-foreground));
   }
 }
 @layer components {
@@ -6153,6 +6300,11 @@ code.hljs {
   syntax: "*";
   inherits: false;
 }
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -6438,6 +6590,7 @@ code.hljs {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;

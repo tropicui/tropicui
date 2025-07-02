@@ -94,6 +94,10 @@ const router = createBrowserRouter([
             path: "/components/modal",
             Component: page.Modal,
           },
+          {
+            path: "/components/popover",
+            Component: page.Popover,
+          },
         ]
       },
     ]

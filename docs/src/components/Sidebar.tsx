@@ -82,6 +82,10 @@ function Sidebar() {
                     title: "Modal",
                     to: "/components/modal",
                 },
+                {
+                    title: "Popover",
+                    to: "/components/popover",
+                },
             ],
         },
     ];
