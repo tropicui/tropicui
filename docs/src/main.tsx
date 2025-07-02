@@ -102,6 +102,10 @@ const router = createBrowserRouter([
             path: "/components/radio",
             Component: page.Radio,
           },
+          {
+            path: "/components/select",
+            Component: page.Select,
+          },
         ]
       },
     ]

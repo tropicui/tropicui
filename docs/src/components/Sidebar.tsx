@@ -90,6 +90,10 @@ function Sidebar() {
                     title: "Radio",
                     to: "/components/radio",
                 },
+                {
+                    title: "Select",
+                    to: "/components/select",
+                },
             ],
         },
     ];

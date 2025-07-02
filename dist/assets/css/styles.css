@@ -1561,6 +1561,9 @@
     --tw-blur: blur(4px);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
   .backdrop-blur-sm {
     --tw-backdrop-blur: blur(var(--blur-sm));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
@@ -1939,6 +1942,11 @@
   .lg\:gap-12 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 12);
+    }
+  }
+  .\@md\:grid-cols-3 {
+    @container (width >= 28rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .theme-dark\:bg-white {
@@ -4726,9 +4734,9 @@ html {
       --select-focus-outline: color-mix(in oklab, var(--select-color, var(--color-accent)) 40%, transparent);
     }
     --select-focus-border: var(--select-color, var(--color-accent));
-    --select-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, transparent);
+    --select-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, #fff);
     @supports (color: color-mix(in lab, red, red)) {
-      --select-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+      --select-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, var(--color-base-background));
     }
     --select-invalid-border: var(--color-danger);
     --select-placeholder: var(--select-fg);
@@ -4757,7 +4765,12 @@ html {
     transition-duration: var(--tt-duration, var(--default-transition-duration));
     transition-timing-function: var(--tt-ease-out, var(--default-transition-timing-function));
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23777777"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
-    background-position: right 0.5rem center;
+    &:dir(ltr) {
+      background-position: right 0.5rem center;
+    }
+    &:dir(rtl) {
+      background-position: left 0.5rem center;
+    }
     background-repeat: no-repeat;
     background-size: 1.25em;
     @media (hover: hover) {
@@ -4785,7 +4798,7 @@ html {
       pointer-events: none;
       background-color: var(--select-bg);
       @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--select-bg), transparent 60%);
+        background-color: color-mix(in oklab, var(--select-bg), var(--color-base-background) 60%);
       }
       --select-border: var(--select-color, oklch(70.8% 0 0));
       @supports (color: color-mix(in lab, red, red)) {
@@ -4793,18 +4806,19 @@ html {
       }
       color: var(--select-fg, oklch(43.9% 0 0));
       @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, var(--select-fg, var(--color-base-foreground)), transparent 40%);
+        color: color-mix(in oklab, var(--select-fg, var(--color-base-foreground)), var(--color-base-background) 50%);
       }
     }
-    &:has(option[value=""]:checked) {
+    &:not(:disabled, [disabled]):has(option[value=""]:checked) {
       color: var(--select-placeholder);
     }
   }
   .select-pill {
     --select-radius: calc(infinity * 1px);
   }
-  .select-clear {
+  .select.select-clear {
     --select-bg: transparent;
+    --select-fg: var(--select-color, var(--color-base-foreground));
     --select-border: transparent;
     --select-shadow: none;
   }
@@ -4845,6 +4859,9 @@ html {
   .select-danger {
     --select-color: var(--color-danger);
     --select-fg: var(--color-danger-content);
+  }
+  .select:not( .select-soft, .select-clear, .select-outline, .select-outline-bold ):is( .select-primary, .select-accent, .select-success, .select-warning, .select-danger ) {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23DDDDDD"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" /></svg>');
   }
   .select-xs {
     --select-size: calc(var(--spacing) * 8);
