@@ -98,6 +98,10 @@ function Sidebar() {
                     title: "Sink",
                     to: "/components/sink",
                 },
+                {
+                    title: "Spinner",
+                    to: "/components/spinner",
+                },
             ],
         },
     ];

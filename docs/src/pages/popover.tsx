@@ -17,7 +17,7 @@ function Popover() {
 
                 <h2>Popover</h2>
 
-                <h6>A flexible, customizable popover component with various positioning options and color variants.</h6>
+                <h6>A flexible, customizable popover component with various positioning options and colour variants.</h6>
 
                 <h3 id="usage">Usage</h3>
 
@@ -271,37 +271,37 @@ function Popover() {
 
                 <h3 id="styles">Styles</h3>
 
-                <h4 id="colors">Colors</h4>
+                <h4 id="colours">Colours</h4>
 
                 <Preview code={`<div class="grid justify-items-center gap-8">
     <div class="popover popover-right popover-primary">
         <button class="btn btn-primary popover-toggle">Primary Popover</button>
         <div class="popover-content">
-            <span>This is a primary colored popover.</span>
+            <span>This is a primary coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-accent">
         <button class="btn btn-accent popover-toggle">Accent Popover</button>
         <div class="popover-content">
-            <span>This is an accent colored popover.</span>
+            <span>This is an accent coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-success">
         <button class="btn btn-success popover-toggle">Success Popover</button>
         <div class="popover-content">
-            <span>This is a success colored popover.</span>
+            <span>This is a success coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-warning">
         <button class="btn btn-warning popover-toggle">Warning Popover</button>
         <div class="popover-content">
-            <span>This is a warning colored popover.</span>
+            <span>This is a warning coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-danger">
         <button class="btn btn-danger popover-toggle">Danger Popover</button>
         <div class="popover-content">
-            <span>This is a danger colored popover.</span>
+            <span>This is a danger coloured popover.</span>
         </div>
     </div>
 </div>`}/>
@@ -318,31 +318,31 @@ function Popover() {
     <div class="popover popover-right popover-soft popover-primary">
         <button class="btn btn-primary popover-toggle">Primary Popover</button>
         <div class="popover-content">
-            <span>This is a primary colored popover.</span>
+            <span>This is a primary coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-accent">
         <button class="btn btn-accent popover-toggle">Accent Popover</button>
         <div class="popover-content">
-            <span>This is an accent colored popover.</span>
+            <span>This is an accent coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-success">
         <button class="btn btn-success popover-toggle">Success Popover</button>
         <div class="popover-content">
-            <span>This is a success colored popover.</span>
+            <span>This is a success coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-warning">
         <button class="btn btn-warning popover-toggle">Warning Popover</button>
         <div class="popover-content">
-            <span>This is a warning colored popover.</span>
+            <span>This is a warning coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-danger">
         <button class="btn btn-danger popover-toggle">Danger Popover</button>
         <div class="popover-content">
-            <span>This is a danger colored popover.</span>
+            <span>This is a danger coloured popover.</span>
         </div>
     </div>
 </div>`}/>
@@ -470,8 +470,8 @@ function Popover() {
                     href: "#styles",
                     nested: [
                         {
-                            title: "Colors",
-                            href: "#colors",
+                            title: "Colours",
+                            href: "#colours",
                         },
                         {
                             title: "Soft",

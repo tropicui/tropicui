@@ -110,6 +110,10 @@ const router = createBrowserRouter([
             path: "/components/sink",
             Component: page.Sink,
           },
+          {
+            path: "/components/spinner",
+            Component: page.Spinner,
+          },
         ]
       },
     ]

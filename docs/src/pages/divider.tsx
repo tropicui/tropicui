@@ -92,7 +92,7 @@ function Divider() {
 <div class="divider divider-dotted divider-thick">Thick</div>
 <div class="divider divider-dotted divider-thicker">Thicker</div>`}/>
 
-                <h4 id="colors">Colors</h4>
+                <h4 id="colours">Colours</h4>
 
                 <Preview code={`<div class="divider">Default</div>
 <div class="divider divider-primary">Primary</div>
@@ -239,8 +239,8 @@ function Divider() {
                             href: "#dotted",
                         },
                         {
-                            title: "Colors",
-                            href: "#colors",
+                            title: "Colours",
+                            href: "#colours",
                         },
                         {
                             title: "Subtle",

@@ -93,4 +93,9 @@ Spinner component styles.
         --spinner-size: --spacing(9);
         --spinner-border-width: 4px;
     }
+    
+    .spinner-2xl {
+        --spinner-size: --spacing(11);
+        --spinner-border-width: 5px;
+    }
 }
