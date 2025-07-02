@@ -11,6 +11,11 @@ Status component styles.
 */
 @layer components {
     .status {
+        /* modifiers */
+        --status-size: --spacing(3);
+        --status-bg: var(--color-base-dense);
+        --status-border-width: var(--border-width);
+
         /* layout */
         display: inline-block;
         aspect-ratio: 1;
@@ -18,14 +23,10 @@ Status component styles.
         /* dimension */
         block-size: var(--status-size);
         inline-size: var(--status-size);
-        border-radius: var(--radius-control);
+        border-radius: var(--radius-input);
 
         /* color */
         background-color: var(--status-bg);
-
-        /* modifiers */
-        --status-size: --spacing(3);
-        --status-bg: var(--color-base-dense);
     }
 
     /* variants */
@@ -37,11 +38,11 @@ Status component styles.
     /* outline */
     .status-outline,
     .status-outline-bold {
-        border: 1px solid var(--status-bg);
+        border: var(--status-border-width) solid var(--status-bg);
         background: none;
     }
     .status-outline-bold {
-        border-width: 2px;
+        border-width: calc(var(--status-border-width) * 2);
     }
 
     .status-ring {
@@ -82,16 +83,10 @@ Status component styles.
 
     /* sizes */
     .status-xs {
-        &:not(.status-round) {
-            border-radius: var(--radius-xs);
-        }
         --status-size: --spacing(2);
     }
 
     .status-sm {
-        &:not(.status-round) {
-            border-radius: var(--radius-xs);
-        }
         --status-size: --spacing(2.5);
     }
 
@@ -100,10 +95,12 @@ Status component styles.
     }
 
     .status-xl {
+        border-radius: var(--radius-control);
         --status-size: --spacing(5);
     }
 
     .status-2xl {
+        border-radius: var(--radius-control);
         --status-size: --spacing(6);
     }
 }

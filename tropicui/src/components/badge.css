@@ -27,7 +27,7 @@ Badge component styles.
         left: 0;
 
         &.badge-tight {
-            translate: -25% -25%;
+            translate: -20% -20%;
         }
     }
     
@@ -37,7 +37,7 @@ Badge component styles.
         right: 0;
 
         &.badge-tight {
-            translate: 25% -25%;
+            translate: 20% -20%;
         }
     }
     
@@ -47,7 +47,7 @@ Badge component styles.
         left: 0;
 
         &.badge-tight {
-            translate: -25% 25%;
+            translate: -20% 20%;
         }
     }
     
@@ -57,7 +57,7 @@ Badge component styles.
         right: 0;
 
         &.badge-tight {
-            translate: 25% 25%;
+            translate: 20% 20%;
         }
     }
 }

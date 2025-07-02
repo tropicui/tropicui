@@ -102,6 +102,10 @@ function Sidebar() {
                     title: "Spinner",
                     to: "/components/spinner",
                 },
+                {
+                    title: "Status",
+                    to: "/components/status",
+                },
             ],
         },
     ];

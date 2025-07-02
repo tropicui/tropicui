@@ -114,6 +114,10 @@ const router = createBrowserRouter([
             path: "/components/spinner",
             Component: page.Spinner,
           },
+          {
+            path: "/components/status",
+            Component: page.Status,
+          },
         ]
       },
     ]
