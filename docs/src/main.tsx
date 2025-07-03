@@ -130,6 +130,10 @@ const router = createBrowserRouter([
             path: "/components/table",
             Component: page.Table,
           },
+          {
+            path: "/components/tag",
+            Component: page.Tag,
+          },
         ]
       },
     ]

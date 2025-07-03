@@ -118,6 +118,10 @@ function Sidebar() {
                     title: "Table",
                     to: "/components/table",
                 },
+                {
+                    title: "Tag",
+                    to: "/components/tag",
+                },
             ],
         },
     ];

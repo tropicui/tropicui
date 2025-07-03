@@ -19,7 +19,7 @@ Tag component styles.
         --tag-size: --spacing(6);
         --tag-bg: var(--tag-color, var(--color-base));
         --tag-fg: var(--color-base-foreground);
-        --tag-soft-bg: color-mix(in oklab, var(--tag-color) 12%, transparent);
+        --tag-soft-bg: color-mix(in oklab, var(--tag-color) 12%, var(--color-base-background));
         --tag-border: color-mix(in oklab, var(--tag-color, var(--color-base-border)), var(--color-black) 12%);
         --tag-border-width: var(--border-width);
         --tag-radius: var(--radius-control);

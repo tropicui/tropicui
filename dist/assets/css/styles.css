@@ -545,6 +545,9 @@
   .inline {
     display: inline;
   }
+  .inline-flex {
+    display: inline-flex;
+  }
   .table {
     display: table;
   }
@@ -830,6 +833,9 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
+  }
+  .content-center {
+    align-content: center;
   }
   .content-center-safe {
     align-content: safe center;
@@ -5425,7 +5431,7 @@ html {
     --tag-fg: var(--color-base-foreground);
     --tag-soft-bg: var(--tag-color);
     @supports (color: color-mix(in lab, red, red)) {
-      --tag-soft-bg: color-mix(in oklab, var(--tag-color) 12%, transparent);
+      --tag-soft-bg: color-mix(in oklab, var(--tag-color) 12%, var(--color-base-background));
     }
     --tag-border: var(--tag-color, oklch(92.2% 0 0));
     @supports (color: color-mix(in lab, red, red)) {
