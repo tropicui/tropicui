@@ -118,6 +118,10 @@ const router = createBrowserRouter([
             path: "/components/status",
             Component: page.Status,
           },
+          {
+            path: "/components/switch",
+            Component: page.Switch,
+          },
         ]
       },
     ]

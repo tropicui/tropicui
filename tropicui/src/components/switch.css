@@ -32,11 +32,12 @@ Switch component styles.
         --switch-thumb-size: calc(var(--switch-height) - --spacing(1));
 
         --switch-bg: var(--color-base-border);
+        --switch-border-width: var(--border-width);
 
         --switch-focus-outline: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
         --switch-focus-border: var(--color-accent);
         
-        --switch-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+        --switch-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, var(--color-base-background));
         --switch-invalid-border: var(--color-danger);
 
         /* layout */
@@ -50,7 +51,7 @@ Switch component styles.
         inset-block-start: var(--switch-margin);
 
         /* colors */
-        border: 1px solid var(--switch-border, color-mix(in oklab, var(--color-base-dense) 60%, transparent));
+        border: var(--switch-border-width) solid var(--switch-border, color-mix(in oklab, var(--color-base-dense) 60%, transparent));
         border-radius: var(--switch-height);
         outline: 0px solid var(--switch-focus-outline);
         outline-offset: 0px;
@@ -116,7 +117,6 @@ Switch component styles.
         /* disabled */
         &:is(:disabled, [disabled]) {
             cursor: not-allowed;
-            pointer-events: none;
 
             /* colors */
             background-color: color-mix(in oklab, var(--switch-bg) 40%, transparent);
@@ -181,7 +181,7 @@ Switch component styles.
     }
 
     .switch-outline-bold {
-        border-width: 2px;
+        border-width: calc(var(--switch-border-width) * 2);
 
         /* modifiers */
         --switch-thumb-start: --spacing(0.5);
@@ -227,24 +227,47 @@ Switch component styles.
     /* sizes */
     .switch-xs {
         --switch-height: --spacing(3);
+
+        label:has(&) {
+            font-size: var(--text-xs);
+        }
     }
 
     .switch-sm {
         --switch-height: --spacing(3.5);
+
+        label:has(&) {
+            font-size: var(--text-sm);
+        }
     }
 
     .switch-lg {
         --switch-height: --spacing(6);
         --switch-margin: 0.1em;
+
+        label:has(&) {
+            font-size: var(--text-lg);
+            line-height: var(--text-2xl--line-height);
+        }
     }
 
     .switch-xl {
         --switch-height: --spacing(7);
         --switch-margin: 0em;
+
+        label:has(&) {
+            font-size: var(--text-xl);
+            line-height: var(--text-xl--line-height);
+        }
     }
 
     .switch-2xl {
         --switch-height: --spacing(8);
         --switch-margin: 0em;
+
+        label:has(&) {
+            font-size: var(--text-2xl);
+            line-height: var(--text-2xl--line-height);
+        }
     }
 }

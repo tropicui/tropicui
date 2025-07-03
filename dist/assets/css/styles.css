@@ -352,9 +352,6 @@
   .end-0 {
     inset-inline-end: calc(var(--spacing) * 0);
   }
-  .-top-1 {
-    top: calc(var(--spacing) * -1);
-  }
   .top-\(--header-h\) {
     top: var(--header-h);
   }
@@ -375,9 +372,6 @@
   }
   .top-14 {
     top: calc(var(--spacing) * 14);
-  }
-  .-right-1 {
-    right: calc(var(--spacing) * -1);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -495,9 +489,6 @@
   }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
-  }
-  .mt-4 {
-    margin-top: calc(var(--spacing) * 4);
   }
   .mt-64 {
     margin-top: calc(var(--spacing) * 64);
@@ -5142,14 +5133,15 @@ html {
     --switch-thumb-start: calc(var(--spacing) * 0.3);
     --switch-thumb-size: calc(var(--switch-height) - calc(var(--spacing) * 1));
     --switch-bg: var(--color-base-border);
+    --switch-border-width: var(--border-width);
     --switch-focus-outline: var(--input-color, oklch(70.7% 0.165 254.624));
     @supports (color: color-mix(in lab, red, red)) {
       --switch-focus-outline: color-mix(in oklab, var(--input-color, var(--color-accent)) 40%, transparent);
     }
     --switch-focus-border: var(--color-accent);
-    --switch-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, transparent);
+    --switch-invalid-bg: color-mix(in srgb, oklch(57.7% 0.245 27.325) 25%, #fff);
     @supports (color: color-mix(in lab, red, red)) {
-      --switch-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, transparent);
+      --switch-invalid-bg: color-mix(in oklab, var(--color-danger) 25%, var(--color-base-background));
     }
     --switch-invalid-border: var(--color-danger);
     appearance: none;
@@ -5158,9 +5150,9 @@ html {
     block-size: var(--switch-height);
     min-inline-size: var(--switch-width);
     inset-block-start: var(--switch-margin);
-    border: 1px solid var(--switch-border, color-mix(in srgb, oklch(70.8% 0 0) 60%, transparent));
+    border: var(--switch-border-width) solid var(--switch-border, color-mix(in srgb, oklch(70.8% 0 0) 60%, transparent));
     @supports (color: color-mix(in lab, red, red)) {
-      border: 1px solid var(--switch-border, color-mix(in oklab, var(--color-base-dense) 60%, transparent));
+      border: var(--switch-border-width) solid var(--switch-border, color-mix(in oklab, var(--color-base-dense) 60%, transparent));
     }
     border-radius: var(--switch-height);
     outline: 0px solid var(--switch-focus-outline);
@@ -5217,7 +5209,6 @@ html {
     }
     &:is(:disabled, [disabled]) {
       cursor: not-allowed;
-      pointer-events: none;
       background-color: var(--switch-bg);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--switch-bg) 40%, transparent);
@@ -5270,7 +5261,7 @@ html {
     }
   }
   .switch-outline-bold {
-    border-width: 2px;
+    border-width: calc(var(--switch-border-width) * 2);
     --switch-thumb-start: calc(var(--spacing) * 0.5);
     --switch-thumb-size: calc(var(--switch-height) - calc(var(--spacing) * 2));
     &:checked {
@@ -5306,21 +5297,39 @@ html {
   }
   .switch-xs {
     --switch-height: calc(var(--spacing) * 3);
+    label:has(&) {
+      font-size: var(--text-xs);
+    }
   }
   .switch-sm {
     --switch-height: calc(var(--spacing) * 3.5);
+    label:has(&) {
+      font-size: var(--text-sm);
+    }
   }
   .switch-lg {
     --switch-height: calc(var(--spacing) * 6);
     --switch-margin: 0.1em;
+    label:has(&) {
+      font-size: var(--text-lg);
+      line-height: var(--text-2xl--line-height);
+    }
   }
   .switch-xl {
     --switch-height: calc(var(--spacing) * 7);
     --switch-margin: 0em;
+    label:has(&) {
+      font-size: var(--text-xl);
+      line-height: var(--text-xl--line-height);
+    }
   }
   .switch-2xl {
     --switch-height: calc(var(--spacing) * 8);
     --switch-margin: 0em;
+    label:has(&) {
+      font-size: var(--text-2xl);
+      line-height: var(--text-2xl--line-height);
+    }
   }
 }
 @layer components {

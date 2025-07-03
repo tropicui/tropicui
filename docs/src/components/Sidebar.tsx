@@ -106,6 +106,10 @@ function Sidebar() {
                     title: "Status",
                     to: "/components/status",
                 },
+                {
+                    title: "Switch",
+                    to: "/components/switch",
+                },
             ],
         },
     ];
