@@ -126,6 +126,10 @@ const router = createBrowserRouter([
             path: "/components/tab",
             Component: page.Tab,
           },
+          {
+            path: "/components/table",
+            Component: page.Table,
+          },
         ]
       },
     ]

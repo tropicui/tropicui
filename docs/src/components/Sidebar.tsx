@@ -114,6 +114,10 @@ function Sidebar() {
                     title: "Tab",
                     to: "/components/tab",
                 },
+                {
+                    title: "Table",
+                    to: "/components/table",
+                },
             ],
         },
     ];
