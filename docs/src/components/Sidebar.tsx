@@ -110,6 +110,10 @@ function Sidebar() {
                     title: "Switch",
                     to: "/components/switch",
                 },
+                {
+                    title: "Tab",
+                    to: "/components/tab",
+                },
             ],
         },
     ];
