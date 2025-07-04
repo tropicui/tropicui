@@ -74,12 +74,10 @@ Alert component styles.
                 mask-type: alpha;
                 background-color: currentColor;
                 color: var(--alert-fg, var(--color-base-dense));
+                flex: none;
                 block-size: --spacing(5);
                 inline-size: --spacing(5);
             }
-        }
-
-        &:has(input.alert-close[type="radio"]) {
         }
 
         &:has(input.alert-close[type="radio"]:checked) {

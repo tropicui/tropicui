@@ -15,28 +15,37 @@ Toast component styles.
 @layer components {
     .toast {
         /* modifiers */
-        --toast-bg: var(--color-base);
-        --toast-size: --spacing(84);
+        --toast-bg: var(--toast-color, var(--color-base));
+        --toast-fg: var(--color-base-foreground);
+        --toast-soft-bg: light-dark(
+            color-mix(in oklab, var(--toast-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--toast-color) 40%, var(--color-base-background))
+        );
+        --toast-border: color-mix(in oklab, var(--toast-color, var(--color-base-border)), transparent 15%);
+        --toast-border-width: var(--border-width);
+        --toast-size: var(--container-md);
         --toast-spacing: --spacing(4);
-        --toast-shadow: var(--tt-ring-shadow), var(--shadow-high);
+        --toast-shadow: var(--shadow-high);
 
         /* layout */
         display: flex;
         opacity: 1;
         visibility: visible;
-        align-items: start;
+        align-items: center;
+        gap: --spacing(2);
 
         /* dimensions */
-        min-block-size: --spacing(12);
+        min-block-size: --spacing(16);
         inline-size: var(--toast-size);
-        padding: --spacing(2);
+        padding-inline: --spacing(4);
         margin: var(--toast-spacing);
 
         /* color */
         background-color: var(--toast-bg);
-        border: 1px solid color-mix(in oklab, var(--color-black) 4%, transparent);
+        border: var(--toast-border-width) solid var(--toast-border);
         border-radius: var(--radius-control);
         box-shadow: var(--toast-shadow);
+        color: var(--toast-fg);
 
         /* animation */
         transition-property: display, opacity, transform, visibility;
@@ -104,14 +113,18 @@ Toast component styles.
 
             :where(
                 .toast-bottom,
+                .toast-bottom-left,
+                .toast-bottom-right,
                 .toast-bottom-start,
-                .toast-bottom-end
+                .toast-bottom-end,
             ) & {
                 transform: translateY(100%);
             }
     
             :where(
                 .toast-top,
+                .toast-top-left,
+                .toast-top-right,
                 .toast-top-start,
                 .toast-top-end
             ) & {
@@ -119,44 +132,48 @@ Toast component styles.
             }
         }
 
-        .toast-icon {
-            inline-size: --spacing(5);
-            margin: --spacing(2);
-            color: var(--toast-fg, var(--color-base-foreground));
+        /* icons */
+        :where(svg, img, i) {
+            flex: none;
+            block-size: 1.25em;
+            min-inline-size: 1.25em;
+            color: var(--toast-fg);
         }
 
-        .toast-content {
-            flex: 1;
-            margin: --spacing(1);
-            color: var(--toast-fg, var(--color-base-foreground));
+        /* content */
+        :where(span, div) {
+            flex-grow: 1;
+            padding-block: --spacing(4);
         }
     }
 
     /* colors */
     .toast-primary {
-        --toast-bg: var(--color-primary);
+        --toast-color: var(--color-primary);
         --toast-fg: var(--color-primary-content);
-        --toast-shadow: var(--shadow-high);
     }
     .toast-success {
-        --toast-bg: var(--color-success);
+        --toast-color: var(--color-success);
         --toast-fg: var(--color-success-content);
-        --toast-shadow: var(--shadow-high);
     }
     .toast-accent {
-        --toast-bg: var(--color-accent);
+        --toast-color: var(--color-accent);
         --toast-fg: var(--color-accent-content);
-        --toast-shadow: var(--shadow-high);
     }
     .toast-warning {
-        --toast-bg: var(--color-warning);
+        --toast-color: var(--color-warning);
         --toast-fg: var(--color-warning-content);
-        --toast-shadow: var(--shadow-high);
     }
     .toast-danger {
-        --toast-bg: var(--color-danger);
+        --toast-color: var(--color-danger);
         --toast-fg: var(--color-danger-content);
-        --toast-shadow: var(--shadow-high);
+    }
+
+    /* variants */
+    .toast-soft {
+        --toast-bg: var(--toast-soft-bg, var(--color-base));
+        --toast-fg: var(--toast-color, var(--color-base-foreground));
+        --toast-border: transparent;
     }
 
     /* placement */
@@ -166,9 +183,19 @@ Toast component styles.
     }
     .toast-top {
         inset-block-start: 0;
-        inset-inline-start: 50%;
+        left: 50%;
         transform: translateX(-50%);
         justify-items: center;
+    }
+    .toast-top-left {
+        inset-block-start: 0;
+        left: 0;
+        justify-items: left;
+    }
+    .toast-top-right {
+        inset-block-start: 0;
+        right: 0;
+        justify-items: right;
     }
     .toast-top-start {
         inset-block-start: 0;
@@ -182,9 +209,19 @@ Toast component styles.
     }
     .toast-bottom {
         inset-block-end: 0;
-        inset-inline-start: 50%;
+        left: 50%;
         transform: translateX(-50%);
         justify-items: center;
+    }
+    .toast-bottom-left {
+        inset-block-end: 0;
+        left: 0;
+        justify-items: left;
+    }
+    .toast-bottom-right {
+        inset-block-end: 0;
+        right: 0;
+        justify-items: right;
     }
     .toast-bottom-start {
         inset-block-end: 0;
@@ -199,13 +236,16 @@ Toast component styles.
 
     /* sizes */
     .toast-sm {
-        --toast-size: --spacing(64);
+        --toast-size: var(--container-sm);
     }
     .toast-lg {
-        --toast-size: --spacing(114);
+        --toast-size: var(--container-lg);
     }
     .toast-xl {
-        --toast-size: --spacing(140);
+        --toast-size: var(--container-xl);
+    }
+    .toast-2xl {
+        --toast-size: var(--container-2xl);
     }
 
     /* animation keyframes */

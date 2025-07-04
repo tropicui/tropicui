@@ -2444,6 +2444,7 @@ html {
         mask-type: alpha;
         background-color: currentColor;
         color: var(--alert-fg, var(--color-base-dense));
+        flex: none;
         block-size: calc(var(--spacing) * 5);
         inline-size: calc(var(--spacing) * 5);
       }
@@ -2860,6 +2861,10 @@ html {
         --btn-fg: var(--btn-color, var(--color-base-foreground));
       }
     }
+  }
+  .btn-solid {
+    --btn-border: transparent;
+    --btn-shadow: none;
   }
   .btn-soft {
     --btn-bg: var(--btn-soft-bg);
@@ -5629,25 +5634,40 @@ html {
 }
 @layer components {
   .toast {
-    --toast-bg: var(--color-base);
-    --toast-size: calc(var(--spacing) * 84);
+    --toast-bg: var(--toast-color, var(--color-base));
+    --toast-fg: var(--color-base-foreground);
+    --toast-soft-bg: light-dark(
+            var(--toast-color),
+            var(--toast-color)
+        );
+    @supports (color: color-mix(in lab, red, red)) {
+      --toast-soft-bg: light-dark(
+            color-mix(in oklab, var(--toast-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--toast-color) 40%, var(--color-base-background))
+        );
+    }
+    --toast-border: var(--toast-color, oklch(92.2% 0 0));
+    @supports (color: color-mix(in lab, red, red)) {
+      --toast-border: color-mix(in oklab, var(--toast-color, var(--color-base-border)), transparent 15%);
+    }
+    --toast-border-width: var(--border-width);
+    --toast-size: var(--container-md);
     --toast-spacing: calc(var(--spacing) * 4);
-    --toast-shadow: var(--tt-ring-shadow), var(--shadow-high);
+    --toast-shadow: var(--shadow-high);
     display: flex;
     opacity: 1;
     visibility: visible;
-    align-items: start;
-    min-block-size: calc(var(--spacing) * 12);
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    min-block-size: calc(var(--spacing) * 16);
     inline-size: var(--toast-size);
-    padding: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 4);
     margin: var(--toast-spacing);
     background-color: var(--toast-bg);
-    border: 1px solid color-mix(in srgb, #000 4%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border: 1px solid color-mix(in oklab, var(--color-black) 4%, transparent);
-    }
+    border: var(--toast-border-width) solid var(--toast-border);
     border-radius: var(--radius-control);
     box-shadow: var(--toast-shadow);
+    color: var(--toast-fg);
     transition-property: display, opacity, transform, visibility;
     transition-behavior: allow-discrete;
     transition-duration: var(--tt-duration, var(--default-transition-duration));
@@ -5744,48 +5764,48 @@ html {
       display: none;
       opacity: 0;
       visibility: none;
-      :where( .toast-bottom, .toast-bottom-start, .toast-bottom-end ) & {
+      :where( .toast-bottom, .toast-bottom-left, .toast-bottom-right, .toast-bottom-start, .toast-bottom-end, ) & {
         transform: translateY(100%);
       }
-      :where( .toast-top, .toast-top-start, .toast-top-end ) & {
+      :where( .toast-top, .toast-top-left, .toast-top-right, .toast-top-start, .toast-top-end ) & {
         transform: translateY(-100%);
       }
     }
-    .toast-icon {
-      inline-size: calc(var(--spacing) * 5);
-      margin: calc(var(--spacing) * 2);
-      color: var(--toast-fg, var(--color-base-foreground));
+    :where(svg, img, i) {
+      flex: none;
+      block-size: 1.25em;
+      min-inline-size: 1.25em;
+      color: var(--toast-fg);
     }
-    .toast-content {
-      flex: 1;
-      margin: calc(var(--spacing) * 1);
-      color: var(--toast-fg, var(--color-base-foreground));
+    :where(span, div) {
+      flex-grow: 1;
+      padding-block: calc(var(--spacing) * 4);
     }
   }
   .toast-primary {
-    --toast-bg: var(--color-primary);
+    --toast-color: var(--color-primary);
     --toast-fg: var(--color-primary-content);
-    --toast-shadow: var(--shadow-high);
   }
   .toast-success {
-    --toast-bg: var(--color-success);
+    --toast-color: var(--color-success);
     --toast-fg: var(--color-success-content);
-    --toast-shadow: var(--shadow-high);
   }
   .toast-accent {
-    --toast-bg: var(--color-accent);
+    --toast-color: var(--color-accent);
     --toast-fg: var(--color-accent-content);
-    --toast-shadow: var(--shadow-high);
   }
   .toast-warning {
-    --toast-bg: var(--color-warning);
+    --toast-color: var(--color-warning);
     --toast-fg: var(--color-warning-content);
-    --toast-shadow: var(--shadow-high);
   }
   .toast-danger {
-    --toast-bg: var(--color-danger);
+    --toast-color: var(--color-danger);
     --toast-fg: var(--color-danger-content);
-    --toast-shadow: var(--shadow-high);
+  }
+  .toast-soft {
+    --toast-bg: var(--toast-soft-bg, var(--color-base));
+    --toast-fg: var(--toast-color, var(--color-base-foreground));
+    --toast-border: transparent;
   }
   .toast-group {
     position: fixed;
@@ -5793,9 +5813,19 @@ html {
   }
   .toast-top {
     inset-block-start: 0;
-    inset-inline-start: 50%;
+    left: 50%;
     transform: translateX(-50%);
     justify-items: center;
+  }
+  .toast-top-left {
+    inset-block-start: 0;
+    left: 0;
+    justify-items: left;
+  }
+  .toast-top-right {
+    inset-block-start: 0;
+    right: 0;
+    justify-items: right;
   }
   .toast-top-start {
     inset-block-start: 0;
@@ -5809,9 +5839,19 @@ html {
   }
   .toast-bottom {
     inset-block-end: 0;
-    inset-inline-start: 50%;
+    left: 50%;
     transform: translateX(-50%);
     justify-items: center;
+  }
+  .toast-bottom-left {
+    inset-block-end: 0;
+    left: 0;
+    justify-items: left;
+  }
+  .toast-bottom-right {
+    inset-block-end: 0;
+    right: 0;
+    justify-items: right;
   }
   .toast-bottom-start {
     inset-block-end: 0;
@@ -5824,13 +5864,16 @@ html {
     justify-items: end;
   }
   .toast-sm {
-    --toast-size: calc(var(--spacing) * 64);
+    --toast-size: var(--container-sm);
   }
   .toast-lg {
-    --toast-size: calc(var(--spacing) * 114);
+    --toast-size: var(--container-lg);
   }
   .toast-xl {
-    --toast-size: calc(var(--spacing) * 140);
+    --toast-size: var(--container-xl);
+  }
+  .toast-2xl {
+    --toast-size: var(--container-2xl);
   }
   @keyframes toastfadeout {
     0% {

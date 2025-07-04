@@ -81,6 +81,28 @@ function Button() {
     <button class="btn btn-soft btn-danger">Danger</button>
 </div>`}/>
 
+                <h4 id="solid">Solid</h4>
+
+                <Preview code={`<div class="flex flex-wrap gap-8">
+    <button class="btn btn-solid">Button</button>
+    <button class="btn btn-solid btn-primary">Primary</button>
+    <button class="btn btn-solid btn-accent">Accent</button>
+    <button class="btn btn-solid btn-success">Success</button>
+    <button class="btn btn-solid btn-warning">Warning</button>
+    <button class="btn btn-solid btn-danger">Danger</button>
+</div>`}/>
+
+                <h4 id="clear">Clear</h4>
+
+                <Preview code={`<div class="flex flex-wrap gap-8">
+    <button class="btn btn-clear">Clear</button>
+    <button class="btn btn-clear btn-primary">Primary</button>
+    <button class="btn btn-clear btn-accent">Accent</button>
+    <button class="btn btn-clear btn-success">Success</button>
+    <button class="btn btn-clear btn-warning">Warning</button>
+    <button class="btn btn-clear btn-danger">Danger</button>
+</div>`}/>
+
                 <h4 id="outline">Outline</h4>
 
                 <Preview code={`<div class="flex flex-wrap gap-8">
@@ -150,10 +172,6 @@ function Button() {
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
     </svg>
 </button>`}/>
-
-                <h4 id="clear">Clear</h4>
-
-                <Preview code={`<button class="btn btn-clear">Button</button>`}/>
 
                 <h4 id="link">Link</h4>
 
@@ -235,6 +253,14 @@ function Button() {
                             href: "#soft",
                         },
                         {
+                            title: "Solid",
+                            href: "#solid",
+                        },
+                        {
+                            title: "Clear",
+                            href: "#clear",
+                        },
+                        {
                             title: "Outline",
                             href: "#outline",
                         },
@@ -271,10 +297,6 @@ function Button() {
                         {
                             title: "Round",
                             href: "#round",
-                        },
-                        {
-                            title: "Clear",
-                            href: "#clear",
                         },
                         {
                             title: "Link",

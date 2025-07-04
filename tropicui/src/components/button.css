@@ -204,6 +204,11 @@ Button component styles.
         }
     }
 
+    .btn-solid {
+        --btn-border: transparent;
+        --btn-shadow: none;
+    }
+
     .btn-soft {
         --btn-bg: var(--btn-soft-bg);
         --btn-ring: inset 0 0 0 1px color-mix(in oklab, var(--color-base-background) 90%, transparent);

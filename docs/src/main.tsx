@@ -138,6 +138,10 @@ const router = createBrowserRouter([
             path: "/components/textarea",
             Component: page.Textarea,
           },
+          {
+            path: "/components/toast",
+            Component: page.Toast,
+          },
         ]
       },
     ]
