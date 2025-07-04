@@ -7,28 +7,30 @@ Textarea component styles.
 
 @property {string} --textarea-bg - Background color of the textarea
 @property {string} --textarea-border - Border color of the textarea
-@property {string} --textarea-outline - Outline color when textarea is focused
+@property {string} --textarea-focus - Outline color when textarea is focused
 @property {string} --textarea-text - Text color of the textarea
 @property {string} --textarea-color - Accent color that affects border and outline
 */
 @layer components {
     .textarea {
         /* modifiers */
-        --textarea-bg: var(--color-base);
+        --textarea-bg: color-mix(in oklab, var(--textarea-color) 15%, var(--color-base-background));
         --textarea-border: var(--textarea-color, var(--color-base-border));
-        --textarea-outline: color-mix(in oklab, var(--textarea-color, var(--color-accent)) 40%, transparent);
+        --textarea-border-width: var(--border-width);
+        --textarea-focus: color-mix(in oklab, var(--textarea-color, var(--color-accent)) 40%, transparent);
         --textarea-text: var(--color-base-foreground);
 
         /* dimensions */
-        block-size: --spacing(24);
         padding-block: --spacing(2);
         padding-inline: --spacing(4);
 
         /* colors */
-        border: 1px solid var(--textarea-border);
+        border-width: var(--textarea-border-width);
+        border-style: solid;
+        border-color: var(--textarea-border);
         border-radius: var(--radius-control);
-        outline: 0px solid var(--textarea-outline);
-        background-color: var(--textarea-bg);
+        outline: 0px solid var(--textarea-focus);
+        background-color: var(--textarea-bg, var(--color-base));
         box-shadow: var(--shadow-low);
 
         /* typography */
@@ -55,11 +57,22 @@ Textarea component styles.
 
         /* focus */
         &:focus-visible {
-            border-color: var(--textarea-color, var(--color-accent));
-
             outline-width: 3px;
-            background-color: transparent;
+
+            &:not(.textarea-solid) {
+                --textarea-text: var(--color-base-foreground);
+
+                border-color: var(--textarea-color, var(--color-accent));
+                background-color: color-mix(in oklab, var(--textarea-bg, var(--color-base)), var(--color-base-background) 80%);
+            }
         }
+    }
+
+    .textarea-validate:user-invalid,
+    .textarea-invalid {
+        --textarea-color: var(--color-danger);
+
+        outline-width: 3px;
     }
 
     /* variations */
@@ -71,64 +84,57 @@ Textarea component styles.
     }
 
     .textarea-solid {
+        --textarea-bg: var(--textarea-color, var(--color-base));
         /* colors */
         border: none;
         box-shadow: none;
-        background-color: var(--color-base-airy);
     }
 
-    .textarea-validate:user-invalid,
-    .textarea-invalid {
-        --textarea-color: var(--color-danger);
-
-        outline-width: 3px;
-
-        & ~ .invalid-msg {
-            opacity: 1;
-        }
+    .textarea.textarea-outline,
+    .textarea.textarea-outline-bold {
+        /* colors */
+        background: none;
+        box-shadow: none;
     }
 
+    .textarea-outline-bold {
+        border-width: calc(var(--textarea-border-width) * 2);
+    }
 
     /* colors */
     .textarea-primary {
         --textarea-color: var(--color-primary);
+
+        &.textarea-solid {
+            --textarea-text: var(--color-primary-content);
+        }
     }
     .textarea-accent {
         --textarea-color: var(--color-accent);
+
+        &.textarea-solid {
+            --textarea-text: var(--color-accent-content);
+        }
     }
     .textarea-success {
         --textarea-color: var(--color-success);
+
+        &.textarea-solid {
+            --textarea-text: var(--color-success-content);
+        }
     }
     .textarea-warning {
         --textarea-color: var(--color-warning);
+
+        &.textarea-solid {
+            --textarea-text: var(--color-warning-content);
+        }
     }
     .textarea-danger {
         --textarea-color: var(--color-danger);
-    }
 
-    /* sizes */
-    .textarea-xs {
-        font-size: var(--text-xs);
-        line-height: var(--text-xs--line-height);
-    }
-
-    .textarea-sm {
-        font-size: var(--text-sm);
-        line-height: var(--text-sm--line-height);
-    }
-
-    .textarea-lg {
-        font-size: var(--text-lg);
-        line-height: var(--text-lg--line-height);
-    }
-
-    .textarea-xl {
-        font-size: var(--text-xl);
-        line-height: var(--text-xl--line-height);
-    }
-
-    .textarea-2xl {
-        font-size: var(--text-2xl);
-        line-height: var(--text-2xl--line-height);
+        &.textarea-solid {
+            --textarea-text: var(--color-danger-content);
+        }
     }
 }

@@ -134,6 +134,10 @@ const router = createBrowserRouter([
             path: "/components/tag",
             Component: page.Tag,
           },
+          {
+            path: "/components/textarea",
+            Component: page.Textarea,
+          },
         ]
       },
     ]

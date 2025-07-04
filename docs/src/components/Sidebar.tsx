@@ -122,6 +122,10 @@ function Sidebar() {
                     title: "Tag",
                     to: "/components/tag",
                 },
+                {
+                    title: "Textarea",
+                    to: "/components/textarea",
+                },
             ],
         },
     ];

@@ -258,7 +258,7 @@ Input component styles.
     }
 
     .input-outline-bold {
-        border-width: 2px;
+        border-width: calc(var(--input-border-width) * 2);
     }
 
     /* colors */

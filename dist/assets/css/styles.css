@@ -545,9 +545,6 @@
   .inline {
     display: inline;
   }
-  .inline-flex {
-    display: inline-flex;
-  }
   .table {
     display: table;
   }
@@ -833,9 +830,6 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
-  }
-  .content-center {
-    align-content: center;
   }
   .content-center-safe {
     align-content: safe center;
@@ -3892,7 +3886,7 @@ html {
     box-shadow: none;
   }
   .input-outline-bold {
-    border-width: 2px;
+    border-width: calc(var(--input-border-width) * 2);
   }
   .input-primary {
     --input-color: var(--color-primary);
@@ -5533,20 +5527,25 @@ html {
 }
 @layer components {
   .textarea {
-    --textarea-bg: var(--color-base);
-    --textarea-border: var(--textarea-color, var(--color-base-border));
-    --textarea-outline: var(--textarea-color, oklch(70.7% 0.165 254.624));
+    --textarea-bg: var(--textarea-color);
     @supports (color: color-mix(in lab, red, red)) {
-      --textarea-outline: color-mix(in oklab, var(--textarea-color, var(--color-accent)) 40%, transparent);
+      --textarea-bg: color-mix(in oklab, var(--textarea-color) 15%, var(--color-base-background));
+    }
+    --textarea-border: var(--textarea-color, var(--color-base-border));
+    --textarea-border-width: var(--border-width);
+    --textarea-focus: var(--textarea-color, oklch(70.7% 0.165 254.624));
+    @supports (color: color-mix(in lab, red, red)) {
+      --textarea-focus: color-mix(in oklab, var(--textarea-color, var(--color-accent)) 40%, transparent);
     }
     --textarea-text: var(--color-base-foreground);
-    block-size: calc(var(--spacing) * 24);
     padding-block: calc(var(--spacing) * 2);
     padding-inline: calc(var(--spacing) * 4);
-    border: 1px solid var(--textarea-border);
+    border-width: var(--textarea-border-width);
+    border-style: solid;
+    border-color: var(--textarea-border);
     border-radius: var(--radius-control);
-    outline: 0px solid var(--textarea-outline);
-    background-color: var(--textarea-bg);
+    outline: 0px solid var(--textarea-focus);
+    background-color: var(--textarea-bg, var(--color-base));
     box-shadow: var(--shadow-low);
     color: var(--textarea-text);
     &::placeholder {
@@ -5565,10 +5564,20 @@ html {
       }
     }
     &:focus-visible {
-      border-color: var(--textarea-color, var(--color-accent));
       outline-width: 3px;
-      background-color: transparent;
+      &:not(.textarea-solid) {
+        --textarea-text: var(--color-base-foreground);
+        border-color: var(--textarea-color, var(--color-accent));
+        background-color: var(--textarea-bg, oklch(98.5% 0 0));
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--textarea-bg, var(--color-base)), var(--color-base-background) 80%);
+        }
+      }
     }
+  }
+  .textarea-validate:user-invalid, .textarea-invalid {
+    --textarea-color: var(--color-danger);
+    outline-width: 3px;
   }
   .textarea-clear {
     border: none;
@@ -5576,51 +5585,46 @@ html {
     background: none;
   }
   .textarea-solid {
+    --textarea-bg: var(--textarea-color, var(--color-base));
     border: none;
     box-shadow: none;
-    background-color: var(--color-base-airy);
   }
-  .textarea-validate:user-invalid, .textarea-invalid {
-    --textarea-color: var(--color-danger);
-    outline-width: 3px;
-    & ~ .invalid-msg {
-      opacity: 1;
-    }
+  .textarea.textarea-outline, .textarea.textarea-outline-bold {
+    background: none;
+    box-shadow: none;
+  }
+  .textarea-outline-bold {
+    border-width: calc(var(--textarea-border-width) * 2);
   }
   .textarea-primary {
     --textarea-color: var(--color-primary);
+    &.textarea-solid {
+      --textarea-text: var(--color-primary-content);
+    }
   }
   .textarea-accent {
     --textarea-color: var(--color-accent);
+    &.textarea-solid {
+      --textarea-text: var(--color-accent-content);
+    }
   }
   .textarea-success {
     --textarea-color: var(--color-success);
+    &.textarea-solid {
+      --textarea-text: var(--color-success-content);
+    }
   }
   .textarea-warning {
     --textarea-color: var(--color-warning);
+    &.textarea-solid {
+      --textarea-text: var(--color-warning-content);
+    }
   }
   .textarea-danger {
     --textarea-color: var(--color-danger);
-  }
-  .textarea-xs {
-    font-size: var(--text-xs);
-    line-height: var(--text-xs--line-height);
-  }
-  .textarea-sm {
-    font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
-  }
-  .textarea-lg {
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
-  }
-  .textarea-xl {
-    font-size: var(--text-xl);
-    line-height: var(--text-xl--line-height);
-  }
-  .textarea-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--text-2xl--line-height);
+    &.textarea-solid {
+      --textarea-text: var(--color-danger-content);
+    }
   }
 }
 @layer components {
