@@ -159,6 +159,10 @@ const router = createBrowserRouter([
             path: "/utilities/float",
             Component: page.Float,
           },
+          {
+            path: "/utilities/join",
+            Component: page.Join,
+          },
         ]
       },
     ]

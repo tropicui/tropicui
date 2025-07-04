@@ -143,6 +143,10 @@ function Sidebar() {
                     title: "Float",
                     to: "/utilities/float",
                 },
+                {
+                    title: "Join",
+                    to: "/utilities/join",
+                },
             ],
         },
     ];
