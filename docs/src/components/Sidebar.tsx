@@ -136,6 +136,15 @@ function Sidebar() {
                 },
             ],
         },
+        {
+            title: "Utilities",
+            children: [
+                {
+                    title: "Float",
+                    to: "/utilities/float",
+                },
+            ],
+        },
     ];
 
     return (

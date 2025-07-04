@@ -148,6 +148,19 @@ const router = createBrowserRouter([
           },
         ]
       },
+      {
+        path: "/utilities",
+        children: [
+          {
+            index: true,
+            loader: () => redirect("/utilities/float"),
+          },
+          {
+            path: "/utilities/float",
+            Component: page.Float,
+          },
+        ]
+      },
     ]
   },
 ]);
