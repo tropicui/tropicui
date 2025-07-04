@@ -21,9 +21,14 @@ Tooltip component styles.
         --tooltip-margin: --spacing(2.7);
         --tooltip-arrow-size: --spacing(2.5);
         --tooltip-arrow-margin: --spacing(1.5);
-        --tooltip-bg: var(--color-base);
-        --tooltip-border: var(--color-base-border);
-        --tooltip-shadow: var(--tt-ring-shadow), var(--shadow-rise);
+        --tooltip-bg: var(--tooltip-color, var(--color-base));
+        --tooltip-soft-bg: light-dark(
+            color-mix(in oklab, var(--tooltip-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--tooltip-color) 40%, var(--color-base-background))
+        );
+        --tooltip-border: color-mix(in oklab, var(--tooltip-color, var(--color-base-border)), var(--color-base-foreground) 10%);
+        --tooltip-border-width: var(--border-width);
+        --tooltip-shadow: 0 0 0 var(--tooltip-border-width) var(--tooltip-border), var(--shadow-rise);
 
         /* layout */
         position: relative;
@@ -80,17 +85,18 @@ Tooltip component styles.
 
         /* arrow */
         &::after {
-            /* layour */
+            /* layout */
             content: "";
             z-index: 32;
             display: block;
+            rotate: 225deg;
 
             /* dimensions */
             width: var(--tooltip-arrow-size);
             height: var(--tooltip-arrow-size);
 
             /* color */
-            border: 1px solid var(--tooltip-border);
+            border: var(--tooltip-border-width) solid var(--tooltip-border);
             background-color: var(--tooltip-bg);
             box-shadow: var(--shadow-rise);
             clip-path: polygon(0 0, 0 100%, 100% 0);
@@ -99,34 +105,29 @@ Tooltip component styles.
 
     /* colors */
     .tooltip-primary {
-        --tooltip-bg: var(--color-primary);
+        --tooltip-color: var(--color-primary);
         --tooltip-fg: var(--color-primary-content);
-        --tooltip-border: transparent;
-        --tooltip-shadow: var(--shadow-rise);
     }
     .tooltip-accent {
-        --tooltip-bg: var(--color-accent);
+        --tooltip-color: var(--color-accent);
         --tooltip-fg: var(--color-accent-content);
-        --tooltip-border: transparent;
-        --tooltip-shadow: var(--shadow-rise);
     }
     .tooltip-success {
-        --tooltip-bg: var(--color-success);
+        --tooltip-color: var(--color-success);
         --tooltip-fg: var(--color-success-content);
-        --tooltip-border: transparent;
-        --tooltip-shadow: var(--shadow-rise);
     }
     .tooltip-warning {
-        --tooltip-bg: var(--color-warning);
+        --tooltip-color: var(--color-warning);
         --tooltip-fg: var(--color-warning-content);
-        --tooltip-border: transparent;
-        --tooltip-shadow: var(--shadow-rise);
     }
     .tooltip-danger {
-        --tooltip-bg: var(--color-danger);
+        --tooltip-color: var(--color-danger);
         --tooltip-fg: var(--color-danger-content);
-        --tooltip-border: transparent;
-        --tooltip-shadow: var(--shadow-rise);
+    }
+
+    .tooltip-soft {
+        --tooltip-bg: var(--tooltip-soft-bg, var(--color-base));
+        --tooltip-fg: var(--tooltip-color, var(--color-base-foreground));
     }
 
     /* sizes */
@@ -148,9 +149,10 @@ Tooltip component styles.
 
     /* arrow positioning */
     .tooltip:where(
-        .tooltip-top,
+        .tooltip-top-left,
+        .tooltip-top-right,
         .tooltip-top-start,
-        .tooltip-top-end
+        .tooltip-top-end,
     )::after {
         /* arrow down */
         rotate: 225deg;
@@ -158,8 +160,10 @@ Tooltip component styles.
 
     .tooltip:where(
         .tooltip-bottom,
+        .tooltip-bottom-left,
+        .tooltip-bottom-right,
         .tooltip-bottom-start,
-        .tooltip-bottom-end
+        .tooltip-bottom-end,
     )::after {
         /* arrow up */
         rotate: 45deg;
@@ -168,7 +172,13 @@ Tooltip component styles.
     .tooltip:where(
         .tooltip-left,
         .tooltip-left-start,
-        .tooltip-left-end
+        .tooltip-left-end,
+        .tooltip-start:dir(ltr),
+        .tooltip-start-start:dir(ltr),
+        .tooltip-start-end:dir(ltr),
+        .tooltip-end:dir(rtl),
+        .tooltip-end-start:dir(rtl),
+        .tooltip-end-end:dir(rtl)
     )::after {
         /* arrow right */
         rotate: 135deg;
@@ -177,17 +187,45 @@ Tooltip component styles.
     .tooltip:where(
         .tooltip-right,
         .tooltip-right-start,
-        .tooltip-right-end
+        .tooltip-right-end,
+        .tooltip-start:dir(rtl),
+        .tooltip-start-start:dir(rtl),
+        .tooltip-start-end:dir(rtl),
+        .tooltip-end:dir(ltr),
+        .tooltip-end-start:dir(ltr),
+        .tooltip-end-end:dir(ltr),
     )::after {
         /* arrow left */
         rotate: 315deg;
     }
 
     /* positioning */
-    .tooltip-top {
+    .tooltip:not(
+        .tooltip-top-left,
+        .tooltip-top-right,
+        .tooltip-top-start,
+        .tooltip-top-end,
+        .tooltip-bottom,
+        .tooltip-bottom-left,
+        .tooltip-bottom-right,
+        .tooltip-bottom-start,
+        .tooltip-bottom-end,
+        .tooltip-left,
+        .tooltip-left-start,
+        .tooltip-left-end,
+        .tooltip-start,
+        .tooltip-start-start,
+        .tooltip-start-end,
+        .tooltip-right,
+        .tooltip-right-start,
+        .tooltip-right-end,
+        .tooltip-end,
+        .tooltip-end-start,
+        .tooltip-end-end
+    ) {
         &::before {
             inset-block-end: calc(100% + var(--tooltip-margin));
-            inset-inline-start: 50%;
+            left: 50%;
             transform: translateX(-50%);
         }
 
@@ -195,6 +233,30 @@ Tooltip component styles.
             inset-block-end: calc(100% + var(--tooltip-arrow-margin));
             inset-inline: 0;
             margin-inline: auto;
+        }
+    }
+
+    .tooltip-top-left {
+        &::before {
+            inset-block-end: calc(100% + var(--tooltip-margin));
+            left: 0;
+        }
+
+        &::after {
+            inset-block-end: calc(100% + var(--tooltip-arrow-margin));
+            left: var(--tooltip-margin);
+        }
+    }
+
+    .tooltip-top-right {
+        &::before {
+            inset-block-end: calc(100% + var(--tooltip-margin));
+            right: 0;
+        }
+
+        &::after {
+            inset-block-end: calc(100% + var(--tooltip-arrow-margin));
+            right: var(--tooltip-margin);
         }
     }
 
@@ -225,7 +287,7 @@ Tooltip component styles.
     .tooltip-bottom {
         &::before {
             inset-block-start: calc(100% + var(--tooltip-margin));
-            inset-inline-start: 50%;
+            left: 50%;
             transform: translateX(-50%);
         }
 
@@ -233,6 +295,30 @@ Tooltip component styles.
             inset-block-start: calc(100% + var(--tooltip-arrow-margin));
             inset-inline: 0;
             margin-inline: auto;
+        }
+    }
+
+    .tooltip-bottom-left {
+        &::before {
+            inset-block-start: calc(100% + var(--tooltip-margin));
+            left: 0;
+        }
+
+        &::after {
+            inset-block-start: calc(100% + var(--tooltip-arrow-margin));
+            left: var(--tooltip-margin);
+        }
+    }
+
+    .tooltip-bottom-right {
+        &::before {
+            inset-block-start: calc(100% + var(--tooltip-margin));
+            right: 0;
+        }
+
+        &::after {
+            inset-block-start: calc(100% + var(--tooltip-arrow-margin));
+            right: var(--tooltip-margin);
         }
     }
 
@@ -262,6 +348,82 @@ Tooltip component styles.
 
     .tooltip-left {
         &::before {
+            right: calc(100% + var(--tooltip-margin));
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            right: calc(100% + var(--tooltip-arrow-margin));
+            inset-block: 0;
+            margin-block: auto;
+        }
+    }
+
+    .tooltip-left-start {
+        &::before {
+            inset-block-start: 0;
+            right: calc(100% + var(--tooltip-margin));
+        }
+
+        &::after {
+            inset-block-start: var(--tooltip-arrow-margin);
+            right: calc(100% + var(--tooltip-arrow-margin));
+        }
+    }
+
+    .tooltip-left-end {
+        &::before {
+            inset-block-end: 0;
+            right: calc(100% + var(--tooltip-margin));
+        }
+
+        &::after {
+            inset-block-end: var(--tooltip-arrow-margin);
+            right: calc(100% + var(--tooltip-arrow-margin));
+        }
+    }
+
+    .tooltip-right {
+        &::before {
+            left: calc(100% + var(--tooltip-margin));
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            left: calc(100% + var(--tooltip-arrow-margin));
+            inset-block: 0;
+            margin-block: auto;
+        }
+    }
+
+    .tooltip-right-start {
+        &::before {
+            inset-block-start: 0;
+            left: calc(100% + var(--tooltip-margin));
+        }
+
+        &::after {
+            inset-block-start: var(--tooltip-arrow-margin);
+            left: calc(100% + var(--tooltip-arrow-margin));
+        }
+    }
+
+    .tooltip-right-end {
+        &::before {
+            inset-block-end: 0;
+            left: calc(100% + var(--tooltip-margin));
+        }
+
+        &::after {
+            inset-block-end: var(--tooltip-arrow-margin);
+            left: calc(100% + var(--tooltip-arrow-margin));
+        }
+    }
+
+    .tooltip-start {
+        &::before {
             inset-inline-end: calc(100% + var(--tooltip-margin));
             inset-block-start: 50%;
             transform: translateY(-50%);
@@ -274,7 +436,7 @@ Tooltip component styles.
         }
     }
 
-    .tooltip-left-start {
+    .tooltip-start-start {
         &::before {
             inset-block-start: 0;
             inset-inline-end: calc(100% + var(--tooltip-margin));
@@ -286,7 +448,7 @@ Tooltip component styles.
         }
     }
 
-    .tooltip-left-end {
+    .tooltip-start-end {
         &::before {
             inset-block-end: 0;
             inset-inline-end: calc(100% + var(--tooltip-margin));
@@ -298,7 +460,7 @@ Tooltip component styles.
         }
     }
 
-    .tooltip-right {
+    .tooltip-end {
         &::before {
             inset-inline-start: calc(100% + var(--tooltip-margin));
             inset-block-start: 50%;
@@ -312,7 +474,7 @@ Tooltip component styles.
         }
     }
 
-    .tooltip-right-start {
+    .tooltip-end-start {
         &::before {
             inset-block-start: 0;
             inset-inline-start: calc(100% + var(--tooltip-margin));
@@ -324,7 +486,7 @@ Tooltip component styles.
         }
     }
 
-    .tooltip-right-end {
+    .tooltip-end-end {
         &::before {
             inset-block-end: 0;
             inset-inline-start: calc(100% + var(--tooltip-margin));

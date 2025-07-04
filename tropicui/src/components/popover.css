@@ -20,6 +20,7 @@ Popover component styles.
             color-mix(in oklab, var(--popover-color) 10%, var(--color-base-background)),
             color-mix(in oklab, var(--popover-color) 40%, var(--color-base-background))
         );
+        --popover-border-width: var(--border-width);
 
         /* layout */
         position: relative;
@@ -50,10 +51,7 @@ Popover component styles.
 
             /* colors */
             background-color: var(--popover-bg);
-            border: 1px solid light-dark(
-                color-mix(in oklab, var(--popover-color, var(--color-base-dense)) 30%, var(--color-base-background)),
-                color-mix(in oklab, var(--popover-color, var(--color-base-dense)) 60%, var(--color-base-background))
-            );
+            border: var(--popover-border-width) solid color-mix(in oklab, var(--popover-color, var(--color-base-border)), var(--color-base-foreground) 10%);
             border-radius: var(--radius-container);
             box-shadow: var(--shadow-rise);
             color: var(--popover-fg, var(--color-base-foreground));

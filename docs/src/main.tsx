@@ -142,6 +142,10 @@ const router = createBrowserRouter([
             path: "/components/toast",
             Component: page.Toast,
           },
+          {
+            path: "/components/tooltip",
+            Component: page.Tooltip,
+          },
         ]
       },
     ]

@@ -162,7 +162,6 @@
     --inset-dent: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     --inset-low: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1),
         inset 0 0px 4px 0 rgba(0, 0, 0, 0.05);
-    --tt-ring-shadow: 0 0 0 1px var(--color-base-border, currentColor);
     --tt-duration: 150ms;
     --tt-ease-out: cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -321,6 +320,9 @@
   }
   .collapse {
     visibility: collapse;
+  }
+  .visible {
+    visibility: visible;
   }
   .absolute {
     position: absolute;
@@ -4304,6 +4306,7 @@ html {
             color-mix(in oklab, var(--popover-color) 40%, var(--color-base-background))
         );
     }
+    --popover-border-width: var(--border-width);
     position: relative;
     display: inline-block;
   }
@@ -4326,9 +4329,9 @@ html {
       min-width: calc(var(--spacing) * 64);
       padding: calc(var(--spacing) * 4);
       background-color: var(--popover-bg);
-      border: 1px solid light-dark( var(--popover-color, oklch(70.8% 0 0)), var(--popover-color, oklch(70.8% 0 0)) );
+      border: var(--popover-border-width) solid var(--popover-color, oklch(92.2% 0 0));
       @supports (color: color-mix(in lab, red, red)) {
-        border: 1px solid light-dark( color-mix(in oklab, var(--popover-color, var(--color-base-dense)) 30%, var(--color-base-background)), color-mix(in oklab, var(--popover-color, var(--color-base-dense)) 60%, var(--color-base-background)) );
+        border: var(--popover-border-width) solid color-mix(in oklab, var(--popover-color, var(--color-base-border)), var(--color-base-foreground) 10%);
       }
       border-radius: var(--radius-container);
       box-shadow: var(--shadow-rise);
@@ -5893,9 +5896,23 @@ html {
     --tooltip-margin: calc(var(--spacing) * 2.7);
     --tooltip-arrow-size: calc(var(--spacing) * 2.5);
     --tooltip-arrow-margin: calc(var(--spacing) * 1.5);
-    --tooltip-bg: var(--color-base);
-    --tooltip-border: var(--color-base-border);
-    --tooltip-shadow: var(--tt-ring-shadow), var(--shadow-rise);
+    --tooltip-bg: var(--tooltip-color, var(--color-base));
+    --tooltip-soft-bg: light-dark(
+            var(--tooltip-color),
+            var(--tooltip-color)
+        );
+    @supports (color: color-mix(in lab, red, red)) {
+      --tooltip-soft-bg: light-dark(
+            color-mix(in oklab, var(--tooltip-color) 10%, var(--color-base-background)),
+            color-mix(in oklab, var(--tooltip-color) 40%, var(--color-base-background))
+        );
+    }
+    --tooltip-border: var(--tooltip-color, oklch(92.2% 0 0));
+    @supports (color: color-mix(in lab, red, red)) {
+      --tooltip-border: color-mix(in oklab, var(--tooltip-color, var(--color-base-border)), var(--color-base-foreground) 10%);
+    }
+    --tooltip-border-width: var(--border-width);
+    --tooltip-shadow: 0 0 0 var(--tooltip-border-width) var(--tooltip-border), var(--shadow-rise);
     position: relative;
     overflow: visible;
     @media (hover: hover) {
@@ -5934,43 +5951,38 @@ html {
       content: "";
       z-index: 32;
       display: block;
+      rotate: 225deg;
       width: var(--tooltip-arrow-size);
       height: var(--tooltip-arrow-size);
-      border: 1px solid var(--tooltip-border);
+      border: var(--tooltip-border-width) solid var(--tooltip-border);
       background-color: var(--tooltip-bg);
       box-shadow: var(--shadow-rise);
       clip-path: polygon(0 0, 0 100%, 100% 0);
     }
   }
   .tooltip-primary {
-    --tooltip-bg: var(--color-primary);
+    --tooltip-color: var(--color-primary);
     --tooltip-fg: var(--color-primary-content);
-    --tooltip-border: transparent;
-    --tooltip-shadow: var(--shadow-rise);
   }
   .tooltip-accent {
-    --tooltip-bg: var(--color-accent);
+    --tooltip-color: var(--color-accent);
     --tooltip-fg: var(--color-accent-content);
-    --tooltip-border: transparent;
-    --tooltip-shadow: var(--shadow-rise);
   }
   .tooltip-success {
-    --tooltip-bg: var(--color-success);
+    --tooltip-color: var(--color-success);
     --tooltip-fg: var(--color-success-content);
-    --tooltip-border: transparent;
-    --tooltip-shadow: var(--shadow-rise);
   }
   .tooltip-warning {
-    --tooltip-bg: var(--color-warning);
+    --tooltip-color: var(--color-warning);
     --tooltip-fg: var(--color-warning-content);
-    --tooltip-border: transparent;
-    --tooltip-shadow: var(--shadow-rise);
   }
   .tooltip-danger {
-    --tooltip-bg: var(--color-danger);
+    --tooltip-color: var(--color-danger);
     --tooltip-fg: var(--color-danger-content);
-    --tooltip-border: transparent;
-    --tooltip-shadow: var(--shadow-rise);
+  }
+  .tooltip-soft {
+    --tooltip-bg: var(--tooltip-soft-bg, var(--color-base));
+    --tooltip-fg: var(--tooltip-color, var(--color-base-foreground));
   }
   .tooltip-xs {
     --tooltip-size: calc(var(--spacing) * 4);
@@ -5987,28 +5999,48 @@ html {
   .tooltip-2xl {
     --tooltip-size: calc(var(--spacing) * 9);
   }
-  .tooltip:where( .tooltip-top, .tooltip-top-start, .tooltip-top-end )::after {
+  .tooltip:where( .tooltip-top-left, .tooltip-top-right, .tooltip-top-start, .tooltip-top-end, )::after {
     rotate: 225deg;
   }
-  .tooltip:where( .tooltip-bottom, .tooltip-bottom-start, .tooltip-bottom-end )::after {
+  .tooltip:where( .tooltip-bottom, .tooltip-bottom-left, .tooltip-bottom-right, .tooltip-bottom-start, .tooltip-bottom-end, )::after {
     rotate: 45deg;
   }
-  .tooltip:where( .tooltip-left, .tooltip-left-start, .tooltip-left-end )::after {
+  .tooltip:where( .tooltip-left, .tooltip-left-start, .tooltip-left-end, .tooltip-start:dir(ltr), .tooltip-start-start:dir(ltr), .tooltip-start-end:dir(ltr), .tooltip-end:dir(rtl), .tooltip-end-start:dir(rtl), .tooltip-end-end:dir(rtl) )::after {
     rotate: 135deg;
   }
-  .tooltip:where( .tooltip-right, .tooltip-right-start, .tooltip-right-end )::after {
+  .tooltip:where( .tooltip-right, .tooltip-right-start, .tooltip-right-end, .tooltip-start:dir(rtl), .tooltip-start-start:dir(rtl), .tooltip-start-end:dir(rtl), .tooltip-end:dir(ltr), .tooltip-end-start:dir(ltr), .tooltip-end-end:dir(ltr), )::after {
     rotate: 315deg;
   }
-  .tooltip-top {
+  .tooltip:not( .tooltip-top-left, .tooltip-top-right, .tooltip-top-start, .tooltip-top-end, .tooltip-bottom, .tooltip-bottom-left, .tooltip-bottom-right, .tooltip-bottom-start, .tooltip-bottom-end, .tooltip-left, .tooltip-left-start, .tooltip-left-end, .tooltip-start, .tooltip-start-start, .tooltip-start-end, .tooltip-right, .tooltip-right-start, .tooltip-right-end, .tooltip-end, .tooltip-end-start, .tooltip-end-end ) {
     &::before {
       inset-block-end: calc(100% + var(--tooltip-margin));
-      inset-inline-start: 50%;
+      left: 50%;
       transform: translateX(-50%);
     }
     &::after {
       inset-block-end: calc(100% + var(--tooltip-arrow-margin));
       inset-inline: 0;
       margin-inline: auto;
+    }
+  }
+  .tooltip-top-left {
+    &::before {
+      inset-block-end: calc(100% + var(--tooltip-margin));
+      left: 0;
+    }
+    &::after {
+      inset-block-end: calc(100% + var(--tooltip-arrow-margin));
+      left: var(--tooltip-margin);
+    }
+  }
+  .tooltip-top-right {
+    &::before {
+      inset-block-end: calc(100% + var(--tooltip-margin));
+      right: 0;
+    }
+    &::after {
+      inset-block-end: calc(100% + var(--tooltip-arrow-margin));
+      right: var(--tooltip-margin);
     }
   }
   .tooltip-top-start {
@@ -6034,13 +6066,33 @@ html {
   .tooltip-bottom {
     &::before {
       inset-block-start: calc(100% + var(--tooltip-margin));
-      inset-inline-start: 50%;
+      left: 50%;
       transform: translateX(-50%);
     }
     &::after {
       inset-block-start: calc(100% + var(--tooltip-arrow-margin));
       inset-inline: 0;
       margin-inline: auto;
+    }
+  }
+  .tooltip-bottom-left {
+    &::before {
+      inset-block-start: calc(100% + var(--tooltip-margin));
+      left: 0;
+    }
+    &::after {
+      inset-block-start: calc(100% + var(--tooltip-arrow-margin));
+      left: var(--tooltip-margin);
+    }
+  }
+  .tooltip-bottom-right {
+    &::before {
+      inset-block-start: calc(100% + var(--tooltip-margin));
+      right: 0;
+    }
+    &::after {
+      inset-block-start: calc(100% + var(--tooltip-arrow-margin));
+      right: var(--tooltip-margin);
     }
   }
   .tooltip-bottom-start {
@@ -6065,6 +6117,70 @@ html {
   }
   .tooltip-left {
     &::before {
+      right: calc(100% + var(--tooltip-margin));
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      right: calc(100% + var(--tooltip-arrow-margin));
+      inset-block: 0;
+      margin-block: auto;
+    }
+  }
+  .tooltip-left-start {
+    &::before {
+      inset-block-start: 0;
+      right: calc(100% + var(--tooltip-margin));
+    }
+    &::after {
+      inset-block-start: var(--tooltip-arrow-margin);
+      right: calc(100% + var(--tooltip-arrow-margin));
+    }
+  }
+  .tooltip-left-end {
+    &::before {
+      inset-block-end: 0;
+      right: calc(100% + var(--tooltip-margin));
+    }
+    &::after {
+      inset-block-end: var(--tooltip-arrow-margin);
+      right: calc(100% + var(--tooltip-arrow-margin));
+    }
+  }
+  .tooltip-right {
+    &::before {
+      left: calc(100% + var(--tooltip-margin));
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      left: calc(100% + var(--tooltip-arrow-margin));
+      inset-block: 0;
+      margin-block: auto;
+    }
+  }
+  .tooltip-right-start {
+    &::before {
+      inset-block-start: 0;
+      left: calc(100% + var(--tooltip-margin));
+    }
+    &::after {
+      inset-block-start: var(--tooltip-arrow-margin);
+      left: calc(100% + var(--tooltip-arrow-margin));
+    }
+  }
+  .tooltip-right-end {
+    &::before {
+      inset-block-end: 0;
+      left: calc(100% + var(--tooltip-margin));
+    }
+    &::after {
+      inset-block-end: var(--tooltip-arrow-margin);
+      left: calc(100% + var(--tooltip-arrow-margin));
+    }
+  }
+  .tooltip-start {
+    &::before {
       inset-inline-end: calc(100% + var(--tooltip-margin));
       inset-block-start: 50%;
       transform: translateY(-50%);
@@ -6075,7 +6191,7 @@ html {
       margin-block: auto;
     }
   }
-  .tooltip-left-start {
+  .tooltip-start-start {
     &::before {
       inset-block-start: 0;
       inset-inline-end: calc(100% + var(--tooltip-margin));
@@ -6085,7 +6201,7 @@ html {
       inset-inline-end: calc(100% + var(--tooltip-arrow-margin));
     }
   }
-  .tooltip-left-end {
+  .tooltip-start-end {
     &::before {
       inset-block-end: 0;
       inset-inline-end: calc(100% + var(--tooltip-margin));
@@ -6095,7 +6211,7 @@ html {
       inset-inline-end: calc(100% + var(--tooltip-arrow-margin));
     }
   }
-  .tooltip-right {
+  .tooltip-end {
     &::before {
       inset-inline-start: calc(100% + var(--tooltip-margin));
       inset-block-start: 50%;
@@ -6107,7 +6223,7 @@ html {
       margin-block: auto;
     }
   }
-  .tooltip-right-start {
+  .tooltip-end-start {
     &::before {
       inset-block-start: 0;
       inset-inline-start: calc(100% + var(--tooltip-margin));
@@ -6117,7 +6233,7 @@ html {
       inset-inline-start: calc(100% + var(--tooltip-arrow-margin));
     }
   }
-  .tooltip-right-end {
+  .tooltip-end-end {
     &::before {
       inset-block-end: 0;
       inset-inline-start: calc(100% + var(--tooltip-margin));

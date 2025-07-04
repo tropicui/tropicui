@@ -130,6 +130,10 @@ function Sidebar() {
                     title: "Toast",
                     to: "/components/toast",
                 },
+                {
+                    title: "Tooltip",
+                    to: "/components/tooltip",
+                },
             ],
         },
     ];
