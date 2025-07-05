@@ -20,6 +20,15 @@ function Sidebar() {
             ],
         },
         {
+            title: "Content",
+            children: [
+                {
+                    title: "Typography",
+                    to: "/content/typography",
+                },
+            ],
+        },
+        {
             title: "Components",
             children: [
                 {

@@ -112,8 +112,8 @@ function Form() {
     <div class="form-field">
         <label>
             <input type="checkbox" class="checkbox">
-            <div>
-                <span>I agree to the terms and conditions</span>
+            <div class="space-y-2">
+                <div>I agree to the terms and conditions</div>
                 <span class="form-helper">Last update: 12/02/2025</span>
             </div>
         </labe>

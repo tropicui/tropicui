@@ -31,9 +31,6 @@ Form component and field styles.
             /* layout */
             display: block;
 
-            /* dimensions */
-            margin-block: --spacing(1);
-
             /* color */
             color: color-mix(in oklab, currentColor, var(--color-base-background) 50%);
 

@@ -28,6 +28,23 @@ const router = createBrowserRouter([
         Component: page.Installation,
       },
       {
+        path: "/theming",
+        Component: page.Theming,
+      },
+      {
+        path: "/content",
+        children: [
+          {
+            index: true,
+            loader: () => redirect("/content/typography"),
+          },
+          {
+            path: "/content/typography",
+            Component: page.Typography,
+          },
+        ]
+      },
+      {
         path: "/components",
         children: [
           {

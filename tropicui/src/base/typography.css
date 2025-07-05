@@ -78,6 +78,16 @@
         padding-inline: --spacing(6);
     }
 
+    dl {
+        dt {
+            font-weight: var(--font-weight-semibold);
+        }
+        dd {
+            margin-block-end: --spacing(4);
+            margin-inline-start: --spacing(4);
+        }
+    }
+
     mark {
         background-color: var(--color-accent);
         color: var(--color-accent-content);
