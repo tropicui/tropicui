@@ -1,17 +1,25 @@
 import { useState } from "react";
 import hljs from "highlight.js/lib/core";
+import bash from "highlight.js/lib/languages/bash";
+import css from "highlight.js/lib/languages/css";
+import js from "highlight.js/lib/languages/javascript";
 import html from "highlight.js/lib/languages/xml";
 // import "highlight.js/styles/monokai-sublime.min.css";
 import "highlight.js/styles/panda-syntax-dark.min.css";
 
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("css", css);
 hljs.registerLanguage("html", html);
+hljs.registerLanguage("js", js);
 
 interface CodeBlockProps {
     children: React.ReactNode;
+    title?: string;
+    lang?: string;
 }
 
 function CodeBlock(props: CodeBlockProps) {
-    const { children } = props;
+    const { children, title, lang } = props;
     const [isViewCode, setViewCode] = useState(false);
     const [isCopied, setCopied] = useState(false);
     const [isScrolling, setScrolling] = useState(false);
@@ -31,13 +39,14 @@ function CodeBlock(props: CodeBlockProps) {
 
     const highlightedCode = hljs.highlight(
         code,
-        { language: 'html' }
+        { language: lang || 'html' }
     ).value
 
     return (
-        <div className="grid bg-primary p-1">
+        <div className="grid bg-base-foreground theme-dark:bg-base p-1">
+            {title && <div className="text-base/75 theme-dark:text-base-foreground/75 px-2 py-1">{title}</div>}
             <div
-                className={`hljs relative border border-base-foreground rounded-md overflow-x-auto scheme-dark ${isViewCode ? '' : 'max-h-36'}`}
+                className={`hljs relative border border-base-foreground theme-dark:border-base rounded-md overflow-x-auto scheme-dark ${isViewCode ? '' : 'max-h-36'}`}
                 style={{scrollbarGutter: 'stable'}}
                 onScroll={() => { setScrolling(true) }}
                 onScrollEnd={() => { setScrolling(false) }}

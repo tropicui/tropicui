@@ -1,6 +1,7 @@
 @custom-variant theme-light (&:where([data-theme=light], [data-theme=light] *));
 
-:root {
+:root,
+[data-theme=light] {
     color-scheme: light;
 
     /* base */
@@ -8,7 +9,7 @@
     --color-base: var(--color-neutral-50);
     --color-base-airy: var(--color-neutral-100);
     --color-base-border: var(--color-neutral-200);
-    --color-base-curb: var(--color-neutral-300);
+    /* --color-base-curb: var(--color-neutral-300); */
     --color-base-dense: var(--color-neutral-400);
     /* --color-base-even: var(--color-neutral-500); */
     --color-base-foreground: var(--color-neutral-600);

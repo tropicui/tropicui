@@ -158,7 +158,7 @@ function Preview(props: PreviewProps) {
                 </div>
             </div>
             <div className="card">
-                <CodeBlock>
+                <CodeBlock title="HTML">
                     {code}
                 </CodeBlock>
             </div>
