@@ -317,7 +317,7 @@ function Toast() {
 </form>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/tag">Tag</PrevPageNav>
+                    <PrevPageNav href="/components/textarea">Textarea</PrevPageNav>
                     <NextPageNav href="/components/tooltip">Tooltip</NextPageNav>
                 </PageFooterNav>
             </div>

@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import Breadcrumb from "../components/Breadcrumb";
 import BreadcrumbItem from "../components/BreadcrumbItem";
 import CodeBlock from '../components/CodeBlock';
@@ -421,7 +420,7 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 
                 <PageFooterNav>
                     <PrevPageNav href="/installation">Installation</PrevPageNav>
-                    <NextPageNav href="/components">Components</NextPageNav>
+                    <NextPageNav href="/content/typography">Typography</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={tocItems} />

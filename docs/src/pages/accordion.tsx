@@ -372,7 +372,7 @@ function Accordion() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/theming">Theming</PrevPageNav>
+                    <PrevPageNav href="/content/typography">Typography</PrevPageNav>
                     <NextPageNav href="/components/alert">Alert</NextPageNav>
                 </PageFooterNav>
             </div>

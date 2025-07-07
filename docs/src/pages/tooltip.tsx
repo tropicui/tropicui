@@ -115,7 +115,7 @@ function Tooltip() {
 
                 <PageFooterNav>
                     <PrevPageNav href="/components/toast">Toast</PrevPageNav>
-                    <NextPageNav href="/components/join">Join</NextPageNav>
+                    <NextPageNav href="/utilities/float">Float</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

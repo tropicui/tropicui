@@ -359,8 +359,8 @@ function Select() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/input">Input</PrevPageNav>
-                    <NextPageNav href="/components/textarea">Textarea</NextPageNav>
+                    <PrevPageNav href="/components/radio">Radio</PrevPageNav>
+                    <NextPageNav href="/components/sink">Sink</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

@@ -3,7 +3,6 @@ import BreadcrumbItem from "../components/BreadcrumbItem";
 import Preview from "../components/Preview";
 import PageFooterNav from "../components/PageFooterNav";
 import PrevPageNav from "../components/PrevPageNav";
-import NextPageNav from "../components/NextPageNav";
 import TableOfContent from "../components/TableOfContent";
 
 function Join() {
@@ -95,8 +94,8 @@ function Join() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/tooltip">Tooltip</PrevPageNav>
-                    <NextPageNav href="/components/toast">Toast</NextPageNav>
+                    <PrevPageNav href="/utilities/float">Float</PrevPageNav>
+                    <div></div>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

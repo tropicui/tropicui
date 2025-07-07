@@ -1308,7 +1308,7 @@ function Menu() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/card">Card</PrevPageNav>
+                    <PrevPageNav href="/components/input">Input</PrevPageNav>
                     <NextPageNav href="/components/modal">Modal</NextPageNav>
                 </PageFooterNav>
             </div>

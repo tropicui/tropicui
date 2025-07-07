@@ -575,8 +575,8 @@ function Drawer() {
 <label class="btn" for="drawer-nav">Open Navigation Drawer</label>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/card">Card</PrevPageNav>
-                    <NextPageNav href="/components/checkbox">Checkbox</NextPageNav>
+                    <PrevPageNav href="/components/divider">Divider</PrevPageNav>
+                    <NextPageNav href="/components/dropdown">Dropdown</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

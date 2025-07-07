@@ -147,8 +147,8 @@ function Spinner() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/skeleton">Skeleton</PrevPageNav>
-                    <NextPageNav href="/components/switch">Switch</NextPageNav>
+                    <PrevPageNav href="/components/sink">Sink</PrevPageNav>
+                    <NextPageNav href="/components/status">Status</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[
