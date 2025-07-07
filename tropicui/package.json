@@ -1,12 +1,20 @@
 {
   "name": "tropicui",
-  "version": "1.0.0",
-  "description": "the theme placeholder",
-  "private": true,
+  "version": "1.0.6",
+  "description": "TropicUI - Modern, Customisable UI Components for your Tailwind CSS project",
   "keywords": [
-    "theme"
+    "ui",
+    "css",
+    "theme",
+    "tropicui",
+    "tailwind",
+    "ui library",
+    "tailwindcss",
+    "css library",
+    "tailwind css",
+    "component library"
   ],
-  "homepage": "https://github.com/tropicui/tropicui#readme",
+  "homepage": "https://tropicui.com",
   "bugs": {
     "url": "https://github.com/tropicui/tropicui/issues"
   },
@@ -14,16 +22,16 @@
     "type": "git",
     "url": "git+ssh://git@github.com/tropicui/tropicui.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "kenfai",
+  "funding": "https://github.com/tropicui/tropicui?sponsor=1",
   "type": "module",
   "main": "./index.css",
   "files": [
     "base",
     "components",
-    "themes"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "themes",
+    "utilities",
+    "index.css"
+  ]
 }
