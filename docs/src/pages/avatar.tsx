@@ -24,7 +24,7 @@ function Avatar() {
                 <h4 id="basic">Basic</h4>
 
                 <Preview code={`<div class="avatar">
-    <img src="/img/user1.jpg" alt="User1" />
+    <img src="/docs/img/user1.jpg" alt="User1" />
 </div>`}/>
 
                 <h4 id="initials">Initials</h4>
@@ -45,19 +45,19 @@ function Avatar() {
 
                 <Preview code={`<div class="flex flex-wrap items-center gap-8">
     <div class="avatar avatar-xs">
-        <img src="/img/user1.jpg" alt="Extra Small Avatar" />
+        <img src="/docs/img/user1.jpg" alt="Extra Small Avatar" />
     </div>
     <div class="avatar avatar-sm">
-        <img src="/img/user1.jpg" alt="Small Avatar" />
+        <img src="/docs/img/user1.jpg" alt="Small Avatar" />
     </div>
     <div class="avatar">
-        <img src="/img/user1.jpg" alt="Default Avatar" />
+        <img src="/docs/img/user1.jpg" alt="Default Avatar" />
     </div>
     <div class="avatar avatar-lg">
-        <img src="/img/user1.jpg" alt="Large Avatar" />
+        <img src="/docs/img/user1.jpg" alt="Large Avatar" />
     </div>
     <div class="avatar avatar-xl">
-        <img src="/img/user1.jpg" alt="Extra Large Avatar" />
+        <img src="/docs/img/user1.jpg" alt="Extra Large Avatar" />
     </div>
 </div>`}/>
 
@@ -141,7 +141,7 @@ function Avatar() {
 
                 <Preview code={`<div class="flex flex-wrap gap-8">
     <div class="avatar avatar-circle">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle">JD</div>
     <div class="avatar avatar-circle">
@@ -156,14 +156,14 @@ function Avatar() {
 
                 <Preview code={`<div class="flex flex-wrap gap-8 mb-8">
     <div class="avatar avatar-ring">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-ring">JD</div>
     <div class="avatar avatar-ring avatar-primary">PR</div>
 </div>
 <div class="flex flex-wrap gap-8">
     <div class="avatar avatar-circle avatar-ring">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle avatar-ring">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -190,19 +190,19 @@ function Avatar() {
 </div>
 <div class="flex flex-wrap gap-8">
     <div class="avatar avatar-circle avatar-ring avatar-ring-primary">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle avatar-ring avatar-ring-accent">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle avatar-ring avatar-ring-success">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle avatar-ring avatar-ring-warning">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle avatar-ring avatar-ring-danger">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
 </div>`}/>
 
@@ -211,7 +211,7 @@ function Avatar() {
                 <Preview code={`<div class="grid gap-8">
     <div class="avatar avatar-ring-bold avatar-ring-accent">JD</div>
     <div class="avatar avatar-circle avatar-ring-bold avatar-ring-accent">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
 </div>`}/>
 
@@ -226,7 +226,7 @@ function Avatar() {
     </div>
     <div class="badge">
         <div class="avatar avatar-circle">
-            <img src="/img/user1.jpg" alt="User1" />
+            <img src="/docs/img/user1.jpg" alt="User1" />
         </div>
         <span class="badge-bottom-right badge-tight status status-round status-ring status-success"></span>
     </div>
@@ -236,7 +236,7 @@ function Avatar() {
 
                 <Preview code={`<div class="avatar-group">
     <div class="avatar avatar-circle">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle">JD</div>
     <div class="avatar avatar-circle">
@@ -251,7 +251,7 @@ function Avatar() {
 
                 <Preview code={`<div class="avatar-group avatar-group-compact">
     <div class="avatar avatar-circle">
-        <img src="/img/user1.jpg" alt="User1" />
+        <img src="/docs/img/user1.jpg" alt="User1" />
     </div>
     <div class="avatar avatar-circle">JD</div>
     <div class="avatar avatar-circle">

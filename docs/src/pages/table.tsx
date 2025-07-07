@@ -111,7 +111,7 @@ function Table() {
             <td>
                 <div class="flex items-center gap-3">
                     <div class="avatar avatar-sm">
-                        <img src="/img/user1.jpg" alt="User avatar" />
+                        <img src="/docs/img/user1.jpg" alt="User avatar" />
                     </div>
                     <span>John Doe</span>
                 </div>
@@ -136,7 +136,7 @@ function Table() {
             <td>
                 <div class="flex items-center gap-3">
                     <div class="avatar avatar-sm">
-                        <img src="/img/user1.jpg" alt="User avatar" />
+                        <img src="/docs/img/user1.jpg" alt="User avatar" />
                     </div>
                     <span>Jane Smith</span>
                 </div>

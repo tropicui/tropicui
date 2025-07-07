@@ -7,15 +7,15 @@ function Sidebar() {
             children: [
                 {
                     title: "Introduction",
-                    to: "/introduction",
+                    to: "/docs/introduction",
                 },
                 {
                     title: "Installation",
-                    to: "/installation",
+                    to: "/docs/installation",
                 },
                 {
                     title: "Theming",
-                    to: "/theming",
+                    to: "/docs/theming",
                 },
             ],
         },
@@ -24,7 +24,7 @@ function Sidebar() {
             children: [
                 {
                     title: "Typography",
-                    to: "/content/typography",
+                    to: "/docs/content/typography",
                 },
             ],
         },
@@ -33,115 +33,115 @@ function Sidebar() {
             children: [
                 {
                     title: "Accordion",
-                    to: "/components/accordion",
+                    to: "/docs/components/accordion",
                 },
                 {
                     title: "Alert",
-                    to: "/components/alert",
+                    to: "/docs/components/alert",
                 },
                 {
                     title: "Avatar",
-                    to: "/components/avatar",
+                    to: "/docs/components/avatar",
                 },
                 {
                     title: "Badge",
-                    to: "/components/badge",
+                    to: "/docs/components/badge",
                 },
                 {
                     title: "Breadcrumb",
-                    to: "/components/breadcrumb",
+                    to: "/docs/components/breadcrumb",
                 },
                 {
                     title: "Button",
-                    to: "/components/button",
+                    to: "/docs/components/button",
                 },
                 {
                     title: "Card",
-                    to: "/components/card",
+                    to: "/docs/components/card",
                 },
                 {
                     title: "Checkbox",
-                    to: "/components/checkbox",
+                    to: "/docs/components/checkbox",
                 },
                 {
                     title: "Divider",
-                    to: "/components/divider",
+                    to: "/docs/components/divider",
                 },
                 {
                     title: "Drawer",
-                    to: "/components/drawer",
+                    to: "/docs/components/drawer",
                 },
                 {
                     title: "Dropdown",
-                    to: "/components/dropdown",
+                    to: "/docs/components/dropdown",
                 },
                 {
                     title: "Form",
-                    to: "/components/form",
+                    to: "/docs/components/form",
                 },
                 {
                     title: "Input",
-                    to: "/components/input",
+                    to: "/docs/components/input",
                 },
                 {
                     title: "Menu",
-                    to: "/components/menu",
+                    to: "/docs/components/menu",
                 },
                 {
                     title: "Modal",
-                    to: "/components/modal",
+                    to: "/docs/components/modal",
                 },
                 {
                     title: "Popover",
-                    to: "/components/popover",
+                    to: "/docs/components/popover",
                 },
                 {
                     title: "Radio",
-                    to: "/components/radio",
+                    to: "/docs/components/radio",
                 },
                 {
                     title: "Select",
-                    to: "/components/select",
+                    to: "/docs/components/select",
                 },
                 {
                     title: "Sink",
-                    to: "/components/sink",
+                    to: "/docs/components/sink",
                 },
                 {
                     title: "Spinner",
-                    to: "/components/spinner",
+                    to: "/docs/components/spinner",
                 },
                 {
                     title: "Status",
-                    to: "/components/status",
+                    to: "/docs/components/status",
                 },
                 {
                     title: "Switch",
-                    to: "/components/switch",
+                    to: "/docs/components/switch",
                 },
                 {
                     title: "Tab",
-                    to: "/components/tab",
+                    to: "/docs/components/tab",
                 },
                 {
                     title: "Table",
-                    to: "/components/table",
+                    to: "/docs/components/table",
                 },
                 {
                     title: "Tag",
-                    to: "/components/tag",
+                    to: "/docs/components/tag",
                 },
                 {
                     title: "Textarea",
-                    to: "/components/textarea",
+                    to: "/docs/components/textarea",
                 },
                 {
                     title: "Toast",
-                    to: "/components/toast",
+                    to: "/docs/components/toast",
                 },
                 {
                     title: "Tooltip",
-                    to: "/components/tooltip",
+                    to: "/docs/components/tooltip",
                 },
             ],
         },
@@ -150,11 +150,11 @@ function Sidebar() {
             children: [
                 {
                     title: "Float",
-                    to: "/utilities/float",
+                    to: "/docs/utilities/float",
                 },
                 {
                     title: "Join",
-                    to: "/utilities/join",
+                    to: "/docs/utilities/join",
                 },
             ],
         },

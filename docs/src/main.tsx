@@ -12,7 +12,7 @@ import * as page from './pages'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/docs/",
     Component: App,
     children: [
       {
@@ -20,164 +20,164 @@ const router = createBrowserRouter([
         Component: page.Introduction,
       },
       {
-        path: "/introduction",
+        path: "/docs/introduction",
         Component: page.Introduction,
       },
       {
-        path: "/installation",
+        path: "/docs/installation",
         Component: page.Installation,
       },
       {
-        path: "/theming",
+        path: "/docs/theming",
         Component: page.Theming,
       },
       {
-        path: "/content",
+        path: "/docs/content",
         children: [
           {
             index: true,
-            loader: () => redirect("/content/typography"),
+            loader: () => redirect("/docs/content/typography"),
           },
           {
-            path: "/content/typography",
+            path: "/docs/content/typography",
             Component: page.Typography,
           },
         ]
       },
       {
-        path: "/components",
+        path: "/docs/components",
         children: [
           {
             index: true,
-            loader: () => redirect("/components/accordion"),
+            loader: () => redirect("/docs/components/accordion"),
           },
           {
-            path: "/components/accordion",
+            path: "/docs/components/accordion",
             Component: page.Accordion,
           },
           {
-            path: "/components/alert",
+            path: "/docs/components/alert",
             Component: page.Alert,
           },
           {
-            path: "/components/avatar",
+            path: "/docs/components/avatar",
             Component: page.Avatar,
           },
           {
-            path: "/components/badge",
+            path: "/docs/components/badge",
             Component: page.Badge,
           },
           {
-            path: "/components/breadcrumb",
+            path: "/docs/components/breadcrumb",
             Component: page.BreadcrumbPage,
           },
           {
-            path: "/components/button",
+            path: "/docs/components/button",
             Component: page.Button,
           },
           {
-            path: "/components/card",
+            path: "/docs/components/card",
             Component: page.Card,
           },
           {
-            path: "/components/checkbox",
+            path: "/docs/components/checkbox",
             Component: page.Checkbox,
           },
           {
-            path: "/components/divider",
+            path: "/docs/components/divider",
             Component: page.Divider,
           },
           {
-            path: "/components/drawer",
+            path: "/docs/components/drawer",
             Component: page.Drawer,
           },
           {
-            path: "/components/dropdown",
+            path: "/docs/components/dropdown",
             Component: page.Dropdown,
           },
           {
-            path: "/components/form",
+            path: "/docs/components/form",
             Component: page.Form,
           },
           {
-            path: "/components/input",
+            path: "/docs/components/input",
             Component: page.Input,
           },
           {
-            path: "/components/menu",
+            path: "/docs/components/menu",
             Component: page.Menu,
           },
           {
-            path: "/components/modal",
+            path: "/docs/components/modal",
             Component: page.Modal,
           },
           {
-            path: "/components/popover",
+            path: "/docs/components/popover",
             Component: page.Popover,
           },
           {
-            path: "/components/radio",
+            path: "/docs/components/radio",
             Component: page.Radio,
           },
           {
-            path: "/components/select",
+            path: "/docs/components/select",
             Component: page.Select,
           },
           {
-            path: "/components/sink",
+            path: "/docs/components/sink",
             Component: page.Sink,
           },
           {
-            path: "/components/spinner",
+            path: "/docs/components/spinner",
             Component: page.Spinner,
           },
           {
-            path: "/components/status",
+            path: "/docs/components/status",
             Component: page.Status,
           },
           {
-            path: "/components/switch",
+            path: "/docs/components/switch",
             Component: page.Switch,
           },
           {
-            path: "/components/tab",
+            path: "/docs/components/tab",
             Component: page.Tab,
           },
           {
-            path: "/components/table",
+            path: "/docs/components/table",
             Component: page.Table,
           },
           {
-            path: "/components/tag",
+            path: "/docs/components/tag",
             Component: page.Tag,
           },
           {
-            path: "/components/textarea",
+            path: "/docs/components/textarea",
             Component: page.Textarea,
           },
           {
-            path: "/components/toast",
+            path: "/docs/components/toast",
             Component: page.Toast,
           },
           {
-            path: "/components/tooltip",
+            path: "/docs/components/tooltip",
             Component: page.Tooltip,
           },
         ]
       },
       {
-        path: "/utilities",
+        path: "/docs/utilities",
         children: [
           {
             index: true,
-            loader: () => redirect("/utilities/float"),
+            loader: () => redirect("/docs/utilities/float"),
           },
           {
-            path: "/utilities/float",
+            path: "/docs/utilities/float",
             Component: page.Float,
           },
           {
-            path: "/utilities/join",
+            path: "/docs/utilities/join",
             Component: page.Join,
           },
         ]
