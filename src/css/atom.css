@@ -1,0 +1,31 @@
+@custom-variant theme-atom (&:where([data-theme=atom], [data-theme=atom] *));
+
+[data-theme="atom"] {
+    color-scheme: light;
+
+    /* Base colors */
+    --color-base-background: var(--color-white);
+    --color-base: var(--color-gray-50);
+    --color-base-airy: var(--color-gray-100);
+    --color-base-border: var(--color-gray-200);
+    --color-base-dense: var(--color-gray-400);
+    --color-base-foreground: var(--color-gray-600);
+
+    /* Brand colors */
+    --color-primary: var(--color-purple-600);
+    --color-primary-content: var(--color-white);
+    --color-accent: var(--color-pink-500);
+    --color-accent-content: var(--color-white);
+
+    /* Semantic colors */
+    --color-danger: var(--color-red-600);
+    --color-danger-content: var(--color-white);
+    --color-warning: var(--color-yellow-500);
+    --color-warning-content: var(--color-black);
+    --color-success: var(--color-green-600);
+    --color-success-content: var(--color-white);
+
+    /* Spacing and borders */
+    --border: 1px;
+    --radius: 0.75rem;
+}
