@@ -217,7 +217,7 @@ function Avatar() {
 
                 <h4 id="status-badge">Status Badge</h4>
 
-                <p>Enclose the <code className="tag"><pre>avatar</pre></code> component within <code className="tag"><pre>badge</pre></code> element to add a <Link to="/components/badge" className="btn btn-link btn-accent">badge</Link> + <Link to="/components/status" className="btn btn-link btn-accent">status</Link> indicator component.</p>
+                <p>Enclose the <code className="tag"><pre>avatar</pre></code> component within <code className="tag"><pre>badge</pre></code> element to add a <Link to="/docs/components/badge" className="btn btn-link btn-accent">badge</Link> + <Link to="/docs/components/status" className="btn btn-link btn-accent">status</Link> indicator component.</p>
 
                 <Preview code={`<div class="grid gap-8">
     <div class="badge">

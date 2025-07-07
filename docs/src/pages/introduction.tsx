@@ -36,7 +36,7 @@ function Introduction() {
                             </svg>
                             <h4>Quick Start Guide</h4>
                         </div>
-                        <div>Check out the <Link to="/installation" className="btn btn-link btn-accent">Installation Guide</Link> to learn how to install TropicUI and start using it in your project.</div>
+                        <div>Check out the <Link to="/docs/installation" className="btn btn-link btn-accent">Installation Guide</Link> to learn how to install TropicUI and start using it in your project.</div>
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@ function Introduction() {
 
                 <h3 id="next">Next Steps</h3>
 
-                <p>Ready to get started? Check out the <Link to="/installation" className="btn btn-link btn-accent">Installation Guide</Link> to learn how to install TropicUI and start using it in your project and accelerate your development process.</p>
+                <p>Ready to get started? Check out the <Link to="/docs/installation" className="btn btn-link btn-accent">Installation Guide</Link> to learn how to install TropicUI and start using it in your project and accelerate your development process.</p>
 
                 <PageFooterNav>
                     <div></div>
