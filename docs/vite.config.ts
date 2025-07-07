@@ -9,6 +9,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
+    outDir: 'dist/docs',
     rollupOptions: {
       output: {
         assetFileNames: 'assets/css/index.css',
