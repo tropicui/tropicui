@@ -2,5 +2,5 @@ name = "tropicui-docs"
 compatibility_date = "2025-07-07"
 
 [assets]
-directory = "./dist/docs/"
+directory = "./dist/"
 not_found_handling = "single-page-application"
