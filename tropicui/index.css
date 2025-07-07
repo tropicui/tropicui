@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @import "./src/base/reset.css";
 @import "./src/base/typography.css";
 @import "./src/components/accordion.css";
@@ -19,7 +18,6 @@
 @import "./src/components/popover.css";
 @import "./src/components/radio.css";
 @import "./src/components/select.css";
-@import "./src/components/sidebar.css";
 @import "./src/components/sink.css";
 @import "./src/components/spinner.css";
 @import "./src/components/status.css";
@@ -32,7 +30,6 @@
 @import "./src/components/tooltip.css";
 @import "./src/themes/default.css";
 @import "./src/themes/dark.css";
-@import "./src/themes/solar.css";
 @import "./src/themes/theme.css";
 @import "./src/utilities/animation.css";
 @import "./src/utilities/float.css";

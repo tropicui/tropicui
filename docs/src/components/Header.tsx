@@ -1,18 +1,29 @@
 import { useEffect, useState } from "react";
 
 function Header() {
-    const [isDarkTheme, setDarkTheme] = useState(false);
+    const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-        // Set the theme based on the localStorage theme, but allow the user to override it by clicking the theme toggle
-        if (localStorage.theme === 'dark') {
+        const isDarkTheme = localStorage.getItem('theme') === 'dark';
+
+        if (isDarkTheme) {
             document.documentElement.setAttribute('data-theme', 'dark');
-            setDarkTheme(true);
+            setIsDark(true);
         } else {
             document.documentElement.removeAttribute('data-theme');
-            setDarkTheme(false);
         }
-    }, [isDarkTheme]);
+    }, []);
+
+    const toggleTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.checked) {
+            localStorage.setItem('theme', 'dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            localStorage.removeItem('theme');
+            document.documentElement.removeAttribute('data-theme');
+        }
+        setIsDark(event.target.checked);
+    };
 
     return (
         <div className="fixed inset-x-0 start-0 z-10 border-b border-base-border">
@@ -29,8 +40,8 @@ function Header() {
                         <label className="btn btn-clear btn-icon btn-round btn-toggle">
                             <input
                                 type="checkbox"
-                                checked={isDarkTheme}
-                                onChange={(event) => { setDarkTheme(event.target.checked) }}
+                                checked={isDark}
+                                onChange={toggleTheme}
                             />
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />

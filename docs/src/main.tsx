@@ -163,6 +163,10 @@ const router = createBrowserRouter([
             path: "/components/tooltip",
             Component: page.Tooltip,
           },
+          {
+            path: "/components/theme-toggle-demo",
+            Component: page.ThemeToggleDemo,
+          },
         ]
       },
       {
