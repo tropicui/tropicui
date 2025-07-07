@@ -4,9 +4,9 @@
 
 ## Modern, Customisable UI Components for your Tailwind CSS project
 
-[![][https://badgen.net/github/tag/tropicui/tropicui/?label=Version&color=00a63e&icon=github]](https://www.npmjs.com/package/tropicui)
-[![][https://badgen.net/badge/Tailwindcss/v4.1/38bdf8/]](https://tailwindcss.com/)
-[![][https://badgen.net/github/license/tropicui/tropicui?label=License&color=00a63e]](https://github.com/tropicui/tropicui/blob/master/LICENSE)
+[![https://badgen.net/github/tag/tropicui/tropicui/?label=Version&color=00a63e&icon=github]](https://www.npmjs.com/package/tropicui)
+[![https://badgen.net/badge/Tailwindcss/v4.1/38bdf8/]](https://tailwindcss.com/)
+[![https://badgen.net/github/license/tropicui/tropicui?label=License&color=00a63e]](https://github.com/tropicui/tropicui/blob/main/tropicui/LICENSE)
 
 </div>
 
@@ -53,4 +53,4 @@ For full documentation and component examples, please visit the [documentation](
 
 ## Licence
 
-This project is licensed under the MIT Licence. See the [LICENCE](https://github.com/tropicui/tropicui/blob/master/LICENSE) file for details.
+This project is licensed under the MIT Licence. See the [LICENCE](https://github.com/tropicui/tropicui/blob/main/tropicui/LICENSE) file for details.
