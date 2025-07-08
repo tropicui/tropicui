@@ -11,7 +11,7 @@ function Typography() {
         <>
             <div className="pt-8">
                 <Breadcrumb>
-                    <BreadcrumbItem>COMPONENT</BreadcrumbItem>
+                    <BreadcrumbItem>CONTENT</BreadcrumbItem>
                 </Breadcrumb>
 
                 <h2>Typography</h2>

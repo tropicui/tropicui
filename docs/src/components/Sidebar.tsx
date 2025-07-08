@@ -1,6 +1,12 @@
 import { NavLink } from "react-router";
 
-function Sidebar() {
+interface SidebarProps {
+    isMobile: boolean;
+}
+
+function Sidebar(props: SidebarProps) {
+    const { isMobile } = props;
+
     const items = [
         {
             title: "Getting Started",
@@ -161,9 +167,9 @@ function Sidebar() {
     ];
 
     return (
-        <aside className="relative col-start-1 row-start-1">
+        <aside className={`relative col-start-1 row-start-1 ${isMobile ? '' : 'max-md:hidden'} h-full`}>
             <div className="absolute inset-0">
-                <div className="sticky top-14 bg-base border-r border-base-border h-full max-h-[calc(100dvh-(var(--spacing)*14))] py-4 px-8 overflow-y-auto">
+                <div className="sticky top-14 bg-base border-r border-base-border h-full max-h-[calc(100dvh-var(--header-h))] py-4 px-8 overflow-y-auto">
                     {items.map((child) => 
                         (
                             <nav className="" key={child.title}>

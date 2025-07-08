@@ -107,7 +107,7 @@ function Switch() {
         <span>Extra Large</span>
     </label>
     <label>
-        <input type="checkbox" class="switch switch-2xl before:content-[url(/img/user1.jpg)]" checked>
+        <input type="checkbox" class="switch switch-2xl" checked>
         <span>2XL</span>
     </label>
 </div>`}/>

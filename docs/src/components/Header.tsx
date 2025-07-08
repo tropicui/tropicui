@@ -26,9 +26,9 @@ function Header() {
     };
 
     return (
-        <div className="fixed inset-x-0 start-0 z-10 border-b border-base-border">
+        <div className="fixed inset-x-0 z-10">
             <div className="bg-base-background">
-                <div className="flex h-[var(--header-h)] px-4">
+                <div className="flex h-[var(--header-h)] border-b border-base-border px-4">
                     <div className="flex items-center gap-2">
                         <span className="text-lg">🌴</span>
                         <a href="https://tropicui.com" className="text-2xl text-base-foreground font-medium">TropicUI</a>
