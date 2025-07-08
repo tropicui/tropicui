@@ -44,7 +44,7 @@ Tag component styles.
 
         /* typography */
         font-size: calc(var(--tag-size) * 0.575);
-        line-height: 1;
+        line-height: var(--tag-size);
     }
 
     /* colors */
