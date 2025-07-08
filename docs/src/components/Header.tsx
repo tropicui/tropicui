@@ -31,9 +31,9 @@ function Header() {
                 <div className="flex h-[var(--header-h)] px-4">
                     <div className="flex items-center gap-2">
                         <span className="text-lg">🌴</span>
-                        <span className="text-2xl text-base-foreground font-medium">TropicUI</span>
+                        <a href="https://tropicui.com" className="text-2xl text-base-foreground font-medium">TropicUI</a>
                         <div className="m-0.5"></div>
-                        <div className="tag tag-pill tag-sm">v1.0</div>
+                        <div className="tag tag-pill tag-sm">v1.0.6</div>
                     </div>
                     <div className="grow"></div>
                     <nav className="flex items-center gap-4">

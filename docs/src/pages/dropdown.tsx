@@ -216,7 +216,7 @@ function Dropdown() {
         <div class="dropdown-content">
             <div class="sink flex flex-col items-center m-1 p-6">
                 <div class="avatar avatar-circle">
-                    <img src="/docs/img/user1.jpg" alt="User" />
+                    <img src="/img/user1.jpg" alt="User" />
                 </div>
                 <div>
                     <h6>John Doe</h6>
@@ -385,7 +385,7 @@ function Dropdown() {
                     <div class="space-y-3">
                         <div class="flex gap-3">
                             <div class="avatar avatar-sm">
-                                <img src="/docs/img/user1.jpg" alt="User">
+                                <img src="/img/user1.jpg" alt="User">
                             </div>
                             <div class="flex-1">
                                 <div class="text-sm font-medium">Sarah commented on your post</div>
@@ -394,7 +394,7 @@ function Dropdown() {
                         </div>
                         <div class="flex gap-3">
                             <div class="avatar avatar-sm">
-                                <img src="/docs/img/user1.jpg" alt="User">
+                                <img src="/img/user1.jpg" alt="User">
                             </div>
                             <div class="flex-1">
                                 <div class="text-sm font-medium">Mike liked your photo</div>
@@ -403,7 +403,7 @@ function Dropdown() {
                         </div>
                         <div class="flex gap-3">
                             <div class="avatar avatar-sm">
-                                <img src="/docs/img/user1.jpg" alt="User">
+                                <img src="/img/user1.jpg" alt="User">
                             </div>
                             <div class="flex-1">
                                 <div class="text-sm font-medium">Emma started following you</div>

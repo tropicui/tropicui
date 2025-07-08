@@ -1,19 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    cloudflare(),
     react(),
     tailwindcss(),
   ],
-  base: '/docs/',
   build: {
-    outDir: 'dist/docs',
     rollupOptions: {
       output: {
-        assetFileNames: 'assets/css/index.css',
+        entryFileNames: 'docs/assets/js/index.js',
+        assetFileNames: 'docs/assets/css/index.css',
       }
     }
   }

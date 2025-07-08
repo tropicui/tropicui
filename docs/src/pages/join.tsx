@@ -39,7 +39,7 @@ function Join() {
                 <Preview code={`<div class="join join-row">
     <div class="card">
         <figure class="h-60">
-            <img src="/docs/img/house1.jpg" alt="Card image" />
+            <img src="/img/house1.jpg" alt="Card image" />
         </figure>
         <div class="card-body">
             <span>First card includes an image cover at the top.</span>
@@ -48,7 +48,7 @@ function Join() {
 
     <div class="card">
         <figure class="h-60">
-            <img src="/docs/img/desk1.jpg" alt="Card image" />
+            <img src="/img/desk1.jpg" alt="Card image" />
         </figure>
         <div class="card-body">
             <span>Second card includes an image cover at the top.</span>
@@ -57,7 +57,7 @@ function Join() {
 
     <div class="card">
         <figure class="h-60">
-            <img src="/docs/img/loft1.jpg" alt="Card image" />
+            <img src="/img/loft1.jpg" alt="Card image" />
         </figure>
         <div class="card-body">
             <span>Third card includes an image cover at the top.</span>

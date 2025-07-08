@@ -181,7 +181,7 @@ function Status() {
                 <Preview code={`<div class="flex items-center gap-3">
     <div class="badge">
         <div class="avatar">
-            <img src="/docs/img/user1.jpg" alt="User">
+            <img src="/img/user1.jpg" alt="User">
             <div class="badge-bottom-right status status-sm status-round status-success status-ring"></div>
         </div>
     </div>
