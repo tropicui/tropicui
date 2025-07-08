@@ -37,7 +37,7 @@ function Preview(props: PreviewProps) {
             </style>
         </head>
         <body class="bg-base-background bg-pattern-diagonal-lines transition-colors h-screen overflow-auto scrollbar-stable">
-            <div class="@container grid content-center-safe justify-items-center-safe h-full p-6">
+            <div class="@container grid content-center-safe justify-items-center-safe min-h-full p-6">
                 ${code}
             </div>
         </body>
