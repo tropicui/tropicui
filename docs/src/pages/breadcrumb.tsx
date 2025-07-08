@@ -62,8 +62,8 @@ function BreadcrumbPage() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/badge">Badge</PrevPageNav>
-                    <NextPageNav href="/components/button">Button</NextPageNav>
+                    <PrevPageNav href="/docs/components/badge">Badge</PrevPageNav>
+                    <NextPageNav href="/docs/components/button">Button</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

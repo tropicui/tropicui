@@ -66,8 +66,8 @@ function Installation() {
                 <p>You can now start using TropicUI components in your project.</p>
                 
                 <PageFooterNav>
-                    <PrevPageNav href="/introduction">Introduction</PrevPageNav>
-                    <NextPageNav href="/theming">Theming</NextPageNav>
+                    <PrevPageNav href="/docs/introduction">Introduction</PrevPageNav>
+                    <NextPageNav href="/docs/theming">Theming</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={tocItems} />

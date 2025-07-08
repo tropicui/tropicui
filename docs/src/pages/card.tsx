@@ -358,8 +358,8 @@ function Card() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/button">Button</PrevPageNav>
-                    <NextPageNav href="/components/checkbox">Checkbox</NextPageNav>
+                    <PrevPageNav href="/docs/components/button">Button</PrevPageNav>
+                    <NextPageNav href="/docs/components/checkbox">Checkbox</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

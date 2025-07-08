@@ -219,8 +219,8 @@ function Status() {
 </button>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/spinner">Spinner</PrevPageNav>
-                    <NextPageNav href="/components/switch">Switch</NextPageNav>
+                    <PrevPageNav href="/docs/components/spinner">Spinner</PrevPageNav>
+                    <NextPageNav href="/docs/components/switch">Switch</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

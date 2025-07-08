@@ -94,7 +94,7 @@ function Join() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/utilities/float">Float</PrevPageNav>
+                    <PrevPageNav href="/docs/utilities/float">Float</PrevPageNav>
                     <div></div>
                 </PageFooterNav>
             </div>

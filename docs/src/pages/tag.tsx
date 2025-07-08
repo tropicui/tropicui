@@ -225,8 +225,8 @@ function Tag() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/table">Table</PrevPageNav>
-                    <NextPageNav href="/components/textarea">Textarea</NextPageNav>
+                    <PrevPageNav href="/docs/components/table">Table</PrevPageNav>
+                    <NextPageNav href="/docs/components/textarea">Textarea</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

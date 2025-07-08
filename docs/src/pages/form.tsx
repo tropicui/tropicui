@@ -224,8 +224,8 @@ function Form() {
 </form>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/dropdown">Dropdown</PrevPageNav>
-                    <NextPageNav href="/components/input">Input</NextPageNav>
+                    <PrevPageNav href="/docs/components/dropdown">Dropdown</PrevPageNav>
+                    <NextPageNav href="/docs/components/input">Input</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

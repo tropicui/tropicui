@@ -218,8 +218,8 @@ function Alert() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/accordion">Accordion</PrevPageNav>
-                    <NextPageNav href="/components/avatar">Avatar</NextPageNav>
+                    <PrevPageNav href="/docs/components/accordion">Accordion</PrevPageNav>
+                    <NextPageNav href="/docs/components/avatar">Avatar</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

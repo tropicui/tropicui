@@ -263,8 +263,8 @@ function Avatar() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/alert">Alert</PrevPageNav>
-                    <NextPageNav href="/components/badge">Badge</NextPageNav>
+                    <PrevPageNav href="/docs/components/alert">Alert</PrevPageNav>
+                    <NextPageNav href="/docs/components/badge">Badge</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

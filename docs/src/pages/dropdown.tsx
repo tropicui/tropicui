@@ -442,8 +442,8 @@ function Dropdown() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/drawer">Drawer</PrevPageNav>
-                    <NextPageNav href="/components/form">Form</NextPageNav>
+                    <PrevPageNav href="/docs/components/drawer">Drawer</PrevPageNav>
+                    <NextPageNav href="/docs/components/form">Form</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

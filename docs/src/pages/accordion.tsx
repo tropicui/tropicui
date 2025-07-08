@@ -372,8 +372,8 @@ function Accordion() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/content/typography">Typography</PrevPageNav>
-                    <NextPageNav href="/components/alert">Alert</NextPageNav>
+                    <PrevPageNav href="/docs/content/typography">Typography</PrevPageNav>
+                    <NextPageNav href="/docs/components/alert">Alert</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

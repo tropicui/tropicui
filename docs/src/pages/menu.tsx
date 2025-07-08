@@ -1308,8 +1308,8 @@ function Menu() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/input">Input</PrevPageNav>
-                    <NextPageNav href="/components/modal">Modal</NextPageNav>
+                    <PrevPageNav href="/docs/components/input">Input</PrevPageNav>
+                    <NextPageNav href="/docs/components/modal">Modal</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

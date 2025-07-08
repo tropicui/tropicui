@@ -111,8 +111,8 @@ function Badge() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/avatar">Avatar</PrevPageNav>
-                    <NextPageNav href="/components/breadcrumb">Breadcrumb</NextPageNav>
+                    <PrevPageNav href="/docs/components/avatar">Avatar</PrevPageNav>
+                    <NextPageNav href="/docs/components/breadcrumb">Breadcrumb</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

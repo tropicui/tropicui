@@ -205,8 +205,8 @@ function Button() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/breadcrumb">Breadcrumb</PrevPageNav>
-                    <NextPageNav href="/components/card">Card</NextPageNav>
+                    <PrevPageNav href="/docs/components/breadcrumb">Breadcrumb</PrevPageNav>
+                    <NextPageNav href="/docs/components/card">Card</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

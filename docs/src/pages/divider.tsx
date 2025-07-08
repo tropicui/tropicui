@@ -195,8 +195,8 @@ function Divider() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/checkbox">Checkbox</PrevPageNav>
-                    <NextPageNav href="/components/drawer">Drawer</NextPageNav>
+                    <PrevPageNav href="/docs/components/checkbox">Checkbox</PrevPageNav>
+                    <NextPageNav href="/docs/components/drawer">Drawer</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

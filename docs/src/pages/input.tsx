@@ -311,8 +311,8 @@ function Input() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/form">Form</PrevPageNav>
-                    <NextPageNav href="/components/menu">Menu</NextPageNav>
+                    <PrevPageNav href="/docs/components/form">Form</PrevPageNav>
+                    <NextPageNav href="/docs/components/menu">Menu</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

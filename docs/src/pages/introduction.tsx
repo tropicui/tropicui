@@ -135,7 +135,7 @@ function Introduction() {
 
                 <PageFooterNav>
                     <div></div>
-                    <NextPageNav href="/installation">Installation</NextPageNav>
+                    <NextPageNav href="/docs/installation">Installation</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={tocItems} />

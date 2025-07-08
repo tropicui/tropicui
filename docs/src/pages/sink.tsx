@@ -100,8 +100,8 @@ function Sink() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/select">Select</PrevPageNav>
-                    <NextPageNav href="/components/spinner">Spinner</NextPageNav>
+                    <PrevPageNav href="/docs/components/select">Select</PrevPageNav>
+                    <NextPageNav href="/docs/components/spinner">Spinner</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

@@ -171,8 +171,8 @@ function Tab() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/switch">Switch</PrevPageNav>
-                    <NextPageNav href="/components/table">Table</NextPageNav>
+                    <PrevPageNav href="/docs/components/switch">Switch</PrevPageNav>
+                    <NextPageNav href="/docs/components/table">Table</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

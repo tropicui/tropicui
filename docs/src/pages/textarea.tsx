@@ -118,8 +118,8 @@ function Textarea() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/tag">Tag</PrevPageNav>
-                    <NextPageNav href="/components/toast">Toast</NextPageNav>
+                    <PrevPageNav href="/docs/components/tag">Tag</PrevPageNav>
+                    <NextPageNav href="/docs/components/toast">Toast</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

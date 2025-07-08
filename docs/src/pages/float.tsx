@@ -172,8 +172,8 @@ function Float() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/tooltip">Tooltip</PrevPageNav>
-                    <NextPageNav href="/utilities/join">Join</NextPageNav>
+                    <PrevPageNav href="/docs/components/tooltip">Tooltip</PrevPageNav>
+                    <NextPageNav href="/docs/utilities/join">Join</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

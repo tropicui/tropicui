@@ -271,8 +271,8 @@ function Radio() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/popover">Popover</PrevPageNav>
-                    <NextPageNav href="/components/select">Select</NextPageNav>
+                    <PrevPageNav href="/docs/components/popover">Popover</PrevPageNav>
+                    <NextPageNav href="/docs/components/select">Select</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

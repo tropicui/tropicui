@@ -435,8 +435,8 @@ function Table() {
 </table>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/tab">Tab</PrevPageNav>
-                    <NextPageNav href="/components/tag">Tag</NextPageNav>
+                    <PrevPageNav href="/docs/components/tab">Tab</PrevPageNav>
+                    <NextPageNav href="/docs/components/tag">Tag</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

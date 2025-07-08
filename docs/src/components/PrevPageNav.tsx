@@ -9,7 +9,7 @@ const PrevPageNav = (props: PrevPageNavProps) => {
     const { href, children } = props;
 
     return (
-        <Link to={href} className="card group flex items-center justify-self-start bg-base border border-base-border inset-ring active:inset-ring-2 inset-ring-base-background hover:border-base-curb hover:bg-base-airy active:border-base-dense active:bg-base-border w-72 transition-all">
+        <Link to={href} className="card group flex items-center justify-self-start bg-base border border-base-border inset-ring active:inset-ring-2 inset-ring-base-background hover:border-base-curb hover:bg-base-airy active:border-base-dense active:bg-base-border w-full max-w-72 transition-all">
             <div className="card-body flex items-center justify-between gap-2 px-4 py-2">
                 <div className="text-base-dense group-hover:text-base-foreground">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 transition-colors">

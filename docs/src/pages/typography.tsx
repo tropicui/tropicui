@@ -321,8 +321,8 @@ function Typography() {
 <p class="text-9xl">This is text with 9xl font size.</p>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/theming">Theming</PrevPageNav>
-                    <NextPageNav href="/components/accordion">Accordion</NextPageNav>
+                    <PrevPageNav href="/docs/theming">Theming</PrevPageNav>
+                    <NextPageNav href="/docs/components/accordion">Accordion</NextPageNav>
                 </PageFooterNav>
             </div>
 

@@ -419,8 +419,8 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
                 </ul>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/installation">Installation</PrevPageNav>
-                    <NextPageNav href="/content/typography">Typography</NextPageNav>
+                    <PrevPageNav href="/docs/installation">Installation</PrevPageNav>
+                    <NextPageNav href="/docs/content/typography">Typography</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={tocItems} />

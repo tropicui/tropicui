@@ -598,8 +598,8 @@ function Modal() {
 <button class="btn btn-danger" onclick="document.querySelector('.modal').showModal()">Delete Item</button>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/menu">Menu</PrevPageNav>
-                    <NextPageNav href="/components/popover">Popover</NextPageNav>
+                    <PrevPageNav href="/docs/components/menu">Menu</PrevPageNav>
+                    <NextPageNav href="/docs/components/popover">Popover</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[

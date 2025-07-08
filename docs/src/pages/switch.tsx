@@ -261,8 +261,8 @@ function Switch() {
 </div>`}/>
 
                 <PageFooterNav>
-                    <PrevPageNav href="/components/status">Status</PrevPageNav>
-                    <NextPageNav href="/components/Tab">Tab</NextPageNav>
+                    <PrevPageNav href="/docs/components/status">Status</PrevPageNav>
+                    <NextPageNav href="/docs/components/Tab">Tab</NextPageNav>
                 </PageFooterNav>
             </div>
             <TableOfContent items={[
