@@ -24,7 +24,7 @@ function Popover() {
                 <h4 id="basic">Basic</h4>
 
                 <Preview code={`<div class="popover">
-    <button class="btn popover-toggle">Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Popover</button>
     <div class="popover-content">
         <span>This is a basic popover content.</span>
     </div>
@@ -33,7 +33,7 @@ function Popover() {
                 <h4 id="open">Open</h4>
 
                 <Preview code={`<div class="popover open">
-    <button class="btn popover-toggle">Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Popover</button>
     <div class="popover-content">
         <span>Open popover by default.</span>
     </div>
@@ -42,7 +42,7 @@ function Popover() {
                 <h4 id="rich-content">Rich Content</h4>
 
                 <Preview code={`<div class="popover popover-top">
-    <button class="btn popover-toggle">Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Popover</button>
     <div class="popover-content">
         <div class="flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
@@ -62,7 +62,7 @@ function Popover() {
                 <p>Top is the default position.</p>
 
                 <Preview code={`<div class="popover">
-    <button class="btn popover-toggle">Top Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Top Popover</button>
     <div class="popover-content">
         <span>This popover appears above the toggle button.</span>
     </div>
@@ -73,7 +73,7 @@ function Popover() {
                 <p>Align the popover to the leading edge of the button with respect to the document text direction.</p>
 
                 <Preview code={`<div class="popover popover-top-start">
-    <button class="btn popover-toggle">Top Leading</button>
+    <button class="btn popover-toggle" tabindex="1">Top Leading</button>
     <div class="popover-content">
         <span>This popover appears above and aligned to the leading edge of the toggle button.</span>
     </div>
@@ -84,7 +84,7 @@ function Popover() {
                 <p>Align the popover to the trailing edge of the button with respect to the document text direction.</p>
 
                 <Preview code={`<div class="popover popover-top-end">
-    <button class="btn popover-toggle">Top Trailing</button>
+    <button class="btn popover-toggle" tabindex="1">Top Trailing</button>
     <div class="popover-content">
         <span>This popover appears above and aligned to the trailing edge of the toggle button.</span>
     </div>
@@ -93,7 +93,7 @@ function Popover() {
                 <h4 id="top-left">Top Left</h4>
 
                 <Preview code={`<div class="popover popover-top-left">
-    <button class="btn popover-toggle">Top Left</button>
+    <button class="btn popover-toggle" tabindex="1">Top Left</button>
     <div class="popover-content">
         <span>This popover appears above and aligned to the left.</span>
     </div>
@@ -102,7 +102,7 @@ function Popover() {
                 <h4 id="top-right">Top Right</h4>
 
                 <Preview code={`<div class="popover popover-top-right">
-    <button class="btn popover-toggle">Top Right</button>
+    <button class="btn popover-toggle" tabindex="1">Top Right</button>
     <div class="popover-content">
         <span>This popover appears above and aligned to the right.</span>
     </div>
@@ -111,7 +111,7 @@ function Popover() {
                 <h4 id="bottom">Bottom</h4>
 
                 <Preview code={`<div class="popover popover-bottom">
-    <button class="btn popover-toggle">Bottom Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Bottom Popover</button>
     <div class="popover-content">
         <span>This popover appears below the toggle button.</span>
     </div>
@@ -122,7 +122,7 @@ function Popover() {
                 <p>Align the popover to the leading edge of the button with respect to the document text direction.</p>
 
                 <Preview code={`<div class="popover popover-bottom-start">
-    <button class="btn popover-toggle">Bottom Leading</button>
+    <button class="btn popover-toggle" tabindex="1">Bottom Leading</button>
     <div class="popover-content">
         <span>This popover appears below and aligned to the leading edge of the toggle button.</span>
     </div>
@@ -133,7 +133,7 @@ function Popover() {
                 <p>Align the popover to the trailing edge of the button with respect to the document text direction.</p>
 
                 <Preview code={`<div class="popover popover-bottom-end">
-    <button class="btn popover-toggle">Bottom Trailing</button>
+    <button class="btn popover-toggle" tabindex="1">Bottom Trailing</button>
     <div class="popover-content">
         <span>This popover appears below and aligned to the trailing edge of the toggle button.</span>
     </div>
@@ -142,7 +142,7 @@ function Popover() {
                 <h4 id="bottom-left">Bottom Left</h4>
 
                 <Preview code={`<div class="popover popover-bottom-left">
-    <button class="btn popover-toggle">Bottom Left</button>
+    <button class="btn popover-toggle" tabindex="1">Bottom Left</button>
     <div class="popover-content">
         <span>This popover appears below and aligned to the left.</span>
     </div>
@@ -151,7 +151,7 @@ function Popover() {
                 <h4 id="bottom-right">Bottom Right</h4>
 
                 <Preview code={`<div class="popover popover-bottom-right">
-    <button class="btn popover-toggle">Bottom Right</button>
+    <button class="btn popover-toggle" tabindex="1">Bottom Right</button>
     <div class="popover-content">
         <span>This popover appears below and aligned to the right.</span>
     </div>
@@ -162,7 +162,7 @@ function Popover() {
                 <p>Position the popover to the leading edge of the button with respect to the document text direction.</p>
 
                 <Preview code={`<div class="popover popover-start">
-    <button class="btn popover-toggle">Leading Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Leading Popover</button>
     <div class="popover-content">
         <span>This popover appears to the leading edge of the toggle button.</span>
     </div>
@@ -171,7 +171,7 @@ function Popover() {
                 <h4 id="leading-start">Leading Start</h4>
 
                 <Preview code={`<div class="popover popover-start-start">
-    <button class="btn popover-toggle">Leading Start</button>
+    <button class="btn popover-toggle" tabindex="1">Leading Start</button>
     <div class="popover-content">
         <span>This popover appears to the leading edge of the toggle button and aligned to the start.</span>
     </div>
@@ -180,7 +180,7 @@ function Popover() {
                 <h4 id="leading-end">Leading End</h4>
 
                 <Preview code={`<div class="popover popover-start-end">
-    <button class="btn popover-toggle">Leading End</button>
+    <button class="btn popover-toggle" tabindex="1">Leading End</button>
     <div class="popover-content">
         <span>This popover appears to the leading edge of the toggle button and aligned to the end.</span>
     </div>
@@ -191,7 +191,7 @@ function Popover() {
                 <p>Position the popover to the trailing edge of the button with respect to the document text direction.</p>
 
                 <Preview code={`<div class="popover popover-end">
-    <button class="btn popover-toggle">Trailing Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Trailing Popover</button>
     <div class="popover-content">
         <span>This popover appears to the trailing edge of the toggle button.</span>
     </div>
@@ -200,7 +200,7 @@ function Popover() {
                 <h4 id="trailing-start">Trailing Start</h4>
 
                 <Preview code={`<div class="popover popover-end-start">
-    <button class="btn popover-toggle">Trailing Start</button>
+    <button class="btn popover-toggle" tabindex="1">Trailing Start</button>
     <div class="popover-content">
         <span>This popover appears to the trailing edge of the toggle button and aligned to the start.</span>
     </div>
@@ -209,7 +209,7 @@ function Popover() {
                 <h4 id="trailing-end">Trailing End</h4>
 
                 <Preview code={`<div class="popover popover-end-end">
-    <button class="btn popover-toggle">Trailing End</button>
+    <button class="btn popover-toggle" tabindex="1">Trailing End</button>
     <div class="popover-content">
         <span>This popover appears to the trailing edge of the toggle button and aligned to the end.</span>
     </div>
@@ -218,7 +218,7 @@ function Popover() {
                 <h4 id="left">Left</h4>
 
                 <Preview code={`<div class="popover popover-left">
-    <button class="btn popover-toggle">Left Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Left Popover</button>
     <div class="popover-content">
         <span>This popover appears to the left of the toggle button.</span>
     </div>
@@ -227,7 +227,7 @@ function Popover() {
                 <h4 id="left-start">Left Start</h4>
 
                 <Preview code={`<div class="popover popover-left-start">
-    <button class="btn popover-toggle">Left Start</button>
+    <button class="btn popover-toggle" tabindex="1">Left Start</button>
     <div class="popover-content">
         <span>This popover appears to the left and aligned to the start.</span>
     </div>
@@ -236,7 +236,7 @@ function Popover() {
                 <h4 id="left-end">Left End</h4>
 
                 <Preview code={`<div class="popover popover-left-end">
-    <button class="btn popover-toggle">Left End</button>
+    <button class="btn popover-toggle" tabindex="1">Left End</button>
     <div class="popover-content">
         <span>This popover appears to the left and aligned to the end.</span>
     </div>
@@ -245,7 +245,7 @@ function Popover() {
                 <h4 id="right">Right</h4>
 
                 <Preview code={`<div class="popover popover-right">
-    <button class="btn popover-toggle">Right Popover</button>
+    <button class="btn popover-toggle" tabindex="1">Right Popover</button>
     <div class="popover-content">
         <span>This popover appears to the right of the toggle button.</span>
     </div>
@@ -254,7 +254,7 @@ function Popover() {
                 <h4 id="right-start">Right Start</h4>
 
                 <Preview code={`<div class="popover popover-right-start">
-    <button class="btn popover-toggle">Right Start</button>
+    <button class="btn popover-toggle" tabindex="1">Right Start</button>
     <div class="popover-content">
         <span>This popover appears to the right and aligned to the start.</span>
     </div>
@@ -263,7 +263,7 @@ function Popover() {
                 <h4 id="right-end">Right End</h4>
 
                 <Preview code={`<div class="popover popover-right-end">
-    <button class="btn popover-toggle">Right End</button>
+    <button class="btn popover-toggle" tabindex="1">Right End</button>
     <div class="popover-content">
         <span>This popover appears to the right and aligned to the end.</span>
     </div>
@@ -275,31 +275,31 @@ function Popover() {
 
                 <Preview code={`<div class="grid justify-items-center gap-8">
     <div class="popover popover-right popover-primary">
-        <button class="btn btn-primary popover-toggle">Primary Popover</button>
+        <button class="btn btn-primary popover-toggle" tabindex="1">Primary Popover</button>
         <div class="popover-content">
             <span>This is a primary coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-accent">
-        <button class="btn btn-accent popover-toggle">Accent Popover</button>
+        <button class="btn btn-accent popover-toggle" tabindex="1">Accent Popover</button>
         <div class="popover-content">
             <span>This is an accent coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-success">
-        <button class="btn btn-success popover-toggle">Success Popover</button>
+        <button class="btn btn-success popover-toggle" tabindex="1">Success Popover</button>
         <div class="popover-content">
             <span>This is a success coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-warning">
-        <button class="btn btn-warning popover-toggle">Warning Popover</button>
+        <button class="btn btn-warning popover-toggle" tabindex="1">Warning Popover</button>
         <div class="popover-content">
             <span>This is a warning coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-danger">
-        <button class="btn btn-danger popover-toggle">Danger Popover</button>
+        <button class="btn btn-danger popover-toggle" tabindex="1">Danger Popover</button>
         <div class="popover-content">
             <span>This is a danger coloured popover.</span>
         </div>
@@ -310,37 +310,37 @@ function Popover() {
 
                 <Preview code={`<div class="grid justify-items-center gap-8">
     <div class="popover popover-right popover-soft">
-        <button class="btn popover-toggle">Default Popover</button>
+        <button class="btn popover-toggle" tabindex="1">Default Popover</button>
         <div class="popover-content">
             <span>This is a default popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-primary">
-        <button class="btn btn-primary popover-toggle">Primary Popover</button>
+        <button class="btn btn-primary popover-toggle" tabindex="1">Primary Popover</button>
         <div class="popover-content">
             <span>This is a primary coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-accent">
-        <button class="btn btn-accent popover-toggle">Accent Popover</button>
+        <button class="btn btn-accent popover-toggle" tabindex="1">Accent Popover</button>
         <div class="popover-content">
             <span>This is an accent coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-success">
-        <button class="btn btn-success popover-toggle">Success Popover</button>
+        <button class="btn btn-success popover-toggle" tabindex="1">Success Popover</button>
         <div class="popover-content">
             <span>This is a success coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-warning">
-        <button class="btn btn-warning popover-toggle">Warning Popover</button>
+        <button class="btn btn-warning popover-toggle" tabindex="1">Warning Popover</button>
         <div class="popover-content">
             <span>This is a warning coloured popover.</span>
         </div>
     </div>
     <div class="popover popover-right popover-soft popover-danger">
-        <button class="btn btn-danger popover-toggle">Danger Popover</button>
+        <button class="btn btn-danger popover-toggle" tabindex="1">Danger Popover</button>
         <div class="popover-content">
             <span>This is a danger coloured popover.</span>
         </div>

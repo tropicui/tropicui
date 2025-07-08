@@ -24,7 +24,7 @@ function Dropdown() {
                 <h4 id="basic">Basic</h4>
 
                 <Preview code={`<div class="dropdown">
-    <button class="btn dropdown-toggle">
+    <button class="btn dropdown-toggle" tabindex="1">
         <span>Dropdown</span>
     </button>
     <div class="dropdown-content">
@@ -42,7 +42,7 @@ function Dropdown() {
                 <p>Use the <code className="tag">dropdown-open</code> class on <code className="tag">dropdown-content</code> to keep the dropdown open.</p>
 
                 <Preview code={`<div class="dropdown">
-    <button class="btn dropdown-toggle">
+    <button class="btn dropdown-toggle" tabindex="1">
         <span>Dropdown Open</span>
     </button>
     <div class="dropdown-content dropdown-open">
@@ -60,7 +60,7 @@ function Dropdown() {
                 <h4 id="up">Up</h4>
 
                 <Preview code={`<div class="dropdown dropdown-up">
-    <button class="btn dropdown-toggle">
+    <button class="btn dropdown-toggle" tabindex="1">
         Dropup
     </button>
     <div class="dropdown-content">
@@ -79,7 +79,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="flex flex-wrap gap-4">
     <div class="dropdown dropdown-up dropdown-start">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Leading Dropup
         </button>
         <div class="dropdown-content">
@@ -92,7 +92,7 @@ function Dropdown() {
         </div>
     </div>
     <div class="dropdown dropdown-start">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Leading Dropdown
         </button>
         <div class="dropdown-content">
@@ -112,7 +112,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="flex flex-wrap gap-4">
     <div class="dropdown dropdown-up dropdown-end">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Trailing Dropup
         </button>
         <div class="dropdown-content">
@@ -125,7 +125,7 @@ function Dropdown() {
         </div>
     </div>
     <div class="dropdown dropdown-end">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Trailing Dropdown
         </button>
         <div class="dropdown-content">
@@ -143,7 +143,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="flex flex-wrap gap-4">
     <div class="dropdown dropdown-up dropdown-left">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Left Dropup
         </button>
         <div class="dropdown-content">
@@ -156,7 +156,7 @@ function Dropdown() {
         </div>
     </div>
     <div class="dropdown dropdown-left">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Left Dropdown
         </button>
         <div class="dropdown-content">
@@ -174,7 +174,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="flex flex-wrap gap-4">
     <div class="dropdown dropdown-up dropdown-right">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Right Dropup
         </button>
         <div class="dropdown-content">
@@ -187,7 +187,7 @@ function Dropdown() {
         </div>
     </div>
     <div class="dropdown dropdown-right">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             Right Dropdown
         </button>
         <div class="dropdown-content">
@@ -207,7 +207,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="mt-64">
     <div class="dropdown dropdown-up dropdown-start">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg>
@@ -261,7 +261,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="h-64">
     <div class="dropdown dropdown-end">
-        <button class="dropdown-toggle btn btn-icon">
+        <button class="dropdown-toggle btn btn-icon" tabindex="1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
             </svg>
@@ -321,7 +321,7 @@ function Dropdown() {
                 <h4 id="horizontal-menu">Horizontal Menu</h4>
 
                 <Preview code={`<div class="dropdown">
-    <button class="btn dropdown-toggle">
+    <button class="btn dropdown-toggle" tabindex="1">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
         </svg>
@@ -364,7 +364,7 @@ function Dropdown() {
 
                 <Preview code={`<div class="h-80">
     <div class="dropdown">
-        <button class="btn dropdown-toggle">
+        <button class="btn dropdown-toggle" tabindex="1">
             <span>Notifications</span>
             <span class="tag tag-sm tag-round tag-danger">3</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -423,7 +423,7 @@ function Dropdown() {
                 <h4 id="form">Form</h4>
 
                 <Preview code={`<div class="dropdown">
-    <button class="btn dropdown-toggle">
+    <button class="btn dropdown-toggle" tabindex="1">
         <span>Trade</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
