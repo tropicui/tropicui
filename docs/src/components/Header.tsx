@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 function Header() {
     const [isDark, setIsDark] = useState(false);
+    const [release, setRelease] = useState('');
 
     useEffect(() => {
         const isDarkTheme = localStorage.getItem('theme') === 'dark';
@@ -12,6 +13,12 @@ function Header() {
         } else {
             document.documentElement.removeAttribute('data-theme');
         }
+
+        fetch('https://api.github.com/repos/tropicui/tropicui/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                data?.tag_name && setRelease(data.tag_name);
+            });
     }, []);
 
     const toggleTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +40,9 @@ function Header() {
                         <span className="text-lg">🌴</span>
                         <a href="https://tropicui.com" className="text-2xl text-base-foreground font-medium">TropicUI</a>
                         <div className="m-0.5"></div>
-                        <div className="tag tag-pill tag-sm">v1.0.6</div>
+                        {release && (
+                            <div className="tag tag-pill tag-sm">{release}</div>
+                        )}
                     </div>
                     <div className="grow"></div>
                     <nav className="flex items-center gap-4">

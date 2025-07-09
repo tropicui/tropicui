@@ -4,7 +4,7 @@
 
 ### Modern, Customisable UI Components for your Tailwind CSS project
 
-[![](https://badgen.net/github/tag/tropicui/tropicui/?label=Version&color=00a63e&icon=github)](https://www.npmjs.com/package/tropicui)
+[![](https://badgen.net/github/tag/tropicui/tropicui?label=Version&color=00a63e&icon=github)](https://www.npmjs.com/package/tropicui)
 [![](https://badgen.net/badge/Tailwindcss/v4.1/38bdf8/)](https://tailwindcss.com/)
 [![](https://badgen.net/github/license/tropicui/tropicui?color=00a63e)](https://github.com/tropicui/tropicui/blob/main/LICENSE)
 
